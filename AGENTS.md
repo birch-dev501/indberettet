@@ -7,3 +7,5 @@ Ved selvkritik og ved `/interrogate` skal hver ændring holdes op mod principper
 Før et commit: tjek at teksten er på dansk, at tal har en offentlig kilde, at udenlandske tal er mærket, og at der ikke er persondata eller sporing. Kør `npm run verify`, når ændringen kan ses i browseren.
 
 En kort observation eller en sag udefra bliver et præcist issue via [issue-fra-observation](.cursor/skills/issue-fra-observation/SKILL.md).
+
+Brug [typesafe-ai](.cursor/skills/typesafe-ai/SKILL.md), når koden kalder TypeSafe eller Jev: vurderinger kommer fra Jev, og beslutningerne bliver i koden. Ingen kode må kalde TypeSafe fra den offentlige side eller fra CI. API-nøglen må aldrig ligge i repoet eller i Actions-secrets.
