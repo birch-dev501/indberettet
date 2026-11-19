@@ -1,5 +1,5 @@
 {
-  "note": "Kun termnavne, der allerede står i Lægemiddelstyrelsens offentlige udtræk. Filen er ikke en MedDRA-ordbog og indeholder ikke koder, definitioner eller hierarki fra MedDRA. Et link forklarer ordet hos en offentlig kilde. Det er ikke en vurdering af, om medicinen forårsagede reaktionen. kind=search er en søgning, ikke en gennemgået artikel. Et direkte link er en artikel, hvis titel er det samme begreb. En tom søgning vises ikke.",
+  "note": "Kun termnavne, der allerede står i Lægemiddelstyrelsens offentlige udtræk. Filen er ikke en MedDRA-ordbog og indeholder ikke koder, definitioner eller hierarki fra MedDRA. Et link forklarer ordet hos en offentlig kilde. Det er ikke en vurdering af, om medicinen forårsagede reaktionen. kind=search er en søgning, ikke en gennemgået artikel. Et direkte link er en artikel, hvis titel er det samme begreb. En tom søgning vises ikke. Et direkte link er en artikel, hvis titel er det samme begreb. En tom søgning vises ikke.",
   "checkedAt": "2026-11-19",
   "search": {
     "label": "Søg i Patienthåndbogen",
@@ -18,6 +18,16 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Ubehag i øvre del af maven"
+    },
+    "Acne": {
+      "danish": "Akne",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/sygdomme/akne-bumser/akne-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Akne, oversigt"
     },
     "Alopecia": {
       "danish": "Hårtab",
@@ -79,16 +89,6 @@
       "audience": "engelsk",
       "confidence": "medium"
     },
-    "Asthenia": {
-      "danish": "Kraftesløshed",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/oevrige-sygdomme/traethed/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Træthed"
-    },
     "Asthma": {
       "danish": "Astma",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/sygdomme/astma/astma-en-oversigt/",
@@ -99,15 +99,45 @@
       "confidence": "high",
       "pageTitle": "Astma, en oversigt"
     },
-    "Back pain": {
-      "danish": "Rygsmerter",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/symptomer/laendesmerter/",
+    "Attention deficit hyperactivity disorder": {
+      "danish": "ADHD",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke-hos-boern/sygdomme/adhd/adhd-oversigt/",
       "source": "sundhed.dk, Patienthåndbogen",
       "kind": "direct",
       "verified": true,
       "audience": "borger",
       "confidence": "high",
-      "pageTitle": "Lændesmerter"
+      "pageTitle": "ADHD, oversigt"
+    },
+    "Back pain": {
+      "danish": "Rygsmerter",
+      "url": "https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/fysmed-og-rehab/symptomer-og-tegn/rygsmerter/",
+      "source": "sundhed.dk, Lægehåndbogen (for sundhedspersoner)",
+      "kind": "direct",
+      "verified": true,
+      "audience": "fagperson",
+      "confidence": "high",
+      "pageTitle": "Rygsmerter"
+    },
+    "COVID-19": {
+      "danish": "COVID-19",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/infektioner/sygdomme/import-og-tropesygdomme/covid-19-sars-cov-2/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "COVID-19, SARS CoV-2"
+    },
+    "Cardiac failure": {
+      "danish": "Hjertesvigt",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/sygdomme/oevrige-tilstande/hjertesvigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Hjertesvigt"
     },
     "Chest pain": {
       "danish": "Brystsmerter",
@@ -128,6 +158,26 @@
       "pageTitle": "Chills: MedlinePlus Medical Encyclopedia",
       "audience": "engelsk",
       "confidence": "medium"
+    },
+    "Cholelithiasis": {
+      "danish": "Galdesten",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/sygdomme/galdeveje/galdestenssygdom/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Galdestenssygdom"
+    },
+    "Chronic obstructive pulmonary disease": {
+      "danish": "KOL",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/sygdomme/kol/kol/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "KOL"
     },
     "Constipation": {
       "danish": "Forstoppelse",
@@ -169,6 +219,16 @@
       "confidence": "high",
       "pageTitle": "Dyb venetrombose (DVT)"
     },
+    "Dementia": {
+      "danish": "Demens",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/aeldre/sygdomme/demens/demens-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Demens, oversigt"
+    },
     "Depression": {
       "danish": "Depression",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/sygdomme/depression/depression-en-oversigt/",
@@ -181,13 +241,13 @@
     },
     "Diarrhoea": {
       "danish": "Diarré",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/kraeft/sygdomme/raad-til-kraeftpatienter/diarre/",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/diarre-akut/",
       "source": "sundhed.dk, Patienthåndbogen",
       "kind": "direct",
       "verified": true,
       "audience": "borger",
       "confidence": "high",
-      "pageTitle": "Diarré ved kræft"
+      "pageTitle": "Diarré, akut"
     },
     "Dizziness": {
       "danish": "Svimmelhed",
@@ -229,16 +289,6 @@
       "confidence": "high",
       "pageTitle": "Dysfagi"
     },
-    "Dyspnoea": {
-      "danish": "Åndenød",
-      "url": "https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/kraeft/tilstande-og-sygdomme/palliativ-medicin/aandedraetsbesvaer/",
-      "source": "sundhed.dk, Lægehåndbogen (for sundhedspersoner)",
-      "kind": "direct",
-      "verified": true,
-      "audience": "fagperson",
-      "confidence": "high",
-      "pageTitle": "Åndedrætsbesvær i palliative forløb"
-    },
     "Eczema": {
       "danish": "Eksem",
       "url": "https://medlineplus.gov/eczema.html",
@@ -249,6 +299,26 @@
       "audience": "engelsk",
       "confidence": "medium"
     },
+    "Encephalitis": {
+      "danish": "Hjernebetændelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/infektioner/hjernebetaendelse-encefalit/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Hjernebetændelse (encefalitis)"
+    },
+    "Epilepsy": {
+      "danish": "Epilepsi",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/epilepsi/epilepsi-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Epilepsi, oversigt"
+    },
     "Fatigue": {
       "danish": "Træthed",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/symptomer/traethed-en-oversigt/",
@@ -258,6 +328,36 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Træthed"
+    },
+    "Fracture": {
+      "danish": "Knoglebrud",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/sygdomme/knoglebrud/knoglebrud-generelt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Knoglebrud, generelt"
+    },
+    "Gastrooesophageal reflux disease": {
+      "danish": "Refluks",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/sygdomme/spiseroer/refluks/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Refluks"
+    },
+    "Gout": {
+      "danish": "Urinsyregigt",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/sygdomme/oevrige-sygdomme/urinsyre-gigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Urinsyregigt"
     },
     "Gynaecomastia": {
       "danish": "Forstørret bryst hos mænd",
@@ -299,16 +399,6 @@
       "confidence": "high",
       "pageTitle": "Hovedpine"
     },
-    "Heart rate increased": {
-      "danish": "Hjertebanken",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/symptomer/hjertebanken/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Hjertebanken"
-    },
     "Heavy menstrual bleeding": {
       "danish": "Kraftige menstruationer",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/kvindesygdomme/symptomer/kraftige-menstruationer/",
@@ -318,6 +408,26 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Kraftig menstruationsblødning"
+    },
+    "Herpes zoster": {
+      "danish": "Helvedesild",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/sygdomme/smaablaerede-udslaet/helvedesild/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Helvedesild"
+    },
+    "Hypercholesterolaemia": {
+      "danish": "Højt kolesterol",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/kolesterolforstyrrelser/hoejt-kolesterol-hyperlipidaemi/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Højt kolesterol (dyslipidæmi)"
     },
     "Hyperhidrosis": {
       "danish": "Svedtendens",
@@ -389,6 +499,16 @@
       "confidence": "high",
       "pageTitle": "Søvnløshed"
     },
+    "Iron deficiency anaemia": {
+      "danish": "Jernmangel",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/blod/sygdomme/anaemier/jernmangel/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Jernmangel"
+    },
     "Jaundice": {
       "danish": "Gulsot",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/gulsot/",
@@ -418,6 +538,16 @@
       "pageTitle": "Malaise: MedlinePlus Medical Encyclopedia",
       "audience": "engelsk",
       "confidence": "medium"
+    },
+    "Multiple sclerosis": {
+      "danish": "Multipel sklerose",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/multipel-sklerose/multipel-sklerose-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Multipel sklerose, oversigt"
     },
     "Muscle spasms": {
       "danish": "Muskelkrampe",
@@ -459,15 +589,45 @@
       "confidence": "high",
       "pageTitle": "Hjertemuskelbetændelse (myokarditis)"
     },
-    "Nausea": {
-      "danish": "Kvalme",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/kraeft/sygdomme/raad-til-kraeftpatienter/kvalme/",
+    "Nasopharyngitis": {
+      "danish": "Forkølelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/infektioner/sygdomme/virusinfektioner/forkoelelse/",
       "source": "sundhed.dk, Patienthåndbogen",
       "kind": "direct",
       "verified": true,
       "audience": "borger",
       "confidence": "high",
-      "pageTitle": "Kvalme"
+      "pageTitle": "Forkølelse"
+    },
+    "Nausea": {
+      "danish": "Kvalme og opkastninger",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Kvalme og opkastninger"
+    },
+    "Nephrolithiasis": {
+      "danish": "Nyresten",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/nyrer-og-urinveje/sygdomme/nyresten/nyresten-en-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Nyresten"
+    },
+    "Obesity": {
+      "danish": "Overvægt og fedme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/overvaegt-og-kost/overvaegt-og-fedme/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Overvægt og fedme"
     },
     "Oropharyngeal pain": {
       "danish": "Halssmerter",
@@ -481,13 +641,13 @@
     },
     "Pain": {
       "danish": "Smerte",
-      "url": "https://medlineplus.gov/pain.html",
-      "source": "MedlinePlus (NIH)",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/undersoegelser/kirurgi/bedoevelse-og-smerter/smerte-hvad-er-det/",
+      "source": "sundhed.dk, Patienthåndbogen",
       "kind": "direct",
       "verified": true,
-      "pageTitle": "Pain | MedlinePlus",
-      "audience": "engelsk",
-      "confidence": "medium"
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Smerte, hvad er det?"
     },
     "Palpitations": {
       "danish": "Hjertebanken",
@@ -499,6 +659,16 @@
       "confidence": "high",
       "pageTitle": "Hjertebanken"
     },
+    "Panic attack": {
+      "danish": "Panikangst",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/sygdomme/angsttilstande/panikangst-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Panikangst, oversigt"
+    },
     "Paraesthesia": {
       "danish": "Snurren eller prikken",
       "url": "https://medlineplus.gov/ency/article/003206.htm",
@@ -508,6 +678,16 @@
       "pageTitle": "Numbness and tingling: MedlinePlus Medical Encyclopedia",
       "audience": "engelsk",
       "confidence": "medium"
+    },
+    "Parkinson's disease": {
+      "danish": "Parkinsons sygdom",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/parkinson/parkinsons-sygdom-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Parkinsons sygdom, oversigt"
     },
     "Pericarditis": {
       "danish": "Hjertehindebetændelse",
@@ -529,6 +709,16 @@
       "audience": "engelsk",
       "confidence": "medium"
     },
+    "Pharyngitis": {
+      "danish": "Halsbetændelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/svaelget-midterste-del/halsbetaendelse/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Halsbetændelse"
+    },
     "Pneumonia": {
       "danish": "Lungebetændelse",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/sygdomme/infektioner/lungebetaendelse/",
@@ -548,6 +738,16 @@
       "audience": "fagperson",
       "confidence": "high",
       "pageTitle": "Kløe"
+    },
+    "Psoriasis": {
+      "danish": "Psoriasis",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/sygdomme/psoriasis/psoriasis-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Psoriasis, oversigt"
     },
     "Pulmonary embolism": {
       "danish": "Blodprop i lungerne",
@@ -579,6 +779,26 @@
       "audience": "engelsk",
       "confidence": "medium"
     },
+    "Rash pruritic": {
+      "danish": "Udslæt med kløe",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/symptomer/udslaet-med-kloee/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Udslæt med kløe"
+    },
+    "Rheumatoid arthritis": {
+      "danish": "Leddegigt",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/sygdomme/leddegigt/leddegigt-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Leddegigt, oversigt"
+    },
     "Scratch": {
       "danish": "Hudafskrabning",
       "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
@@ -591,13 +811,13 @@
     },
     "Seizure": {
       "danish": "Kramper",
-      "url": "https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/akut-og-foerstehjaelp/tilstande-og-sygdomme/foerstehjaelp/akutte-medicinske-tilstande/krampeanfald/",
+      "url": "https://www.sundhed.dk/sundhedsfaglig/laegehaandbogen/neurologi/symptomer-og-tegn/kramper/",
       "source": "sundhed.dk, Lægehåndbogen (for sundhedspersoner)",
       "kind": "direct",
       "verified": true,
       "audience": "fagperson",
       "confidence": "high",
-      "pageTitle": "Krampeanfald"
+      "pageTitle": "Kramper"
     },
     "Skin wound": {
       "danish": "Hudsår",
@@ -669,6 +889,26 @@
       "confidence": "high",
       "pageTitle": "Rysten"
     },
+    "Type 1 diabetes mellitus": {
+      "danish": "Type 1-diabetes",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/diabetes-type-1-hvad-er-det/type-1-diabetes/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Type 1-diabetes"
+    },
+    "Type 2 diabetes mellitus": {
+      "danish": "Type 2-diabetes",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/diabetes-type-2-hvad-er-det/type-2-diabetes/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Type 2-diabetes"
+    },
     "Urticaria": {
       "danish": "Nældefeber",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/sygdomme/roedt-hududslaet/naeldefeber/",
@@ -698,6 +938,36 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Synsnedsættelse"
+    },
+    "Vitamin B12 deficiency": {
+      "danish": "Vitamin B12-mangel",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/blod/sygdomme/anaemier/vitamin-b12-mangel/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Vitamin B12 mangel"
+    },
+    "Vitamin D deficiency": {
+      "danish": "D-vitaminmangel",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/oevrige-sygdomme/d-vitamin-mangel/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "D-vitamin-mangel"
+    },
+    "Vomiting": {
+      "danish": "Kvalme og opkastninger",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "audience": "borger",
+      "confidence": "high",
+      "pageTitle": "Kvalme og opkastninger"
     },
     "Weight decreased": {
       "danish": "Vægttab",
@@ -929,15 +1199,15 @@
   },
   "coverage": {
     "reactionOccurrences": 692178,
-    "directOccurrences": 154269,
-    "directShare": 0.2229,
-    "directTerms": 49,
+    "directOccurrences": 167408,
+    "directShare": 0.2419,
+    "directTerms": 77,
     "professionalTerms": 3,
-    "professionalOccurrences": 15784,
-    "englishTerms": 19,
-    "englishOccurrences": 90139,
-    "mappedTerms": 71,
-    "unlinkedOccurrences": 431986,
+    "professionalOccurrences": 10127,
+    "englishTerms": 18,
+    "englishOccurrences": 85560,
+    "mappedTerms": 98,
+    "unlinkedOccurrences": 429083,
     "socWithDirectLink": 16,
     "socCount": 27
   }

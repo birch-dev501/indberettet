@@ -46,8 +46,14 @@ function serve() {
       response.writeHead(200, { "Content-Type": types[extname(file)] ?? "application/octet-stream" });
       response.end(body);
     } catch {
-      response.writeHead(404);
-      response.end("not found");
+      try {
+        const missing = readFileSync(join(outDir, "404.html"));
+        response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+        response.end(missing);
+      } catch {
+        response.writeHead(404);
+        response.end("not found");
+      }
     }
   });
   return new Promise((ready, reject) => {
@@ -106,6 +112,34 @@ async function checkSearch(page, width) {
   if (!msd.includes("MSD (Merck Sharp & Dohme)")) fail(`${width} MSD mangler MSD`);
   if (msd.includes("Tysk Merck")) fail(`${width} MSD viser tysk Merck`);
   await page.screenshot({ path: join(evidence, `soegning-${width}.png`) });
+}
+
+async function checkSearchDismiss(page, width) {
+  await page.goto(`${base}/`, { waitUntil: "networkidle" });
+  for (const selector of ["search[data-search=header]", "search[data-search=page]"]) {
+    const box = page.locator(selector);
+    const input = box.locator("input[role=searchbox]");
+    await input.fill("vioxx");
+    await box.locator(".result-groups").waitFor();
+    const clear = box.getByRole("button", { name: "Ryd søgning" });
+    if ((await clear.count()) !== 1) fail(`${width} ${selector} mangler ryd-kryds`);
+    await page.mouse.click(2, 320);
+    await box.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail(`${width} ${selector} lukker ikke ved klik udenfor`);
+    });
+    if ((await input.inputValue()) !== "vioxx") fail(`${width} ${selector} slettede teksten ved klik udenfor`);
+    const live = await page.locator("[aria-live=polite]").allInnerTexts();
+    if (!live.some((text) => text.includes("Listen er lukket"))) fail(`${width} ${selector} meldte ikke at listen lukkede`);
+    await input.focus();
+    await box.locator(".result-groups").waitFor();
+    await input.press("Escape");
+    await box.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail(`${width} ${selector} lukker ikke ved Esc`);
+    });
+    await input.press("Escape");
+    if ((await input.inputValue()) !== "") fail(`${width} ${selector} andet Esc ryddede ikke feltet`);
+    if ((await clear.count()) !== 0) fail(`${width} ${selector} viser kryds uden tekst`);
+  }
 }
 
 async function checkSearchPage(page, width) {
@@ -263,6 +297,75 @@ async function checkReport(page) {
   if (!footer?.includes("github.com/birch-dev501/indberettet/issues/new/choose")) fail(`footer-fejl linker til ${footer}`);
 }
 
+async function checkRedirects(page) {
+  const routes = [
+    ["/stof/oxycodon/", "/stof/oxycodone/"],
+    ["/stof/semaglutid/", "/stof/semaglutide/"],
+    ["/firma/novo/", "/firma/novo-nordisk/"],
+  ];
+  for (const [from, to] of routes) {
+    await page.goto(`${base}${from}`, { waitUntil: "networkidle" });
+    if (!page.url().includes(to)) fail(`${from} endte på ${page.url()}`);
+  }
+  const response = await page.goto(`${base}/stof/findes-ikke-xyz/`, { waitUntil: "networkidle" });
+  if (response?.status() !== 404) fail(`ukendt adresse svarer ${response?.status()}`);
+  if (!(await page.locator("h1").innerText()).includes("findes ikke")) fail("404 mangler overskrift");
+  await page.locator("input[role=searchbox]").first().waitFor();
+  await page.getByText("findes ikke xyz").first().waitFor();
+}
+
+function pngSize(buffer) {
+  if (buffer.length < 24 || buffer.toString("ascii", 1, 4) !== "PNG") return null;
+  return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+}
+
+async function checkShare(page) {
+  const paths = ["/", "/stof/semaglutide/", "/firma/msd/"];
+  for (const path of paths) {
+    await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
+    const image = await page.locator('meta[property="og:image"]').getAttribute("content");
+    const card = await page.locator('meta[name="twitter:card"]').getAttribute("content");
+    if (!image?.startsWith("https://birch-dev501.github.io/indberettet/og/")) fail(`${path} og:image er ${image}`);
+    if (card !== "summary_large_image") fail(`${path} twitter:card er ${card}`);
+    const local = image.replace("https://birch-dev501.github.io", origin);
+    const response = await page.request.get(local);
+    const size = pngSize(await response.body());
+    if (response.status() !== 200 || size?.width !== 1200 || size?.height !== 630) {
+      fail(`${path} billede ${response.status()} ${size?.width}x${size?.height}`);
+    }
+  }
+}
+
+async function checkSitemap(page) {
+  const robots = await (await page.request.get(`${base}/robots.txt`)).text();
+  if (!robots.includes("https://birch-dev501.github.io/indberettet/sitemap.xml")) fail("robots.txt peger ikke på sitemap");
+  const xml = await (await page.request.get(`${base}/sitemap.xml`)).text();
+  if (!xml.includes("<urlset")) fail("sitemap er ikke et urlset");
+  const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+  if (urls.length < 1000) fail(`sitemap har kun ${urls.length} adresser`);
+  const sample = urls.filter((_, index) => index % Math.ceil(urls.length / 50) === 0).slice(0, 50);
+  for (const url of sample) {
+    const local = url.replace("https://birch-dev501.github.io", origin);
+    const response = await page.request.get(local);
+    if (response.status() !== 200) fail(`sitemap ${url} svarer ${response.status()}`);
+  }
+}
+
+async function checkDataDate(page) {
+  await page.goto(`${base}/`, { waitUntil: "networkidle" });
+  const stamp = await page.locator("time").first().getAttribute("dateTime");
+  if (!stamp || !/^\d{4}-\d{2}-\d{2}$/.test(stamp)) fail(`data-dato er ${stamp}`);
+}
+
+async function checkExtractGuard() {
+  const good = spawn("python3", ["scripts/validate_extract.py"], { cwd: root });
+  const goodCode = await new Promise((done) => good.on("exit", done));
+  if (goodCode !== 0) fail("validering af det nuværende udtræk fejlede");
+  const bad = spawn("python3", ["scripts/validate_extract.py", "--simulate-drop"], { cwd: root });
+  const badCode = await new Promise((done) => bad.on("exit", done));
+  if (badCode === 0) fail("simuleret afvigelse blev godkendt");
+}
+
 async function main() {
   mkdirSync(evidence, { recursive: true });
   await build();
@@ -277,6 +380,7 @@ async function main() {
     ]) {
       const page = await browser.newPage({ viewport });
       await checkSearch(page, viewport.width);
+      await checkSearchDismiss(page, viewport.width);
       await checkSearchPage(page, viewport.width);
       await checkReactions(page, viewport.width);
       await checkFines(page, viewport.width);
@@ -286,6 +390,11 @@ async function main() {
       if (viewport.width === 1280) {
         await checkPwa(page);
         await checkReport(page);
+        await checkRedirects(page);
+        await checkShare(page);
+        await checkSitemap(page);
+        await checkDataDate(page);
+        await checkExtractGuard();
       }
       await page.close();
     }

@@ -27,9 +27,9 @@ PHRASES: dict[str, tuple[str, list[str]]] = {
     "Pyrexia": ("Feber", ["feber"]),
     "Fatigue": ("Træthed", ["traethed", "traethed en oversigt"]),
     "Dizziness": ("Svimmelhed", ["svimmelhed"]),
-    "Nausea": ("Kvalme", ["kvalme"]),
-    "Vomiting": ("Opkastning", ["opkastning", "opkastninger"]),
-    "Diarrhoea": ("Diarré", ["diarre", "diarré"]),
+    "Nausea": ("Kvalme og opkastninger", ["kvalme og opkastninger"]),
+    "Vomiting": ("Kvalme og opkastninger", ["kvalme og opkastninger"]),
+    "Diarrhoea": ("Diarré", ["diarre akut", "akut diarre"]),
     "Abdominal pain": ("Mavesmerter", ["mavesmerter"]),
     "Pruritus": ("Kløe", ["kloe", "kløe"]),
     "Rash": ("Udslæt", ["udslaet", "udslæt"]),
@@ -67,12 +67,12 @@ PHRASES: dict[str, tuple[str, list[str]]] = {
     "Pericarditis": ("Hjertehindebetændelse", ["hjertehindebetaendelse perikardit"]),
     "Deep vein thrombosis": ("Dyb venetrombose", ["dyb venetrombose dvt", "dyb venetrombose"]),
     "Pulmonary embolism": ("Blodprop i lungerne", ["blodprop i lungerne lungeemboli"]),
-    "Back pain": ("Rygsmerter", ["rygsmerter", "laendesmerter"]),
+    "Back pain": ("Rygsmerter", ["rygsmerter"]),
     "Arthralgia": ("Ledsmerter", ["ledsmerter"]),
     "Myalgia": ("Muskelsmerter", ["muskelsmerter"]),
     "Dyspnoea": ("Åndenød", ["aandenoed", "aandedraetsbesvaer"]),
     "Malaise": ("Utilpashed", ["utilpashed"]),
-    "Pain": ("Smerte", ["smerte", "smerter"]),
+    "Pain": ("Smerte", ["smerte hvad er det"]),
     "Chills": ("Kulderystelser", ["kulderystelser"]),
     "Angioedema": ("Angioødem", ["angiooedem"]),
     "Dry mouth": ("Mundtørhed", ["mundtoerhed"]),
@@ -80,7 +80,7 @@ PHRASES: dict[str, tuple[str, list[str]]] = {
     "Weight increased": ("Vægtøgning", ["vaegtstigning"]),
     "Weight decreased": ("Vægttab", ["vaegttab hos voksne", "vaegttab"]),
     "Oedema": ("Hævelse", ["haevelse", "oedem"]),
-    "Asthenia": ("Kraftesløshed", ["kraftesloeshed", "traethed"]),
+    "Asthenia": ("Kraftesløshed", ["kraftesloeshed"]),
     "Paraesthesia": ("Snurren", ["paraeatesi", "foeleforstyrrelse"]),
     "Hypoaesthesia": ("Nedsat følesans", ["nedsat foelesans"]),
     "Muscle spasms": ("Muskelkrampe", ["muskelkrampe"]),
@@ -91,7 +91,36 @@ PHRASES: dict[str, tuple[str, list[str]]] = {
     "Vision blurred": ("Sløret syn", ["taagesyn", "uklarheder"]),
     "Erythema": ("Rødme", ["roedme"]),
     "Hypotension": ("Lavt blodtryk", ["lavt blodtryk"]),
-    "Heart rate increased": ("Hjertebanken", ["hjertebanken"]),
+    "Heart rate increased": ("Høj puls", ["hoej puls"]),
+    "COVID-19": ("COVID-19", ["covid 19 sars cov 2"]),
+    "Nasopharyngitis": ("Forkølelse", ["forkoelelse"]),
+    "Rash pruritic": ("Udslæt med kløe", ["udslaet med kloee"]),
+    "Type 2 diabetes mellitus": ("Type 2-diabetes", ["type 2 diabetes"]),
+    "Type 1 diabetes mellitus": ("Type 1-diabetes", ["type 1 diabetes"]),
+    "Epilepsy": ("Epilepsi", ["epilepsi oversigt"]),
+    "Multiple sclerosis": ("Multipel sklerose", ["multipel sklerose oversigt"]),
+    "Parkinson's disease": ("Parkinsons sygdom", ["parkinsons sygdom oversigt"]),
+    "Dementia": ("Demens", ["demens oversigt"]),
+    "Obesity": ("Overvægt og fedme", ["overvaegt og fedme"]),
+    "Cardiac failure": ("Hjertesvigt", ["hjertesvigt"]),
+    "Psoriasis": ("Psoriasis", ["psoriasis oversigt"]),
+    "Acne": ("Akne", ["akne oversigt"]),
+    "Herpes zoster": ("Helvedesild", ["helvedesild"]),
+    "Pharyngitis": ("Halsbetændelse", ["halsbetaendelse"]),
+    "Nephrolithiasis": ("Nyresten", ["nyresten en oversigt"]),
+    "Cholelithiasis": ("Galdesten", ["galdestenssygdom"]),
+    "Rheumatoid arthritis": ("Leddegigt", ["leddegigt oversigt"]),
+    "Gout": ("Urinsyregigt", ["urinsyre gigt"]),
+    "Chronic obstructive pulmonary disease": ("KOL", ["kol"]),
+    "Gastrooesophageal reflux disease": ("Refluks", ["refluks"]),
+    "Iron deficiency anaemia": ("Jernmangel", ["jernmangel"]),
+    "Vitamin B12 deficiency": ("Vitamin B12-mangel", ["vitamin b12 mangel"]),
+    "Vitamin D deficiency": ("D-vitaminmangel", ["d vitamin mangel"]),
+    "Encephalitis": ("Hjernebetændelse", ["hjernebetaendelse encefalit"]),
+    "Panic attack": ("Panikangst", ["panikangst oversigt"]),
+    "Hypercholesterolaemia": ("Højt kolesterol", ["hoejt kolesterol hyperlipidaemi"]),
+    "Fracture": ("Knoglebrud", ["knoglebrud generelt"]),
+    "Attention deficit hyperactivity disorder": ("ADHD", ["adhd oversigt"]),
     "Abdominal pain upper": ("Ubehag i øvre del af maven", ["ubehag i oevre del af maven"]),
     "Dyspepsia": ("Halsbrand", ["halsbrand og sure opstoed", "halsbrand"]),
     "Haematuria": ("Blod i urinen", ["blod i urinen"]),
@@ -125,10 +154,12 @@ def load_locs(url: str) -> list[str]:
 
 def candidates(locs: list[str], phrases: list[str]) -> list[str]:
     wanted = [norm_tokens(phrase) for phrase in phrases]
+    wanted_words = [token for phrase in wanted for token in phrase]
     found: list[tuple[int, str]] = []
     for url in locs:
-        if any(part in url for part in ("/illustrationer/", "/animationer/", "/billeddiagnostik/")):
-            continue
+        if any(part in url for part in ("/illustrationer/", "/animationer/", "/billeddiagnostik/", "/kraeft/", "/boern/", "/graviditet/", "/foerstehjaelp/")):
+            if not any(word in " ".join(wanted_words) for word in ("kraeft", "boern", "graviditet")):
+                continue
         slug = url.rstrip("/").split("/")[-1]
         tokens = norm_tokens(slug)
         if not tokens:
