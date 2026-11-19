@@ -62,11 +62,29 @@ function serve() {
   });
 }
 
-function build() {
+function run(command, args, env = process.env) {
   return new Promise((ready, reject) => {
-    const child = spawn("npm", ["run", "build"], { cwd: root, stdio: "inherit", env: { ...process.env, NEXT_PUBLIC_BASE_PATH: "/indberettet" } });
-    child.on("exit", (code) => (code === 0 ? ready() : reject(new Error(`build exited ${code}`))));
+    const child = spawn(command, args, { cwd: root, stdio: "inherit", env });
+    child.on("error", reject);
+    child.on("exit", (code) => (code === 0 ? ready() : reject(new Error(`${command} stopped ${code}`))));
   });
+}
+
+async function cleanPythonPath() {
+  const venv = join(root, ".verify", "py");
+  await run("python3", ["-m", "venv", "--clear", venv]);
+  await run(join(venv, "bin", "pip"), ["install", "-r", "requirements.txt"]);
+  for (const file of [".github/workflows/pages.yml", ".github/workflows/monthly-update.yml"]) {
+    const text = readFileSync(join(root, file), "utf8");
+    if (!text.includes("pip install -r requirements.txt") || !text.includes("fonts-dejavu-core")) {
+      throw new Error(`${file} installerer ikke requirements.txt og fonts-dejavu-core`);
+    }
+  }
+  return `${join(venv, "bin")}:${process.env.PATH ?? ""}`;
+}
+
+function build(pathEnv) {
+  return run("npm", ["run", "build"], { ...process.env, PATH: pathEnv, NEXT_PUBLIC_BASE_PATH: "/indberettet" });
 }
 
 async function doctor() {
@@ -388,7 +406,8 @@ async function checkExtractGuard() {
 
 async function main() {
   mkdirSync(evidence, { recursive: true });
-  await build();
+  const pathEnv = await cleanPythonPath();
+  await build(pathEnv);
   if (!statSync(join(outDir, "index.html")).isFile()) throw new Error("build skrev ikke out/index.html");
   const server = await serve();
   const browser = await chromium.launch();

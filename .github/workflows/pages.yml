@@ -23,6 +23,14 @@ jobs:
         with:
           node-version: "22"
           cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Installer Pillow og DejaVu
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-dejavu-core
+          python -m pip install -r requirements.txt
       - run: npm ci
       - name: Byg statisk site
         env:

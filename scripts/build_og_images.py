@@ -25,7 +25,7 @@ def font(size: int, bold: bool = False) -> ImageFont.ImageFont:
     for path in candidates:
         if Path(path).exists():
             return ImageFont.truetype(path, size)
-    return ImageFont.load_default()
+    raise SystemExit("Mangler DejaVu eller Liberation. Installer fonts-dejavu-core.")
 
 
 def card(title: str, lines: list[str], destination: Path) -> None:

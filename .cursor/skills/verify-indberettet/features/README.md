@@ -16,3 +16,4 @@
 | Sitemap | [sitemap.md](sitemap.md) | robots.txt and a sample of addresses |
 | Deling | [share.md](share.md) | 1200×630 share images |
 | Udtræk | [extract.md](extract.md) | Visible data date and the drop guard |
+| Byggeafhængigheder | [build-deps.md](build-deps.md) | The site build uses only requirements.txt |
