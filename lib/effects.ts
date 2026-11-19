@@ -29,3 +29,21 @@ export function trialRisks() {
   const control = BNT162B2.placeboCases / BNT162B2.placeboN;
   return { treated, control, measures: effectMeasures(treated, control)! };
 }
+
+export type HarmInput = { risk: number };
+
+/** Baseline and reaction risks are proportions. Efficacy is a fraction from 0 to 1. */
+export function benefitHarm(baseline: number, efficacy: number, harms: HarmInput[]) {
+  if (!Number.isFinite(baseline) || !Number.isFinite(efficacy)) return null;
+  if (baseline < 0 || baseline > 1 || efficacy < 0 || efficacy > 1) return null;
+  if (harms.some((harm) => !Number.isFinite(harm.risk) || harm.risk < 0 || harm.risk > 1)) return null;
+  const prevented = baseline * efficacy;
+  return {
+    nnt: prevented > 0 ? 1 / prevented : null,
+    preventedPer100k: prevented * 100_000,
+    harms: harms.map((harm) => ({
+      nnh: harm.risk > 0 ? 1 / harm.risk : null,
+      causedPer100k: harm.risk * 100_000,
+    })),
+  };
+}

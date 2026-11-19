@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { EffectCalculator } from "@/components/effect-calculator";
+import { HarmBalance } from "@/components/harm-balance";
 import { IconArray } from "@/components/icon-array";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
 const POLACK = "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577";
 const OLLIARO = "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(21)00069-0/fulltext";
 const OLLIARO_CORRECTION = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9247853/";
+const KARLSTAD = "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253";
+const CDC_MMWR = "https://www.cdc.gov/mmwr/volumes/70/wr/mm7027e2.htm";
 
 export default function ResearchLiteracyPage() {
   const { measures } = trialRisks();
@@ -155,6 +158,62 @@ export default function ResearchLiteracyPage() {
             <h2>Regn selv</h2>
             <p>Skriv to risici i procent. Lommeregneren bruger kun de tal, du taster, ikke artiklens model.</p>
             <EffectCalculator />
+          </article>
+
+          <article className="card" id="nnh">
+            <h2>Gavn og skade ved siden af hinanden</h2>
+            <p>
+              NNT siger, hvor mange der skal behandles, for at én undgår udfaldet. NNH siger, hvor mange der skal
+              behandles, for at én får en bestemt skade. Formlen for gavnen er NNT = 1 / (udgangsrisiko × effekt).
+              Effekten er den relative reduktion som en andel: 95 % er 0,95. NNH for én reaktion er 1 divideret med
+              risikoen for netop den reaktion.
+            </p>
+            <p>
+              <strong>Eksempeltal, ikke en måling.</strong> Hvis 1 ud af 10.000 bliver indlagt med covid-19 uden
+              vaccinen, og vaccinen forebygger dem alle, er NNT 10.000. Hvis en alvorlig reaktion rammer 1 ud af 5.000,
+              er NNH 5.000. Pr. 100.000 vaccinerede er det 10 forebyggede indlæggelser og 20 reaktioner, altså omkring
+              to reaktioner for hver indlæggelse, eksemplet forebygger. Er effekten under 100 %, stiger NNT.
+            </p>
+            <p>
+              Der findes mange slags reaktioner, og de har ikke samme alvor. En mild lokal reaktion og en indlæggelse
+              kan ikke lægges sammen til ét NNH. Gavnen kan også være andet end indlæggelse: smitte, intensivforløb
+              eller død. Hvert udfald har sit eget tal.
+            </p>
+            <h3>Målte tal, to forskellige kilder</h3>
+            <p>
+              I et nordisk register var den overskydende risiko for myokarditis højest hos unge mænd i de første 28
+              dage efter andet stik.{" "}
+              <a href={KARLSTAD} rel="noopener noreferrer">
+                Karlstad et al., JAMA Cardiology 2022
+              </a>{" "}
+              fandt 5,55 ekstra tilfælde pr. 100.000 (interval 3,70–7,39) efter andet stik med BNT162b2 og 18,39 pr.
+              100.000 (9,05–27,72) efter andet stik med mRNA-1273, hos mænd på 16–24 år. Efter første stik med BNT162b2
+              var tallet 1,55 pr. 100.000 (0,70–2,39) i samme gruppe. Hos mænd på 40 år og derover var ekstra tilfælde
+              efter to doser BNT162b2 0,22 pr. 100.000, og intervallet gik gennem nul. Hos kvinder på 16–24 år var der
+              for få myokarditis-tilfælde efter to doser BNT162b2 til at regne et stabilt overskud. Opfølgningen løb fra
+              27. december 2020 til 5. oktober 2021.
+            </p>
+            <p>
+              Den artikel tæller ikke forebyggede covid-19-indlæggelser. Et andet regnestykke, fra det amerikanske
+              smitteagentur CDC i juli 2021, antog 95 % effekt af to mRNA-doser og så 120 dage frem. Pr. million doser
+              ventede modellen hos mænd på 18–24 år 530 forebyggede indlæggelser og 45–56 tilfælde af myokarditis. Hos
+              mænd på 30 år og derover var det 4.598 forebyggede indlæggelser og 3–4 tilfælde af myokarditis. Hos piger
+              og kvinder var de forventede myokarditis-tal lavere end hos mænd i samme alder, mens de forebyggede
+              indlæggelser steg med alderen. Tabellen har også forebyggede smittetilfælde, intensivforløb og dødsfald.{" "}
+              <a href={CDC_MMWR} rel="noopener noreferrer">
+                Gargano et al., MMWR 2021
+              </a>
+              .
+            </p>
+            <p>
+              De to kilder er ikke samme befolkning, samme land eller samme tidsrum. Det nordiske tal er ekstra
+              hospitalsdiagnoser i 28 dage. CDC-tallet er en model over 120 dage med en antaget effekt. Balancen flytter
+              sig med alder, køn, hvilket stik, hvilket mRNA-præparat, hvor meget smitte der er, og om personen har
+              været smittet før. Encefalitis er meget sjælden, og en sikker sammenhæng med disse vacciner er ikke
+              etableret, så den får ikke et tal her. Den kan kun bruges som et hypotetisk eksempel, hvis man selv
+              skriver en risiko ind.
+            </p>
+            <HarmBalance />
           </article>
 
           <article className="card">
