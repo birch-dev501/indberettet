@@ -21,7 +21,7 @@ const siteUrl = "https://birch-dev501.github.io/indberettet";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Indberettet — formodede bivirkninger i Danmark",
+    default: "Indberettet. Formodede bivirkninger i Danmark",
     template: "%s · Indberettet",
   },
   description:
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   applicationName: "Indberettet",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Indberettet — formodede bivirkninger i Danmark",
+    title: "Indberettet. Formodede bivirkninger i Danmark",
     description:
       "Åbne tal fra Lægemiddelstyrelsens interaktive bivirkningsoversigter. Formodede bivirkninger, ikke bevis for årsag og ikke en hyppighed.",
     url: siteUrl,

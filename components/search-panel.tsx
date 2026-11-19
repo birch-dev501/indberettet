@@ -254,7 +254,7 @@ export function SearchPanel({
         {state === "error" && <p className="warning-note">Søgningen kunne ikke gennemføres. Prøv igen.</p>}
         {open && state === "ready" && needle.length >= 2 && groups.length === 0 && (
           <div className="empty-search">
-            <p className="muted">Ingen træf på “{needle}”.</p>
+            <p className="muted">Ingen træf på «{needle}».</p>
           </div>
         )}
         {open && groups.length > 0 && (

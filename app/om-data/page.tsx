@@ -23,7 +23,7 @@ export default function AboutPage() {
         <h1>Hvad tallene er, og hvad de ikke er.</h1>
         <p className="lede">
           Kilden er Lægemiddelstyrelsens interaktive bivirkningsoversigter. Hvert stof leveres som en ZIP med fem
-          CSV-filer og en forklaring. Vi gentager den forklaring her, fordi den er selve brugsanvisningen.
+          CSV-filer og en forklaring. Teksten herunder gengiver styrelsens egen forklaring.
         </p>
 
         <section className="section stack">
@@ -36,7 +36,7 @@ export default function AboutPage() {
               sikkerheden.
             </p>
             <p>
-              Oversigterne kan ikke måle risiko. De kender ikke nævneren: hvor mange der har taget medicinen uden
+              Oversigterne kan ikke måle risiko. De kender ikke, hvor mange der har taget medicinen uden
               at indberette noget. Ikke alle formodede bivirkninger bliver meldt, og andelen varierer mellem
               lægemidler. Derfor kan to stoffer ikke sammenlignes ved at stille tallene ved siden af hinanden. En
               indberetning kan desuden nævne flere lægemidler og så stå i flere oversigter.
@@ -56,22 +56,22 @@ export default function AboutPage() {
             <p>Hver ZIP indeholder, som styrelsens hjælpetekst beskriver:</p>
             <ul>
               <li>
-                <strong>case.csv</strong> — én række pr. indberetning: køn, aldersbånd, modtagelsesår, om
+                <strong>case.csv</strong>. Én række pr. indberetning. Felterne er køn, aldersbånd, modtagelsesår, om
                 indberetteren er patient/pårørende og/eller sundhedsperson, og alvorlighed (ikke-alvorlig,
                 alvorlig eller dødsfald).
               </li>
               <li>
-                <strong>drug.csv</strong> — hvordan stoffet blev givet. Veje med få indberetninger er slået sammen.
+                <strong>drug.csv</strong>. Hvordan stoffet blev givet. Veje med få indberetninger er slået sammen.
               </li>
               <li>
-                <strong>event.csv</strong> — reaktionerne i MedDRA (foretrukken term og organklasse) og om den
+                <strong>event.csv</strong>. Reaktionerne i MedDRA (foretrukken term og organklasse) og om den
                 enkelte reaktion var fatal.
               </li>
               <li>
-                <strong>summary.csv</strong> — produktnavne i udtrækket, uden antal pr. navn.
+                <strong>summary.csv</strong>. Produktnavne i udtrækket, uden antal pr. navn.
               </li>
               <li>
-                <strong>info.csv</strong> — stofnavn, udtræksdato, MedDRA-version og land.
+                <strong>info.csv</strong>. Stofnavn, udtræksdato, MedDRA-version og land.
               </li>
             </ul>
             <p>
@@ -128,9 +128,8 @@ export default function AboutPage() {
               lægemiddeldata opdateres stadig.
             </p>
             <p>
-              Fejler downloadet, eller ligner filerne ikke længere det dokumenterede format — især hvis Semaglutide
-              eller COVID-19 vaccines ikke kan valideres, eller hvis en stor del af filerne bryder skemaet — stopper
-              jobbet med fejl. Den forrige mappe med data bliver liggende, og sitet fortsætter på sidste gyldige
+              Jobbet stopper med fejl, hvis downloadet fejler, eller hvis filerne ikke længere ligner det dokumenterede format.
+              Det sker især, hvis Semaglutide eller COVID-19 vaccines ikke kan valideres, eller hvis en stor del af filerne bryder skemaet. Den forrige mappe med data bliver liggende, og sitet fortsætter på sidste gyldige
               udtræk. En enkelt ødelagt ZIP holder ikke de andre tilbage: den stofside beholder sin gamle fil og
               markeres som forældet.
             </p>

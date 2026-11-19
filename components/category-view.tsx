@@ -115,7 +115,7 @@ export function CategoryView({
           )}
         </div>
         {visible.length === 0 ? (
-          <p className="muted">Ingen stoffer matcher “{query.trim()}”.</p>
+          <p className="muted">Ingen stoffer matcher «{query.trim()}».</p>
         ) : (
           <div className="table-scroll">
             <table>

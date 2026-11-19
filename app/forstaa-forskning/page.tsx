@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { BNT162B2, trialRisks } from "@/lib/effects";
 
 export const metadata: Metadata = {
-  title: "Sådan læser du industriens resultater",
+  title: "Sådan læses forsøgstal",
   description:
     "Relativ og absolut risikoreduktion, NNT og NNH, forklaret med tallene fra fase 3-forsøget med BNT162b2.",
 };
@@ -34,7 +34,7 @@ export default function ResearchLiteracyPage() {
       <SiteHeader current="forskning" />
       <main id="indhold" className="wrap page-head">
         <p className="kicker">Forsøgstal</p>
-        <h1>Sådan læser du industriens resultater.</h1>
+        <h1>Sådan læses forsøgstal.</h1>
         <p className="lede">
           En overskrift siger ofte, at et lægemiddel nedsætter risikoen med 95 %. Det tal er næsten altid den relative
           reduktion. Det siger, hvor stor en andel af de tilfælde, der ellers ville være sket, der udeblev. Det siger

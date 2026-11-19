@@ -70,8 +70,8 @@ export function RateCard({ rate }: { rate: SubstanceRate }) {
       </div>
       <p className="small muted">
         Tælleren er indberetninger, Lægemiddelstyrelsen modtog det år. Nævneren er personer, der købte lægemidlet på
-        apotek samme år. Data til {rate.latestMonth}. Kilde: Sundhedsdatastyrelsen, {rate.register}, målet “Antal
-        brugere”, offentliggjort i{" "}
+        apotek samme år. Data til {rate.latestMonth}. Kilde: Sundhedsdatastyrelsen, {rate.register}, målet «Antal
+        brugere», offentliggjort i{" "}
         <a href={rate.sourceUrl}>{rate.sourceName}</a>.{" "}
         <a href={rate.medstatUrl}>Medstat.dk</a> lukkede 5. november 2026 og henviser hertil.
       </p>

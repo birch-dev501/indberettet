@@ -3,7 +3,7 @@ export const MIN_USERS = 1000;
 export const CAUSALITY_NOTE =
   "En indberettet bivirkning er ikke nødvendigvis forårsaget af medicinen. Hændelsen kan skyldes sygdommen selv, anden medicin, et tilfælde eller andre forhold. En indberetning betyder kun, at nogen havde en mistanke om en sammenhæng, og årsagen er ikke fastslået.";
 
-export const RATE_DISCLAIMER = `Dette er en indberetningsrate, ikke en risiko og ikke en hyppighed. ${CAUSALITY_NOTE} De fleste bivirkninger bliver aldrig indberettet (underrapportering). Indberetning svinger med medieomtale, nye lægemidler og kampagner. Én indberetning kan nævne flere lægemidler. Tællingen fra Lægemiddelstatistikregisteret er kun køb i primærsektoren — ikke sygehusbrug og ikke de fleste vaccinationer. Sammenlign ikke lægemidler direkte ud fra raten.`;
+export const RATE_DISCLAIMER = `Dette er en indberetningsrate, ikke en risiko og ikke en hyppighed. ${CAUSALITY_NOTE} De fleste bivirkninger bliver aldrig indberettet (underrapportering). Indberetning svinger med medieomtale, nye lægemidler og kampagner. Én indberetning kan nævne flere lægemidler. Tællingen fra Lægemiddelstatistikregisteret er køb i primærsektoren. Den omfatter ikke sygehusbrug og ikke de fleste vaccinationer. Sammenlign ikke lægemidler direkte ud fra raten.`;
 
 export type UsageFile = {
   ok: boolean;

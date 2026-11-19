@@ -12,7 +12,7 @@ export function SiteFooter() {
         <div>
           <strong>Indberettet</strong>
           <p>
-            Et uafhængigt vindue ind i Lægemiddelstyrelsens åbne bivirkningsoversigter. Sitet er ikke
+            Uafhængig visning af Lægemiddelstyrelsens åbne bivirkningsoversigter. Sitet er ikke
             Lægemiddelstyrelsen og giver ikke lægelige råd. Stop ikke ordineret medicin uden at tale med en læge.
           </p>
         </div>

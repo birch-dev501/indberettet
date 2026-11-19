@@ -19,7 +19,7 @@ export default function HomePage() {
     index.dataExtractionDateMin &&
     index.dataExtractionDateMax &&
     index.dataExtractionDateMin !== index.dataExtractionDateMax
-      ? `${formatDate(index.dataExtractionDateMin)} – ${formatDate(index.dataExtractionDateMax)}`
+      ? `${formatDate(index.dataExtractionDateMin)} til ${formatDate(index.dataExtractionDateMax)}`
       : formatDate(index.dataExtractionDateMax);
 
   return (
@@ -30,7 +30,7 @@ export default function HomePage() {
           <div className="wrap hero-grid">
             <div>
               <p className="kicker">Lægemiddelstyrelsen · åbne tal</p>
-              <h1>Formodede bivirkninger, læst langsomt.</h1>
+              <h1>Formodede bivirkninger i Danmark.</h1>
               <p className="lede">
                 Indberettet viser de indberetninger, Lægemiddelstyrelsen offentliggør om medicin i Danmark.{" "}
                 {CAUSALITY_NOTE} Tallene er heller ikke en risiko for den, der tager medicinen.
@@ -136,7 +136,7 @@ export default function HomePage() {
         <section className="wrap section">
           <div className="caveat-grid">
             <article className="caveat">
-              <h3>En mistanke, ikke en dom</h3>
+              <h3>En mistanke er ikke en bevist årsag</h3>
               <p>{CAUSALITY_NOTE}</p>
             </article>
             <article className="caveat">

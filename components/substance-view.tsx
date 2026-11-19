@@ -91,7 +91,7 @@ export function SubstanceView({
         {preparation && (
           <p className="note">
             Du søgte præparatet <strong>{preparation}</strong>. Tallene herunder gælder hele det aktive stof{" "}
-            {substance.name}, ikke kun dette handelsnavn. En indberetning kan desuden nævne flere lægemidler.
+            {substance.name}. De gælder ikke handelsnavnet alene. En indberetning kan desuden nævne flere lægemidler.
           </p>
         )}
         {substance.stale && (
