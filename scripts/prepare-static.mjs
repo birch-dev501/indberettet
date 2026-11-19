@@ -34,3 +34,5 @@ writeFileSync(path.join(root, "public/.nojekyll"), "");
 
 const redirect = spawnSync("node", ["scripts/build-redirects.mjs"], { cwd: root, stdio: "inherit" });
 if (redirect.status !== 0) process.exit(redirect.status ?? 1);
+const images = spawnSync("python3", ["scripts/build_og_images.py"], { cwd: root, stdio: "inherit" });
+if (images.status !== 0) process.exit(images.status ?? 1);

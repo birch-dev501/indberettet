@@ -23,9 +23,12 @@ export async function generateMetadata({
   const substance = getSubstance(slug);
   if (!substance) return { title: "Stof ikke fundet" };
   const reports = substance.views.all.reports;
+  const image = `https://birch-dev501.github.io/indberettet/og/stof/${slug}.png`;
   return {
     title: substance.name,
     description: `${reports.toLocaleString("da-DK")} indberetninger om formodede bivirkninger ved ${substance.name} i Danmark. Tal fra Lægemiddelstyrelsen.`,
+    openGraph: { images: [{ url: image, width: 1200, height: 630 }] },
+    twitter: { card: "summary_large_image", images: [image] },
   };
 }
 

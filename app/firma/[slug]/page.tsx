@@ -19,9 +19,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const company = getCompany(slug);
   if (!company) return { title: "Firma ikke fundet" };
+  const image = `https://birch-dev501.github.io/indberettet/og/firma/${slug}.png`;
   return {
     title: company.label,
     description: `${company.label} som indehaver på listen over godkendte lægemidler, og de stoffer vi har en bivirkningsoversigt for.`,
+    openGraph: { images: [{ url: image, width: 1200, height: 630 }] },
+    twitter: { card: "summary_large_image", images: [image] },
   };
 }
 
