@@ -18,8 +18,8 @@ export default function UncertaintyPage() {
   const { treated, control, measures } = trialRisks();
   const rrr = (measures.rrr! * 100).toLocaleString("da-DK", { maximumFractionDigits: 1, minimumFractionDigits: 1 });
   const arr = (measures.arr * 100).toLocaleString("da-DK", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-  const placebo = (control * 100).toLocaleString("da-DK", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
-  const vaccine = (treated * 100).toLocaleString("da-DK", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+  const placebo = (control * 100).toLocaleString("da-DK", { maximumFractionDigits: 3, minimumFractionDigits: 3 });
+  const vaccine = (treated * 100).toLocaleString("da-DK", { maximumFractionDigits: 3, minimumFractionDigits: 3 });
 
   return (
     <>
@@ -28,8 +28,9 @@ export default function UncertaintyPage() {
         <p className="kicker">Forsøgstal</p>
         <h1>Sådan læses usikkerhed.</h1>
         <p className="lede">
-          Et forsøg giver et skøn, ikke den endelige sandhed. Intervallet viser, hvilke tal der stadig passer med
-          forsøget. Tallene er fra udenlandske studier, ikke fra Danmark. Kilderne er{" "}
+          Et studie giver et skøn, ikke den endelige sandhed. Intervallet viser, hvilke tal der stadig passer med
+          studiet. Polack og kolleger er et udenlandsk forsøg. Karlstad og kolleger er et nordisk register, som også
+          omfatter Danmark. Husby og kolleger fulgte personer i Danmark. Kilderne er{" "}
           <a href={POLACK} rel="noopener noreferrer">Polack et al., New England Journal of Medicine 2020</a>,{" "}
           <a href={KARLSTAD} rel="noopener noreferrer">Karlstad et al., JAMA Cardiology 2022</a> og{" "}
           <a href={HUSBY} rel="noopener noreferrer">Husby et al., BMJ 2021</a>. Samme tal står på siden om{" "}
@@ -40,7 +41,7 @@ export default function UncertaintyPage() {
           <article className="card" id="konfidensinterval">
             <h2>Hvad et 95 % konfidensinterval er</h2>
             <p>
-              Forskerne beregner intervallet ud fra forsøgets tal og en fast metode. Hvis man gentog det samme forsøg
+              Forskerne beregner intervallet ud fra studiets tal og en fast metode. Hvis man gentog det samme studie
               mange gange, ville metoden i 95 ud af 100 gentagelser ramme den sande værdi. Det enkelte interval er
               enten ramt eller ikke ramt. Det er ikke en sandsynlighed på 95 % for, at sandheden ligger i netop dette
               interval.
@@ -64,12 +65,13 @@ export default function UncertaintyPage() {
             </p>
             <p>
               Karlstad og kolleger fandt 5,55 ekstra tilfælde af myokarditis pr. 100.000 hos mænd på 16 til 24 år efter
-              andet stik med BNT162b2. Intervallet er 3,70 til 7,39. Begge grænser er over 0. Forsøget passer ikke med
-              en forskel på 0.
+              andet stik med BNT162b2. Intervallet er 3,70 til 7,39. Begge grænser er over 0. Registeropgørelsen passer
+              ikke med en forskel på 0.
             </p>
             <p>
               Hos mænd på 40 år og derover var det tilsvarende tal 0,22 pr. 100.000, og intervallet gik gennem 0.
-              Forsøget passer både med lidt flere tilfælde, med ingen forskel og med lidt færre tilfælde.
+              Siden om forsøgstal opgiver ikke intervallets to grænser. Opgørelsen passer med flere tilfælde, med
+              ingen forskel og med færre tilfælde. Den siger ikke, hvor langt fra 0 de tal ligger.
             </p>
           </article>
 
@@ -83,11 +85,11 @@ export default function UncertaintyPage() {
             <p>
               Husby og kolleger fandt en justeret hazard ratio på 1,34 for myokarditis eller myoperikarditis inden for
               28 dage efter BNT162b2. Intervallet er 0,90 til 2,00. 0,90 er under 1, og 2,00 er over 1. Intervallet
-              indeholder 1. Forsøget passer med en lavere rate, med samme rate og med en fordobling.
+              indeholder 1. Opgørelsen passer med en lavere rate, med samme rate og med en fordobling.
             </p>
             <p>
               Efter mRNA-1273 var hazard ratio 3,92 med interval 2,30 til 6,68. Hele intervallet ligger over 1.
-              Forsøget passer ikke med en ratio på 1.
+              Opgørelsen passer ikke med en ratio på 1.
             </p>
           </article>
 
@@ -121,8 +123,9 @@ export default function UncertaintyPage() {
               {vaccine} %.
             </p>
             <p>
-              Den relative reduktion er 1 minus vaccineandelen delt med placeboandelen. Det giver {rrr} %. Den
-              absolutte forskel er placeboandelen minus vaccineandelen. Det giver {arr} procentpoint.
+              Andelene ovenfor er afrundet til tre decimaler. {rrr} % og {arr} procentpoint er regnet på de uafrundede
+              andele. Den relative reduktion er 1 minus vaccineandelen delt med placeboandelen. Den absolutte forskel
+              er placeboandelen minus vaccineandelen.
             </p>
             <p>
               En overskrift med {rrr} % siger, hvor stor en del af placebotilfældene der udeblev. {arr} procentpoint
@@ -131,14 +134,15 @@ export default function UncertaintyPage() {
           </article>
 
           <article className="card" id="ingen-effekt">
-            <h2>Ikke-signifikant er ikke et bevis for ingen effekt</h2>
+            <h2>Et interval gennem 1 er ikke et bevis for ingen effekt</h2>
             <p>
-              Husby-intervallet 0,90 til 2,00 indeholder 1. Resultatet er ikke statistisk signifikant for en forskel
-              fra 1. Intervallet indeholder også 2,00, altså en fordobling. Forsøget kan ikke skelne «ingen forskel»
-              fra en reel stigning. Det beviser ikke, at vaccinen ikke øger risikoen.
+              Husby-intervallet 0,90 til 2,00 indeholder 1. Siden om forsøgstal kalder forskellen usikker. Intervallet
+              er ikke mærket som 95 % her, så siden kalder det ikke statistisk signifikant. Intervallet indeholder
+              også 2,00, altså en fordobling. Opgørelsen kan ikke skelne «ingen forskel» fra en reel stigning. Det
+              beviser ikke, at vaccinen ikke øger risikoen.
             </p>
             <p>
-              Et bredt interval betyder, at forsøget er usikkert. Et smalt interval omkring 1 ville ligge tættere på
+              Et bredt interval betyder, at opgørelsen er usikker. Et smalt interval omkring 1 ville ligge tættere på
               ingen forskel. Det interval gør det ikke.
             </p>
             <p>

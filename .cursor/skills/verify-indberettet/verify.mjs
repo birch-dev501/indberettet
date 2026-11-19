@@ -479,7 +479,8 @@ async function checkUncertainty(page) {
   if (!text.includes("nulhypotesen er 0") && !text.includes("nulhypotesen 0")) fail("siden siger ikke at forskellens nul er 0");
   if (!text.includes("Nulhypotesen er 1")) fail("siden siger ikke at forholdets nul er 1");
   if (!text.toLowerCase().includes("beviser ikke")) fail("siden siger ikke at ikke-signifikant ikke er et bevis");
-  if (!text.toLowerCase().includes("udenlandske")) fail("usikkerhedssiden mærker ikke tallene som udenlandske");
+  if (!text.toLowerCase().includes("udenlandsk")) fail("usikkerhedssiden mærker ikke Polack som udenlandsk");
+  if (!text.includes("0,044") || !text.includes("0,884")) fail("andelene er ikke vist med tre decimaler");
   const source = await page.locator("a[href*='nejm.org']").count();
   if (source < 1) fail("usikkerhedssiden mangler kilden til Polack");
 }
