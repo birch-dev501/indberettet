@@ -103,6 +103,17 @@ export function SubstanceView({
 
       <SummaryCard substance={substance} />
       {rate && <RateCard rate={rate} />}
+      {substance.slug === "covid-19-vaccines" ? (
+        <p className="note research-link">
+          Fase 3-forsøget målte symptomgivende covid-19, ikke indberetninger.{" "}
+          <Link href="/forstaa-forskning/#bnt162b2">Sådan regnes de 95 % om til en absolut forskel og et NNT</Link>.
+        </p>
+      ) : (
+        <p className="small muted research-link">
+          <Link href="/forstaa-forskning/">Sådan læses en relativ risikoreduktion, NNT og NNH</Link>. En indberetning
+          her er ikke en hyppighed.
+        </p>
+      )}
 
       <div className="stat-grid">
         <article className="stat">

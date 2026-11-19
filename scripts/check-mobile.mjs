@@ -12,6 +12,7 @@ const paths = [
   "/firma/novo-nordisk/",
   "/firma/pfizer/",
   "/om-data/",
+  "/forstaa-forskning/",
   "/sygdom/",
   "/sygdom/diabetes/",
 ];

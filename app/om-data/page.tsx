@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { CAUSALITY_NOTE } from "@/lib/rates";
@@ -41,7 +42,8 @@ export default function AboutPage() {
             </p>
             <p>
               Kendte bivirkninger og den samlede evidens står i produktinformationen. Spørgsmål om din egen medicin
-              hører hjemme hos lægen eller på apoteket.
+              hører hjemme hos lægen eller på apoteket. Hvordan en relativ reduktion i et forsøg adskiller sig fra
+              disse indberetninger, står under <Link href="/forstaa-forskning">forsøgstal</Link>.
             </p>
             <p>
               Handelsnavne og firmaer kommer fra listen over godkendte lægemidler. Indberetningerne er talt for det

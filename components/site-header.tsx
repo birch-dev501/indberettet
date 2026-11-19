@@ -9,6 +9,7 @@ const LINKS = [
   { href: "/sygdom", id: "sygdom", label: "Efter sygdom" },
   { href: "/firma", id: "firma", label: "Firmaer" },
   { href: "/om-data", id: "om", label: "Om data" },
+  { href: "/forstaa-forskning", id: "forskning", label: "Forsøgstal" },
 ] as const;
 
 export function SiteHeader({ current }: { current?: (typeof LINKS)[number]["id"] | "home" }) {

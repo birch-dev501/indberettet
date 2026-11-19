@@ -31,6 +31,8 @@ export function SiteFooter() {
             <br />
             <Link href="/om-data">Sådan læses tallene</Link>
             <br />
+            <Link href="/forstaa-forskning">Sådan læses forsøgstal</Link>
+            <br />
             <a href="https://github.com/birch-dev501/indberettet">Kildekode</a>
             <br />
             <a href="https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin/meld-en-bivirkning/">
