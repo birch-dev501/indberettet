@@ -146,7 +146,6 @@ export function SearchPanel({
         ref={inputRef}
         role="searchbox"
         aria-autocomplete="list"
-        aria-expanded={open && groups.length > 0}
         aria-controls={listId}
         aria-activedescendant={active >= 0 ? `${optionPrefix}-${active}` : undefined}
         autoFocus={autoFocus}

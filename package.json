@@ -10,10 +10,7 @@
     "start": "next start -H 0.0.0.0 -p 3847",
     "lint": "eslint",
     "test": "node --experimental-strip-types --test lib/search.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts lib/case-notes.test.ts lib/effects.test.ts lib/company-filter.test.ts",
-    "test:pwa": "node scripts/check-pwa.mjs",
-    "test:cards": "node scripts/check-card-padding.mjs",
-    "test:merck": "node scripts/check-merck-search.mjs",
-    "test:mobile": "node scripts/check-mobile.mjs",
+    "verify": "node .cursor/skills/verify-indberettet/verify.mjs",
     "ingest": "python3 scripts/ingest.py"
   },
   "dependencies": {

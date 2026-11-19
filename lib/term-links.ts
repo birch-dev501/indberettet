@@ -48,7 +48,7 @@ export type ResolvedLink = {
 
 export const termLinks = raw as TermLinksFile;
 
-export function resolveMapped(record: TermLinkRecord | undefined, _query: string, _file: TermLinksFile = termLinks): ResolvedLink {
+export function resolveMapped(record: TermLinkRecord | undefined): ResolvedLink {
   const danish = record?.danish || null;
   const audience = record?.audience ?? null;
   if (!record?.verified || !record.url) {
@@ -64,11 +64,12 @@ export function resolveMapped(record: TermLinkRecord | undefined, _query: string
 }
 
 export function resolveTerm(english: string, file: TermLinksFile = termLinks): ResolvedLink {
-  return resolveMapped(file.terms[english], english, file);
+  return resolveMapped(file.terms[english]);
 }
 
 export function resolveSoc(abbrev: string, label: string, file: TermLinksFile = termLinks): ResolvedLink {
-  return resolveMapped(file.socs[abbrev], label, file);
+  const link = resolveMapped(file.socs[abbrev]);
+  return link.danish ? link : { ...link, danish: label };
 }
 
 export function linkTag(link: ResolvedLink): string | null {
