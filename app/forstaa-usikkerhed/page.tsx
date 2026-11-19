@@ -135,7 +135,8 @@ export default function UncertaintyPage() {
               ingen forskel. Det interval gør det ikke.
             </p>
             <p>
-              <Link href="/forstaa-forskning/#bnt162b2">Tilbage til regnestykket for BNT162b2</Link>.
+              <Link href="/forstaa-forskning/#bnt162b2">Tilbage til regnestykket for BNT162b2</Link>.{" "}
+              <Link href="/forstaa-testen/">Sådan læses en test</Link>.
             </p>
           </article>
         </section>

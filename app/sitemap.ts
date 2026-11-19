@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/firma/",
     "/forstaa-forskning/",
     "/forstaa-usikkerhed/",
+    "/forstaa-testen/",
     "/katalog/",
     "/kategori/",
     "/om-data/",

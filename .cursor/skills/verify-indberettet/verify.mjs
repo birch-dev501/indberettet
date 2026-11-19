@@ -298,7 +298,7 @@ async function checkSticky(page, width) {
 }
 
 async function checkLayout(page, width) {
-  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/forstaa-usikkerhed/", "/boedesager/"];
+  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/forstaa-usikkerhed/", "/forstaa-testen/", "/boedesager/"];
   for (const path of paths) {
     const response = await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
     if (!response || response.status() >= 400) {
@@ -481,6 +481,22 @@ async function checkUncertainty(page) {
   if (!text.toLowerCase().includes("beviser ikke")) fail("siden siger ikke at ikke-signifikant ikke er et bevis");
 }
 
+async function checkBayes(page) {
+  await page.goto(`${base}/forstaa-usikkerhed/`, { waitUntil: "networkidle" });
+  if ((await page.locator("a[href*='/forstaa-testen']").count()) < 1) fail("usikkerhedssiden linker ikke til testen");
+  await page.goto(`${base}/forstaa-testen/`, { waitUntil: "networkidle" });
+  const text = await page.locator("main").innerText();
+  if (!(await page.locator("h1").innerText()).includes("Sådan læses en test")) fail("testsiden mangler overskrift");
+  if (!text.includes("10.000")) fail("testsiden viser ikke 10.000");
+  if (!text.includes("Cochrane")) fail("testsiden mangler kilden");
+  if (!text.includes("54,7") || !text.includes("99,7") || !text.includes("73,0") || !text.includes("99,1")) {
+    fail("testsiden mangler de offentliggjorte testtal");
+  }
+  const proof = spawn("node", ["--experimental-strip-types", "--test", "lib/bayes.test.ts"], { cwd: root });
+  const code = await new Promise((done) => proof.on("exit", done));
+  if (code !== 0) fail("bayes-regnestykket gik ikke op");
+}
+
 async function checkExtractGuard() {
   const good = spawn("python3", ["scripts/validate_extract.py"], { cwd: root });
   const goodCode = await new Promise((done) => good.on("exit", done));
@@ -561,6 +577,7 @@ async function main() {
         await checkSitemap(page);
         await checkDataDate(page);
         await checkUncertainty(page);
+        await checkBayes(page);
         await checkExtractGuard();
       }
       await page.close();
