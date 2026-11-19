@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Lægemiddelstyrelsen
+    url: https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin/meld-en-bivirkning/
+    about: En formodet bivirkning skal meldes til Lægemiddelstyrelsen, ikke som en fejl her.

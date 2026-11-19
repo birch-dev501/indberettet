@@ -16,16 +16,35 @@ const categoryFile = JSON.parse(readFileSync(path.join(root, "data/categories.js
 };
 
 const overviewNames: { slug: string; names: string[] }[] = [];
+const reactionMap = new Map<string, { pt: string; substances: { slug: string; name: string; reactions: number }[] }>();
 const substanceDir = path.join(root, "data/substances");
+const nameBySlug = new Map(index.substances.map((item) => [item.slug, item.name]));
 for (const file of readdirSync(substanceDir)) {
   if (!file.endsWith(".json")) continue;
   const document = JSON.parse(readFileSync(path.join(substanceDir, file), "utf8")) as {
     slug: string;
     productNames?: { single?: string[]; multi?: string[] };
+    views?: { all?: { terms?: { pt: string; reactions: number }[] } };
   };
   const names = [...(document.productNames?.single ?? []), ...(document.productNames?.multi ?? [])];
   if (names.length) overviewNames.push({ slug: document.slug, names });
+  for (const term of document.views?.all?.terms ?? []) {
+    if (!term.pt || term.reactions < 5) continue;
+    const row = reactionMap.get(term.pt) ?? { pt: term.pt, substances: [] };
+    row.substances.push({ slug: document.slug, name: nameBySlug.get(document.slug) ?? document.slug, reactions: term.reactions });
+    reactionMap.set(term.pt, row);
+  }
 }
+const termDanish = JSON.parse(readFileSync(path.join(root, "data/term-links.json"), "utf8")) as {
+  terms: Record<string, { danish?: string }>;
+};
+const reactions = [...reactionMap.values()]
+  .map((row) => ({
+    pt: row.pt,
+    danish: termDanish.terms[row.pt]?.danish ?? "",
+    substances: row.substances.sort((a, b) => b.reactions - a.reactions).slice(0, 5),
+  }))
+  .filter((row) => row.substances.reduce((sum, item) => sum + item.reactions, 0) >= 20);
 
 const substances: SubstanceRecord[] = index.substances.map((item) => ({
   slug: item.slug,
@@ -58,7 +77,7 @@ const companyCatalog = buildCompanyCatalog(
 );
 writeFileSync(path.join(root, "data/companies.json"), JSON.stringify(companyCatalog));
 
-const searchIndex = buildSearchIndex({
+const searchIndex = { ...buildSearchIndex({
   substances,
   products,
   reviewed,
@@ -72,7 +91,7 @@ const searchIndex = buildSearchIndex({
     reports: group.reports,
     members: group.members.length,
   })),
-});
+}), reactions };
 const generatedAliases = searchIndex.aliases.filter((alias) => alias.kind !== "synonym");
 const generated = {
   note: "Bygget fra produktlisten, indehavere og navne i bivirkningsoversigterne. Ret ikke filen i hånden. Hverdagsord ligger i synonyms.reviewed.json.",

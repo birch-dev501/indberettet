@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Penalties } from "@/components/penalties";
+import { ReportIssue } from "@/components/report-issue";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SUBSTANCE_COUNT_NOTE } from "@/lib/companies";
@@ -96,6 +97,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             {company.otherProductNames.length > 0 ? `, blandt andet ${company.otherProductNames.slice(0, 6).join(", ")}` : ""}.
           </p>
         )}
+        <ReportIssue path={`/firma/${slug}/`} />
       </main>
       <SiteFooter />
     </>

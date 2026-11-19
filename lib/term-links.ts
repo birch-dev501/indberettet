@@ -2,6 +2,8 @@ import raw from "../data/term-links.json" with { type: "json" };
 
 export type TermLinkKind = "direct" | "search";
 
+export type TermAudience = "borger" | "fagperson" | "engelsk";
+
 export type TermLinkRecord = {
   danish: string;
   url: string;
@@ -9,6 +11,8 @@ export type TermLinkRecord = {
   kind: TermLinkKind;
   verified: boolean;
   pageTitle?: string;
+  audience?: TermAudience;
+  confidence?: "high" | "medium";
 };
 
 export type TermLinksFile = {
@@ -39,31 +43,24 @@ export type ResolvedLink = {
   danish: string | null;
   source: string | null;
   search: boolean;
+  audience: TermAudience | null;
 };
 
 export const termLinks = raw as TermLinksFile;
 
-function fallbackSearch(file: TermLinksFile, query: string, danish: string | null): ResolvedLink {
-  if (!file.search.verified || !file.search.urlTemplate.includes("{q}")) {
-    return { href: null, danish, source: file.search.source, search: true };
-  }
-  return {
-    href: file.search.urlTemplate.replace("{q}", encodeURIComponent(query)),
-    danish,
-    source: file.search.source,
-    search: true,
-  };
-}
-
-export function resolveMapped(record: TermLinkRecord | undefined, query: string, file: TermLinksFile = termLinks): ResolvedLink {
+export function resolveMapped(record: TermLinkRecord | undefined, _query: string, _file: TermLinksFile = termLinks): ResolvedLink {
   const danish = record?.danish || null;
-  if (record?.verified && record.kind === "direct" && record.url) {
-    return { href: record.url, danish, source: record.source, search: false };
+  const audience = record?.audience ?? null;
+  if (!record?.verified || !record.url) {
+    return { href: null, danish, source: record?.source ?? null, search: false, audience };
   }
-  if (record?.verified && record.kind === "search" && record.url) {
-    return { href: record.url, danish, source: record.source, search: true };
+  if (record.kind === "search") {
+    if (record.url.includes("?q=") || !record.url.includes("SearchTerm=")) {
+      return { href: null, danish, source: record.source, search: false, audience };
+    }
+    return { href: record.url, danish, source: record.source, search: true, audience: audience ?? "borger" };
   }
-  return fallbackSearch(file, danish || query, danish);
+  return { href: record.url, danish, source: record.source, search: false, audience };
 }
 
 export function resolveTerm(english: string, file: TermLinksFile = termLinks): ResolvedLink {
@@ -74,9 +71,16 @@ export function resolveSoc(abbrev: string, label: string, file: TermLinksFile = 
   return resolveMapped(file.socs[abbrev], label, file);
 }
 
+export function linkTag(link: ResolvedLink): string | null {
+  if (link.audience === "engelsk") return "Engelsk";
+  if (link.audience === "fagperson") return "Fagperson";
+  if (link.search) return "Søg";
+  return null;
+}
+
 export function englishSourceNote(link: ResolvedLink): string | null {
-  if (link.search || !link.source) return null;
+  if (link.audience !== "engelsk" || !link.source) return null;
   if (link.source.includes("MedlinePlus")) return "MedlinePlus";
   if (link.source.includes("NHS")) return "NHS";
-  return null;
+  return "Engelsk";
 }

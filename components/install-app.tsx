@@ -27,6 +27,14 @@ export function InstallApp() {
 
   useEffect(() => {
     if ("serviceWorker" in navigator) {
+      let hadController = Boolean(navigator.serviceWorker.controller);
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        if (!hadController) {
+          hadController = true;
+          return;
+        }
+        window.location.reload();
+      });
       navigator.serviceWorker.register(`${base}/sw.js`, { scope: `${base}/` }).catch(() => undefined);
     }
     if (standalone()) {

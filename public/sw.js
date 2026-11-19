@@ -1,6 +1,6 @@
 /* Indberettet service worker. Served under the GitHub Pages subpath. */
 const BASE = "/indberettet";
-const CACHE = "indberettet-shell-v1";
+const CACHE = "indberettet-shell-v2";
 const OFFLINE = `${BASE}/offline/`;
 
 const SHELL = [BASE + "/", OFFLINE, `${BASE}/icons/icon-192.png`, `${BASE}/icons/icon-512.png`];
@@ -30,7 +30,11 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return;
   if (!url.pathname.startsWith(BASE)) return;
 
-  const freshFirst = request.mode === "navigate" || url.pathname.endsWith(".json") || url.pathname.endsWith("/");
+  const freshFirst =
+    request.mode === "navigate" ||
+    url.pathname.endsWith(".json") ||
+    url.pathname.endsWith(".js") ||
+    url.pathname.endsWith("/");
   event.respondWith(freshFirst ? networkFirst(request) : staleWhileRevalidate(request));
 });
 

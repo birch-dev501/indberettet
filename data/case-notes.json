@@ -267,6 +267,80 @@
       ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/abbott-labs-pay-15-billion-resolve-criminal-civil-investigations-label-promotion-depakote",
       "sourceName": "DOJ"
+    },
+    {
+      "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-warner-lambert",
+      "firm": "pfizer",
+      "summary": "Warner-Lambert erkendte ulovlig markedsføring af Neurontin. DOJ: mere end 430 mio. dollar.",
+      "drugs": [
+        {
+          "name": "Neurontin",
+          "generic": "gabapentin",
+          "slug": "gabapentine"
+        }
+      ],
+      "search": ["neurontin", "gabapentin", "gabapentinum"],
+      "sourceUrl": "https://www.justice.gov/archive/opa/pr/2004/May/04_civ_322.htm",
+      "sourceName": "DOJ",
+      "year": 2004,
+      "detail": "13. maj 2004 meddelte det amerikanske justitsministerium, at Warner-Lambert havde erklæret sig skyldig og skulle betale mere end 430 millioner dollar for ulovlig markedsføring af Neurontin. Violation Tracker, under Pfizer, har posten som 430.000.000 dollar i 2004."
+    },
+    {
+      "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-purdue-frederick-company-inc",
+      "firm": "mundipharma",
+      "standalone": true,
+      "headline": "OxyContin – Purdue-sagen 2007",
+      "summary": "Purdue Frederick erkendte vildledende markedsføring. DOJ: 634.515.475 dollar i alt.",
+      "drugs": [
+        {
+          "name": "OxyContin",
+          "generic": "oxycodone",
+          "slug": "oxycodone"
+        }
+      ],
+      "search": ["oxycontin", "oxy contin", "oxycodon", "oxycodone", "purdue", "sackler", "mundipharma"],
+      "sourceUrl": "https://media.defense.gov/2007/may/10/2001711223/-1/-1/1/purdue_frederick_1.pdf",
+      "sourceName": "DOJ",
+      "year": 2007,
+      "detail": "10. maj 2007: The Purdue Frederick Company erkendte sig skyldig i felony misbranding af OxyContin. Ifølge justitsministeriets meddelelse skulle selskabet og tre ledere tilsammen betale 634.515.475 dollar. Violation Tracker har en post på 600.000.000 dollar for Purdue Frederick Company Inc. i 2007. OxyContin Depot sælges i Danmark af Mundipharma (pro.medicin.dk). Mundipharma-selskaberne blev historisk drevet i Sackler-familiens netværk ved siden af Purdue. Sagen er amerikansk og er ikke en dansk bøde til Mundipharma. Forliget i 2026 omtaler salg af familiens internationale lægemiddelvirksomheder, så siden siger ikke, at familien ejer Mundipharma i dag."
+    },
+    {
+      "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-purdue-pharma-lp",
+      "firm": "mundipharma",
+      "standalone": true,
+      "headline": "OxyContin – Purdue-ordningen 2020",
+      "summary": "DOJ annoncerede en ordning på mere end 8 milliarder dollar. Den krævede konkursrettens godkendelse.",
+      "drugs": [
+        {
+          "name": "OxyContin",
+          "generic": "oxycodone",
+          "slug": "oxycodone"
+        }
+      ],
+      "search": ["oxycontin", "oxy contin", "oxycodon", "oxycodone", "purdue", "sackler", "mundipharma"],
+      "sourceUrl": "https://www.justice.gov/archives/opa/pr/justice-department-announces-global-resolution-criminal-and-civil-investigations-opioid",
+      "sourceName": "DOJ",
+      "year": 2020,
+      "detail": "21. oktober 2020 annoncerede justitsministeriet en samlet ordning: kriminel bøde på 3,544 milliarder dollar, konfiskation på 2 milliarder dollar og et civilt krav på 2,8 milliarder dollar. Sackler-familiens civile forlig med forbundet var 225 millioner dollar. Ministeriet skrev, at ordningen med selskabet skulle godkendes af konkursretten, og at den ikke frigjorde enkeltpersoner strafferetligt. Violation Tracker har posten som 8.344.000.000 dollar i 2020. Beløbet er det annoncerede, ikke et bevis på, at det hele var betalt i 2020."
+    },
+    {
+      "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-purdue-pharma-lp-1",
+      "firm": "mundipharma",
+      "standalone": true,
+      "headline": "OxyContin – Purdue/Sackler-forliget 2026",
+      "summary": "Et nationalt forlig på 7,4 milliarder dollar trådte i kraft 1. maj 2026. Det er ikke det samme som at hele beløbet fra 2020 er betalt.",
+      "drugs": [
+        {
+          "name": "OxyContin",
+          "generic": "oxycodone",
+          "slug": "oxycodone"
+        }
+      ],
+      "search": ["oxycontin", "oxy contin", "oxycodon", "oxycodone", "purdue", "sackler", "mundipharma"],
+      "sourceUrl": "https://www.attorneygeneral.gov/taking-action/attorney-general-sunday-purdue-sackler-7-4-billion-national-opioid-settlement-goes-into-effect/",
+      "sourceName": "Pennsylvania Attorney General",
+      "year": 2026,
+      "detail": "Højesteret underkendte i juni 2024 bestemmelser i et tidligere forlig, ifølge Pennsylvania attorney general. Konkursretten stadfæstede 18. november 2025 en ny plan, som ifølge Kroll (restructuring.ra.kroll.com/purduepharma) trådte i kraft og blev substantially consummated 1. maj 2026. Samme dag skrev Pennsylvania attorney general, at et forlig på 7,4 milliarder dollar var trådt i kraft: Sackler-familien betaler mere end 1,5 milliarder dollar den dag og derefter yderligere rater, og Purdue betaler omkring 900 millioner dollar. Familien må ikke sælge opioider i USA. Violation Tracker har en post på 900.000.000 dollar i 2025. De 7,4 milliarder er det samlede forlig over årene, ikke en enkelt indbetalt bøde."
     }
   ]
 }

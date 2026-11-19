@@ -30,7 +30,7 @@ export function CompanyIndex({ companies }: { companies: CompanyFilterRow[] }) {
   }, [companies, filtering]);
 
   return (
-    <div className="index-filter">
+    <div className="index-filter" data-search="firma">
       <div className="sticky-search">
         <label className="kicker" htmlFor="firmasogning">
           Søg
@@ -66,11 +66,16 @@ export function CompanyIndex({ companies }: { companies: CompanyFilterRow[] }) {
         )}
       </nav>
       {filtering ? (
-        <div className="substance-index">
-          {matches.map((company) => (
-            <CompanyLink key={company.slug} company={company} />
-          ))}
-        </div>
+        <>
+          <p className="small">
+            <Link href={`/soeg/?q=${encodeURIComponent(applied.trim())}`}>Søg i alt efter «{applied.trim()}»</Link>
+          </p>
+          <div className="substance-index">
+            {matches.map((company) => (
+              <CompanyLink key={company.slug} company={company} />
+            ))}
+          </div>
+        </>
       ) : (
         groups.map((group) => (
           <section key={group.letter} id={`firma-${group.letter}`}>
@@ -91,6 +96,8 @@ function CompanyLink({ company }: { company: CompanyFilterRow }) {
   return (
     <Link href={`/firma/${company.slug}`}>
       {company.label}{" "}
+      {company.slug === "msd" ? <small>MSD er Merck & Co. I USA og Canada kaldes selskabet Merck.</small> : null}
+      {company.slug === "merck" ? <small>Tysk Merck (Merck KGaA). Ikke det samme som MSD.</small> : null}{" "}
       <small>
         {formatInt(company.substanceCount)} stoffer · {formatInt(company.productRows)} præparatrækker
       </small>

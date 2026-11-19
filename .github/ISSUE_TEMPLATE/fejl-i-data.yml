@@ -1,0 +1,25 @@
+name: Fejl i data eller på siden
+description: Noget på siden stemmer ikke, eller et tal ser forkert ud.
+title: "[Fejl] "
+labels: ["fejl"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sagen er offentlig. Skriv ikke personlige helbredsoplysninger, og nævn ikke en navngiven patient.
+        Du skal have en GitHub-konto for at oprette sagen.
+  - type: input
+    id: side
+    attributes:
+      label: Side
+      description: Adressen på den side, fejlen står på.
+      placeholder: https://birch-dev501.github.io/indberettet/stof/semaglutide/
+    validations:
+      required: true
+  - type: textarea
+    id: hvad
+    attributes:
+      label: Hvad er galt?
+      description: Skriv hvad du så, og hvad du forventede.
+    validations:
+      required: true

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ReportIssue } from "@/components/report-issue";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { CAUSALITY_NOTE } from "@/lib/rates";
@@ -136,6 +137,13 @@ export default function AboutPage() {
             <p>
               Lokalt: <code>python scripts/ingest.py</code>. Kun match, uden download:{" "}
               <code>python scripts/ingest.py --dry-run</code>.
+            </p>
+          </article>
+          <article className="card">
+            <h2>Fandt du en fejl?</h2>
+            <p>
+              Mangler et lægemiddel, eller stemmer et tal ikke, så skriv det som en sag. {""}
+              <ReportIssue />
             </p>
           </article>
         </section>

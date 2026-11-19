@@ -30,4 +30,12 @@ test("søgning på lægemiddel finder firmasiden", () => {
   assert.equal(caseSearchHits("victoza", companies)[0]?.slug, "novo-nordisk");
   assert.equal(caseSearchHits("bextra", companies)[0]?.slug, "pfizer");
   assert.equal(caseSearchHits("depakote", companies).length, 0);
+  const withMundi = [...companies, { slug: "mundipharma", name: "Mundipharma" }];
+  const oxy = caseSearchHits("oxycontin", withMundi);
+  assert.ok(oxy.some((hit) => hit.kind === "case" && /Purdue/.test(hit.name)));
+  assert.ok(oxy.some((hit) => hit.kind === "substance" && hit.slug === "oxycodone"));
+  assert.ok(caseSearchHits("oxycodon", withMundi).some((hit) => hit.kind === "case"));
+  assert.ok(caseSearchHits("purdue", withMundi).some((hit) => hit.kind === "case"));
+  const pfizer = caseSearchHits("pfizer", companies);
+  assert.ok(pfizer.some((hit) => hit.slug === "pfizer" && hit.anchor));
 });

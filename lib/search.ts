@@ -61,6 +61,12 @@ export type DiseaseSearchRecord = {
   atcPrefixes: string[];
 };
 
+export type ReactionSearchRecord = {
+  pt: string;
+  danish: string;
+  substances: { slug: string; name: string; reactions: number }[];
+};
+
 export type SearchIndex = {
   substances: SubstanceRecord[];
   aliases: AliasRecord[];
@@ -70,6 +76,7 @@ export type SearchIndex = {
   companies: CompanySearchRecord[];
   atcBySlug: Record<string, string[]>;
   gaps: SearchGap[];
+  reactions?: ReactionSearchRecord[];
 };
 
 export type CompanySearchRecord = {
@@ -84,13 +91,14 @@ export type SearchHit = {
   reports: number | null;
   score: number;
   reason: string;
-  kind?: "substance" | "category" | "disease" | "company";
+  kind?: "substance" | "product" | "category" | "disease" | "company" | "case" | "reaction" | "page";
   anchor?: string;
   brands?: string[];
   brandCount?: number;
   companies?: string[];
   unavailable?: boolean;
   explanation?: string;
+  href?: string;
 };
 
 export function fold(value: string): string {
@@ -213,17 +221,17 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
     return { hits, suggestions: hits.length ? [] : suggest(index, tokens) };
   }
 
-  const scores = new Map<string, { score: number; matched: number; reason: string; reasonScore: number }>();
+  const scores = new Map<string, { score: number; matched: number; reason: string; reasonScore: number; via: AliasKind; label: string }>();
   const ensure = (slug: string) => {
     const current = scores.get(slug);
     if (current) return current;
-    const created = { score: 0, matched: 0, reason: "", reasonScore: 0 };
+    const created = { score: 0, matched: 0, reason: "", reasonScore: 0, via: "substance" as AliasKind, label: "" };
     scores.set(slug, created);
     return created;
   };
 
   for (const token of activeTokens) {
-    const bestBySlug = new Map<string, { score: number; reason: string }>();
+    const bestBySlug = new Map<string, { score: number; reason: string; via: AliasKind; label: string }>();
     for (const alias of index.aliases) {
       const folded = fold(alias.text);
       const direct = tokenScore(token, folded);
@@ -241,6 +249,8 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
         bestBySlug.set(alias.slug, {
           score: total,
           reason: `${alias.text} → ${substance?.name ?? alias.slug}`,
+          via: alias.kind,
+          label: alias.text,
         });
       }
     }
@@ -253,7 +263,12 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
         const total = 70;
         const previous = bestBySlug.get(slug);
         if (!previous || total > previous.score) {
-          bestBySlug.set(slug, { score: total, reason: `${matchedTerm} → ${substance?.name ?? slug}` });
+          bestBySlug.set(slug, {
+            score: total,
+            reason: `${matchedTerm} → ${substance?.name ?? slug}`,
+            via: "synonym",
+            label: matchedTerm,
+          });
         }
       }
     }
@@ -264,6 +279,8 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
       if (hit.score > bucket.reasonScore) {
         bucket.reasonScore = hit.score;
         bucket.reason = hit.reason;
+        bucket.via = hit.via;
+        bucket.label = hit.label;
       }
     }
   }
@@ -272,11 +289,12 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
     .filter(([, value]) => value.matched === activeTokens.length)
     .map(([slug, value]) => {
       const substance = bySlug.get(slug);
+      const product = value.via === "brand";
       return {
         slug,
-        name: substance?.name ?? slug,
+        name: product ? value.label || substance?.name || slug : substance?.name ?? slug,
         reports: substance?.reports ?? null,
-        kind: "substance",
+        kind: product ? "product" : "substance",
         brands: substance?.brands,
         brandCount: substance?.brandCount,
         companies: substance?.companies,
@@ -310,7 +328,20 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
   }
 
   const companyHits: SearchHit[] = [];
+  const merck = merckQuery(query);
   for (const company of index.companies ?? []) {
+    if (merck && (company.slug === "msd" || company.slug === "merck")) {
+      if (merck === "msd" && company.slug !== "msd") continue;
+      companyHits.push({
+        slug: company.slug,
+        name: company.name,
+        reports: null,
+        kind: "company",
+        score: company.slug === "msd" ? 960 : 940,
+        reason: MERCK_LABEL[company.slug as "msd" | "merck"],
+      });
+      continue;
+    }
     const matched = companyMatchScore(query, tokens, company);
     if (matched === 0) continue;
     companyHits.push({
@@ -367,6 +398,109 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
   return { hits, suggestions: hits.length === 0 ? suggest(index, tokens) : [] };
 }
 
+export type SearchGroupId = "substance" | "product" | "company" | "case" | "category" | "reaction" | "disease" | "page";
+
+const GROUP_LABEL: Record<SearchGroupId, string> = {
+  substance: "Stoffer",
+  product: "Produkter og mærker",
+  company: "Firmaer",
+  case: "Bødesager",
+  category: "Kategorier",
+  reaction: "Bivirkninger",
+  disease: "Sygdomme",
+  page: "Sider",
+};
+
+const SITE_PAGES: { href: string; title: string; terms: string[] }[] = [
+  { href: "/forstaa-forskning", title: "Sådan læses forsøgstal", terms: ["forsog", "forsogstal", "nnt", "nnh", "relativ risiko", "absolut risiko", "risiko"] },
+  { href: "/om-data", title: "Sådan læses tallene", terms: ["om data", "metode", "indberetning"] },
+  { href: "/boedesager", title: "Store bødesager", terms: ["bode", "bodesag", "skandale", "forlig"] },
+  { href: "/kategori", title: "Grupper efter ATC", terms: ["atc", "gruppe", "grupper"] },
+  { href: "/sygdom", title: "Find medicin efter sygdom", terms: ["sygdom", "sygdomme"] },
+  { href: "/firma", title: "Firmaer", terms: ["firma", "firmaer"] },
+  { href: "/katalog", title: "Stoffer og præparater", terms: ["katalog", "praparat", "praeparat"] },
+];
+
+function pageHits(query: string): SearchHit[] {
+  const folded = fold(query);
+  if (folded.length < 3) return [];
+  return SITE_PAGES.filter((page) => page.terms.some((term) => folded.includes(fold(term)) || fold(term).includes(folded) || editDistance(folded, fold(term), folded.length >= 5 ? 1 : 0) <= 1)).map((page) => ({
+    slug: page.href.replace(/^\//, ""),
+    name: page.title,
+    reports: null,
+    kind: "page" as const,
+    score: 100,
+    reason: "Side på Indberettet",
+    href: page.href,
+  }));
+}
+
+function reactionSearchHits(index: SearchIndex, query: string): SearchHit[] {
+  const folded = fold(query);
+  if (folded.length < 4) return [];
+  const hits: SearchHit[] = [];
+  for (const row of index.reactions ?? []) {
+    const names = [row.pt, row.danish].filter(Boolean);
+    const best = names.reduce((distance, name) => Math.min(distance, caseTermDistance(folded, name)), 99);
+    if (best > 1 && !names.some((name) => phraseHit(folded, name))) continue;
+    const top = row.substances[0];
+    if (!top) continue;
+    const total = row.substances.reduce((sum, item) => sum + item.reactions, 0);
+    hits.push({
+      slug: top.slug,
+      name: row.danish || row.pt,
+      reports: total,
+      kind: "reaction",
+      score: best === 0 ? 120 : 80,
+      reason: row.substances.slice(0, 3).map((item) => item.name).join(", "),
+    });
+  }
+  return hits.sort((a, b) => b.score - a.score || (b.reports ?? 0) - (a.reports ?? 0)).slice(0, 12);
+}
+
+export function groupSearch(index: SearchIndex, rawQuery: string, perGroup = 5): { id: SearchGroupId; label: string; total: number; hits: SearchHit[] }[] {
+  const pool = searchCatalog(index, rawQuery, 80);
+  const seen = new Set(pool.hits.map((hit) => `${hit.kind}:${hit.slug}:${hit.anchor ?? ""}`));
+  for (const hit of caseSearchHits(rawQuery, index.companies ?? [])) {
+    const key = `${hit.kind}:${hit.slug}:${hit.anchor ?? ""}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    pool.hits.push(hit);
+  }
+  const buckets = new Map<SearchGroupId, SearchHit[]>();
+  const push = (id: SearchGroupId, hit: SearchHit) => {
+    const list = buckets.get(id) ?? [];
+    list.push(hit);
+    buckets.set(id, list);
+  };
+  for (const hit of pool.hits) {
+    if (hit.kind === "product") push("product", hit);
+    else if (hit.kind === "company" && hit.anchor) push("case", hit);
+    else if (hit.kind === "case") push("case", hit);
+    else if (hit.kind === "company") push("company", hit);
+    else if (hit.kind === "category") push("category", hit);
+    else if (hit.kind === "disease") push("disease", hit);
+    else if (hit.kind === "substance") push("substance", hit);
+  }
+  for (const hit of reactionSearchHits(index, rawQuery)) push("reaction", hit);
+  for (const hit of pageHits(rawQuery)) push("page", hit);
+  const order: SearchGroupId[] = ["company", "case", "substance", "product", "category", "reaction", "disease", "page"];
+  return order
+    .filter((id) => (buckets.get(id)?.length ?? 0) > 0)
+    .map((id) => {
+      const hits = buckets.get(id) ?? [];
+      return { id, label: GROUP_LABEL[id], total: hits.length, hits: hits.slice(0, perGroup) };
+    });
+}
+
+function companyNameHit(query: string, company: { name: string }): boolean {
+  const folded = fold(query);
+  if (folded.length < 3) return false;
+  const name = fold(company.name);
+  if (name === folded || name.startsWith(`${folded} `)) return true;
+  return tokenize(company.name).includes(folded);
+}
+
 export function caseSearchHits(
   query: string,
   companies: { slug: string; name: string }[],
@@ -374,25 +508,54 @@ export function caseSearchHits(
   const folded = fold(query.trim());
   if (folded.length < 3) return [];
   const hits: SearchHit[] = [];
+  const substances = new Set<string>();
   for (const item of caseNotes()) {
-    if (!item.firm || !item.url) continue;
+    if (!item.url) continue;
     const terms = [...item.search, ...item.drugs.flatMap((drug) => [drug.name, drug.generic])];
     const best = terms.reduce((distance, term) => Math.min(distance, caseTermDistance(folded, term)), 99);
-    if (best > 2) continue;
-    const company = companies.find((entry) => entry.slug === item.firm);
-    if (!company) continue;
+    const company = item.firm ? companies.find((entry) => entry.slug === item.firm) : undefined;
+    const viaCompany = Boolean(company && companyNameHit(folded, company));
+    if (best > 2 && !viaCompany) continue;
+    if (!item.standalone && !company) continue;
     const drug = item.drugs[0]?.name ?? "Bødesag";
-    const short = company.name.split("(")[0]?.trim() || company.name;
+    const short = company ? company.name.split("(")[0]?.trim() || company.name : "";
     const year = item.year;
-    hits.push({
-      slug: item.firm,
-      name: `${drug} – bødesag${year ? ` ${year}` : ""}, ${short}`,
-      reports: null,
-      kind: "company",
-      score: best === 0 ? 260 : 190,
-      reason: item.summary,
-      anchor: caseAnchor(item.url),
-    });
+    const anchor = caseAnchor(item.url);
+    if (item.standalone) {
+      hits.push({
+        slug: "boedesager",
+        name: item.headline ?? `${drug} – sag${year ? ` ${year}` : ""}`,
+        reports: null,
+        kind: "case",
+        score: best <= 2 ? (best === 0 ? 280 : 200) : 150,
+        reason: item.summary,
+        anchor,
+      });
+    } else if (company) {
+      hits.push({
+        slug: company.slug,
+        name: `${drug} – bødesag${year ? ` ${year}` : ""}, ${short}`,
+        reports: null,
+        kind: "company",
+        score: best <= 2 ? (best === 0 ? 260 : 190) : 150,
+        reason: item.summary,
+        anchor,
+      });
+    }
+    if (best <= 2) {
+      for (const named of item.drugs) {
+        if (!named.slug || substances.has(named.slug)) continue;
+        substances.add(named.slug);
+        hits.push({
+          slug: named.slug,
+          name: named.generic || named.name,
+          reports: null,
+          kind: "substance",
+          score: 210,
+          reason: `Danske indberetninger om stoffet i ${named.name}.`,
+        });
+      }
+    }
   }
   return hits.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, "da"));
 }
@@ -425,6 +588,33 @@ function aliasKnown(index: SearchIndex, token: string): boolean {
 
 function classKnown(index: SearchIndex, token: string): boolean {
   return index.classes.some((group) => group.terms.some((term) => termHitsQuery([token], token, term)));
+}
+
+const MERCK_LABEL = {
+  msd: "MSD er Merck & Co. I USA og Canada kaldes selskabet Merck.",
+  merck: "Tysk Merck (Merck KGaA). Ikke det samme som MSD.",
+} as const;
+
+/** Queries that name the Merck word, not the MSD abbreviation, should show both companies. */
+export function merckQuery(raw: string): "both" | "msd" | null {
+  const query = fold(raw)
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (query === "msd") return "msd";
+  if (
+    query === "merck" ||
+    query === "merk" ||
+    query === "merck and co" ||
+    query === "merck co" ||
+    query === "merck sharp" ||
+    query === "merck sharp and dohme" ||
+    query === "merck sharp dohme"
+  ) {
+    return "both";
+  }
+  return null;
 }
 
 function companyPool(company: CompanySearchRecord): string[] {

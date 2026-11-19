@@ -432,11 +432,43 @@ th, td { text-align: left; padding: 0.45rem 0.35rem; border-bottom: 1px solid va
 th { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .table-scroll {
-  overflow-x: auto;
+  overflow: auto;
   max-width: 100%;
+  max-height: min(70vh, 42rem);
   -webkit-overflow-scrolling: touch;
 }
-.table-scroll table { min-width: 32rem; }
+.table-scroll table { min-width: 32rem; border-collapse: separate; border-spacing: 0; }
+.table-scroll thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--card);
+  box-shadow: inset 0 -1px 0 var(--line);
+}
+.header-search { position: relative; flex: 1 1 16rem; min-width: 10rem; }
+.header-search .search { margin: 0; }
+.header-search .kicker { position: absolute; width: 1px; height: 1px; overflow: hidden; }
+.search-compact .result-list,
+.search-compact .empty-search,
+.search-compact .warning-note {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  width: min(34rem, 86vw);
+  max-height: min(60vh, 28rem);
+  overflow: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow);
+  padding: 0.35rem;
+}
+.match-reason { display: block; color: var(--muted); font-size: 0.92rem; }
+.result-group h3 { margin: 0.8rem 0 0.2rem; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.result-list a.is-active { background: var(--foam); }
+.see-all { margin: 0.4rem 0 0; }
+.button.quiet { background: transparent; color: var(--ink); border: 1px solid var(--line); }
 details summary { cursor: pointer; font-weight: 700; }
 .term-name { display: flex; flex-wrap: wrap; gap: 0.35rem 0.5rem; align-items: baseline; }
 .term-en { color: var(--muted); }
@@ -608,6 +640,14 @@ details summary { cursor: pointer; font-weight: 700; }
   .actions .button, .actions a.button { flex: 1 1 12rem; }
   .soc-row { grid-template-columns: 1fr auto; }
   .soc-track { grid-column: 1 / -1; }
+  .table-scroll th:first-child,
+  .table-scroll td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--card);
+  }
+  .table-scroll thead th:first-child { z-index: 3; }
   .table-scroll::before {
     content: "Stryg sidelæns for hele tabellen";
     display: block;
@@ -641,6 +681,8 @@ details summary { cursor: pointer; font-weight: 700; }
 }
 tr[id^="sag-"] { scroll-margin-top: 5.5rem; }
 .empty-search { background: var(--paper); border-radius: 0.8rem; padding: 0.8rem 0.9rem; }
+.scandal-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.scandal-list h2 { font-size: 1.35rem; }
 .install-bar {
   position: fixed;
   z-index: 40;

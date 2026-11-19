@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { SearchPanel } from "@/components/search-panel";
 
 const LINKS = [
   { href: "/katalog", id: "katalog", label: "Stoffer og præparater" },
   { href: "/kategori", id: "kategori", label: "Grupper" },
   { href: "/sygdom", id: "sygdom", label: "Efter sygdom" },
   { href: "/firma", id: "firma", label: "Firmaer" },
+  { href: "/boedesager", id: "sager", label: "Bødesager" },
   { href: "/om-data", id: "om", label: "Om data" },
   { href: "/forstaa-forskning", id: "forskning", label: "Forsøgstal" },
 ] as const;
@@ -31,6 +33,9 @@ export function SiteHeader({ current }: { current?: (typeof LINKS)[number]["id"]
             Ind<em>berettet</em>
           </span>
         </Link>
+        <div className="header-search">
+          <SearchPanel compact placeholder="Søg stof, firma eller sag" />
+        </div>
         <button
           className="nav-toggle"
           type="button"

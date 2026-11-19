@@ -77,13 +77,15 @@ test("søgning finder firmaet også ved eli lily og novo", () => {
   assert.equal(lily?.slug, "eli-lilly");
   const krka = searchCatalog(index, "novo", 8).hits.filter((hit) => hit.kind === "company" && hit.slug === "krka");
   assert.equal(krka.length, 0);
-  for (const query of ["merck", "merk"]) {
-    const slugs = searchCatalog(index, query, 8).hits.filter((hit) => hit.kind === "company").map((hit) => hit.slug);
+  for (const query of ["merck", "merk", "Merck & Co", "Merck Sharp & Dohme", "merck sharp dohme"]) {
+    const companies = searchCatalog(index, query, 8).hits.filter((hit) => hit.kind === "company" && !hit.anchor);
+    const slugs = companies.map((hit) => hit.slug);
     assert.ok(slugs.includes("msd"), query);
     assert.ok(slugs.includes("merck"), query);
+    assert.match(companies.find((hit) => hit.slug === "msd")?.reason ?? "", /USA/);
+    assert.match(companies.find((hit) => hit.slug === "merck")?.reason ?? "", /Tysk/);
   }
-  const msdOnly = searchCatalog(index, "msd", 8).hits.filter((hit) => hit.kind === "company").map((hit) => hit.slug);
-  assert.deepEqual(msdOnly, ["msd"]);
-  const sharp = searchCatalog(index, "merck sharp dohme", 8).hits.filter((hit) => hit.kind === "company").map((hit) => hit.slug);
-  assert.deepEqual(sharp, ["msd"]);
+  const msdHits = searchCatalog(index, "MSD", 8).hits.filter((hit) => hit.kind === "company" && !hit.anchor);
+  assert.deepEqual(msdHits.map((hit) => hit.slug), ["msd"]);
+  assert.match(msdHits[0]?.reason ?? "", /USA/);
 });

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReportIssue } from "@/components/report-issue";
 import { formatDate } from "@/lib/format";
 import { getIndex, getStatus } from "@/lib/data";
 
@@ -33,11 +34,13 @@ export function SiteFooter() {
             <br />
             <Link href="/forstaa-forskning">Sådan læses forsøgstal</Link>
             <br />
-            <a href="https://github.com/birch-dev501/indberettet">Kildekode</a>
-            <br />
             <a href="https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin/meld-en-bivirkning/">
               Meld en bivirkning
             </a>
+            <br />
+            <a href="https://github.com/birch-dev501/indberettet">Kildekode</a>
+            <br />
+            <ReportIssue />
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ReportIssue } from "@/components/report-issue";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SubstanceView } from "@/components/substance-view";
@@ -56,6 +57,7 @@ export default async function SubstancePage({ params }: { params: Promise<{ slug
           plain={getPlain(slug)}
           identity={getIdentity(slug)}
         />
+        <ReportIssue path={`/stof/${slug}/`} />
       </main>
       <SiteFooter />
     </>

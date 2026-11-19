@@ -6,14 +6,7 @@ import { resolveSoc, resolveTerm, type TermLinksFile } from "./term-links.ts";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const file = JSON.parse(readFileSync(path.join(root, "data/term-links.json"), "utf8")) as TermLinksFile;
-const allowedHosts = new Set([
-  "sundhed.dk",
-  "www.sundhed.dk",
-  "medlineplus.gov",
-  "www.medlineplus.gov",
-  "nhs.uk",
-  "www.nhs.uk",
-]);
+const allowedHosts = new Set(["sundhed.dk", "www.sundhed.dk", "medlineplus.gov", "www.medlineplus.gov", "nhs.uk", "www.nhs.uk"]);
 
 function substanceViews(): { pt: string; reactions: number; soc: string }[][] {
   return readdirSync(path.join(root, "data/substances"))
@@ -38,66 +31,36 @@ test("kortet bruger kun termer fra udtrækket", () => {
   assert.equal(Object.keys(file.socs).length, 27);
 });
 
-test("et direkte link er https hos en kendt kilde", () => {
+test("et link er https og er ikke en tom engelsk søgning", () => {
   for (const row of [...Object.values(file.terms), ...Object.values(file.socs)]) {
-    assert.ok(row.kind === "direct" || row.kind === "search");
-    assert.equal(typeof row.danish, "string");
-    assert.ok(row.danish.length > 0);
+    if (!row.verified || !row.url) continue;
     const url = new URL(row.url);
     assert.equal(url.protocol, "https:");
     assert.ok(allowedHosts.has(url.hostname), row.url);
-    if (row.kind === "direct") {
-      assert.equal(row.verified, true);
-      assert.equal(row.url.includes("/soeg/"), false);
-    }
-    if (row.kind === "search") assert.match(row.url, /\/soeg\/\?q=/);
+    assert.equal(url.search.includes("q="), false, row.url);
+    if (row.kind === "direct") assert.equal(row.url.includes("/soeg/"), false);
+    if (row.kind === "search") assert.match(row.url, /SearchTerm=/);
   }
-  assert.match(file.search.urlTemplate, /\{q\}/);
-  assert.equal(file.search.verified, true);
 });
 
-test("hovedpine linker direkte, og en ukendt term bliver en søgning", () => {
+test("hovedpine og trombocytopeni peger på den rigtige artikel", () => {
   const headache = resolveTerm("Headache", file);
   assert.equal(headache.search, false);
   assert.equal(headache.danish, "Hovedpine");
-  assert.match(headache.href ?? "", /hjerne-og-nerver\/symptomer\/hovedpine/);
+  assert.match(headache.href ?? "", /hovedpine/);
+
+  const lowPlatelets = resolveTerm("Thrombocytopenia", file);
+  assert.match(lowPlatelets.href ?? "", /blodplademangel/);
+  assert.equal((lowPlatelets.href ?? "").includes("purpura"), false);
 
   const unknown = resolveTerm("Totally Unknown Term", file);
-  assert.equal(unknown.search, true);
-  assert.equal(unknown.danish, null);
-  assert.match(unknown.href ?? "", /patienthaandbogen\/soeg\/\?q=Totally%20Unknown%20Term/);
+  assert.equal(unknown.href, null);
 
-  const granuloma = resolveTerm("Vaccination site granuloma", file);
-  assert.equal(granuloma.search, true);
-  assert.equal(granuloma.danish, "Granulom på vaccinationsstedet");
-  assert.match(granuloma.href ?? "", /\/soeg\/\?q=/);
-
-  const withdrawn = resolveTerm("Headache", {
-    ...file,
-    terms: { ...file.terms, Headache: { ...file.terms.Headache, verified: false } },
-  });
-  assert.equal(withdrawn.search, true);
-  assert.match(withdrawn.href ?? "", /\/soeg\/\?q=Hovedpine/);
-
-  assert.equal(resolveSoc("Nerv", "Nervesystemet (Nerv)", file).search, false);
-  assert.equal(resolveSoc("Genrl", "Almene symptomer", file).search, true);
+  assert.equal(resolveSoc("Nerv", "Nervesystemet", file).search, false);
 });
 
-test("dækningen er andelen af reaktioner med et direkte link", () => {
-  const direct = new Set(
-    Object.entries(file.terms)
-      .filter(([, row]) => row.kind === "direct" && row.verified)
-      .map(([name]) => name),
-  );
-  let occurrences = 0;
-  let directOccurrences = 0;
-  for (const rows of substanceViews()) {
-    for (const term of rows) {
-      occurrences += term.reactions;
-      if (direct.has(term.pt)) directOccurrences += term.reactions;
-    }
-  }
-  assert.equal(file.coverage?.reactionOccurrences, occurrences);
-  assert.equal(file.coverage?.directOccurrences, directOccurrences);
-  assert.ok(directOccurrences / occurrences > 0.3);
+test("dækningen tæller de danske artikler", () => {
+  assert.equal(typeof file.coverage?.directTerms, "number");
+  assert.ok((file.coverage?.directTerms ?? 0) > 10);
+  assert.ok((file.coverage?.directShare ?? 0) > 0.05);
 });

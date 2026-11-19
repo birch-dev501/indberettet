@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { formatInt, formatPercent } from "@/lib/format";
 import { plainSoc } from "@/lib/soc-plain";
-import { resolveTerm } from "@/lib/term-links";
+import { linkTag, resolveTerm } from "@/lib/term-links";
 import type { Substance, TermRow } from "@/lib/types";
 
 type ClassRow = {
@@ -124,7 +124,7 @@ export function ReactionTypes({ substance }: { substance: Substance }) {
                             {link.href ? (
                               <a href={link.href} target="_blank" rel="noopener noreferrer">
                                 {name}
-                                {link.search ? <span className="tag quiet">Søg</span> : null}
+                                {linkTag(link) ? <span className="tag quiet">{linkTag(link)}</span> : null}
                               </a>
                             ) : (
                               name

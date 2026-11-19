@@ -10,7 +10,7 @@ import type { PlainLanguage } from "@/lib/data";
 import { SubstanceIdentityLine } from "@/components/substance-identity";
 import { SUBSTANCE_COUNT_NOTE, type SubstanceIdentity } from "@/lib/companies";
 import { CAUSALITY_NOTE, type SubstanceRate } from "@/lib/rates";
-import { englishSourceNote, resolveSoc, resolveTerm } from "@/lib/term-links";
+import { englishSourceNote, linkTag, resolveSoc, resolveTerm } from "@/lib/term-links";
 import type { NewsItem, Substance, SubstanceView } from "@/lib/types";
 
 const VIEWS = [
@@ -467,19 +467,19 @@ function NewsSection({ items }: { items: NewsItem[] }) {
 function WordLink({
   text,
   href,
-  search,
+  tag,
   source,
 }: {
   text: string;
   href: string;
-  search: boolean;
+  tag: string | null;
   source: string | null;
 }) {
-  const label = search ? `${text}. Søgning i Patienthåndbogen` : `${text}. Forklaring hos ${source ?? "kilden"}`;
+  const label = tag === "Søg" ? `${text}. Søgning i Patienthåndbogen` : `${text}. Forklaring hos ${source ?? "kilden"}`;
   return (
     <a className="term-link" href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
       {text}
-      {search ? <span className="tag quiet">Søg</span> : null}
+      {tag ? <span className="tag quiet">{tag}</span> : null}
     </a>
   );
 }
@@ -491,7 +491,7 @@ function TermName({ english }: { english: string }) {
   return (
     <span className="term-name">
       {link.href ? (
-        <WordLink text={link.danish ?? english} href={link.href} search={link.search} source={link.source} />
+        <WordLink text={link.danish ?? english} href={link.href} tag={linkTag(link)} source={link.source} />
       ) : (
         <span>{link.danish ?? english}</span>
       )}
@@ -504,7 +504,7 @@ function TermName({ english }: { english: string }) {
 function SocName({ abbrev, label }: { abbrev: string; label: string }) {
   const link = resolveSoc(abbrev, label);
   if (!link.href) return <span>{label}</span>;
-  return <WordLink text={label} href={link.href} search={link.search} source={link.source} />;
+  return <WordLink text={label} href={link.href} tag={linkTag(link)} source={link.source} />;
 }
 
 function downloadSubstance(substance: Substance) {
@@ -613,7 +613,7 @@ function RankedBars({
         <div className="bar-row" key={row.label}>
           <div className="bar-label">
             {row.href ? (
-              <WordLink text={row.label} href={row.href} search={Boolean(row.search)} source={row.source ?? null} />
+              <WordLink text={row.label} href={row.href} tag={row.search ? "Søg" : null} source={row.source ?? null} />
             ) : (
               row.label
             )}

@@ -15,6 +15,12 @@ export type CaseNote = {
   sourceUrl: string;
   sourceName: string;
   year?: number;
+  /** Longer Danish explanation. Shown on the scandals page, not as a medical claim. */
+  detail?: string;
+  /** Search label when the case should not be phrased as the Danish company's own fine. */
+  headline?: string;
+  /** Link the hit to /boedesager instead of the company penalty row. */
+  standalone?: boolean;
 };
 
 const cases = notes.cases as CaseNote[];
@@ -35,6 +41,14 @@ export function caseNoteFor(url: string): CaseNote | null {
 
 export function caseNotes(): CaseNote[] {
   return cases;
+}
+
+export function casesForFirm(slug: string): CaseNote[] {
+  return cases.filter((item) => item.firm === slug && item.url);
+}
+
+export function casesForSubstance(slug: string): CaseNote[] {
+  return cases.filter((item) => item.drugs.some((drug) => drug.slug === slug));
 }
 
 export function caseAnchor(url: string): string {

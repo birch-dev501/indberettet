@@ -1,0 +1,24 @@
+name: Manglende lægemiddel eller data
+description: Et stof, et præparat eller et firma mangler.
+title: "[Mangler] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sagen er offentlig. Skriv ikke personlige helbredsoplysninger.
+        Du skal have en GitHub-konto for at oprette sagen.
+  - type: input
+    id: navn
+    attributes:
+      label: Navn
+      description: Stoffet, handelsnavnet eller firmaet der mangler.
+    validations:
+      required: true
+  - type: textarea
+    id: hvor
+    attributes:
+      label: Hvor har du ledt?
+      description: Siden eller søgningen, hvor det burde have stået.
+    validations:
+      required: true
