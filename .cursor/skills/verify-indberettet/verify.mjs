@@ -165,6 +165,10 @@ async function checkSearch(page, width) {
   if (!pamolTarget?.includes("/stof/paracetamolum")) fail(`${width} pamol peger på ${pamolTarget}`);
   const pamolText = await page.locator("search[data-search=header] .result-groups").innerText();
   if (pamolText.toLowerCase().includes("bupropion")) fail(`${width} pamol viser bupropion`);
+  const testen = await search(page, "testen");
+  if (!testen.includes("Sådan læses en test")) fail(`${width} testen finder ikke testsiden`);
+  const falsk = await search(page, "falsk positiv");
+  if (!falsk.includes("Sådan læses en test")) fail(`${width} falsk positiv finder ikke testsiden`);
   if (width === 1280) {
     await page.locator("search[data-search=page] input[role=searchbox]").fill("pamol");
     await page.locator("search[data-search=page] .result-groups").waitFor();

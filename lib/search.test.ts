@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { assignCategories, type CategoryDefinition } from "./categories.ts";
-import { buildSearchIndex, searchCatalog, type DiseaseSearchRecord, type ProductRecord, type ReviewedSynonyms, type SubstanceRecord } from "./search.ts";
+import { buildSearchIndex, groupSearch, searchCatalog, type DiseaseSearchRecord, type ProductRecord, type ReviewedSynonyms, type SubstanceRecord } from "./search.ts";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const substances = (JSON.parse(readFileSync(path.join(root, "data/index.json"), "utf8")) as { substances: SubstanceRecord[] }).substances;
@@ -199,5 +199,12 @@ test("vaccinemærker uden stofnavn finder deres egen oversigt", () => {
     const hit = top(query).hits[0];
     assert.equal(hit?.slug, null, query);
     assert.equal(hit?.unavailable, true, query);
+  }
+});
+
+test("testen og falsk positiv finder siden om testen", () => {
+  for (const query of ["testen", "falsk positiv", "falske positive"]) {
+    const pages = groupSearch(index, query).find((group) => group.id === "page");
+    assert.ok(pages?.hits.some((hit) => hit.href === "/forstaa-testen"), query);
   }
 });
