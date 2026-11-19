@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3847",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test lib/search.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts",
+    "test": "node --experimental-strip-types --test lib/search.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts lib/case-notes.test.ts",
     "test:mobile": "node scripts/check-mobile.mjs",
     "ingest": "python3 scripts/ingest.py"
   },

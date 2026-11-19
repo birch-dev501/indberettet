@@ -92,7 +92,7 @@ export function SearchPanel({
                     <p className="small">{hit.explanation}</p>
                   </div>
                 ) : (
-                  <Link href={hit.kind === "category" ? `/kategori/${hit.slug}` : hit.kind === "disease" ? `/sygdom/${hit.slug}` : hit.kind === "company" ? `/firma/${hit.slug}` : `/stof/${hit.slug}`}>
+                  <Link href={hit.kind === "category" ? `/kategori/${hit.slug}` : hit.kind === "disease" ? `/sygdom/${hit.slug}` : hit.kind === "company" ? `/firma/${hit.slug}${hit.anchor ? `#${hit.anchor}` : ""}` : `/stof/${hit.slug}`}>
                     <span className="result-top">
                       <strong>{hit.name}</strong>
                       {hit.kind === "category" ? (

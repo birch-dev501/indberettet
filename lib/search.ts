@@ -1,3 +1,4 @@
+import { caseNotes } from "./case-notes.ts";
 import { buildCompanyCatalog, companySearchRecords, normalizeHolder } from "./companies.ts";
 
 export type AliasKind = "substance" | "brand" | "holder" | "synonym";
@@ -84,6 +85,7 @@ export type SearchHit = {
   score: number;
   reason: string;
   kind?: "substance" | "category" | "disease" | "company";
+  anchor?: string;
   brands?: string[];
   brandCount?: number;
   companies?: string[];
@@ -354,12 +356,39 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
     const previous = merged.get(key);
     if (!previous || hit.score > previous.score) merged.set(key, hit);
   }
-  const ranked = [...companyHits, ...diseaseHits, ...categoryHits, ...merged.values()].sort(
+  const ranked = [...companyHits, ...caseSearchHits(query, index.companies ?? []), ...diseaseHits, ...categoryHits, ...merged.values()].sort(
     (a, b) => b.score - a.score || (b.reports ?? 0) - (a.reports ?? 0) || a.name.localeCompare(b.name, "da"),
   );
 
   const hits = [...gaps, ...ranked].slice(0, limit);
   return { hits, suggestions: hits.length === 0 ? suggest(index, tokens) : [] };
+}
+
+export function caseSearchHits(
+  query: string,
+  companies: { slug: string; name: string }[],
+): SearchHit[] {
+  const folded = fold(query.trim());
+  if (folded.length < 3) return [];
+  const byFirm = new Map<string, { name: string; drug: string }>();
+  for (const item of caseNotes()) {
+    if (!item.firm) continue;
+    if (!item.search.some((term: string) => fold(term) === folded)) continue;
+    const company = companies.find((entry) => entry.slug === item.firm);
+    const drug = item.drugs.find((entry) => fold(entry.name) === folded || fold(entry.generic) === folded);
+    const label = drug?.name ?? item.search.find((entry) => fold(entry) === folded) ?? folded;
+    if (!company || byFirm.has(item.firm)) continue;
+    byFirm.set(item.firm, { name: company.name, drug: label });
+  }
+  return [...byFirm.entries()].map(([slug, hit]) => ({
+    slug,
+    name: hit.name,
+    reports: null,
+    kind: "company",
+    score: 155,
+    reason: `${hit.drug} · bødesag`,
+    anchor: "boeder",
+  }));
 }
 
 function aliasKnown(index: SearchIndex, token: string): boolean {

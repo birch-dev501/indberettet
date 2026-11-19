@@ -267,6 +267,19 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
 .plain-brands { font-size: 1.25rem; margin: 0.2rem 0; }
 .identity { display: flex; flex-wrap: wrap; gap: 0.15rem 0.8rem; margin: 0.25rem 0 0; color: var(--muted); font-size: 0.92rem; }
 .identity a { color: var(--teal); }
+.case-note { margin: 0.35rem 0 0; line-height: 1.4; }
+.case-note a { color: var(--teal); }
+.case-search { display: grid; gap: 0.3rem; margin: 0.8rem 0 0.2rem; font-weight: 700; }
+.case-search input {
+  font: inherit;
+  font-weight: 500;
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 0.45rem 0.7rem;
+  background: white;
+}
 .identity-label {
   margin-right: 0.3rem;
   font-size: 0.72rem;
