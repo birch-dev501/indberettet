@@ -325,6 +325,21 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   padding: 0.15rem 0 0.7rem;
   overflow-anchor: none;
 }
+.search-field { position: relative; }
+.search-clear {
+  position: absolute;
+  right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.search-clear:hover { background: var(--paper-deep); color: var(--ink); }
 .sticky-search input, .search input {
   width: 100%;
   min-height: 44px;
@@ -334,6 +349,7 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   padding: 0.9rem 1rem;
   font-size: 1.05rem;
 }
+.search input { padding-right: 2.6rem; }
 .result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; overflow-anchor: none; }
 .index-filter, .substance-index, main { overflow-anchor: none; }
 .result-list a, .result-list .plain {

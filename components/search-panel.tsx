@@ -119,8 +119,25 @@ export function SearchPanel({
   const listId = useId();
   const optionPrefix = useId().replace(/:/g, "");
   const inputRef = useRef<HTMLInputElement>(null);
+  const rootRef = useRef<HTMLElement>(null);
+  const openRef = useRef(true);
+  const [status, setStatus] = useState("");
   const router = useRouter();
   usePinScroll(inputRef);
+  openRef.current = open;
+
+  function closeList() {
+    if (openRef.current) setStatus("Listen er lukket");
+    setOpen(false);
+  }
+
+  useEffect(() => {
+    function onPointerDown(event: PointerEvent) {
+      if (!rootRef.current?.contains(event.target as Node)) closeList();
+    }
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, []);
   const needle = query.trim();
   const groups = useMemo(
     () => (needle.length < 2 || !catalog ? [] : groupSearch(catalog, needle, compact ? 4 : 5)),
@@ -137,10 +154,15 @@ export function SearchPanel({
   }
 
   return (
-    <search className={compact ? "search search-compact" : "search"} data-search={compact ? "header" : "page"}>
+    <search
+      ref={rootRef}
+      className={compact ? "search search-compact" : "search"}
+      data-search={compact ? "header" : "page"}
+    >
       <label className="kicker" htmlFor={inputId}>
         Søg
       </label>
+      <div className="search-field">
       <input
         id={inputId}
         ref={inputRef}
@@ -154,6 +176,9 @@ export function SearchPanel({
         autoComplete="off"
         autoCorrect="off"
         spellCheck={false}
+        onFocus={() => {
+          if (query.trim().length >= 2) setOpen(true);
+        }}
         onChange={(event) => {
           setQuery(event.target.value);
           setActive(-1);
@@ -175,10 +200,35 @@ export function SearchPanel({
               router.push(`/soeg/?q=${encodeURIComponent(needle)}`);
             }
           } else if (event.key === "Escape") {
-            setOpen(false);
+            event.preventDefault();
+            if (open && (groups.length > 0 || needle.length >= 2)) {
+              closeList();
+              return;
+            }
+            setQuery("");
+            setActive(-1);
+            setStatus("Søgningen er ryddet");
           }
         }}
       />
+      {query.length > 0 && (
+        <button
+          type="button"
+          className="search-clear"
+          aria-label="Ryd søgning"
+          onClick={() => {
+            setQuery("");
+            setActive(-1);
+            setOpen(false);
+            setStatus("Søgningen er ryddet");
+            inputRef.current?.focus();
+          }}
+        >
+          ✕
+        </button>
+      )}
+      </div>
+      <p className="sr-only" aria-live="polite">{status}</p>
       <div id={listId}>
         {state === "loading" && !compact && <p className="muted">Henter register…</p>}
         {state === "error" && <p className="warning-note">Søgningen kunne ikke gennemføres. Prøv igen.</p>}
