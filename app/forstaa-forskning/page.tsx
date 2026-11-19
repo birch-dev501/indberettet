@@ -116,7 +116,7 @@ export default function ResearchLiteracyPage() {
               Artiklens 95,0 % er regnet på tilfælde pr. observationstid med en bayesiansk model. De to måder lander på
               samme afrundede relative tal.
             </p>
-            <p className="warning-note">
+            <p className="note">
               <strong>Hvad betyder det?</strong> {rrr} % er den relative reduktion. {arr} procentpoint er den absolutte
               forskel. Kredibilitetsintervallet 90,3 til 97,6 ligger over 0 og er ikke et konfidensinterval.{" "}
               <Link href="/forstaa-usikkerhed/#relativ-absolut">Regnestykket står her</Link>.
@@ -202,9 +202,9 @@ export default function ResearchLiteracyPage() {
               for få myokarditis-tilfælde efter to doser BNT162b2 til at regne et stabilt overskud. Opfølgningen løb fra
               27. december 2020 til 5. oktober 2021.
             </p>
-            <p className="warning-note">
+            <p className="note">
               <strong>Hvad betyder det?</strong> 3,70 til 7,39 ligger over 0. Intervallet omkring 0,22 går gennem 0.
-              For en forskel er nulhypotesen 0.{" "}
+              Ingen forskel mellem grupperne er tallet 0.{" "}
               <Link href="/forstaa-usikkerhed/#nul-forskel">Læs hvorfor grænsen er 0</Link>.
             </p>
             <p className="warning-note">
@@ -253,9 +253,9 @@ export default function ResearchLiteracyPage() {
               antal blandt vaccinerede, ikke et overskud i forhold til uvaccinerede, og de er ikke delt i raske og
               personer med anden sygdom.               Derfor bliver de ikke til et NNH i lommeregneren.
             </p>
-            <p className="warning-note">
+            <p className="note">
               <strong>Hvad betyder det?</strong> Hazard ratio 1,34 har intervallet 0,90 til 2,00. Intervallet
-              indeholder 1. For et forhold er nulhypotesen 1. Det beviser ikke, at der ingen effekt er.{" "}
+              indeholder 1. Samme risiko som et forhold er tallet 1. Det beviser ikke, at der ingen effekt er.{" "}
               <Link href="/forstaa-usikkerhed/#nul-forhold">Læs hvorfor grænsen er 1</Link>.
             </p>
             <p>

@@ -4,6 +4,10 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { BNT162B2, trialRisks } from "@/lib/effects";
 
+const POLACK = "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577";
+const KARLSTAD = "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253";
+const HUSBY = "https://www.bmj.com/content/375/bmj-2021-068665";
+
 export const metadata: Metadata = {
   title: "Sådan læses usikkerhed",
   description:
@@ -25,7 +29,10 @@ export default function UncertaintyPage() {
         <h1>Sådan læses usikkerhed.</h1>
         <p className="lede">
           Et forsøg giver et skøn, ikke den endelige sandhed. Intervallet viser, hvilke tal der stadig passer med
-          forsøget. Alle eksempler herunder bruger tal, der allerede står på siden om{" "}
+          forsøget. Tallene er fra udenlandske studier, ikke fra Danmark. Kilderne er{" "}
+          <a href={POLACK} rel="noopener noreferrer">Polack et al., New England Journal of Medicine 2020</a>,{" "}
+          <a href={KARLSTAD} rel="noopener noreferrer">Karlstad et al., JAMA Cardiology 2022</a> og{" "}
+          <a href={HUSBY} rel="noopener noreferrer">Husby et al., BMJ 2021</a>. Samme tal står på siden om{" "}
           <Link href="/forstaa-forskning/">forsøgstal</Link>.
         </p>
 
