@@ -551,6 +551,15 @@ async function checkBayes(page) {
   if (!text.includes("54,7") || !text.includes("99,7") || !text.includes("73,0") || !text.includes("99,1")) {
     fail("testsiden mangler de offentliggjorte testtal");
   }
+  const form = page.locator("form.effect-form");
+  const live = form.locator("[aria-live=polite]");
+  if ((await live.innerText()).trim() !== "") fail("beregneren melder en fejl ved de forudfyldte tal");
+  await form.locator("input").nth(0).fill("");
+  await live.getByText("Skriv tre tal.").waitFor();
+  if ((await form.locator("input").nth(0).getAttribute("aria-invalid")) !== "true") fail("tomt felt er ikke markeret ugyldigt");
+  await form.locator("input").nth(0).fill("0,1");
+  await form.getByText("Af 10.000 testede").waitFor();
+  if ((await live.innerText()).includes("Skriv tre tal.")) fail("advarslen bliver stående efter et gyldigt tal");
   const proof = spawn("node", ["--experimental-strip-types", "--test", "lib/bayes.test.ts"], { cwd: root });
   const code = await new Promise((done) => proof.on("exit", done));
   if (code !== 0) fail("bayes-regnestykket gik ikke op");
