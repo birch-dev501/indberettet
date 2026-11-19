@@ -8,6 +8,8 @@ Før et commit: tjek at teksten er på dansk, at tal har en offentlig kilde, at 
 
 ## Arbejdsloop
 
+Arbejdsloopet står i [projekt-workflow](.cursor/skills/projekt-workflow/SKILL.md).
+
 Før et issue bliver implementeret, kør `/blast-radius` på den planlagte ændring. Skriv i issuet eller i commit-beskeden, hvad ændringen ellers kan ødelægge, og hvordan det blev tjekket.
 
 Ny eller ændret dansk tekst på siden køres gennem `/unslop` før commit. Det gælder teksten i brugerfladen, forklaringer, overskrifter og metabeskrivelser. Teksten skal være nøgtern og faktuel og passe med VISION.md.
