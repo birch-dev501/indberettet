@@ -222,6 +222,35 @@ async function checkSearchDismiss(page, width) {
       fail("Esc på ryd-krydset lukker ikke listen");
     });
     if ((await headerInput.inputValue()) !== "vioxx") fail("Esc på ryd-krydset ryddede teksten");
+    await headerInput.fill("vioxx");
+    await header.locator(".result-groups").waitFor();
+    await page.locator("a.brand").click();
+    await header.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail("klik på navnet lukker ikke listen");
+    });
+    if (!page.url().endsWith("/indberettet/")) fail(`klik på navnet forlod forsiden: ${page.url()}`);
+    await headerInput.fill("vioxx");
+    await header.locator(".result-groups").waitFor();
+    await page.locator("a.skip").click({ force: true });
+    await header.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail("spring-til-indhold lukker ikke listen");
+    });
+    await headerInput.fill("vioxx");
+    await header.locator(".result-groups").waitFor();
+    await page.evaluate(() => {
+      const main = document.querySelector("main");
+      if (!main) return;
+      main.setAttribute("tabindex", "-1");
+      main.focus();
+    });
+    await page.keyboard.press("Escape");
+    await header.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail("Esc uden for søgefeltet lukker ikke listen");
+    });
+    if ((await headerInput.inputValue()) !== "vioxx") fail("Esc uden for søgefeltet ryddede teksten");
+    const rule = spawn("node", ["--experimental-strip-types", "--test", "lib/search-dismiss.test.ts"], { cwd: root, stdio: "inherit" });
+    const ruleCode = await new Promise((done) => rule.on("exit", done));
+    if (ruleCode !== 0) fail("reglen for at lukke søgningen fejlede");
   }
 }
 

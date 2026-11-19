@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { formatInt } from "@/lib/format";
 import { usePinScroll } from "@/components/pin-scroll";
+import { closesSearchOnPointer } from "@/lib/search-dismiss";
 import { groupSearch, type SearchGroupId, type SearchHit, type SearchIndex } from "@/lib/search";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -138,19 +139,36 @@ export function SearchPanel({
 
   function closeList() {
     if (showingRef.current) announce("Listen er lukket");
+    showingRef.current = false;
     setOpen(false);
   }
   closeRef.current = closeList;
 
   useEffect(() => {
+    function linkHref(target: EventTarget | null): string | null {
+      const element = target instanceof Element ? target : target instanceof Node ? target.parentElement : null;
+      return element?.closest("a")?.getAttribute("href") ?? null;
+    }
     function onPointerDown(event: PointerEvent) {
       const target = event.target;
-      if (!(target instanceof Node) || rootRef.current?.contains(target)) return;
-      if (target instanceof Element && target.closest("a")) return;
+      const inside = target instanceof Node && !!rootRef.current?.contains(target);
+      if (!closesSearchOnPointer(inside, linkHref(target), window.location.pathname)) return;
+      closeRef.current();
+    }
+    function onEscapeOutside(event: globalThis.KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      const target = event.target;
+      if (target instanceof Node && rootRef.current?.contains(target)) return;
+      if (!showingRef.current) return;
+      event.preventDefault();
       closeRef.current();
     }
     document.addEventListener("pointerdown", onPointerDown);
-    return () => document.removeEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onEscapeOutside);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onEscapeOutside);
+    };
   }, []);
   const needle = query.trim();
   const groups = useMemo(
