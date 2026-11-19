@@ -100,7 +100,7 @@ export default function TestLiteracyPage() {
           <article className="card" id="bayes">
             <h2>Bayes i ord</h2>
             <p>
-              Start med, hvor mange af 10.000 der er syge. Det er forekomsten, også kaldet prior. Gang med
+              Start med, hvor mange af 10.000 der er syge. Det er forekomsten. Gang med
               sensitiviteten. Det er de sandt positive. De øvrige syge er falsk negative.
             </p>
             <p>
@@ -161,7 +161,7 @@ export default function TestLiteracyPage() {
             <h2>Hvad det har med en indberetning at gøre</h2>
             <p>
               En indberetning er en mistanke, ikke et bevis for, at medicinen er årsagen. Når bivirkningen også sker
-              uden medicinen, ligner det en lav prior. Ét positivt signal er da ofte et tilfælde.
+              uden medicinen, ligner det en lav forekomst. Ét positivt signal er da ofte et tilfælde.
             </p>
             <p>
               <Link href="/forstaa-usikkerhed/">Tilbage til interval og p-værdi</Link>.
