@@ -10,7 +10,11 @@ export function MissingPage() {
   useEffect(() => {
     const parts = window.location.pathname.split("/").filter(Boolean);
     const last = parts.at(-1) === "indberettet" ? "" : (parts.at(-1) ?? "");
-    setSegment(decodeURIComponent(last));
+    try {
+      setSegment(decodeURIComponent(last));
+    } catch {
+      setSegment(last);
+    }
   }, []);
   const query = (segment ?? "").replace(/-/g, " ");
   return (

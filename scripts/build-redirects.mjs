@@ -39,12 +39,16 @@ for (const slug of substanceSlugs) {
   used.add(`stof/${alias}`);
   writeAlias("stof", alias, `/stof/${slug}/`);
 }
-for (const slug of companySlugs) {
-  const short = slug.split("-")[0];
-  if (!short || short === slug || short.length < 3) continue;
-  const owners = [...companySlugs].filter((item) => item === short || item.startsWith(`${short}-`));
-  if (owners.length !== 1 || used.has(`firma/${short}`)) continue;
+const seenShort = new Set();
+for (const company of companies.companies) {
+  const short = company.slug.split("-")[0];
+  if (!short || short.length < 3 || seenShort.has(short) || companySlugs.has(short)) continue;
+  seenShort.add(short);
+  const rivals = companies.companies.filter((item) => item.slug.startsWith(short));
+  rivals.sort((a, b) => b.productRows - a.productRows || a.slug.localeCompare(b.slug));
+  const [winner, next] = rivals;
+  if (!winner || (next && next.productRows === winner.productRows) || used.has(`firma/${short}`)) continue;
   used.add(`firma/${short}`);
-  writeAlias("firma", short, `/firma/${slug}/`);
+  writeAlias("firma", short, `/firma/${winner.slug}/`);
 }
 console.log(`Viderestillinger: ${used.size}`);

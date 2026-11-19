@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { formatInt } from "@/lib/format";
@@ -114,26 +114,40 @@ export function SearchPanel({
   const { catalog, state } = useSearchIndex();
   const [query, setQuery] = useState(initial);
   const [active, setActive] = useState(-1);
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(initial.trim().length >= 2);
   const inputId = useId();
   const listId = useId();
   const optionPrefix = useId().replace(/:/g, "");
   const inputRef = useRef<HTMLInputElement>(null);
   const rootRef = useRef<HTMLElement>(null);
-  const openRef = useRef(true);
+  const showingRef = useRef(false);
+  const spoken = useRef(0);
+  const closeRef = useRef<() => void>(() => {});
   const [status, setStatus] = useState("");
   const router = useRouter();
   usePinScroll(inputRef);
-  openRef.current = open;
+
+  function announce(message: string) {
+    spoken.current += 1;
+    const ticket = spoken.current;
+    setStatus("");
+    requestAnimationFrame(() => {
+      if (spoken.current === ticket) setStatus(message);
+    });
+  }
 
   function closeList() {
-    if (openRef.current) setStatus("Listen er lukket");
+    if (showingRef.current) announce("Listen er lukket");
     setOpen(false);
   }
+  closeRef.current = closeList;
 
   useEffect(() => {
     function onPointerDown(event: PointerEvent) {
-      if (!rootRef.current?.contains(event.target as Node)) closeList();
+      const target = event.target;
+      if (!(target instanceof Node) || rootRef.current?.contains(target)) return;
+      if (target instanceof Element && target.closest("a")) return;
+      closeRef.current();
     }
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
@@ -144,6 +158,20 @@ export function SearchPanel({
     [catalog, compact, needle],
   );
   const flatCount = groups.reduce((sum, group) => sum + group.hits.length, 0);
+  const listVisible = open && needle.length >= 2 && (groups.length > 0 || state === "ready");
+  showingRef.current = listVisible;
+
+  function onEscape(event: KeyboardEvent) {
+    if (event.key !== "Escape") return;
+    event.preventDefault();
+    if (listVisible) {
+      closeList();
+      return;
+    }
+    setQuery("");
+    setActive(-1);
+    announce("Søgningen er ryddet");
+  }
 
   function move(next: number) {
     if (flatCount === 0) return;
@@ -158,6 +186,7 @@ export function SearchPanel({
       ref={rootRef}
       className={compact ? "search search-compact" : "search"}
       data-search={compact ? "header" : "page"}
+      onKeyDown={onEscape}
     >
       <label className="kicker" htmlFor={inputId}>
         Søg
@@ -199,15 +228,6 @@ export function SearchPanel({
               event.preventDefault();
               router.push(`/soeg/?q=${encodeURIComponent(needle)}`);
             }
-          } else if (event.key === "Escape") {
-            event.preventDefault();
-            if (open && (groups.length > 0 || needle.length >= 2)) {
-              closeList();
-              return;
-            }
-            setQuery("");
-            setActive(-1);
-            setStatus("Søgningen er ryddet");
           }
         }}
       />
@@ -220,7 +240,7 @@ export function SearchPanel({
             setQuery("");
             setActive(-1);
             setOpen(false);
-            setStatus("Søgningen er ryddet");
+            announce("Søgningen er ryddet");
             inputRef.current?.focus();
           }}
         >
@@ -232,7 +252,7 @@ export function SearchPanel({
       <div id={listId}>
         {state === "loading" && !compact && <p className="muted">Henter register…</p>}
         {state === "error" && <p className="warning-note">Søgningen kunne ikke gennemføres. Prøv igen.</p>}
-        {state === "ready" && needle.length >= 2 && groups.length === 0 && (
+        {open && state === "ready" && needle.length >= 2 && groups.length === 0 && (
           <div className="empty-search">
             <p className="muted">Ingen træf på “{needle}”.</p>
           </div>
