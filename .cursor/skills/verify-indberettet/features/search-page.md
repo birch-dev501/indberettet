@@ -18,7 +18,7 @@ Preconditions:
 - The export is served and the doctor check passed.
 
 - Open `/soeg/?q=Pfizer`. The tablist contains `Bødesager`.
-- Choose the Bødesager button. The result text contains `Bextra` and no longer contains a Stoffer count.
+- Choose the Bødesager button. The result text contains `Bextra` and no longer contains a Stoffer count. The heading is painted in uppercase, so the check matches `stoffer` in any case.
 
 ## Gotchas
 

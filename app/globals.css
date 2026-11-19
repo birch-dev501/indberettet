@@ -464,7 +464,8 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .header-search { position: relative; flex: 1 1 16rem; min-width: 10rem; }
 .header-search .search { margin: 0; }
 .header-search .kicker { position: absolute; width: 1px; height: 1px; overflow: hidden; }
-.search-compact .result-list,
+.search-compact { position: relative; }
+.search-compact .result-groups,
 .search-compact .empty-search,
 .search-compact .warning-note {
   position: absolute;

@@ -25,4 +25,4 @@ Preconditions:
 ## Gotchas
 
 - The catalogue and company pages keep their own filters. This journey uses the header field.
-- Results are the visible text of `.result-groups`, including groups below the first screen of the dropdown.
+- The dropdown is one panel. Group lists must not share the same screen rectangle. Headings are uppercase, so a filter check matches `stoffer` without caring about case.

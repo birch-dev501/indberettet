@@ -79,8 +79,28 @@ async function doctor() {
 
 async function groups(page) {
   const box = page.locator("search[data-search=header]");
-  await box.locator(".result-groups").waitFor({ timeout: 8000 });
-  return (await box.locator(".result-groups").innerText()).replace(/\s+/g, " ");
+  const panel = box.locator(".result-groups");
+  await panel.waitFor({ timeout: 8000 });
+  const covered = await panel.evaluate((node) => {
+    const rows = [...node.querySelectorAll(".result-list")].map((list) => {
+      const row = list.querySelector("a, .plain") ?? list;
+      const rect = row.getBoundingClientRect();
+      const heading = list.closest(".result-group")?.querySelector("h3")?.textContent ?? "";
+      return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right, heading: heading.replace(/\s+/g, " ").trim() };
+    });
+    const hits = [];
+    for (let i = 0; i < rows.length; i += 1) {
+      for (let j = i + 1; j < rows.length; j += 1) {
+        const a = rows[i];
+        const b = rows[j];
+        const overlaps = a.left < b.right - 1 && a.right > b.left + 1 && a.top < b.bottom - 1 && a.bottom > b.top + 1;
+        if (overlaps) hits.push(`${a.heading} dækker ${b.heading}`);
+      }
+    }
+    return hits;
+  });
+  if (covered.length > 0) fail(`header-søgning dækker grupper: ${covered.join("; ")}`);
+  return (await panel.innerText()).replace(/\s+/g, " ");
 }
 
 async function search(page, query) {
@@ -150,7 +170,7 @@ async function checkSearchPage(page, width) {
   await page.getByRole("button", { name: /Bødesager/ }).click();
   const text = (await page.locator(".result-groups").innerText()).replace(/\s+/g, " ");
   if (!text.includes("Bextra")) fail(`${width} /soeg/ Bødesager viser ikke Bextra`);
-  if (/Stoffer\s+\d/.test(text)) fail(`${width} /soeg/ filteret gemmer ikke de andre grupper`);
+  if (/stoffer\s+\d/i.test(text)) fail(`${width} /soeg/ filteret gemmer ikke de andre grupper`);
   await page.screenshot({ path: join(evidence, `soeg-${width}.png`) });
 }
 
