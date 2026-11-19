@@ -23,3 +23,10 @@ body:
       description: Skriv hvad du så, og hvad du forventede.
     validations:
       required: true
+  - type: checkboxes
+    id: vision
+    attributes:
+      label: Vision
+      options:
+        - label: Passer det med VISION.md?
+          required: true

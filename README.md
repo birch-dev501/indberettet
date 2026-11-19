@@ -2,6 +2,8 @@
 
 Dansk site der viser formodede bivirkninger fra Lægemiddelstyrelsens åbne, interaktive bivirkningsoversigter. Tallene er indberetninger, ikke bevis for årsag og ikke en hyppighed.
 
+Nordstjernen står i [VISION.md](VISION.md). Agenter læser den sammen med [AGENTS.md](AGENTS.md). Hver ændring tjekkes mod visionen.
+
 ## Kør lokalt
 
 ```bash

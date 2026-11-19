@@ -19,3 +19,10 @@ body:
     attributes:
       label: Side
       description: Valgfri adresse, hvis forslaget gælder en bestemt side.
+  - type: checkboxes
+    id: vision
+    attributes:
+      label: Vision
+      options:
+        - label: Passer det med VISION.md?
+          required: true

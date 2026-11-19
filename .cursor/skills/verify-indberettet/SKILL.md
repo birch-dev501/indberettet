@@ -5,6 +5,8 @@ description: "Build the Indberettet static export, serve it under /indberettet, 
 
 # Verify Indberettet
 
+[VISION.md](../../../VISION.md) is the north star. A check that only proves a behavior the vision rejects is not done.
+
 The surface is the static Next.js site. One command builds it, serves it, and runs every feature below at 1280px and 390px. A second copy cannot share the port.
 
 ## Launch

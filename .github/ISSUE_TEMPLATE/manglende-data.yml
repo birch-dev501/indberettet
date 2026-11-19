@@ -22,3 +22,10 @@ body:
       description: Siden eller søgningen, hvor det burde have stået.
     validations:
       required: true
+  - type: checkboxes
+    id: vision
+    attributes:
+      label: Vision
+      options:
+        - label: Passer det med VISION.md?
+          required: true
