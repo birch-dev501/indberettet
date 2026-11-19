@@ -25,6 +25,18 @@ def load(path: Path) -> dict:
     return {}
 
 
+def compare(previous: dict[str, int], current: dict[str, int]) -> str | None:
+    for slug, before in previous.items():
+        if before < 50:
+            continue
+        after = current.get(slug)
+        if after is None:
+            return f"{slug} mangler i det nye udtræk ({before} indberetninger)"
+        if after < before * 0.8:
+            return f"{slug} faldt fra {before} til {after} indberetninger"
+    return None
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--before", type=Path, help="Tidligere data/index.json")
@@ -52,13 +64,10 @@ def main() -> None:
 
     if args.before:
         previous = {item["slug"]: int(item["reports"]) for item in load(args.before).get("substances") or []}
-        for item in substances:
-            before = previous.get(item["slug"])
-            if before is None or before < 50:
-                continue
-            after = int(item["reports"])
-            if after < before * 0.8:
-                fail(f"{item['slug']} faldt fra {before} til {after} indberetninger")
+        current = {item["slug"]: int(item["reports"]) for item in substances}
+        mismatch = compare(previous, current)
+        if mismatch:
+            fail(mismatch)
     print(f"Udtrækket hænger sammen ({len(substances)} stoffer).")
 
 

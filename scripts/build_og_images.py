@@ -28,19 +28,66 @@ def font(size: int, bold: bool = False) -> ImageFont.ImageFont:
     raise SystemExit("Mangler DejaVu eller Liberation. Installer fonts-dejavu-core.")
 
 
+def wrap(text: str, face: ImageFont.ImageFont, width: int) -> list[str]:
+    words = text.split()
+    lines: list[str] = []
+    current = ""
+    for word in words:
+        trial = word if not current else f"{current} {word}"
+        if face.getlength(trial) <= width:
+            current = trial
+            continue
+        if current:
+            lines.append(current)
+        current = word
+    if current:
+        lines.append(current)
+    return lines
+
+
+def title_block(title: str, width: int) -> tuple[ImageFont.ImageFont, list[str]]:
+    for size in (56, 44, 36, 28, 22):
+        face = font(size, True)
+        lines = wrap(title, face, width)
+        if len(lines) <= 3 and all(face.getlength(line) <= width for line in lines):
+            return face, lines
+    face = font(22, True)
+    return face, wrap(title, face, width)
+
+
 def card(title: str, lines: list[str], destination: Path) -> None:
     image = Image.new("RGB", (W, H), PAPER)
     draw = ImageDraw.Draw(image)
     draw.rectangle((0, 0, 28, H), fill=TEAL)
-    draw.text((72, 70), "Indberettet", font=font(28, True), fill=TEAL)
-    draw.text((72, 150), title[:42], font=font(64, True), fill=INK)
-    y = 260
+    draw.text((72, 64), "Indberettet", font=font(28, True), fill=TEAL)
+    face, title_lines = title_block(title, W - 120)
+    y = 130
+    for line in title_lines:
+        draw.text((72, y), line, font=face, fill=INK)
+        y += int(face.size * 1.15)
+    y += 18
+    body = font(32)
     for line in lines:
-        draw.text((72, y), line, font=font(36), fill=INK)
-        y += 52
-    draw.text((72, 540), "Formodede bivirkninger. Ikke bevis for årsag.", font=font(24), fill=MUTED)
+        for wrapped in wrap(line, body, W - 120):
+            draw.text((72, y), wrapped, font=body, fill=INK)
+            y += 42
+    draw.text((72, 548), "Formodede bivirkninger. Ikke bevis for årsag.", font=font(24), fill=MUTED)
     destination.parent.mkdir(parents=True, exist_ok=True)
     image.save(destination, "PNG")
+
+
+def company_lines(company: dict) -> list[str]:
+    rows = company.get("substances") or []
+    if not rows:
+        return ["Ingen bivirkningsoversigt er knyttet til firmaet."]
+    reports = sum(int(item["reports"]) for item in rows)
+    serious = sum(int(item["seriousReports"]) for item in rows)
+    fatal = sum(int(item["fatalReports"]) for item in rows)
+    return [
+        "Tal for det aktive stof, ikke for firmaet.",
+        f"{danish(reports)} indberetninger",
+        f"{danish(serious)} alvorlige · {danish(fatal)} ved dødsfald",
+    ]
 
 
 def danish(number: int) -> str:
@@ -61,17 +108,7 @@ def main() -> None:
             OUT / "stof" / f"{item['slug']}.png",
         )
     for company in companies["companies"]:
-        reports = sum(item["reports"] for item in company["substances"])
-        serious = sum(item["seriousReports"] for item in company["substances"])
-        fatal = sum(item["fatalReports"] for item in company["substances"])
-        card(
-            company["label"][:42],
-            [
-                f"{danish(reports)} indberetninger",
-                f"{danish(serious)} alvorlige · {danish(fatal)} ved dødsfald",
-            ],
-            OUT / "firma" / f"{company['slug']}.png",
-        )
+        card(company["label"], company_lines(company), OUT / "firma" / f"{company['slug']}.png")
     print(f"Delingsbilleder: {1 + len(index['substances']) + len(companies['companies'])}")
 
 

@@ -239,16 +239,6 @@
       "confidence": "high",
       "pageTitle": "Depression, en oversigt"
     },
-    "Diarrhoea": {
-      "danish": "Diarré",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/diarre-akut/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Diarré, akut"
-    },
     "Dizziness": {
       "danish": "Svimmelhed",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/oevrige-sygdomme/svimmelhed/",
@@ -419,16 +409,6 @@
       "confidence": "high",
       "pageTitle": "Helvedesild"
     },
-    "Hypercholesterolaemia": {
-      "danish": "Højt kolesterol",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/kolesterolforstyrrelser/hoejt-kolesterol-hyperlipidaemi/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Højt kolesterol (dyslipidæmi)"
-    },
     "Hyperhidrosis": {
       "danish": "Svedtendens",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/symptomer/svedtendens/",
@@ -498,16 +478,6 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Søvnløshed"
-    },
-    "Iron deficiency anaemia": {
-      "danish": "Jernmangel",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/blod/sygdomme/anaemier/jernmangel/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Jernmangel"
     },
     "Jaundice": {
       "danish": "Gulsot",
@@ -599,16 +569,6 @@
       "confidence": "high",
       "pageTitle": "Forkølelse"
     },
-    "Nausea": {
-      "danish": "Kvalme og opkastninger",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Kvalme og opkastninger"
-    },
     "Nephrolithiasis": {
       "danish": "Nyresten",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/nyrer-og-urinveje/sygdomme/nyresten/nyresten-en-oversigt/",
@@ -618,16 +578,6 @@
       "audience": "borger",
       "confidence": "high",
       "pageTitle": "Nyresten"
-    },
-    "Obesity": {
-      "danish": "Overvægt og fedme",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/sygdomme/overvaegt-og-kost/overvaegt-og-fedme/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Overvægt og fedme"
     },
     "Oropharyngeal pain": {
       "danish": "Halssmerter",
@@ -959,16 +909,6 @@
       "confidence": "high",
       "pageTitle": "D-vitamin-mangel"
     },
-    "Vomiting": {
-      "danish": "Kvalme og opkastninger",
-      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
-      "source": "sundhed.dk, Patienthåndbogen",
-      "kind": "direct",
-      "verified": true,
-      "audience": "borger",
-      "confidence": "high",
-      "pageTitle": "Kvalme og opkastninger"
-    },
     "Weight decreased": {
       "danish": "Vægttab",
       "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/vaegttab-hos-voksne/",
@@ -1199,15 +1139,15 @@
   },
   "coverage": {
     "reactionOccurrences": 692178,
-    "directOccurrences": 167408,
-    "directShare": 0.2419,
-    "directTerms": 77,
+    "directOccurrences": 139835,
+    "directShare": 0.202,
+    "directTerms": 71,
     "professionalTerms": 3,
     "professionalOccurrences": 10127,
     "englishTerms": 18,
     "englishOccurrences": 85560,
-    "mappedTerms": 98,
-    "unlinkedOccurrences": 429083,
+    "mappedTerms": 92,
+    "unlinkedOccurrences": 456656,
     "socWithDirectLink": 16,
     "socCount": 27
   }

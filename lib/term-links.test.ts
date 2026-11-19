@@ -55,6 +55,9 @@ test("hovedpine og trombocytopeni peger på den rigtige artikel", () => {
 
   const unknown = resolveTerm("Totally Unknown Term", file);
   assert.equal(unknown.href, null);
+  for (const term of ["Nausea", "Vomiting", "Diarrhoea", "Iron deficiency anaemia", "Hypercholesterolaemia", "Obesity"]) {
+    assert.equal(resolveTerm(term, file).href, null, term);
+  }
 
   assert.equal(resolveSoc("Nerv", "Nervesystemet", file).search, false);
 });

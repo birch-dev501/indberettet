@@ -111,6 +111,10 @@ jobs:
   deploy:
     needs: update
     if: needs.update.result == 'success' && needs.update.outputs.deploy == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     environment:
       name: github-pages

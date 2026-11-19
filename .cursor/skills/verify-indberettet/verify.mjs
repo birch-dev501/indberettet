@@ -395,6 +395,20 @@ async function checkDataDate(page) {
   if (!stamp || !/^\d{4}-\d{2}-\d{2}$/.test(stamp)) fail(`data-dato er ${stamp}`);
 }
 
+function python(code) {
+  return new Promise((ready) => {
+    const child = spawn("python3", ["-c", code], { cwd: root, stdio: ["ignore", "pipe", "pipe"] });
+    let out = "";
+    child.stdout.on("data", (chunk) => {
+      out += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      out += chunk;
+    });
+    child.on("exit", (code) => ready({ code, out }));
+  });
+}
+
 async function checkExtractGuard() {
   const good = spawn("python3", ["scripts/validate_extract.py"], { cwd: root });
   const goodCode = await new Promise((done) => good.on("exit", done));
@@ -402,6 +416,47 @@ async function checkExtractGuard() {
   const bad = spawn("python3", ["scripts/validate_extract.py", "--simulate-drop"], { cwd: root });
   const badCode = await new Promise((done) => bad.on("exit", done));
   if (badCode === 0) fail("simuleret afvigelse blev godkendt");
+  const hole = await python(`
+import importlib.util
+spec = importlib.util.spec_from_file_location("guard", "scripts/validate_extract.py")
+mod = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(mod)
+missing = mod.compare({"covid-19-vaccines": 45537}, {})
+drop = mod.compare({"semaglutide": 3329}, {"semaglutide": 2662})
+small = mod.compare({"aclidinium": 49}, {"aclidinium": 1})
+assert missing and "mangler" in missing, missing
+assert drop and "faldt" in drop, drop
+assert small is None, small
+print("ok")
+`);
+  if (hole.code !== 0) fail(`udtrækstjekket godkendte et hul: ${hole.out.trim()}`);
+  const pictures = await python(`
+import importlib.util, hashlib
+from pathlib import Path
+spec = importlib.util.spec_from_file_location("og", "scripts/build_og_images.py")
+og = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(og)
+out = Path(".verify/og-probe")
+names = [
+ "Respiratory Syncytial Virus, Subgroup A, Stabilized Prefusion F Protein 847a",
+ "Respiratory Syncytial Virus, Subgroup B, Stabilized Prefusion F Protein 847b",
+]
+paths = []
+for name in names:
+ dest = out / f"{name[-4:]}.png"
+ og.card(name, ["118 indberetninger", "19 alvorlige · 0 ved dødsfald"], dest)
+ paths.append(dest)
+assert paths[0].read_bytes() != paths[1].read_bytes()
+empty = og.company_lines({"substances": []})
+assert not any("0 indberetninger" in line for line in empty), empty
+print("ok")
+`);
+  if (pictures.code !== 0) fail(`delingsbilleder kan ikke skelnes: ${pictures.out.trim()}`);
+  const links = JSON.parse(readFileSync(join(root, "data/term-links.json"), "utf8"));
+  for (const term of ["Nausea", "Vomiting", "Diarrhoea", "Iron deficiency anaemia", "Hypercholesterolaemia", "Obesity"]) {
+    const row = links.terms[term];
+    if (row?.url && row.verified) fail(`${term} linker stadig til ${row.url}`);
+  }
 }
 
 async function main() {
