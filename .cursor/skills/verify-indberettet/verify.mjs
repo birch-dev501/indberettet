@@ -235,7 +235,8 @@ async function checkSearchDismiss(page, width) {
     if (!page.url().endsWith("/indberettet/")) fail(`klik på navnet forlod forsiden: ${page.url()}`);
     await headerInput.fill("vioxx");
     await header.locator(".result-groups").waitFor();
-    await page.locator("a.skip").click({ force: true });
+    await page.locator("a.skip").focus();
+    await page.locator("a.skip").click();
     await header.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
       fail("spring-til-indhold lukker ikke listen");
     });
