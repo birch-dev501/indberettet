@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { formatInt } from "@/lib/format";
+import { usePinScroll } from "@/components/pin-scroll";
 import { searchCatalog, type SearchHit, type SearchIndex } from "@/lib/search";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -19,6 +20,11 @@ export function SearchPanel({
   const [state, setState] = useState<"idle" | "loading" | "ready" | "error">("idle");
   const inputId = useId();
   const listId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const needle = query.trim();
+  const result =
+    needle.length < 2 || !catalog ? { hits: [] as SearchHit[], suggestions: [] as string[] } : searchCatalog(catalog, needle);
+  usePinScroll(inputRef);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -38,10 +44,6 @@ export function SearchPanel({
     return () => controller.abort();
   }, []);
 
-  const needle = query.trim();
-  const result =
-    needle.length < 2 || !catalog ? { hits: [] as SearchHit[], suggestions: [] as string[] } : searchCatalog(catalog, needle);
-
   return (
     <search className="search">
       <label className="kicker" htmlFor={inputId}>
@@ -49,11 +51,15 @@ export function SearchPanel({
       </label>
       <input
         id={inputId}
+        ref={inputRef}
         role="searchbox"
         autoFocus={autoFocus}
         value={query}
         placeholder={placeholder}
         aria-controls={listId}
+        autoComplete="off"
+        autoCorrect="off"
+        spellCheck={false}
         onChange={(event) => setQuery(event.target.value)}
       />
       <div id={listId}>

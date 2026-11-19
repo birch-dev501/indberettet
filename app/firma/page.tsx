@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SearchPanel } from "@/components/search-panel";
+import { CompanyIndex } from "@/components/company-index";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SUBSTANCE_COUNT_NOTE } from "@/lib/companies";
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
 
 export default function CompaniesPage() {
   const companies = getCompanyCatalog().companies.filter((company) => company.productRows > 0);
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ".split("");
   return (
     <>
       <SiteHeader current="firma" />
@@ -26,33 +24,15 @@ export default function CompaniesPage() {
           lægemidler. Navne som «Novo Nordisk A/S» og «Eli Lilly Nederland B.V.» er samlet under ét firmanavn.
         </p>
         <p className="warning-note">{SUBSTANCE_COUNT_NOTE}</p>
-        <SearchPanel placeholder="Søg på firma, fx Novo eller Eli Lilly" />
-        <nav className="alpha" aria-label="Bogstaver">
-          {letters.map((letter) => (
-            <a key={letter} href={`#firma-${letter}`}>
-              {letter}
-            </a>
-          ))}
-        </nav>
-        {letters.map((letter) => {
-          const group = companies.filter((company) => company.label.toLocaleUpperCase("da").startsWith(letter));
-          if (group.length === 0) return null;
-          return (
-            <section key={letter} id={`firma-${letter}`}>
-              <h2>{letter}</h2>
-              <div className="substance-index">
-                {group.map((company) => (
-                  <Link key={company.slug} href={`/firma/${company.slug}`}>
-                    {company.label}{" "}
-                    <small>
-                      {formatInt(company.substances.length)} stoffer · {formatInt(company.productRows)} præparatrækker
-                    </small>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          );
-        })}
+        <CompanyIndex
+          companies={companies.map((company) => ({
+            slug: company.slug,
+            label: company.label,
+            aliases: [...new Set([...company.variants, ...(company.searchTerms ?? [])])],
+            productRows: company.productRows,
+            substanceCount: company.substances.length,
+          }))}
+        />
       </main>
       <SiteFooter />
     </>

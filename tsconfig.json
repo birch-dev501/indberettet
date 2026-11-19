@@ -24,5 +24,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "scripts", "lib/search.test.ts", "lib/rates.test.ts", "lib/term-links.test.ts", "lib/companies.test.ts", "lib/case-notes.test.ts", "lib/effects.test.ts"]
+  "exclude": ["node_modules", "scripts", "lib/search.test.ts", "lib/rates.test.ts", "lib/term-links.test.ts", "lib/companies.test.ts", "lib/case-notes.test.ts", "lib/effects.test.ts", "lib/company-filter.test.ts"]
 }

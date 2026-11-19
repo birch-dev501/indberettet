@@ -19,7 +19,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-anchor: none; }
 html, body { max-width: 100%; }
 body {
   margin: 0;
@@ -314,8 +314,17 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
 .search {
   display: grid;
   gap: 0.7rem;
+  overflow-anchor: none;
 }
-.search input {
+.sticky-search {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 9;
+  background: var(--paper);
+  padding: 0.15rem 0 0.7rem;
+  overflow-anchor: none;
+}
+.sticky-search input, .search input {
   width: 100%;
   min-height: 44px;
   border: 1px solid var(--line);
@@ -324,7 +333,8 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   padding: 0.9rem 1rem;
   font-size: 1.05rem;
 }
-.result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.result-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; overflow-anchor: none; }
+.index-filter, .substance-index, main { overflow-anchor: none; }
 .result-list a, .result-list .plain {
   display: block;
   text-decoration: none;
