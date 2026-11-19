@@ -175,7 +175,7 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 1.25rem;
-  padding: 1.2rem 1.25rem 1.3rem;
+  padding: clamp(16px, 4vw, 32px);
   box-shadow: var(--shadow);
 }
 .card a.stretch { text-decoration: none; color: inherit; }
@@ -220,7 +220,8 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   z-index: 1;
 }
 
-.section { padding: 1rem 0 2.5rem; }
+.section:not(.card) { padding: 1rem 0 2.5rem; }
+.card.section { margin: 1rem 0 2.5rem; }
 .category-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -305,7 +306,7 @@ h3 { font-size: 1.35rem; margin: 0 0 0.4rem; }
   background: var(--card);
   border-top: 4px solid var(--amber);
   border-radius: 0.9rem;
-  padding: 1rem 1rem 1.1rem;
+  padding: clamp(16px, 4vw, 32px);
 }
 .caveat:nth-child(2) { border-top-color: var(--teal); }
 .caveat:nth-child(3) { border-top-color: var(--wine); }

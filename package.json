@@ -11,6 +11,7 @@
     "lint": "eslint",
     "test": "node --experimental-strip-types --test lib/search.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts lib/case-notes.test.ts lib/effects.test.ts lib/company-filter.test.ts",
     "test:pwa": "node scripts/check-pwa.mjs",
+    "test:cards": "node scripts/check-card-padding.mjs",
     "test:mobile": "node scripts/check-mobile.mjs",
     "ingest": "python3 scripts/ingest.py"
   },
