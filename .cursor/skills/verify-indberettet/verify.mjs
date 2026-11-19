@@ -298,7 +298,7 @@ async function checkSticky(page, width) {
 }
 
 async function checkLayout(page, width) {
-  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/boedesager/"];
+  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/forstaa-usikkerhed/", "/boedesager/"];
   for (const path of paths) {
     const response = await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
     if (!response || response.status() >= 400) {
@@ -466,6 +466,21 @@ function python(code) {
   });
 }
 
+async function checkUncertainty(page) {
+  await page.goto(`${base}/forstaa-forskning/`, { waitUntil: "networkidle" });
+  const fromTrial = page.locator("a[href*='/forstaa-usikkerhed']");
+  if ((await fromTrial.count()) < 1) fail("forsøgssiden linker ikke til usikkerhed");
+  await page.goto(`${base}/forstaa-usikkerhed/`, { waitUntil: "networkidle" });
+  if ((await page.locator("h1").innerText()) !== "Sådan læses usikkerhed.") fail("usikkerhedssiden mangler overskrift");
+  const text = await page.locator("main").innerText();
+  for (const part of ["18.198", "18.325", "95,0", "90,3", "97,6", "3,70", "7,39", "0,22", "0,90", "2,00", "2,30", "6,68"]) {
+    if (!text.includes(part)) fail(`usikkerhedssiden mangler tallet ${part}`);
+  }
+  if (!text.includes("nulhypotesen er 0") && !text.includes("nulhypotesen 0")) fail("siden siger ikke at forskellens nul er 0");
+  if (!text.includes("Nulhypotesen er 1")) fail("siden siger ikke at forholdets nul er 1");
+  if (!text.toLowerCase().includes("beviser ikke")) fail("siden siger ikke at ikke-signifikant ikke er et bevis");
+}
+
 async function checkExtractGuard() {
   const good = spawn("python3", ["scripts/validate_extract.py"], { cwd: root });
   const goodCode = await new Promise((done) => good.on("exit", done));
@@ -545,6 +560,7 @@ async function main() {
         await checkShare(page);
         await checkSitemap(page);
         await checkDataDate(page);
+        await checkUncertainty(page);
         await checkExtractGuard();
       }
       await page.close();

@@ -38,7 +38,8 @@ export default function ResearchLiteracyPage() {
         <p className="lede">
           En overskrift siger ofte, at et lægemiddel nedsætter risikoen med 95 %. Det tal er næsten altid den relative
           reduktion. Det siger, hvor stor en andel af de tilfælde, der ellers ville være sket, der udeblev. Det siger
-          ikke, hvor mange mennesker der faktisk undgik noget.
+          ikke, hvor mange mennesker der faktisk undgik noget.{" "}
+          <Link href="/forstaa-usikkerhed/">Sådan læses intervallet og p-værdien</Link>.
         </p>
 
         <section className="section stack">
@@ -114,6 +115,11 @@ export default function ResearchLiteracyPage() {
               og {perThousandPlacebo.toLocaleString("da-DK", { maximumFractionDigits: 1 })} pr. 1.000 i placebogruppen.
               Artiklens 95,0 % er regnet på tilfælde pr. observationstid med en bayesiansk model. De to måder lander på
               samme afrundede relative tal.
+            </p>
+            <p className="warning-note">
+              <strong>Hvad betyder det?</strong> {rrr} % er den relative reduktion. {arr} procentpoint er den absolutte
+              forskel. Kredibilitetsintervallet 90,3 til 97,6 ligger over 0 og er ikke et konfidensinterval.{" "}
+              <Link href="/forstaa-usikkerhed/#relativ-absolut">Regnestykket står her</Link>.
             </p>
             <p>
               NNT på 119 betyder ikke, at 119 mennesker skal vaccineres for at én undgår død. Det betyder, at der i
@@ -197,6 +203,11 @@ export default function ResearchLiteracyPage() {
               27. december 2020 til 5. oktober 2021.
             </p>
             <p className="warning-note">
+              <strong>Hvad betyder det?</strong> 3,70 til 7,39 ligger over 0. Intervallet omkring 0,22 går gennem 0.
+              For en forskel er nulhypotesen 0.{" "}
+              <Link href="/forstaa-usikkerhed/#nul-forskel">Læs hvorfor grænsen er 0</Link>.
+            </p>
+            <p className="warning-note">
               CDC-modellen er amerikansk og kan ikke overføres direkte til Danmark. I august 2021 til august 2023 havde
               40,3 % af de amerikanske voksne svær overvægt, målt som BMI på 30 eller derover (
               <a href={CDC_OBESITY} rel="noopener noreferrer">
@@ -240,7 +251,12 @@ export default function ResearchLiteracyPage() {
               ratio 1,48 (0,74–2,98). Efter mRNA-1273 var raten 4,2 pr. 100.000 (2,6–6,4) og hazard ratio 3,92
               (2,30–6,68); blandt 12–39-årige 5,7 pr. 100.000 (3,3–9,3) og hazard ratio 5,24 (2,47–11,12). Raterne er
               antal blandt vaccinerede, ikke et overskud i forhold til uvaccinerede, og de er ikke delt i raske og
-              personer med anden sygdom. Derfor bliver de ikke til et NNH i lommeregneren.
+              personer med anden sygdom.               Derfor bliver de ikke til et NNH i lommeregneren.
+            </p>
+            <p className="warning-note">
+              <strong>Hvad betyder det?</strong> Hazard ratio 1,34 har intervallet 0,90 til 2,00. Intervallet
+              indeholder 1. For et forhold er nulhypotesen 1. Det beviser ikke, at der ingen effekt er.{" "}
+              <Link href="/forstaa-usikkerhed/#nul-forhold">Læs hvorfor grænsen er 1</Link>.
             </p>
             <p>
               Det nordiske overskud ovenfor, fra Karlstad, omfatter også Danmark, men stadig ikke en dansk

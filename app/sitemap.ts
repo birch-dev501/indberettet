@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/boedesager/",
     "/firma/",
     "/forstaa-forskning/",
+    "/forstaa-usikkerhed/",
     "/katalog/",
     "/kategori/",
     "/om-data/",

@@ -34,6 +34,8 @@ export function SiteFooter() {
             <br />
             <Link href="/forstaa-forskning">Sådan læses forsøgstal</Link>
             <br />
+            <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
+            <br />
             <a href="https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin/meld-en-bivirkning/">
               Meld en bivirkning
             </a>

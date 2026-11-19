@@ -413,6 +413,7 @@ const GROUP_LABEL: Record<SearchGroupId, string> = {
 
 const SITE_PAGES: { href: string; title: string; terms: string[] }[] = [
   { href: "/forstaa-forskning", title: "Sådan læses forsøgstal", terms: ["forsog", "forsogstal", "nnt", "nnh", "relativ risiko", "absolut risiko", "risiko"] },
+  { href: "/forstaa-usikkerhed", title: "Sådan læses usikkerhed", terms: ["konfidensinterval", "p-vaerdi", "signifikans", "usikkerhed"] },
   { href: "/om-data", title: "Sådan læses tallene", terms: ["om data", "metode", "indberetning"] },
   { href: "/boedesager", title: "Store bødesager", terms: ["bode", "bodesag", "skandale", "forlig"] },
   { href: "/kategori", title: "Grupper efter ATC", terms: ["atc", "gruppe", "grupper"] },
