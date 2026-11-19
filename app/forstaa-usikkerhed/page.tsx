@@ -23,7 +23,7 @@ export default function UncertaintyPage() {
 
   return (
     <>
-      <SiteHeader current="forskning" />
+      <SiteHeader current="usikkerhed" />
       <main id="indhold" className="wrap page-head">
         <p className="kicker">Forsøgstal</p>
         <h1>Sådan læses usikkerhed.</h1>

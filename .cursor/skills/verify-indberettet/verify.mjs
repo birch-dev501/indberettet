@@ -495,6 +495,28 @@ function python(code) {
   });
 }
 
+async function checkLearningNav(page, width) {
+  const pages = [
+    ["/forstaa-forskning/", "/forstaa-forskning/", "Forsøgstal"],
+    ["/forstaa-usikkerhed/", "/forstaa-usikkerhed/", "Usikkerhed"],
+    ["/forstaa-testen/", "/forstaa-testen/", "En test"],
+  ];
+  for (const [path, hrefPart, label] of pages) {
+    await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
+    if (width <= 390) await page.getByRole("button", { name: "Menu" }).click();
+    const nav = page.getByRole("navigation", { name: "Hovedmenu" });
+    const current = nav.locator("[aria-current=page]");
+    if ((await current.count()) !== 1) fail(`${width} ${path} har ${(await current.count())} aktuelle menupunkter`);
+    const href = await current.getAttribute("href");
+    const text = (await current.innerText()).replace(/\s+/g, " ").trim();
+    if (!href?.includes(hrefPart)) fail(`${width} ${path} siger at ${href} er den åbne side`);
+    if (text !== label) fail(`${width} ${path} kalder den åbne side ${text}`);
+    for (const item of ["Usikkerhed", "En test"]) {
+      if ((await nav.getByRole("link", { name: item, exact: true }).count()) !== 1) fail(`${width} menuen mangler ${item}`);
+    }
+  }
+}
+
 async function checkUncertainty(page) {
   await page.goto(`${base}/forstaa-forskning/`, { waitUntil: "networkidle" });
   const fromTrial = page.locator("a[href*='/forstaa-usikkerhed']");
@@ -602,6 +624,7 @@ async function main() {
       await checkCalculator(page, viewport.width);
       await checkSticky(page, viewport.width);
       await checkLayout(page, viewport.width);
+      await checkLearningNav(page, viewport.width);
       if (viewport.width === 1280) {
         await checkPwa(page);
         await checkReport(page);

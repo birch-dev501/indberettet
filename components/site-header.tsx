@@ -12,6 +12,8 @@ const LINKS = [
   { href: "/boedesager", id: "sager", label: "Bødesager" },
   { href: "/om-data", id: "om", label: "Om data" },
   { href: "/forstaa-forskning", id: "forskning", label: "Forsøgstal" },
+  { href: "/forstaa-usikkerhed", id: "usikkerhed", label: "Usikkerhed" },
+  { href: "/forstaa-testen", id: "testen", label: "En test" },
 ] as const;
 
 export function SiteHeader({ current }: { current?: (typeof LINKS)[number]["id"] | "home" }) {

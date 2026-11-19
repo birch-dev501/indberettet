@@ -61,7 +61,7 @@ function Table({ row }: { row: BayesCounts }) {
 export default function TestLiteracyPage() {
   return (
     <>
-      <SiteHeader current="forskning" />
+      <SiteHeader current="testen" />
       <main id="indhold" className="wrap page-head">
         <p className="kicker">Forsøgstal</p>
         <h1>Sådan læses en test.</h1>
