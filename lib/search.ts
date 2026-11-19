@@ -544,14 +544,15 @@ export function caseSearchHits(
     }
     if (best <= 2) {
       for (const named of item.drugs) {
-        if (!named.slug || substances.has(named.slug)) continue;
+        const distance = Math.min(caseTermDistance(folded, named.name), named.generic ? caseTermDistance(folded, named.generic) : 99);
+        if (distance > 2 || !named.slug || substances.has(named.slug)) continue;
         substances.add(named.slug);
         hits.push({
           slug: named.slug,
           name: named.generic || named.name,
           reports: null,
           kind: "substance",
-          score: 210,
+          score: distance === 0 ? 210 : 120,
           reason: `Danske indberetninger om stoffet i ${named.name}.`,
         });
       }
@@ -576,7 +577,14 @@ function caseTermDistance(query: string, term: string): number {
   const limit = left.length >= 5 ? 2 : left.length >= 4 ? 1 : 0;
   if (limit === 0) return 99;
   const distance = editDistance(left, right, limit);
-  return distance <= limit ? distance : 99;
+  if (distance > limit) return 99;
+  if (distance === 2) {
+    let prefix = 0;
+    const end = Math.min(left.length, right.length);
+    while (prefix < end && left[prefix] === right[prefix]) prefix += 1;
+    if (prefix < 3) return 99;
+  }
+  return distance;
 }
 
 function aliasKnown(index: SearchIndex, token: string): boolean {

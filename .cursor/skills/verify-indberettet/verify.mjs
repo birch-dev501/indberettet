@@ -149,6 +149,21 @@ async function checkSearch(page, width) {
   const msd = await search(page, "MSD");
   if (!msd.includes("MSD (Merck Sharp & Dohme)")) fail(`${width} MSD mangler MSD`);
   if (msd.includes("Tysk Merck")) fail(`${width} MSD viser tysk Merck`);
+  await search(page, "pamol");
+  const pamolTarget = await page.locator("search[data-search=header] .result-list a").first().getAttribute("href");
+  if (!pamolTarget?.includes("/stof/paracetamolum")) fail(`${width} pamol peger på ${pamolTarget}`);
+  const pamolText = await page.locator("search[data-search=header] .result-groups").innerText();
+  if (pamolText.toLowerCase().includes("bupropion")) fail(`${width} pamol viser bupropion`);
+  if (width === 1280) {
+    await page.locator("search[data-search=page] input[role=searchbox]").fill("pamol");
+    await page.locator("search[data-search=page] .result-groups").waitFor();
+    const pageTarget = await page.locator("search[data-search=page] .result-list a").first().getAttribute("href");
+    if (!pageTarget?.includes("/stof/paracetamolum")) fail(`forside pamol peger på ${pageTarget}`);
+    await page.goto(`${base}/soeg/?q=pamol`, { waitUntil: "networkidle" });
+    const fullTarget = await page.locator(".result-list a").first().getAttribute("href");
+    if (!fullTarget?.includes("/stof/paracetamolum")) fail(`/soeg/ pamol peger på ${fullTarget}`);
+    await page.goto(`${base}/`, { waitUntil: "networkidle" });
+  }
   await page.screenshot({ path: join(evidence, `soegning-${width}.png`) });
 }
 
@@ -177,6 +192,25 @@ async function checkSearchDismiss(page, width) {
     await input.press("Escape");
     if ((await input.inputValue()) !== "") fail(`${width} ${selector} andet Esc ryddede ikke feltet`);
     if ((await clear.count()) !== 0) fail(`${width} ${selector} viser kryds uden tekst`);
+    await input.fill("zzzzqqqq");
+    await box.locator(".empty-search").waitFor();
+    await input.press("Escape");
+    await box.locator(".empty-search").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail(`${width} ${selector} lukker ikke tomme træf ved Esc`);
+    });
+    if ((await input.inputValue()) !== "zzzzqqqq") fail(`${width} ${selector} ryddede den tomme søgning ved første Esc`);
+  }
+  if (width === 1280) {
+    const header = page.locator("search[data-search=header]");
+    const headerInput = header.locator("input[role=searchbox]");
+    await headerInput.fill("vioxx");
+    await header.locator(".result-groups").waitFor();
+    await header.getByRole("button", { name: "Ryd søgning" }).focus();
+    await page.keyboard.press("Escape");
+    await header.locator(".result-groups").waitFor({ state: "detached", timeout: 3000 }).catch(() => {
+      fail("Esc på ryd-krydset lukker ikke listen");
+    });
+    if ((await headerInput.inputValue()) !== "vioxx") fail("Esc på ryd-krydset ryddede teksten");
   }
 }
 
@@ -340,6 +374,8 @@ async function checkRedirects(page) {
     ["/stof/oxycodon/", "/stof/oxycodone/"],
     ["/stof/semaglutid/", "/stof/semaglutide/"],
     ["/firma/novo/", "/firma/novo-nordisk/"],
+    ["/firma/glaxo/", "/firma/glaxosmithkline/"],
+    ["/firma/nova/", "/firma/novartis/"],
   ];
   for (const [from, to] of routes) {
     await page.goto(`${base}${from}`, { waitUntil: "networkidle" });
@@ -350,6 +386,13 @@ async function checkRedirects(page) {
   if (!(await page.locator("h1").innerText()).includes("findes ikke")) fail("404 mangler overskrift");
   await page.locator("input[role=searchbox]").first().waitFor();
   await page.getByText("findes ikke xyz").first().waitFor();
+  const broken = await page.goto(`${base}/stof/%25ZZ/`, { waitUntil: "networkidle" });
+  if (broken?.status() !== 404) fail(`procent-adresse svarer ${broken?.status()}`);
+  if ((await page.locator("body").innerText()).includes("Application error")) fail("procent-adresse viser en programfejl");
+  if (!(await page.locator("h1").innerText()).includes("findes ikke")) fail("procent-adresse mangler 404-overskrift");
+  await page.goto(`${base}/stof/wegovy/`, { waitUntil: "networkidle" });
+  await page.getByRole("link", { name: /Se alle forslag/ }).click();
+  await page.waitForURL(/\/soeg\/\?q=wegovy/);
 }
 
 function pngSize(buffer) {

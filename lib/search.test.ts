@@ -88,6 +88,23 @@ test("panodil, pamol og paracetamol", () => {
   expectSlug("pamol", "paracetamolum");
   expectSlug("panadil", "paracetamolum");
   expectSlug("paracetamol", "paracetamolum");
+  assert.equal(top("pamol").hits.some((hit) => hit.slug === "bupropion"), false);
+});
+
+test("kendte handelsnavne finder det aktive stof først", () => {
+  const brands: [string, string][] = [
+    ["panodil", "paracetamolum"],
+    ["pamol", "paracetamolum"],
+    ["ipren", "ibuprofen"],
+    ["ozempic", "semaglutide"],
+    ["wegovy", "semaglutide"],
+    ["comirnaty", "covid-19-vaccines"],
+    ["spikevax", "covid-19-vaccines"],
+    ["ventoline", "salbutamol"],
+    ["seroxat", "paroxetine"],
+    ["zolpidem", "zolpidem"],
+  ];
+  for (const [query, slug] of brands) expectSlug(query, slug);
 });
 
 test("hverdagsord bruger ATC eller afgrænsede stoffer", () => {
