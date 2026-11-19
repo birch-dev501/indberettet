@@ -13,6 +13,9 @@
 # testing
 /coverage
 /.verify/
+/public/og/
+/public/stof/
+/public/firma/
 
 # next.js
 /.next/

@@ -1,3 +1,4 @@
+import { spawnSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,3 +31,6 @@ const payload = {
 
 writeFileSync(path.join(outDir, "search.json"), JSON.stringify(payload));
 writeFileSync(path.join(root, "public/.nojekyll"), "");
+
+const redirect = spawnSync("node", ["scripts/build-redirects.mjs"], { cwd: root, stdio: "inherit" });
+if (redirect.status !== 0) process.exit(redirect.status ?? 1);
