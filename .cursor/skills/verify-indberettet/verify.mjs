@@ -33,7 +33,18 @@ function fail(message) {
 function serve() {
   const server = createServer((request, response) => {
     const url = new URL(request.url ?? "/", origin);
-    let pathname = decodeURIComponent(url.pathname);
+    let pathname;
+    try {
+      pathname = decodeURIComponent(url.pathname);
+    } catch {
+      response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+      try {
+        response.end(readFileSync(join(outDir, "404.html")));
+      } catch {
+        response.end("not found");
+      }
+      return;
+    }
     if (!pathname.startsWith("/indberettet")) {
       response.writeHead(404);
       response.end("not found");
@@ -388,6 +399,9 @@ async function checkRedirects(page) {
   await page.getByText("findes ikke xyz").first().waitFor();
   const broken = await page.goto(`${base}/stof/%25ZZ/`, { waitUntil: "networkidle" });
   if (broken?.status() !== 404) fail(`procent-adresse svarer ${broken?.status()}`);
+  const raw = await fetch(`${origin}/indberettet/stof/%ZZ/`);
+  if (raw.status !== 404) fail(`rå procent-adresse svarer ${raw.status}`);
+  if (!(await raw.text()).includes("findes ikke")) fail("rå procent-adresse viser ikke 404-siden");
   if ((await page.locator("body").innerText()).includes("Application error")) fail("procent-adresse viser en programfejl");
   if (!(await page.locator("h1").innerText()).includes("findes ikke")) fail("procent-adresse mangler 404-overskrift");
   await page.goto(`${base}/stof/wegovy/`, { waitUntil: "networkidle" });
