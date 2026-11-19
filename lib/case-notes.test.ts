@@ -22,8 +22,11 @@ test("Vioxx-sagerne har lægemiddel og kilde", () => {
 test("søgning på lægemiddel finder firmasiden", () => {
   const vioxx = caseSearchHits("vioxx", companies);
   assert.equal(vioxx[0]?.slug, "msd");
-  assert.equal(vioxx[0]?.reason, "Vioxx · bødesag");
-  assert.equal(vioxx[0]?.anchor, "boeder");
+  assert.match(vioxx[0]?.name ?? "", /Vioxx – bødesag/);
+  assert.match(vioxx[0]?.name ?? "", /MSD/);
+  assert.match(vioxx[0]?.anchor ?? "", /^sag-/);
+  assert.equal(caseSearchHits("viox", companies)[0]?.slug, "msd");
+  assert.equal(caseSearchHits("vioks", companies)[0]?.slug, "msd");
   assert.equal(caseSearchHits("victoza", companies)[0]?.slug, "novo-nordisk");
   assert.equal(caseSearchHits("bextra", companies)[0]?.slug, "pfizer");
   assert.equal(caseSearchHits("depakote", companies).length, 0);

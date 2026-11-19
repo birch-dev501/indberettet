@@ -638,3 +638,5 @@ details summary { cursor: pointer; font-weight: 700; }
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+tr[id^="sag-"] { scroll-margin-top: 5.5rem; }
+.empty-search { background: var(--paper); border-radius: 0.8rem; padding: 0.8rem 0.9rem; }

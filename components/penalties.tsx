@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { caseMatches, caseNoteFor, type CaseNote } from "@/lib/case-notes";
+import { caseAnchor, caseMatches, caseNoteFor, type CaseNote } from "@/lib/case-notes";
 import { formatUsd, VIOLATION_NOTE, type PenaltyCase, type ViolationRecord } from "@/lib/violations";
 
 export function Penalties({ record }: { record: ViolationRecord }) {
@@ -121,7 +121,7 @@ function CaseTable({ rows }: { rows: PenaltyCase[] }) {
         </thead>
         <tbody>
           {rows.map((row) => (
-            <tr key={row.url}>
+            <tr key={row.url} id={caseAnchor(row.url)}>
               <td>{row.year}</td>
               <td>
                 <a href={row.url} rel="noopener noreferrer">

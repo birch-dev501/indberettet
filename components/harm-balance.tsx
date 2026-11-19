@@ -30,7 +30,7 @@ const PRESETS: Preset[] = [
   {
     id: "young",
     label: "Model: mænd 18–24 år",
-    note: "CDC’s model, juli 2021, pr. million doser over 120 dage. Myokarditis er midten af 45–56 forventede tilfælde. Det er ikke det nordiske register.",
+    note: "Amerikansk model fra juli 2021, ikke danske tal. Se forbeholdet ovenfor: befolkningen og perioden er en anden.",
     baseline: { mode: "per", value: "1792" },
     efficacy: "95",
     rows: [{ name: "Myokarditis", risk: { mode: "per", value: "20000" }, severity: "Alvorlig" }],
@@ -38,7 +38,7 @@ const PRESETS: Preset[] = [
   {
     id: "older",
     label: "Model: mænd 30 år og ældre",
-    note: "Samme CDC-model. Myokarditis er midten af 3–4 forventede tilfælde pr. million doser.",
+    note: "Samme amerikanske model, mænd 30 år og derover. Forbeholdet ovenfor gælder også her.",
     baseline: { mode: "per", value: "207" },
     efficacy: "95",
     rows: [{ name: "Myokarditis", risk: { mode: "per", value: "285714" }, severity: "Alvorlig" }],

@@ -1,4 +1,4 @@
-import { caseNotes } from "./case-notes.ts";
+import { caseAnchor, caseNotes } from "./case-notes.ts";
 import { buildCompanyCatalog, companySearchRecords, normalizeHolder } from "./companies.ts";
 
 export type AliasKind = "substance" | "brand" | "holder" | "synonym";
@@ -203,11 +203,14 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
       classKnown(index, token) ||
       categoryKnown(index, token) ||
       companyKnown(index, token) ||
-      diseaseTokens.has(token),
+      diseaseTokens.has(token) ||
+      caseTermKnown(token),
   );
+  const scandalHits = caseSearchHits(query, index.companies ?? []);
   const activeTokens = tokens.filter((_, index) => tokenKnown[index]);
   if (activeTokens.length === 0) {
-    return { hits: gaps, suggestions: gaps.length ? [] : suggest(index, tokens) };
+    const hits = [...gaps, ...scandalHits].slice(0, limit);
+    return { hits, suggestions: hits.length ? [] : suggest(index, tokens) };
   }
 
   const scores = new Map<string, { score: number; matched: number; reason: string; reasonScore: number }>();
@@ -356,7 +359,7 @@ export function searchCatalog(index: SearchIndex, rawQuery: string, limit = 8): 
     const previous = merged.get(key);
     if (!previous || hit.score > previous.score) merged.set(key, hit);
   }
-  const ranked = [...companyHits, ...caseSearchHits(query, index.companies ?? []), ...diseaseHits, ...categoryHits, ...merged.values()].sort(
+  const ranked = [...companyHits, ...scandalHits, ...diseaseHits, ...categoryHits, ...merged.values()].sort(
     (a, b) => b.score - a.score || (b.reports ?? 0) - (a.reports ?? 0) || a.name.localeCompare(b.name, "da"),
   );
 
@@ -370,25 +373,47 @@ export function caseSearchHits(
 ): SearchHit[] {
   const folded = fold(query.trim());
   if (folded.length < 3) return [];
-  const byFirm = new Map<string, { name: string; drug: string }>();
+  const hits: SearchHit[] = [];
   for (const item of caseNotes()) {
-    if (!item.firm) continue;
-    if (!item.search.some((term: string) => fold(term) === folded)) continue;
+    if (!item.firm || !item.url) continue;
+    const terms = [...item.search, ...item.drugs.flatMap((drug) => [drug.name, drug.generic])];
+    const best = terms.reduce((distance, term) => Math.min(distance, caseTermDistance(folded, term)), 99);
+    if (best > 2) continue;
     const company = companies.find((entry) => entry.slug === item.firm);
-    const drug = item.drugs.find((entry) => fold(entry.name) === folded || fold(entry.generic) === folded);
-    const label = drug?.name ?? item.search.find((entry) => fold(entry) === folded) ?? folded;
-    if (!company || byFirm.has(item.firm)) continue;
-    byFirm.set(item.firm, { name: company.name, drug: label });
+    if (!company) continue;
+    const drug = item.drugs[0]?.name ?? "Bødesag";
+    const short = company.name.split("(")[0]?.trim() || company.name;
+    const year = item.year;
+    hits.push({
+      slug: item.firm,
+      name: `${drug} – bødesag${year ? ` ${year}` : ""}, ${short}`,
+      reports: null,
+      kind: "company",
+      score: best === 0 ? 260 : 190,
+      reason: item.summary,
+      anchor: caseAnchor(item.url),
+    });
   }
-  return [...byFirm.entries()].map(([slug, hit]) => ({
-    slug,
-    name: hit.name,
-    reports: null,
-    kind: "company",
-    score: 155,
-    reason: `${hit.drug} · bødesag`,
-    anchor: "boeder",
-  }));
+  return hits.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, "da"));
+}
+
+function caseTermKnown(token: string): boolean {
+  return caseNotes().some((item) => {
+    const terms = [...item.search, ...item.drugs.flatMap((drug) => [drug.name, drug.generic])];
+    return terms.some((term) => caseTermDistance(token, term) <= 2);
+  });
+}
+
+function caseTermDistance(query: string, term: string): number {
+  const left = fold(query);
+  const right = fold(term);
+  if (!left || !right) return 99;
+  if (left === right) return 0;
+  if (left.length >= 4 && right.startsWith(left) && right.length - left.length <= 2) return 1;
+  const limit = left.length >= 5 ? 2 : left.length >= 4 ? 1 : 0;
+  if (limit === 0) return 99;
+  const distance = editDistance(left, right, limit);
+  return distance <= limit ? distance : 99;
 }
 
 function aliasKnown(index: SearchIndex, token: string): boolean {

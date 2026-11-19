@@ -18,6 +18,9 @@ const OLLIARO = "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247
 const OLLIARO_CORRECTION = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9247853/";
 const KARLSTAD = "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253";
 const CDC_MMWR = "https://www.cdc.gov/mmwr/volumes/70/wr/mm7027e2.htm";
+const HUSBY = "https://www.bmj.com/content/375/bmj-2021-068665";
+const CDC_OBESITY = "https://www.cdc.gov/nchs/products/databriefs/db508.htm";
+const DK_OBESITY = "https://www.sst.dk/media/wrginiwh/christine-bjoerk-petersen_oplaeg-session1.pdf";
 
 export default function ResearchLiteracyPage() {
   const { measures } = trialRisks();
@@ -193,6 +196,22 @@ export default function ResearchLiteracyPage() {
               for få myokarditis-tilfælde efter to doser BNT162b2 til at regne et stabilt overskud. Opfølgningen løb fra
               27. december 2020 til 5. oktober 2021.
             </p>
+            <p className="warning-note">
+              CDC-modellen er amerikansk og kan ikke overføres direkte til Danmark. I august 2021 til august 2023 havde
+              40,3 % af de amerikanske voksne svær overvægt, målt som BMI på 30 eller derover (
+              <a href={CDC_OBESITY} rel="noopener noreferrer">
+                CDC, NCHS Data Brief 508
+              </a>
+              ). I Den Nationale Sundhedsprofil 2021 var andelen i Danmark 18,5 %, ud fra selvrapporteret højde og vægt
+              (
+              <a href={DK_OBESITY} rel="noopener noreferrer">
+                Sundhedsstyrelsen
+              </a>
+              ). Metoderne er ikke ens, men forskellen er stor. Svær overvægt og anden sygdom er blandt de største
+              grunde til, at covid-19 bliver alvorlig. Inden for samme alder er risikoen højere hos personer med de
+              sygdomme end hos raske. CDC’s tal er et gennemsnit for en mere overvægtig befolkning i en bestemt
+              smitteperiode i 2021, og de overvurderer sandsynligvis gavnen for danskere, især for raske unge.
+            </p>
             <p>
               Den artikel tæller ikke forebyggede covid-19-indlæggelser. Et andet regnestykke, fra det amerikanske
               smitteagentur CDC i juli 2021, antog 95 % effekt af to mRNA-doser og så 120 dage frem. Pr. million doser
@@ -203,7 +222,30 @@ export default function ResearchLiteracyPage() {
               <a href={CDC_MMWR} rel="noopener noreferrer">
                 Gargano et al., MMWR 2021
               </a>
-              .
+              . Lommeregnerens to amerikanske forvalg bruger den model og er mærket som det.
+            </p>
+            <h3>Danske tal, ikke et samlet NNT</h3>
+            <p>
+              Et dansk NNT kan ikke regnes rent her. Der mangler en indlæggelsesrisiko for samme gruppe, samme periode
+              og samme helbred, som kan sættes ind i formlen. Komponenterne står hver for sig.
+            </p>
+            <p>
+              <a href={HUSBY} rel="noopener noreferrer">
+                Husby et al., BMJ 2021
+              </a>{" "}
+              fulgte 4.931.775 personer i Danmark på 12 år og derover fra 1. oktober 2020 til 5. oktober 2021.
+              Myokarditis eller myoperikarditis inden for 28 dage efter vaccination med BNT162b2 havde en absolut rate
+              på 1,4 pr. 100.000 (1,0–1,8). Den justerede hazard ratio mod tiden før vaccination var 1,34 (0,90–2,00),
+              så den samlede forskel er usikker. Blandt 12–39-årige var raten 1,6 pr. 100.000 (1,0–2,6) og hazard
+              ratio 1,48 (0,74–2,98). Efter mRNA-1273 var raten 4,2 pr. 100.000 (2,6–6,4) og hazard ratio 3,92
+              (2,30–6,68); blandt 12–39-årige 5,7 pr. 100.000 (3,3–9,3) og hazard ratio 5,24 (2,47–11,12). Raterne er
+              antal blandt vaccinerede, ikke et overskud i forhold til uvaccinerede, og de er ikke delt i raske og
+              personer med anden sygdom. Derfor bliver de ikke til et NNH i lommeregneren.
+            </p>
+            <p>
+              Det nordiske overskud ovenfor, fra Karlstad, omfatter også Danmark, men stadig ikke en dansk
+              indlæggelsesnævner. Statens Serum Institut offentliggør løbende overvågning af covid-19. Denne side har
+              ikke et tal for, hvor ofte uvaccinerede raske unge blev indlagt i netop det vindue, så det indgår ikke.
             </p>
             <p>
               De to kilder er ikke samme befolkning, samme land eller samme tidsrum. Det nordiske tal er ekstra

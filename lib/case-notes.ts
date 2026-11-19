@@ -14,6 +14,7 @@ export type CaseNote = {
   search: string[];
   sourceUrl: string;
   sourceName: string;
+  year?: number;
 };
 
 const cases = notes.cases as CaseNote[];
@@ -34,6 +35,12 @@ export function caseNoteFor(url: string): CaseNote | null {
 
 export function caseNotes(): CaseNote[] {
   return cases;
+}
+
+export function caseAnchor(url: string): string {
+  const slug = url.split("/").filter(Boolean).pop() ?? "sag";
+  const clean = slug.replace(/^[^a-z0-9]+/i, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");
+  return `sag-${clean || "sag"}`;
 }
 
 export function caseMatches(parts: string[], query: string): boolean {

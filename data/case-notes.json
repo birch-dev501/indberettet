@@ -5,111 +5,266 @@
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-and-co-1",
       "firm": "msd",
       "summary": "forlig med patienter om hjerte-kar-skader",
-      "drugs": [{ "name": "Vioxx", "generic": "rofecoxib", "slug": null }],
-      "search": ["vioxx", "rofecoxib"],
+      "drugs": [
+        {
+          "name": "Vioxx",
+          "generic": "rofecoxib",
+          "slug": null
+        }
+      ],
+      "search": [
+        "vioxx",
+        "rofecoxib"
+      ],
       "sourceUrl": "https://www.reuters.com/article/business/healthcare-pharmaceuticals/merck-agrees-to-pay-485-billion-in-vioxx-settlement-idUSL09297266/",
-      "sourceName": "Reuters"
+      "sourceName": "Reuters",
+      "year": 2007
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-sharp-and-dohme",
       "firm": "msd",
       "summary": "bøde og forlig om ulovlig markedsføring",
-      "drugs": [{ "name": "Vioxx", "generic": "rofecoxib", "slug": null }],
-      "search": ["vioxx", "rofecoxib"],
+      "drugs": [
+        {
+          "name": "Vioxx",
+          "generic": "rofecoxib",
+          "slug": null
+        }
+      ],
+      "search": [
+        "vioxx",
+        "rofecoxib"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/us-pharmaceutical-company-merck-sharp-dohme-pay-nearly-one-billion-dollars-over-promotion",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2011
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-3",
       "firm": "pfizer",
       "summary": "forlig om ulovlig markedsføring",
       "drugs": [
-        { "name": "Bextra", "generic": "valdecoxib", "slug": null },
-        { "name": "Geodon", "generic": "ziprasidone", "slug": "ziprasidone" },
-        { "name": "Zyvox", "generic": "linezolid", "slug": "linezolid" },
-        { "name": "Lyrica", "generic": "pregabalin", "slug": "pregabalin" }
+        {
+          "name": "Bextra",
+          "generic": "valdecoxib",
+          "slug": null
+        },
+        {
+          "name": "Geodon",
+          "generic": "ziprasidone",
+          "slug": "ziprasidone"
+        },
+        {
+          "name": "Zyvox",
+          "generic": "linezolid",
+          "slug": "linezolid"
+        },
+        {
+          "name": "Lyrica",
+          "generic": "pregabalin",
+          "slug": "pregabalin"
+        }
       ],
-      "search": ["bextra", "valdecoxib", "geodon", "ziprasidone", "zyvox", "linezolid", "lyrica", "pregabalin"],
+      "search": [
+        "bextra",
+        "valdecoxib",
+        "geodon",
+        "ziprasidone",
+        "zyvox",
+        "linezolid",
+        "lyrica",
+        "pregabalin"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/justice-department-announces-largest-health-care-fraud-settlement-its-history",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2009
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-llc",
       "firm": "glaxosmithkline",
       "summary": "forlig om ulovlig markedsføring og manglende sikkerhedsdata",
       "drugs": [
-        { "name": "Paxil", "generic": "paroxetine", "slug": "paroxetine" },
-        { "name": "Wellbutrin", "generic": "bupropion", "slug": "bupropion" },
-        { "name": "Avandia", "generic": "rosiglitazone", "slug": null }
+        {
+          "name": "Paxil",
+          "generic": "paroxetine",
+          "slug": "paroxetine"
+        },
+        {
+          "name": "Wellbutrin",
+          "generic": "bupropion",
+          "slug": "bupropion"
+        },
+        {
+          "name": "Avandia",
+          "generic": "rosiglitazone",
+          "slug": null
+        }
       ],
-      "search": ["paxil", "paroxetine", "paroxetin", "wellbutrin", "bupropion", "avandia", "rosiglitazone"],
+      "search": [
+        "paxil",
+        "paroxetine",
+        "paroxetin",
+        "wellbutrin",
+        "bupropion",
+        "avandia",
+        "rosiglitazone"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/glaxosmithkline-plead-guilty-and-pay-3-billion-resolve-fraud-allegations-and-failure-report",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2012
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson",
       "firm": "janssen-cilag",
       "summary": "forlig om ulovlig markedsføring",
       "drugs": [
-        { "name": "Risperdal", "generic": "risperidone", "slug": "risperidonum" },
-        { "name": "Invega", "generic": "paliperidone", "slug": "paliperidone" },
-        { "name": "Natrecor", "generic": "nesiritide", "slug": null }
+        {
+          "name": "Risperdal",
+          "generic": "risperidone",
+          "slug": "risperidonum"
+        },
+        {
+          "name": "Invega",
+          "generic": "paliperidone",
+          "slug": "paliperidone"
+        },
+        {
+          "name": "Natrecor",
+          "generic": "nesiritide",
+          "slug": null
+        }
       ],
-      "search": ["risperdal", "risperidone", "risperidon", "invega", "paliperidone", "natrecor", "nesiritide"],
+      "search": [
+        "risperdal",
+        "risperidone",
+        "risperidon",
+        "invega",
+        "paliperidone",
+        "natrecor",
+        "nesiritide"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/johnson-johnson-pay-more-22-billion-resolve-criminal-and-civil-investigations",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2013
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-0",
       "firm": "eli-lilly",
       "summary": "forlig om ulovlig markedsføring",
-      "drugs": [{ "name": "Zyprexa", "generic": "olanzapine", "slug": "olanzapine" }],
-      "search": ["zyprexa", "olanzapine", "olanzapin"],
+      "drugs": [
+        {
+          "name": "Zyprexa",
+          "generic": "olanzapine",
+          "slug": "olanzapine"
+        }
+      ],
+      "search": [
+        "zyprexa",
+        "olanzapine",
+        "olanzapin"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/eli-lilly-and-company-agrees-pay-1415-billion-resolve-allegations-label-promotion-zyprexa",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2009
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-lp",
       "firm": "astrazeneca",
       "summary": "forlig om ulovlig markedsføring",
-      "drugs": [{ "name": "Seroquel", "generic": "quetiapine", "slug": "quetiapine" }],
-      "search": ["seroquel", "quetiapine", "quetiapin"],
+      "drugs": [
+        {
+          "name": "Seroquel",
+          "generic": "quetiapine",
+          "slug": "quetiapine"
+        }
+      ],
+      "search": [
+        "seroquel",
+        "quetiapine",
+        "quetiapin"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/pharmaceutical-giant-astrazeneca-pay-520-million-label-drug-marketing",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2010
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-pharmaceuticals-corporation",
       "firm": "novartis",
       "summary": "forlig om ulovlig markedsføring",
-      "drugs": [{ "name": "Trileptal", "generic": "oxcarbazepine", "slug": "oxcarbazepine" }],
-      "search": ["trileptal", "oxcarbazepine", "oxcarbazepin", "diovan", "valsartan", "sandostatin", "octreotide"],
+      "drugs": [
+        {
+          "name": "Trileptal",
+          "generic": "oxcarbazepine",
+          "slug": "oxcarbazepine"
+        }
+      ],
+      "search": [
+        "trileptal",
+        "oxcarbazepine",
+        "oxcarbazepin",
+        "diovan",
+        "valsartan",
+        "sandostatin",
+        "octreotide"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/novartis-pharmaceuticals-corp-pay-more-420-million-resolve-label-promotion-and-kickback",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2010
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sanofi-aventis-us-inc",
       "firm": "sanofi",
       "summary": "forlig om gratis doser til læger",
-      "drugs": [{ "name": "Hyalgan", "generic": "hyaluronic acid", "slug": "hyaluronic-acid" }],
-      "search": ["hyalgan", "hyaluronsyre"],
+      "drugs": [
+        {
+          "name": "Hyalgan",
+          "generic": "hyaluronic acid",
+          "slug": "hyaluronic-acid"
+        }
+      ],
+      "search": [
+        "hyalgan",
+        "hyaluronsyre"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/sanofi-us-agrees-pay-109-million-resolve-false-claims-act-allegations-free-product-kickbacks",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2012
     },
     {
       "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc-0",
       "firm": "novo-nordisk",
       "summary": "forlig om manglende overholdelse af risikoprogrammet",
-      "drugs": [{ "name": "Victoza", "generic": "liraglutide", "slug": "liraglutide" }],
-      "search": ["victoza", "liraglutide", "liraglutid"],
+      "drugs": [
+        {
+          "name": "Victoza",
+          "generic": "liraglutide",
+          "slug": "liraglutide"
+        }
+      ],
+      "search": [
+        "victoza",
+        "liraglutide",
+        "liraglutid"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/novo-nordisk-agrees-pay-58-million-failure-comply-fda-mandated-risk-program",
-      "sourceName": "DOJ"
+      "sourceName": "DOJ",
+      "year": 2017
     },
     {
       "url": null,
       "firm": null,
       "summary": "forlig om ulovlig markedsføring",
-      "drugs": [{ "name": "Depakote", "generic": "valproate", "slug": "valproate" }],
-      "search": ["depakote", "divalproex"],
+      "drugs": [
+        {
+          "name": "Depakote",
+          "generic": "valproate",
+          "slug": "valproate"
+        }
+      ],
+      "search": [
+        "depakote",
+        "divalproex"
+      ],
       "sourceUrl": "https://www.justice.gov/archives/opa/pr/abbott-labs-pay-15-billion-resolve-criminal-civil-investigations-label-promotion-depakote",
       "sourceName": "DOJ"
     }

@@ -17,7 +17,7 @@ export function SearchPanel({
 }) {
   const [query, setQuery] = useState("");
   const [catalog, setCatalog] = useState<SearchIndex | null>(null);
-  const [state, setState] = useState<"idle" | "loading" | "ready" | "error">("idle");
+  const [state, setState] = useState<"idle" | "loading" | "ready" | "error">("loading");
   const inputId = useId();
   const listId = useId();
   const inputRef = useRef<HTMLInputElement>(null);
@@ -69,7 +69,7 @@ export function SearchPanel({
         )}
         {state === "error" && <p className="warning-note">Søgningen kunne ikke gennemføres. Prøv igen.</p>}
         {state === "ready" && needle.length >= 2 && result.hits.length === 0 && (
-          <div>
+          <div className="empty-search">
             <p className="muted">Ingen træf på “{needle}”.</p>
             {result.suggestions.length > 0 ? (
               <p className="small">
@@ -81,7 +81,10 @@ export function SearchPanel({
                 ))}
               </p>
             ) : (
-              <p className="small muted">Prøv et stofnavn, et handelsnavn eller firmaet bag medicinen.</p>
+              <p className="small muted">
+                Prøv et stofnavn, et handelsnavn eller et firma. Bødesager, også for lægemidler der ikke længere er på
+                markedet, findes under firmaet, når sagen er beskrevet.
+              </p>
             )}
           </div>
         )}
