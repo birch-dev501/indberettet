@@ -1,0 +1,178 @@
+The data from each IDAP report is available within a single zip file containing
+five (5) comma-separated (csv) text files plus this HELP file which provides
+details on the contents of the csv files. The csv files contain information
+about the DK spontaneous suspected adverse drug reactions (ADRs) for the drug
+of interest.
+
+The csv files are:
+
+CASE.csv
+Information summarising each ADR, including patient demographics and case
+outcome.
+
+DRUG.csv
+Information summarising the way the drug was administered in each ADR report
+
+EVENT.csv
+Information about the adverse reactions experienced by the patients in each ADR
+report
+
+SUMMARY.csv
+Further information about the forms of the drug that are contained in each ADR
+report
+
+INFO.csv
+General information summarising the data in this report and the software used
+to create the data.
+
+
+
+Description of the data columns within each csv file
+
+CASE.csv
+========
+1: ADR
+Sequential number identifying a single ADR report
+
+2: SEX
+Patient sex: "Male", "Female", "Unknown"
+
+3: AGE_10
+Patient age at the time of the ADR. This is expressed in 10-year bands with the
+lowest level of the band displayed in the file e.g.,
+  0 represents ages less than 10 years (0-9 years)
+ 10 represents ages of 10 years or higher, but less than 20 years (10-19 years)
+ 20 represents ages of 20 years or higher, but less than 30 years (20-29 years)
+
+4: RECVD_YEAR
+Year in which the ADR was first received by the DKMA
+
+5: CONSUMER_YN
+Indicates if the ADR was reported by the consumer (the patient, their parent or
+a carer) of the product or other non-health professional representative
+   "Y" if the ADR was reported by a consumer, a lawyer, or from
+       Patienterstatningen
+   "N" if the ADR was not reported by one of these sources
+
+6: HCP_YN
+Indicates if the ADR was reported by a healthcare professional.
+(examples of healthcare professionals include: Hospital Doctor, GP, pharmacist,
+nurse, etc)
+   "Y" if the ADR was reported by a health professional
+   "N" if the ADR was reported by a non-health professional
+
+Please note HCP_YN and Consumer_YN are not exclusive categories; an ADR report
+can be sent to the DKMA with details of both a consumer and healthcare
+professional reporter
+
+7: NONSERIOUS_SERIOUS_FATAL_NSF
+Indicates the seriousness of the ADR report
+   "F" if the ADR was fatal
+   "S" if the ADR was serious but not fatal.
+   "N" if the ADR was non-serious.
+
+
+DRUG.csv
+========
+1: ADR
+Sequential number identifying a single ADR report
+
+2: SEQ
+Sequential number identifying each reported administration of the suspect drug
+in question
+
+3: ROUTE
+The route of administration for the drug (e.g. oral, intravenous, etc).
+Drug routes that appear in fewer than 5 ADR reports (or 1% of ADR reports for
+drugs with more than 500 ADRs) are displayed as "Routes with few reports"
+
+4: MULTICONST
+Describes whether the drug in each ADR report contains more than one active
+ingredient
+   "Y" if the drug substance of interest in the IDAP is one active ingredient
+       in a multi- constituent product. 
+   "N" if the drug substance of interest in the IDAP is the only active
+       ingredient in the product. 
+
+5: NONSERIOUS_SERIOUS_FATAL_NSF
+Indicates the seriousness of the ADR report. This field is also in CASE.csv
+   "F" if the ADR was fatal
+   "S" if the ADR was serious but not fatal.
+   "N" if the ADR was non-serious.
+
+
+EVENT.csv
+=========
+1: ADR
+Sequential number identifying a single ADR report
+
+2: SEQ
+Sequential number identifying each adverse reaction within the ADR report
+
+3: PT
+MedDRA Preferred Term, describing the adverse reaction
+
+4: HLT
+MedDRA High Level Term which contains the corresponding Preferred Term
+
+5: HLGT
+MedDRA High Level Group Term which contains the corresponding High Level Term
+
+6: SOC_ABBREV
+MedDRA System Organ Class which contains the corresponding High Level Group
+Term
+
+7: FATAL_YN
+Describes whether the adverse reaction had a fatal outcome 
+   "Y" if the reaction was fatal
+   "N" if the reaction was not fatal
+
+
+SUMMARY.csv
+===========
+The SUMMARY.csv contains 2 columns and two rows. Each row shows a list of
+either single-constituent or multi-constituent products that are summarised in
+the IDAP report
+
+1: MULTI_CONSTITUENT_YN
+   "N" indicates that the row is summarising single-constituent products
+   "Y" indicates that the row is summarising multi-constituent products
+
+2: PBG
+A list of the single-constituent or multi-constituent products that are
+summarised in the report. The products are identified by their "Product Brand
+Generic" (PBG) names.
+
+
+INFO.csv
+========
+INFO.csv contains 6 rows of item-value pairs:
+
+1: DRUG_NAME:
+The name of the drug substance of interest in this IDAP report
+
+2: DATA_EXTRACT_VERSION
+The software version used to generate the data in the report
+
+3: DATA_EXTRACTION_DATE
+The date when the data for this report were produced. Please note that a drug
+with less frequent ADRs reported may have an older date because new IDAP
+datasets are only created after new ADR reports for the drug have been received.
+
+4: MEDDRA_VERSION
+The version of the MedDRA dictionary that was active on the data extraction
+date. Values are 2-3 digit numeric strings e.g. "19" (for MedDRA version 19.0),
+"181" (for MedDRA version 18.1) etc.
+
+5: REPORT_TYPE
+The level within the dictionary hierarchy of the information included on the
+IDAP. Not all levels are currently routinely published online. If you require
+further information please contact the MHRA. Levels include:
+   "Combined substance" - A drug that contains one or more active ingredients
+   "Substance" - An active ingredient, regardless of whether it is administered
+                 by itself or in combination with other ingredients,
+   "Substance Variant" - A drug chemical variant of a substance
+   "PBG" - Product Brand Generic, a family name for a group of related products
+
+6: COUNTRY
+The country where the ADRs in the IDAP were reported. 

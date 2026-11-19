@@ -1,0 +1,80 @@
+name: Månedlig opdatering
+
+on:
+  schedule:
+    # Den 2. i måneden, efter Lægemiddelstyrelsen typisk har lagt et nyt udtræk.
+    - cron: "30 5 2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bivirkningsdata
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Hent og valider seneste data
+        run: python scripts/ingest.py
+      - name: Hent nyheder
+        run: python scripts/fetch_news.py
+      - name: Hent antal brugere fra Lægemiddelstatistikregisteret
+        run: python scripts/fetch_medstat.py
+      - name: Udfyld hverdagsnavne fra ATC-grupper
+        run: python scripts/build_plain_language.py
+      - name: Tjek links til bivirkningstermer
+        run: python scripts/check_term_links.py
+      - name: Opdater søgeord og ATC-grupper fra produktlisten
+        run: node --experimental-strip-types scripts/build-search-index.ts
+      - name: Installer og byg
+        env:
+          NEXT_PUBLIC_BASE_PATH: /indberettet
+        run: npm ci && npm run build
+      - name: Gem data hvis de er ændret
+        id: commit
+        run: |
+          git config user.name "birch-dev501"
+          git config user.email "358617643+birch-dev501@users.noreply.github.com"
+          git add -A data news search/synonyms.from-products.json
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Ingen ændring i data"
+            exit 0
+          fi
+          git commit -m "Opdater bivirkningsdata fra Lægemiddelstyrelsen"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Udgiv Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: update
+    if: needs.update.result == 'success' && needs.update.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Udgiv
+        id: deployment
+        uses: actions/deploy-pages@v4

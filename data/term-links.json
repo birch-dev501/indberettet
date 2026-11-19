@@ -1,0 +1,905 @@
+{
+  "note": "Kun termnavne, der allerede står i Lægemiddelstyrelsens offentlige udtræk. Filen er ikke en MedDRA-ordbog og indeholder ikke koder, definitioner eller hierarki fra MedDRA. Et link forklarer ordet hos en offentlig kilde. Det er ikke en vurdering af, om medicinen forårsagede reaktionen. kind=search er en søgning, ikke en gennemgået artikel.",
+  "checkedAt": "2026-11-18",
+  "search": {
+    "label": "Søg i Patienthåndbogen",
+    "urlTemplate": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q={q}",
+    "source": "sundhed.dk, Patienthåndbogen",
+    "verified": true,
+    "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=hovedpine",
+    "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+  },
+  "terms": {
+    "Headache": {
+      "danish": "Hovedpine",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/symptomer/hovedpine/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hovedpine - Patienthåndbogen på sundhed.dk"
+    },
+    "Rash": {
+      "danish": "Udslæt",
+      "url": "https://medlineplus.gov/rashes.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Rash | Dermatitis | Skin Rash | MedlinePlus"
+    },
+    "Fatigue": {
+      "danish": "Træthed",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/symptomer/traethed-en-oversigt/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Træthed - en oversigt - Patienthåndbogen på sundhed.dk"
+    },
+    "Pyrexia": {
+      "danish": "Feber",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/infektioner/symptomer/feber/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Feber - Patienthåndbogen på sundhed.dk"
+    },
+    "Nausea": {
+      "danish": "Kvalme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Kvalme og opkastninger - Patienthåndbogen på sundhed.dk"
+    },
+    "Vomiting": {
+      "danish": "Opkastning",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/kvalme-og-opkastninger/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Kvalme og opkastninger - Patienthåndbogen på sundhed.dk"
+    },
+    "Dizziness": {
+      "danish": "Svimmelhed",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/symptomer/svimmelhed-vejviser/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Svimmelhed, hvad kan årsagen være? - Patienthåndbogen på sundhed.dk"
+    },
+    "Arthralgia": {
+      "danish": "Ledsmerter",
+      "url": "https://medlineplus.gov/ency/article/003261.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Joint pain: MedlinePlus Medical Encyclopedia"
+    },
+    "Myalgia": {
+      "danish": "Muskelsmerter",
+      "url": "https://medlineplus.gov/ency/article/003178.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Muscle aches: MedlinePlus Medical Encyclopedia"
+    },
+    "Scratch": {
+      "danish": "Hudafskrabning",
+      "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+      "source": "NHS",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Cuts and grazes - NHS"
+    },
+    "Skin wound": {
+      "danish": "Hudsår",
+      "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+      "source": "NHS",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Cuts and grazes - NHS"
+    },
+    "Pruritus": {
+      "danish": "Kløe",
+      "url": "https://medlineplus.gov/itching.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Itching | Pruritus | Itchy skin | MedlinePlus"
+    },
+    "Dyspnoea": {
+      "danish": "Åndenød",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/symptomer/aandedraetsbesvaer-hos-voksne/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Åndedrætsbesvær hos voksne - Patienthåndbogen på sundhed.dk"
+    },
+    "Malaise": {
+      "danish": "Utilpashed",
+      "url": "https://medlineplus.gov/ency/article/003089.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Malaise: MedlinePlus Medical Encyclopedia"
+    },
+    "Urticaria": {
+      "danish": "Nældefeber",
+      "url": "https://medlineplus.gov/hives.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hives | Rash | Skin Rash | Itchy Skin | MedlinePlus"
+    },
+    "Diarrhoea": {
+      "danish": "Diarré",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/diarre-akut/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Diarré, akut - Patienthåndbogen på sundhed.dk"
+    },
+    "Abdominal pain": {
+      "danish": "Mavesmerter",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/mavesmerter-akutte/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Mavesmerter, akutte - Patienthåndbogen på sundhed.dk"
+    },
+    "Pain": {
+      "danish": "Smerte",
+      "url": "https://medlineplus.gov/pain.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Pain | MedlinePlus"
+    },
+    "Paraesthesia": {
+      "danish": "Snurren eller prikken",
+      "url": "https://medlineplus.gov/ency/article/003206.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Numbness and tingling: MedlinePlus Medical Encyclopedia"
+    },
+    "Sleep disorder": {
+      "danish": "Søvnforstyrrelser",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/soevnforstyrrelser/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Søvnforstyrrelser - Patienthåndbogen på sundhed.dk"
+    },
+    "Insomnia": {
+      "danish": "Søvnløshed",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/soevnforstyrrelser/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Søvnforstyrrelser - Patienthåndbogen på sundhed.dk"
+    },
+    "Palpitations": {
+      "danish": "Hjertebanken",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/symptomer/hjertebanken/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hjertebanken - Patienthåndbogen på sundhed.dk"
+    },
+    "Hypersensitivity": {
+      "danish": "Overfølsomhed",
+      "url": "https://medlineplus.gov/allergy.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Allergies | Hypersensivity | MedlinePlus"
+    },
+    "Cough": {
+      "danish": "Hoste",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/symptomer/hoste/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hoste - Patienthåndbogen på sundhed.dk"
+    },
+    "Chills": {
+      "danish": "Kulderystelser",
+      "url": "https://medlineplus.gov/ency/article/003091.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Chills: MedlinePlus Medical Encyclopedia"
+    },
+    "Visual impairment": {
+      "danish": "Synsnedsættelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oejne/symptomer/synsnedsaettelse/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Synsnedsættelse - Patienthåndbogen på sundhed.dk"
+    },
+    "Abdominal pain upper": {
+      "danish": "Ubehag i øvre del af maven",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/ubehag-i-oevre-del-af-maven/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Ubehag i øvre del af maven - Patienthåndbogen på sundhed.dk"
+    },
+    "Tremor": {
+      "danish": "Rysten",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/symptomer/rysten/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Rysten - Patienthåndbogen på sundhed.dk"
+    },
+    "Muscle spasms": {
+      "danish": "Muskelkramper",
+      "url": "https://medlineplus.gov/ency/article/003193.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Muscle cramps: MedlinePlus Medical Encyclopedia"
+    },
+    "Chest pain": {
+      "danish": "Brystsmerter",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/symptomer/brystsmerter/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Brystsmerter - Patienthåndbogen på sundhed.dk"
+    },
+    "Asthenia": {
+      "danish": "Kraftesløshed",
+      "url": "https://medlineplus.gov/ency/article/003174.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Weakness: MedlinePlus Medical Encyclopedia"
+    },
+    "Angioedema": {
+      "danish": "Angioødem",
+      "url": "https://medlineplus.gov/ency/article/000846.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Angioedema: MedlinePlus Medical Encyclopedia"
+    },
+    "Weight increased": {
+      "danish": "Vægtøgning",
+      "url": "https://medlineplus.gov/ency/article/003084.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Weight gain – unintentional: MedlinePlus Medical Encyclopedia"
+    },
+    "Hyperhidrosis": {
+      "danish": "Svedtendens",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/symptomer/svedtendens/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Svedtendens - Patienthåndbogen på sundhed.dk"
+    },
+    "Tinnitus": {
+      "danish": "Øresusen",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/symptomer/tinnitus-oeresusen/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Tinnitus (øresusen) - Patienthåndbogen på sundhed.dk"
+    },
+    "Alopecia": {
+      "danish": "Hårtab",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/symptomer/haartab/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hårtab - Patienthåndbogen på sundhed.dk"
+    },
+    "Lymphadenopathy": {
+      "danish": "Hævede lymfeknuder",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/blod/symptomer/haevede-lymfeknuder/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hævede lymfeknuder - Patienthåndbogen på sundhed.dk"
+    },
+    "Constipation": {
+      "danish": "Forstoppelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/symptomer/forstoppelse-vejviser/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Forstoppelse, vejviser - Patienthåndbogen på sundhed.dk"
+    },
+    "Peripheral swelling": {
+      "danish": "Hævelse i arme eller ben",
+      "url": "https://medlineplus.gov/edema.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Edema | Dropsy | MedlinePlus"
+    },
+    "Muscular weakness": {
+      "danish": "Muskelsvaghed",
+      "url": "https://medlineplus.gov/ency/article/003174.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Weakness: MedlinePlus Medical Encyclopedia"
+    },
+    "Depression": {
+      "danish": "Depression",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/sygdomme/depression/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Depression - Patienthåndbogen på sundhed.dk"
+    },
+    "Syncope": {
+      "danish": "Besvimelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/symptomer/besvimelse-vejviser/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Besvimelse, årsager - Patienthåndbogen på sundhed.dk"
+    },
+    "Eczema": {
+      "danish": "Eksem",
+      "url": "https://medlineplus.gov/eczema.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Eczema | Dermatitis | Atopic Dermatitis | MedlinePlus"
+    },
+    "Restlessness": {
+      "danish": "Uro",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/symptomer/uro-forvirring/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Uro, forvirring - Patienthåndbogen på sundhed.dk"
+    },
+    "Hyponatraemia": {
+      "danish": "Lavt natrium i blodet",
+      "url": "https://medlineplus.gov/ency/article/000394.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Low blood sodium: MedlinePlus Medical Encyclopedia"
+    },
+    "Hypoaesthesia": {
+      "danish": "Nedsat følesans",
+      "url": "https://medlineplus.gov/ency/article/003206.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Numbness and tingling: MedlinePlus Medical Encyclopedia"
+    },
+    "Decreased appetite": {
+      "danish": "Nedsat appetit",
+      "url": "https://medlineplus.gov/ency/article/003121.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Appetite - decreased: MedlinePlus Medical Encyclopedia"
+    },
+    "Menstrual disorder": {
+      "danish": "Menstruationsproblemer",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/kvindesygdomme/sygdomme/menstruationsproblemer/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Menstruationsproblemer - Patienthåndbogen på sundhed.dk"
+    },
+    "Menstruation irregular": {
+      "danish": "Uregelmæssig menstruation",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/kvindesygdomme/sygdomme/menstruationsproblemer/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Menstruationsproblemer - Patienthåndbogen på sundhed.dk"
+    },
+    "Dry mouth": {
+      "danish": "Mundtørhed",
+      "url": "https://medlineplus.gov/drymouth.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Dry Mouth: MedlinePlus"
+    },
+    "Confusional state": {
+      "danish": "Forvirring",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/symptomer/uro-forvirring/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Uro, forvirring - Patienthåndbogen på sundhed.dk"
+    },
+    "Anxiety": {
+      "danish": "Angst",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/symptomer/angst/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Angst - Patienthåndbogen på sundhed.dk"
+    },
+    "Swelling": {
+      "danish": "Hævelse",
+      "url": "https://medlineplus.gov/edema.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Edema | Dropsy | MedlinePlus"
+    },
+    "Back pain": {
+      "danish": "Rygsmerter",
+      "url": "https://medlineplus.gov/backpain.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Back Pain"
+    },
+    "Vision blurred": {
+      "danish": "Sløret syn",
+      "url": "https://medlineplus.gov/ency/article/003029.htm",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Vision problems: MedlinePlus Medical Encyclopedia"
+    },
+    "Rash pruritic": {
+      "danish": "Kløende udslæt",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/symptomer/udslaet-med-kloee/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Udslæt med kløe - Patienthåndbogen på sundhed.dk"
+    },
+    "Migraine": {
+      "danish": "Migræne",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/sygdomme/migraene/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Migræne - Patienthåndbogen på sundhed.dk"
+    },
+    "Neck pain": {
+      "danish": "Nakkesmerter",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/symptomer/nakkesmerter/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Nakkesmerter - Patienthåndbogen på sundhed.dk"
+    },
+    "Oropharyngeal pain": {
+      "danish": "Halssmerter",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/symptomer/halssmerter/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Halssmerter - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site granuloma": {
+      "danish": "Granulom på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Granulom%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site pruritus": {
+      "danish": "Kløe på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Kl%C3%B8e%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site erythema": {
+      "danish": "Rødme på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=R%C3%B8dme%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site pain": {
+      "danish": "Smerte på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Smerte%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site swelling": {
+      "danish": "Hævelse på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=H%C3%A6velse%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site hypertrichosis": {
+      "danish": "Øget hårvækst på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=%C3%98get%20h%C3%A5rv%C3%A6kst%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site rash": {
+      "danish": "Udslæt på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Udsl%C3%A6t%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site discolouration": {
+      "danish": "Misfarvning på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Misfarvning%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site eczema": {
+      "danish": "Eksem på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Eksem%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Vaccination site irritation": {
+      "danish": "Irritation på vaccinationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Irritation%20p%C3%A5%20vaccinationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Reaction to excipient": {
+      "danish": "Reaktion på hjælpestof",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Reaktion%20p%C3%A5%20hj%C3%A6lpestof",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Allergy to metals": {
+      "danish": "Metalallergi",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Metalallergi",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Drug ineffective": {
+      "danish": "Manglende virkning",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Manglende%20virkning",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Pain in extremity": {
+      "danish": "Smerte i arm eller ben",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Smerte%20i%20arm%20eller%20ben",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Erythema": {
+      "danish": "Rødme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=R%C3%B8dme",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Disturbance in attention": {
+      "danish": "Koncentrationsbesvær",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Koncentrationsbesv%C3%A6r",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Memory impairment": {
+      "danish": "Hukommelsesbesvær",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Hukommelsesbesv%C3%A6r",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Influenza like illness": {
+      "danish": "Influenzalignende sygdom",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Influenzalignende%20sygdom",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Drug interaction": {
+      "danish": "Lægemiddelinteraktion",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=L%C3%A6gemiddelinteraktion",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Discomfort": {
+      "danish": "Ubehag",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Ubehag",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Chest discomfort": {
+      "danish": "Ubehag i brystet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Ubehag%20i%20brystet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Hepatic function abnormal": {
+      "danish": "Unormal leverfunktion",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Unormal%20leverfunktion",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Osteonecrosis of jaw": {
+      "danish": "Knoglenedbrydning i kæben",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Knoglenedbrydning%20i%20k%C3%A6ben",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Sensory disturbance": {
+      "danish": "Føleforstyrrelse",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=F%C3%B8leforstyrrelse",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    }
+  },
+  "socs": {
+    "Nerv": {
+      "danish": "Nervesystemet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerne-og-nerver/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hjerne og nerver - Patienthåndbogen på sundhed.dk"
+    },
+    "Skin": {
+      "danish": "Hud og subkutane væv",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hud/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hud - Patienthåndbogen på sundhed.dk"
+    },
+    "Gastr": {
+      "danish": "Mave-tarm-kanalen",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/mave-og-tarm/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Mave og tarm - Patienthåndbogen på sundhed.dk"
+    },
+    "Musc": {
+      "danish": "Knogler, led, muskler og bindevæv",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/knogler-muskler-og-led/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Knogler, muskler og led - Patienthåndbogen på sundhed.dk"
+    },
+    "Psych": {
+      "danish": "Psykiske forstyrrelser",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/psyke/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Psyke - Patienthåndbogen på sundhed.dk"
+    },
+    "Resp": {
+      "danish": "Luftveje, thorax og mediastinum",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/lunger/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Lunger - Patienthåndbogen på sundhed.dk"
+    },
+    "Infec": {
+      "danish": "Infektioner og parasitære sygdomme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/infektioner/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Infektioner - Patienthåndbogen på sundhed.dk"
+    },
+    "Eye": {
+      "danish": "Øjne",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oejne/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Øjne - Patienthåndbogen på sundhed.dk"
+    },
+    "Card": {
+      "danish": "Hjerte",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hjerte og blodkar - Patienthåndbogen på sundhed.dk"
+    },
+    "Vasc": {
+      "danish": "Vaskulære sygdomme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hjerte-og-blodkar/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hjerte og blodkar - Patienthåndbogen på sundhed.dk"
+    },
+    "Metab": {
+      "danish": "Metabolisme og ernæring",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hormoner og stofskifte - Patienthåndbogen på sundhed.dk"
+    },
+    "Endo": {
+      "danish": "Det endokrine system",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/hormoner-og-stofskifte/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Hormoner og stofskifte - Patienthåndbogen på sundhed.dk"
+    },
+    "Blood": {
+      "danish": "Blod og lymfesystem",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/blod/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Blod - Patienthåndbogen på sundhed.dk"
+    },
+    "Renal": {
+      "danish": "Nyrer og urinveje",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/nyrer-og-urinveje/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Nyrer og urinveje - Patienthåndbogen på sundhed.dk"
+    },
+    "Ear": {
+      "danish": "Øre og labyrint",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Øre-næse-hals - Patienthåndbogen på sundhed.dk"
+    },
+    "Preg": {
+      "danish": "Graviditet, puerperium og den perinatale periode",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/graviditet/",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Graviditet - Patienthåndbogen på sundhed.dk"
+    },
+    "Immun": {
+      "danish": "Immunsystemet",
+      "url": "https://medlineplus.gov/immunesystemanddisorders.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Immune System and Disorders | Autoimmune Disease | MedlinePlus"
+    },
+    "Hepat": {
+      "danish": "Lever og galdeveje",
+      "url": "https://medlineplus.gov/liverdiseases.html",
+      "source": "MedlinePlus (NIH)",
+      "kind": "direct",
+      "verified": true,
+      "pageTitle": "Liver Diseases | Hepatic Diseases | MedlinePlus"
+    },
+    "Genrl": {
+      "danish": "Almene symptomer og reaktioner på administrationsstedet",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Almene%20symptomer%20og%20reaktioner%20p%C3%A5%20administrationsstedet",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Inj&P": {
+      "danish": "Traumer, forgiftninger og behandlingskomplikationer",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Traumer%2C%20forgiftninger%20og%20behandlingskomplikationer",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Inv": {
+      "danish": "Undersøgelser",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Unders%C3%B8gelser",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Repro": {
+      "danish": "Det reproduktive system og mammae",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Det%20reproduktive%20system%20og%20mammae",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Prod": {
+      "danish": "Produktfejl",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Produktfejl",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Neopl": {
+      "danish": "Benigne, maligne og uspecificerede tumorer",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Benigne%2C%20maligne%20og%20uspecificerede%20tumorer",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Surg": {
+      "danish": "Kirurgiske og medicinske procedurer",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Kirurgiske%20og%20medicinske%20procedurer",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "Cong": {
+      "danish": "Medfødte, familiære og genetiske sygdomme",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Medf%C3%B8dte%2C%20famili%C3%A6re%20og%20genetiske%20sygdomme",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    },
+    "SocCi": {
+      "danish": "Sociale forhold",
+      "url": "https://www.sundhed.dk/borger/patienthaandbogen/soeg/?q=Sociale%20forhold",
+      "source": "sundhed.dk, Patienthåndbogen",
+      "kind": "search",
+      "verified": true,
+      "pageTitle": "Patienthåndbogen - Patienthåndbogen på sundhed.dk"
+    }
+  },
+  "coverage": {
+    "reactionOccurrences": 692178,
+    "directOccurrences": 269542,
+    "directShare": 0.3894,
+    "directTerms": 59,
+    "mappedTerms": 83,
+    "socWithDirectLink": 18,
+    "socCount": 27
+  }
+}

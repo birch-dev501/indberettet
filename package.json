@@ -1,0 +1,32 @@
+{
+  "name": "indberettet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node --experimental-strip-types scripts/build-search-index.ts && node scripts/prepare-static.mjs",
+    "prebuild": "node --experimental-strip-types scripts/build-search-index.ts && node scripts/prepare-static.mjs",
+    "dev": "next dev --turbopack -H 0.0.0.0 -p 3847",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p 3847",
+    "lint": "eslint",
+    "test": "node --experimental-strip-types --test lib/search.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts",
+    "ingest": "python3 scripts/ingest.py"
+  },
+  "dependencies": {
+    "next": "15.5.29",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "recharts": "^3.11.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.29",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "note": "Håndskrevne søgeord. Den månedlige kørsel overskriver ikke denne fil. Ordene er hverdagsnavne og officielle produktnavne, ikke medicinske påstande. Klasser peger på ATC-koder fra listen over godkendte lægemidler.",
+  "slugTerms": [
+    {
+      "slugs": ["covid-19-vaccines"],
+      "terms": ["corona", "coronavirus", "covid", "covid-19", "covid19"],
+      "label": "hverdagsord for covid-19"
+    },
+    {
+      "slugs": ["covid-19-vaccines"],
+      "terms": ["comirnaty", "tozinameran", "famtozinameran", "pfizer", "biontech", "bioNTech"],
+      "label": "Comirnaty står i udtrækket COVID-19 vaccines"
+    },
+    {
+      "slugs": ["covid-19-vaccines"],
+      "terms": ["spikevax", "elasomeran", "moderna"],
+      "label": "Spikevax står i udtrækket COVID-19 vaccines"
+    },
+    {
+      "slugs": ["influenza-vaccines"],
+      "terms": ["influenza", "influenzavaccine", "influenzavacciner", "influenza vaccine", "flu", "flu vaccine", "flu-vaccine"],
+      "label": "sæsoninfluenzavaccine i udtrækket Influenza vaccines"
+    },
+    {
+      "slugs": ["semaglutide", "liraglutide"],
+      "terms": ["slankemedicin", "vaegttabsmedicin", "vægttabsmedicin", "weight-loss", "weight loss"],
+      "label": "Wegovy og Saxenda i produktlisten"
+    }
+  ],
+  "classTerms": [
+    {
+      "terms": ["vaccine", "vaccines", "vaccin", "vacciner", "vaccination", "vaccinationer", "stik"],
+      "atcPrefixes": ["J07"],
+      "label": "ATC J07"
+    },
+    {
+      "terms": ["blodfortynder", "blodfortyndende", "blood thinner", "bloodthinner"],
+      "atcPrefixes": ["B01"],
+      "label": "ATC B01"
+    },
+    {
+      "terms": ["smertestillende", "painkiller", "painkillers"],
+      "atcPrefixes": ["N02"],
+      "label": "ATC N02"
+    },
+    {
+      "terms": ["diabetes", "diabetesmedicin"],
+      "atcPrefixes": ["A10"],
+      "label": "ATC A10"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "vaxzevria",
+      "terms": ["vaxzevria", "chadox1", "chadox1-s", "chadox", "azd1222"],
+      "requireAny": [],
+      "title": "Vaxzevria (AstraZeneca, ChAdOx1-S)",
+      "explanation": "Vaxzevria har ikke sin egen interaktive oversigt. Udtrækket COVID-19 vaccines indeholder kun Comirnaty og Spikevax, så der er ingen tal for AstraZenecas vaccine her."
+    },
+    {
+      "id": "astrazeneca-covid",
+      "terms": ["astrazeneca", "astra-zeneca", "astra zeneca", "astazeneca"],
+      "requireAny": ["vaccine", "vaccin", "vacciner", "vaccination", "corona", "covid", "covid-19", "vaxzevria"],
+      "title": "Vaxzevria (AstraZeneca, ChAdOx1-S)",
+      "explanation": "Vaxzevria har ikke sin egen interaktive oversigt. Udtrækket COVID-19 vaccines indeholder kun Comirnaty og Spikevax, så der er ingen tal for AstraZenecas vaccine her."
+    },
+    {
+      "id": "jcovden",
+      "terms": ["jcovden", "janssen-vaccine", "johnson vaccine"],
+      "requireAny": [],
+      "title": "Jcovden (Janssen / Johnson & Johnson)",
+      "explanation": "Jcovden har ikke sin egen interaktive oversigt og står ikke i udtrækket COVID-19 vaccines. Den fil indeholder kun Comirnaty og Spikevax."
+    },
+    {
+      "id": "janssen-covid",
+      "terms": ["janssen", "johnson", "j&j", "jnj"],
+      "requireAny": ["vaccine", "vaccin", "vacciner", "vaccination", "corona", "covid", "jcovden"],
+      "title": "Jcovden (Janssen / Johnson & Johnson)",
+      "explanation": "Jcovden har ikke sin egen interaktive oversigt og står ikke i udtrækket COVID-19 vaccines. Den fil indeholder kun Comirnaty og Spikevax."
+    },
+    {
+      "id": "supemtek",
+      "terms": ["supemtek"],
+      "requireAny": [],
+      "title": "Supemtek",
+      "explanation": "Supemtek Tetra står på listen over godkendte lægemidler, men produktnavnet indgår ikke i udtrækket Influenza vaccines."
+    },
+    {
+      "id": "nuvaxovid",
+      "terms": ["nuvaxovid", "novavax"],
+      "requireAny": [],
+      "title": "Nuvaxovid (Novavax)",
+      "explanation": "Nuvaxovid står på listen over godkendte lægemidler, men har ikke sin egen interaktive oversigt og indgår ikke i udtrækket COVID-19 vaccines. Den fil indeholder kun Comirnaty og Spikevax."
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "note": "Håndskrevne grupper. Medlemskab beregnes ved build ud fra ATC-koder på listen over godkendte lægemidler og skrives ikke ind i hånden. Beskrivelserne nævner kun koden og det officielle gruppenavn.",
+  "categories": [
+    {
+      "slug": "vacciner",
+      "name": "Vacciner",
+      "atc": "J07",
+      "officialName": "Vacciner",
+      "description": "Lægemidler med ATC-koden J07. Gruppen følger koden på listen over godkendte lægemidler.",
+      "terms": ["vacciner", "vaccine", "vaccination", "vaccinationer"],
+      "order": 1
+    },
+    {
+      "slug": "statiner",
+      "name": "Statiner",
+      "atc": "C10AA",
+      "officialName": "HMG-CoA-reduktasehæmmere",
+      "description": "Lægemidler med ATC-koden C10AA, HMG-CoA-reduktasehæmmere. I daglig tale kaldes gruppen statiner.",
+      "terms": ["statiner", "statin", "kolesterolmedicin", "hmg-coa-reduktasehæmmere"],
+      "order": 2
+    },
+    {
+      "slug": "antibiotika",
+      "name": "Antibiotika",
+      "atc": "J01",
+      "officialName": "Antibakterielle midler til systemisk brug",
+      "description": "Lægemidler med ATC-koden J01, antibakterielle midler til systemisk brug.",
+      "terms": ["antibiotika", "antibiotikum", "antibakterielle"],
+      "order": 3
+    },
+    {
+      "slug": "antidiabetika",
+      "name": "Antidiabetika",
+      "atc": "A10",
+      "officialName": "Antidiabetika",
+      "description": "Lægemidler med ATC-koden A10, antidiabetika. Insuliner har også deres egen gruppe, A10A.",
+      "terms": ["antidiabetika", "diabetes", "diabetesmedicin"],
+      "order": 4
+    },
+    {
+      "slug": "insuliner",
+      "name": "Insuliner",
+      "atc": "A10A",
+      "officialName": "Insuliner og analoger",
+      "description": "Lægemidler med ATC-koden A10A, insuliner og analoger.",
+      "terms": ["insuliner", "insulin"],
+      "order": 5
+    },
+    {
+      "slug": "antitrombotiske-midler",
+      "name": "Antitrombotiske midler",
+      "atc": "B01",
+      "officialName": "Antitrombotiske midler",
+      "description": "Lægemidler med ATC-koden B01, antitrombotiske midler.",
+      "terms": ["antitrombotiske", "blodfortynder", "blodfortyndende"],
+      "order": 6
+    },
+    {
+      "slug": "analgetika",
+      "name": "Analgetika",
+      "atc": "N02",
+      "officialName": "Analgetika",
+      "description": "Lægemidler med ATC-koden N02, analgetika.",
+      "terms": ["analgetika", "smertestillende"],
+      "order": 7
+    },
+    {
+      "slug": "nsaid",
+      "name": "NSAID",
+      "atc": "M01A",
+      "officialName": "Antiinflammatoriske og antireumatiske midler, non-steroide",
+      "description": "Lægemidler med ATC-koden M01A, non-steroide antiinflammatoriske og antireumatiske midler.",
+      "terms": ["nsaid", "non-steroide", "gigtmidler"],
+      "order": 8
+    },
+    {
+      "slug": "beta-blokkere",
+      "name": "Betablokkere",
+      "atc": "C07",
+      "officialName": "Betablokerende midler",
+      "description": "Lægemidler med ATC-koden C07, betablokerende midler.",
+      "terms": ["betablokkere", "betablokker", "beta-blokkere"],
+      "order": 9
+    },
+    {
+      "slug": "ace-haemmere",
+      "name": "ACE-hæmmere",
+      "atc": "C09A",
+      "officialName": "ACE-hæmmere, usammensatte",
+      "description": "Lægemidler med ATC-koden C09A, usammensatte ACE-hæmmere. Kombinationer har andre koder og står ikke her.",
+      "terms": ["ace-hæmmere", "ace-hæmmer", "acehæmmere"],
+      "order": 10
+    },
+    {
+      "slug": "angiotensin-ii-antagonister",
+      "name": "Angiotensin II-antagonister",
+      "atc": "C09C",
+      "officialName": "Angiotensin II-antagonister, usammensatte",
+      "description": "Lægemidler med ATC-koden C09C, usammensatte angiotensin II-antagonister.",
+      "terms": ["angiotensin", "angiotensin-ii-antagonister"],
+      "order": 11
+    },
+    {
+      "slug": "calciumantagonister",
+      "name": "Calciumantagonister",
+      "atc": "C08",
+      "officialName": "Calciumantagonister",
+      "description": "Lægemidler med ATC-koden C08, calciumantagonister.",
+      "terms": ["calciumantagonister", "calciumantagonist", "calciumblokkere"],
+      "order": 12
+    },
+    {
+      "slug": "diuretika",
+      "name": "Diuretika",
+      "atc": "C03",
+      "officialName": "Diuretika",
+      "description": "Lægemidler med ATC-koden C03, diuretika.",
+      "terms": ["diuretika", "vanddrivende"],
+      "order": 13
+    },
+    {
+      "slug": "lipidmodificerende-midler",
+      "name": "Lipidmodificerende midler",
+      "atc": "C10",
+      "officialName": "Lipidmodificerende midler",
+      "description": "Lægemidler med ATC-koden C10, lipidmodificerende midler. Statiner (C10AA) er en delmængde og har deres egen gruppe.",
+      "terms": ["lipidmodificerende", "lipidmidler"],
+      "order": 14
+    },
+    {
+      "slug": "antidepressiva",
+      "name": "Antidepressiva",
+      "atc": "N06A",
+      "officialName": "Antidepressiva",
+      "description": "Lægemidler med ATC-koden N06A, antidepressiva.",
+      "terms": ["antidepressiva", "antidepressiv"],
+      "order": 15
+    },
+    {
+      "slug": "antiepileptika",
+      "name": "Antiepileptika",
+      "atc": "N03",
+      "officialName": "Antiepileptika",
+      "description": "Lægemidler med ATC-koden N03, antiepileptika.",
+      "terms": ["antiepileptika", "epilepsimidler"],
+      "order": 16
+    },
+    {
+      "slug": "antipsykotika",
+      "name": "Antipsykotika",
+      "atc": "N05A",
+      "officialName": "Antipsykotika",
+      "description": "Lægemidler med ATC-koden N05A, antipsykotika.",
+      "terms": ["antipsykotika", "antipsykotikum"],
+      "order": 17
+    },
+    {
+      "slug": "antivirale-midler",
+      "name": "Antivirale midler",
+      "atc": "J05",
+      "officialName": "Antivirale midler til systemisk brug",
+      "description": "Lægemidler med ATC-koden J05, antivirale midler til systemisk brug.",
+      "terms": ["antivirale", "antivirusmidler"],
+      "order": 18
+    },
+    {
+      "slug": "luftvejsmidler",
+      "name": "Luftvejsmidler",
+      "atc": "R03",
+      "officialName": "Midler mod obstruktive luftvejssygdomme",
+      "description": "Lægemidler med ATC-koden R03, midler mod obstruktive luftvejssygdomme.",
+      "terms": ["luftvejsmidler", "astmamedicin", "inhalationsmedicin"],
+      "order": 19
+    },
+    {
+      "slug": "antihistaminer",
+      "name": "Antihistaminer",
+      "atc": "R06",
+      "officialName": "Antihistaminer til systemisk brug",
+      "description": "Lægemidler med ATC-koden R06, antihistaminer til systemisk brug.",
+      "terms": ["antihistaminer", "antihistamin"],
+      "order": 20
+    },
+    {
+      "slug": "protonpumpehaemmere",
+      "name": "Protonpumpehæmmere",
+      "atc": "A02BC",
+      "officialName": "Protonpumpehæmmere",
+      "description": "Lægemidler med ATC-koden A02BC, protonpumpehæmmere.",
+      "terms": ["protonpumpehæmmere", "syrepumpehæmmere", "mavesyremidler"],
+      "order": 21
+    },
+    {
+      "slug": "immunsuppressiva",
+      "name": "Immunsuppressiva",
+      "atc": "L04",
+      "officialName": "Immunsuppressiva",
+      "description": "Lægemidler med ATC-koden L04, immunsuppressiva.",
+      "terms": ["immunsuppressiva", "immunsupprimerende"],
+      "order": 22
+    },
+    {
+      "slug": "antineoplastiske-midler",
+      "name": "Antineoplastiske midler",
+      "atc": "L01",
+      "officialName": "Antineoplastiske midler",
+      "description": "Lægemidler med ATC-koden L01, antineoplastiske midler.",
+      "terms": ["antineoplastiske", "cytostatika"],
+      "order": 23
+    }
+  ]
+}

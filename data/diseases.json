@@ -1,0 +1,41 @@
+{
+  "note": "Sygdomsordene peger på ATC-grupper, ikke på en godkendt indikation for hvert stof. needsReview er true, indtil et menneske har læst teksten. Siden må ikke fremstilles som en behandlingsanbefaling.",
+  "diseases": [
+    {
+      "slug": "diabetes",
+      "name": "Diabetes",
+      "terms": ["diabetes", "diabetesmedicin", "type 2-diabetes", "sukkersyge"],
+      "atcPrefixes": ["A10"],
+      "summary": "ATC-gruppen antidiabetika (A10), herunder insulin og andre blodglukosesænkende midler.",
+      "source": "ATC A10, officielt gruppenavn Antidiabetika",
+      "needsReview": true
+    },
+    {
+      "slug": "migraene",
+      "name": "Migræne",
+      "terms": ["migræne", "migraene", "migraine"],
+      "atcPrefixes": ["N02C"],
+      "summary": "ATC-gruppen antimigrænemidler (N02C).",
+      "source": "ATC N02C, officielt gruppenavn Antimigrænemidler",
+      "needsReview": true
+    },
+    {
+      "slug": "depression",
+      "name": "Depression",
+      "terms": ["depression", "depressiv", "antidepressiv"],
+      "atcPrefixes": ["N06A"],
+      "summary": "ATC-gruppen antidepressiva (N06A).",
+      "source": "ATC N06A, officielt gruppenavn Antidepressiva",
+      "needsReview": true
+    },
+    {
+      "slug": "hojt-blodtryk",
+      "name": "Højt blodtryk",
+      "terms": ["højt blodtryk", "hojt blodtryk", "forhøjet blodtryk", "blodtryk"],
+      "atcPrefixes": ["C02", "C03", "C07", "C08", "C09"],
+      "summary": "ATC-grupperne antihypertensiva, diuretika, betablokkere, calciumantagonister og renin-angiotensin-midler. Grupperne er bredere end forhøjet blodtryk.",
+      "source": "ATC C02, C03, C07, C08 og C09. Kun C02 hedder officielt antihypertensiva.",
+      "needsReview": true
+    }
+  ]
+}
