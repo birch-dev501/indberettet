@@ -36,7 +36,7 @@ export default function HomePage() {
                 {CAUSALITY_NOTE} Tallene er heller ikke en risiko for den, der tager medicinen.
               </p>
               <p className="date-pill">
-                Data opdateret <strong>{updated}</strong>
+                Data opdateret <time dateTime={index.dataExtractionDateMax ?? undefined}>{updated}</time>
                 <span className="muted">· hentet {formatDate(status.generatedAt)}</span>
               </p>
             </div>
