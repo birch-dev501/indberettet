@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Penalties } from "@/components/penalties";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SUBSTANCE_COUNT_NOTE } from "@/lib/companies";
-import { getCompany, getCompanyCatalog } from "@/lib/data";
+import { getCompany, getCompanyCatalog, getViolation } from "@/lib/data";
 import { formatInt } from "@/lib/format";
 
 export const dynamicParams = false;
@@ -27,6 +28,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const company = getCompany(slug);
   if (!company) notFound();
+  const penalties = getViolation(slug);
   const reports = company.substances.reduce((sum, item) => sum + item.reports, 0);
 
   return (
@@ -87,6 +89,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
             </table>
           </div>
         )}
+        {penalties && <Penalties record={penalties} />}
         {company.otherProductCount > 0 && (
           <p className="muted">
             {formatInt(company.otherProductCount)} præparatrækker har ikke en hentet oversigt

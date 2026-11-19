@@ -1,0 +1,1559 @@
+{
+  "source": "https://violationtracker.goodjobsfirst.org/industry/pharmaceuticals",
+  "sourceName": "Violation Tracker, Good Jobs First",
+  "fetchedAt": "2026-11-19",
+  "note": "Tallene dækker især amerikansk håndhævelse og kun en del sager fra Storbritannien og EU. De er samlet af Good Jobs First og handler om selskabet, ikke om sikkerheden ved et bestemt lægemiddel.",
+  "firms": {
+    "pfizer": {
+      "parentName": "Pfizer",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/pfizer",
+      "penaltyTotalUsd": 11290643733,
+      "recordCount": 109,
+      "topOffenseTypes": [
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 5636840000,
+          "count": 9
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 3394425000,
+          "count": 11
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 1207937502,
+          "count": 22
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 933902884,
+          "count": 14
+        },
+        {
+          "type": "Foreign Corrupt Practices Act",
+          "totalUsd": 60216568,
+          "count": 3
+        }
+      ],
+      "largest": [
+        {
+          "company": "American Home Products",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2002,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 3750000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-american-home-products"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2009,
+          "agency": "FDA",
+          "amountUsd": 2300000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-3"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2016,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 784600000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-2"
+        },
+        {
+          "company": "Pfizer",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2004,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 750000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-4"
+        },
+        {
+          "company": "Pfizer",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2008,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 745000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-3"
+        },
+        {
+          "company": "Wyeth Pharmaceuticals Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2013,
+          "agency": "FDA",
+          "amountUsd": 490900000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-wyeth-pharmaceuticals-inc"
+        },
+        {
+          "company": "Warner-Lambert",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2004,
+          "agency": "FDA",
+          "amountUsd": 430000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-warner-lambert"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2021,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 345000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-13"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Pharmacia LLC",
+          "offense": "PCB violation",
+          "year": 2026,
+          "agency": "RI-AG",
+          "amountUsd": 8333333,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ri-pharmacia-llc"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2025,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 59746277,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-16"
+        },
+        {
+          "company": "Pfizer",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2025,
+          "agency": "TX-AG",
+          "amountUsd": 20750000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/tx-pfizer"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2024,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 93000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-14"
+        },
+        {
+          "company": "Pfizer Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2024,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 50000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-pfizer-inc-15"
+        }
+      ]
+    },
+    "novo-nordisk": {
+      "parentName": "Novo Holdings A/S",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/novo-holdings-as",
+      "penaltyTotalUsd": 130043236,
+      "recordCount": 21,
+      "topOffenseTypes": [
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 66675000,
+          "count": 4
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 26100000,
+          "count": 3
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 19000000,
+          "count": 1
+        },
+        {
+          "type": "Foreign Corrupt Practices Act",
+          "totalUsd": 9030149,
+          "count": 1
+        },
+        {
+          "type": "kickbacks and bribery",
+          "totalUsd": 9000000,
+          "count": 1
+        }
+      ],
+      "largest": [
+        {
+          "company": "Novo Nordisk Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2017,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 58650000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc-0"
+        },
+        {
+          "company": "Novo Nordisk Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2011,
+          "agency": "FDA",
+          "amountUsd": 25000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc"
+        },
+        {
+          "company": "Novo Nordisk A/S",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2015,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 19000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-as-1"
+        },
+        {
+          "company": "Novo Nordisk A/S",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2009,
+          "agency": "SEC",
+          "amountUsd": 9030149,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-as-0"
+        },
+        {
+          "company": "Novo Nordisk A/S",
+          "offense": "kickbacks and bribery",
+          "year": 2009,
+          "agency": "DOJ_CRIMINAL",
+          "amountUsd": 9000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-as"
+        },
+        {
+          "company": "Novo Nordisk Inc",
+          "offense": "False Claims Act and related",
+          "year": 2022,
+          "agency": "USAO",
+          "amountUsd": 6300000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc-4"
+        },
+        {
+          "company": "Novo Nordisk Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2011,
+          "agency": "USAO",
+          "amountUsd": 1725000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc-1"
+        },
+        {
+          "company": "Novo Nordisk Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2017,
+          "agency": "CA-INS",
+          "amountUsd": 1100000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ca-novo-nordisk-inc"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Novo Nordisk Pharmaceutical Industries LP",
+          "offense": "air pollution violation",
+          "year": 2025,
+          "agency": "VA-ENV",
+          "amountUsd": 35000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/va-novo-nordisk-pharmaceutical-industries-l"
+        },
+        {
+          "company": "CATALENT PHARMA SOLUTIONS, LLC",
+          "offense": "workplace safety or health violation",
+          "year": 2023,
+          "agency": "OSHA",
+          "amountUsd": 8185,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/va-catalent-pharma-solutions-llc"
+        },
+        {
+          "company": "Novo Nordisk Inc",
+          "offense": "False Claims Act and related",
+          "year": 2022,
+          "agency": "USAO",
+          "amountUsd": 6300000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novo-nordisk-inc-4"
+        },
+        {
+          "company": "CATALENT PHARMA SOLUTIONS",
+          "offense": "workplace safety or health violation",
+          "year": 2022,
+          "agency": "OSHA",
+          "amountUsd": 8929,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/mo-catalent-pharma-solutions"
+        },
+        {
+          "company": "CATALENT PHARMA SOLUTIONS, LLC",
+          "offense": "workplace safety or health violation",
+          "year": 2021,
+          "agency": "OSHA",
+          "amountUsd": 21170,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ca-catalent-pharma-solutions-llc"
+        }
+      ]
+    },
+    "eli-lilly": {
+      "parentName": "Eli Lilly",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/eli-lilly",
+      "penaltyTotalUsd": 3014987327,
+      "recordCount": 27,
+      "topOffenseTypes": [
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 1608100000,
+          "count": 9
+        },
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 1190000000,
+          "count": 2
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 185337651,
+          "count": 2
+        },
+        {
+          "type": "Foreign Corrupt Practices Act",
+          "totalUsd": 29398734,
+          "count": 1
+        },
+        {
+          "type": "environmental violation",
+          "totalUsd": 1492467,
+          "count": 8
+        }
+      ],
+      "largest": [
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2009,
+          "agency": "FDA",
+          "amountUsd": 1415000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-0"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2005,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 690000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-5"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2007,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 500000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-4"
+        },
+        {
+          "company": "Eli Lilly & Co.",
+          "offense": "False Claims Act and related",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 183687651,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-co-0"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2008,
+          "agency": "MULTI-AG",
+          "amountUsd": 62000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-3"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2005,
+          "agency": "FDA",
+          "amountUsd": 36000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company-1"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2012,
+          "agency": "SEC",
+          "amountUsd": 29398734,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company"
+        },
+        {
+          "company": "Eli Lilly and Co.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2009,
+          "agency": "CT-AG",
+          "amountUsd": 25100000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ct-eli-lilly-and-co"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Eli Lilly & Co.",
+          "offense": "False Claims Act and related",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 183687651,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-co-0"
+        },
+        {
+          "company": "ELI LILLY & CO LTC",
+          "offense": "air pollution violation",
+          "year": 2019,
+          "agency": "IN-ENV",
+          "amountUsd": 45000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/in-eli-lilly-and-co-ltc"
+        },
+        {
+          "company": "Eli Lilly",
+          "offense": "False Claims Act and related",
+          "year": 2013,
+          "agency": "LA-AG",
+          "amountUsd": 1650000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/la-eli-lilly"
+        },
+        {
+          "company": "Boehringer Ingelheim Vetmedica, Inc.",
+          "offense": "hazardous waste violation",
+          "year": 2012,
+          "agency": "EPA",
+          "amountUsd": 68475,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/mo-boehringer-ingelheim-vetmedica-inc"
+        },
+        {
+          "company": "Eli Lilly and Company",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2012,
+          "agency": "SEC",
+          "amountUsd": 29398734,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-eli-lilly-and-company"
+        }
+      ]
+    },
+    "msd": {
+      "parentName": "Merck",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/merck",
+      "penaltyTotalUsd": 10710431781,
+      "recordCount": 90,
+      "topOffenseTypes": [
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 5427450000,
+          "count": 5
+        },
+        {
+          "type": "tax violations",
+          "totalUsd": 2300000000,
+          "count": 1
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 1391000000,
+          "count": 6
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 796733333,
+          "count": 14
+        },
+        {
+          "type": "kickbacks and bribery",
+          "totalUsd": 345000000,
+          "count": 2
+        }
+      ],
+      "largest": [
+        {
+          "company": "Merck & Co.",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2007,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 4850000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-and-co-1"
+        },
+        {
+          "company": "Merck & Co., Inc.",
+          "offense": "tax violations",
+          "year": 2007,
+          "agency": "IRS",
+          "amountUsd": 2300000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-and-co-inc-4"
+        },
+        {
+          "company": "Merck, Sharp & Dohme",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2011,
+          "agency": "FDA",
+          "amountUsd": 950000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-sharp-and-dohme"
+        },
+        {
+          "company": "Merck & Company",
+          "offense": "False Claims Act and related",
+          "year": 2008,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 650000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-and-company"
+        },
+        {
+          "company": "Schering-Plough Corporation",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2002,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 500000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-schering-plough-corporation-2"
+        },
+        {
+          "company": "Schering-Plough Corporation",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2006,
+          "agency": "USAO",
+          "amountUsd": 435000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-schering-plough-corporation-3"
+        },
+        {
+          "company": "Schering-Plough Corporation",
+          "offense": "kickbacks and bribery",
+          "year": 2004,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 345000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-schering-plough-corporation"
+        },
+        {
+          "company": "Merck & Co.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2017,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 60200000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-and-co-2"
+        }
+      ],
+      "recent": [
+        {
+          "company": "MERCK SHARP & DOHME LLC",
+          "offense": "air pollution violation",
+          "year": 2024,
+          "agency": "NJ-ENV",
+          "amountUsd": 33200,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/nj-merck-sharp-and-dohme-llc"
+        },
+        {
+          "company": "MERCK, SHARPE & DOHME LLC",
+          "offense": "workplace safety or health violation",
+          "year": 2024,
+          "agency": "OSHA",
+          "amountUsd": 31750,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/va-merck-sharpe-and-dohme-llc"
+        },
+        {
+          "company": "Merck",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 56000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-2"
+        },
+        {
+          "company": "MERCK SHARP & DOHME CORP.",
+          "offense": "environmental violation",
+          "year": 2023,
+          "agency": "EPA",
+          "amountUsd": 6250,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-sharp-and-dohme-corp-1"
+        },
+        {
+          "company": "Cherokee Pharmaceuticals",
+          "offense": "railroad safety violation",
+          "year": 2021,
+          "agency": "FRA",
+          "amountUsd": 5000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-cherokee-pharmaceuticals"
+        }
+      ]
+    },
+    "merck": {
+      "parentName": "Merck KGaA (EMD)",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/merck-kgaa-emd",
+      "penaltyTotalUsd": 820670885,
+      "recordCount": 40,
+      "topOffenseTypes": [
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 704000000,
+          "count": 2
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 66275454,
+          "count": 3
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 44300000,
+          "count": 2
+        },
+        {
+          "type": "pesticide violation",
+          "totalUsd": 2681500,
+          "count": 1
+        },
+        {
+          "type": "export control violation",
+          "totalUsd": 1804000,
+          "count": 2
+        }
+      ],
+      "largest": [
+        {
+          "company": "Serono, S.A.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2005,
+          "agency": "FDA",
+          "amountUsd": 704000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-serono-sa"
+        },
+        {
+          "company": "E. Merck KG",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2002,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 50000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-e-merck-kg"
+        },
+        {
+          "company": "Serono Laboratories Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2011,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 44300000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-serono-laboratories-inc"
+        },
+        {
+          "company": "Merck KgaA",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2000,
+          "agency": "DOJ_ANTITRUST",
+          "amountUsd": 14000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-kgaa"
+        },
+        {
+          "company": "EMD Millipore Corporation",
+          "offense": "pesticide violation",
+          "year": 2013,
+          "agency": "EPA",
+          "amountUsd": 2681500,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ma-emd-millipore-corporation"
+        },
+        {
+          "company": "Merck KGaA",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2009,
+          "agency": "MULTI-AG",
+          "amountUsd": 2275454,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-merck-kgaa-0"
+        },
+        {
+          "company": "Sigma Aldrich Research Biochemicals Inc.",
+          "offense": "export control violation",
+          "year": 2002,
+          "agency": "BIS",
+          "amountUsd": 1760000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sigma-aldrich-research-biochemicals-inc"
+        },
+        {
+          "company": "MILLIPORE CORP",
+          "offense": "environmental violation",
+          "year": 2010,
+          "agency": "EPA",
+          "amountUsd": 526500,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ma-millipore-corp"
+        }
+      ],
+      "recent": [
+        {
+          "company": "VERSUM MATERIALS",
+          "offense": "workplace safety or health violation",
+          "year": 2023,
+          "agency": "OSHA",
+          "amountUsd": 8438,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/tx-versum-materials"
+        },
+        {
+          "company": "EMD MILLIPORE CORPORATION",
+          "offense": "workplace safety or health violation",
+          "year": 2021,
+          "agency": "OSHA",
+          "amountUsd": 10240,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/nh-emd-millipore-corporation"
+        },
+        {
+          "company": "VERSUM MATERIALS, INC.",
+          "offense": "environmental violation",
+          "year": 2020,
+          "agency": "EPA",
+          "amountUsd": 17600,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-versum-materials-inc"
+        },
+        {
+          "company": "SIGMA-ALDRICH",
+          "offense": "workplace safety or health violation",
+          "year": 2018,
+          "agency": "OSHA",
+          "amountUsd": 23632,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/mo-sigma-aldrich"
+        },
+        {
+          "company": "Aldrich Chemical",
+          "offense": "environmental violation",
+          "year": 2018,
+          "agency": "EPA",
+          "amountUsd": 5000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/wi-aldrich-chemical"
+        }
+      ]
+    },
+    "astrazeneca": {
+      "parentName": "AstraZeneca",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/astrazeneca",
+      "penaltyTotalUsd": 2049285457,
+      "recordCount": 35,
+      "topOffenseTypes": [
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 594000000,
+          "count": 4
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 590239159,
+          "count": 14
+        },
+        {
+          "type": "product safety violation",
+          "totalUsd": 425000000,
+          "count": 1
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 208925000,
+          "count": 6
+        },
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 198000000,
+          "count": 1
+        }
+      ],
+      "largest": [
+        {
+          "company": "AstraZeneca LP",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2010,
+          "agency": "FDA",
+          "amountUsd": 520000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-lp"
+        },
+        {
+          "company": "AstraZeneca",
+          "offense": "product safety violation",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 425000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-2"
+        },
+        {
+          "company": "AstraZeneca Pharmaceuticals LP",
+          "offense": "False Claims Act and related",
+          "year": 2003,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 354900000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-pharmaceuticals-lp"
+        },
+        {
+          "company": "AstraZeneca",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2010,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 198000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-0"
+        },
+        {
+          "company": "AstraZeneca",
+          "offense": "False Claims Act and related",
+          "year": 2018,
+          "agency": "TX-AG",
+          "amountUsd": 110000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/tx-astrazeneca"
+        },
+        {
+          "company": "AstraZeneca Pharmaceuticals LP",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2011,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 90000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-pharmaceuticals-lp-6"
+        },
+        {
+          "company": "AstraZeneca Pharmaceuticals",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2011,
+          "agency": "MULTI-AG",
+          "amountUsd": 68500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-pharmaceuticals-0"
+        },
+        {
+          "company": "AstraZeneca Pharmaceuticals LP",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2025,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 50925000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-pharmaceuticals-lp-7"
+        }
+      ],
+      "recent": [
+        {
+          "company": "AstraZeneca Pharmaceuticals LP",
+          "offense": "False Claims Act and related",
+          "year": 2026,
+          "agency": "TX-AG",
+          "amountUsd": 33998000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/tx-astrazeneca-pharmaceuticals-lp"
+        },
+        {
+          "company": "AstraZeneca Pharmaceuticals LP",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2025,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 50925000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-pharmaceuticals-lp-7"
+        },
+        {
+          "company": "AstraZeneca",
+          "offense": "product safety violation",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 425000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-astrazeneca-2"
+        },
+        {
+          "company": "AstraZeneca",
+          "offense": "employment discrimination",
+          "year": 2021,
+          "agency": "OFCCP",
+          "amountUsd": 560000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/de-astrazeneca"
+        },
+        {
+          "company": "ASTRAZENECA PLP",
+          "offense": "environmental violation",
+          "year": 2021,
+          "agency": "EPA",
+          "amountUsd": 18960,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ky-astrazeneca-plp"
+        }
+      ]
+    },
+    "glaxosmithkline": {
+      "parentName": "GSK plc",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/gsk-plc",
+      "penaltyTotalUsd": 11777303406,
+      "recordCount": 52,
+      "topOffenseTypes": [
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 3982583148,
+          "count": 9
+        },
+        {
+          "type": "tax violations",
+          "totalUsd": 3400000000,
+          "count": 1
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 3019361860,
+          "count": 5
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 931270000,
+          "count": 15
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 313656216,
+          "count": 11
+        }
+      ],
+      "largest": [
+        {
+          "company": "GlaxoSmithKline Holdings (Americas)",
+          "offense": "tax violations",
+          "year": 2006,
+          "agency": "IRS",
+          "amountUsd": 3400000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-holdings-americas"
+        },
+        {
+          "company": "GlaxoSmithKline LLC",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2012,
+          "agency": "FDA",
+          "amountUsd": 3000000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-llc"
+        },
+        {
+          "company": "GSK PLC",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2024,
+          "agency": "private lawsuit-state",
+          "amountUsd": 2200000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-gsk-plc"
+        },
+        {
+          "company": "GlaxoSmithKline",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2010,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 770000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-6"
+        },
+        {
+          "company": "SB Pharmco Puerto Rico Inc.",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2010,
+          "agency": "FDA",
+          "amountUsd": 750000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sb-pharmco-puerto-rico-inc"
+        },
+        {
+          "company": "GlaxoSmithKline",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2004,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 175000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-10"
+        },
+        {
+          "company": "GlaxoSmithKline",
+          "offense": "False Claims Act and related",
+          "year": 2005,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 150000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline"
+        },
+        {
+          "company": "GlaxoSmithKline PLC",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2013,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 150000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-plc-2"
+        }
+      ],
+      "recent": [
+        {
+          "company": "GlaxoSmithKline",
+          "offense": "product safety violation",
+          "year": 2025,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 4500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-12"
+        },
+        {
+          "company": "GSK PLC",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2024,
+          "agency": "private lawsuit-state",
+          "amountUsd": 2200000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-gsk-plc"
+        },
+        {
+          "company": "GlaxoSmithKline",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2023,
+          "agency": "IN-AG",
+          "amountUsd": 1270000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/in-glaxosmithkline"
+        },
+        {
+          "company": "GlaxoSmithKline LLC",
+          "offense": "False Claims Act and related",
+          "year": 2019,
+          "agency": "IL-AG",
+          "amountUsd": 54653931,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/il-glaxosmithkline-llc"
+        },
+        {
+          "company": "GlaxoSmithKline plc",
+          "offense": "kickbacks and bribery",
+          "year": 2016,
+          "agency": "SEC",
+          "amountUsd": 20000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-glaxosmithkline-plc"
+        }
+      ]
+    },
+    "sanofi": {
+      "parentName": "Sanofi",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/sanofi",
+      "penaltyTotalUsd": 1698834785,
+      "recordCount": 40,
+      "topOffenseTypes": [
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 489458415,
+          "count": 15
+        },
+        {
+          "type": "product safety violation",
+          "totalUsd": 458006000,
+          "count": 1
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 350000000,
+          "count": 1
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 302680768,
+          "count": 12
+        },
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 55781039,
+          "count": 2
+        }
+      ],
+      "largest": [
+        {
+          "company": "Sanofi",
+          "offense": "product safety violation",
+          "year": 2024,
+          "agency": "HI-AG",
+          "amountUsd": 458006000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/hi-sanofi"
+        },
+        {
+          "company": "Sanofi",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2025,
+          "agency": "HI-AG",
+          "amountUsd": 350000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/hi-sanofi-0"
+        },
+        {
+          "company": "Aventis Pharmaceuticals Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2007,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 190000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-aventis-pharmaceuticals-inc"
+        },
+        {
+          "company": "Sanofi-Aventis U.S. Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2012,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 109000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sanofi-aventis-us-inc"
+        },
+        {
+          "company": "Aventis Pharmaceutical Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2009,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 95500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-aventis-pharmaceutical-inc"
+        },
+        {
+          "company": "Sanofi Pasteur Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2017,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 61500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sanofi-pasteur-inc"
+        },
+        {
+          "company": "Hoechst Marion Roussel",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2003,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 55000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-hoechst-marion-roussel-0"
+        },
+        {
+          "company": "Hoechst Marion Roussel, Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2016,
+          "agency": "private lawsuit-state",
+          "amountUsd": 50000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-hoechst-marion-roussel-inc"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Sanofi",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2025,
+          "agency": "HI-AG",
+          "amountUsd": 350000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/hi-sanofi-0"
+        },
+        {
+          "company": "SANOFI",
+          "offense": "hazardous waste violation",
+          "year": 2025,
+          "agency": "NJ-ENV",
+          "amountUsd": 11900,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/nj-sanofi"
+        },
+        {
+          "company": "Sanofi",
+          "offense": "product safety violation",
+          "year": 2024,
+          "agency": "HI-AG",
+          "amountUsd": 458006000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/hi-sanofi"
+        },
+        {
+          "company": "Sanofi-Aventis U.S., LLC",
+          "offense": "False Claims Act and related",
+          "year": 2020,
+          "agency": "USAO",
+          "amountUsd": 11850000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-sanofi-aventis-us-llc-0"
+        },
+        {
+          "company": "Sanofi-Aventis",
+          "offense": "consumer protection violation",
+          "year": 2019,
+          "agency": "WV-AG",
+          "amountUsd": 1600000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/wv-sanofi-aventis"
+        }
+      ]
+    },
+    "novartis": {
+      "parentName": "Novartis",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/novartis",
+      "penaltyTotalUsd": 2449435337,
+      "recordCount": 37,
+      "topOffenseTypes": [
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 612613689,
+          "count": 8
+        },
+        {
+          "type": "kickbacks and bribery",
+          "totalUsd": 504800000,
+          "count": 4
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 501638250,
+          "count": 5
+        },
+        {
+          "type": "Foreign Corrupt Practices Act",
+          "totalUsd": 370800000,
+          "count": 3
+        },
+        {
+          "type": "employment discrimination",
+          "totalUsd": 183051594,
+          "count": 3
+        }
+      ],
+      "largest": [
+        {
+          "company": "Novartis Pharmaceuticals Corporation",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2010,
+          "agency": "FDA",
+          "amountUsd": 422500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-pharmaceuticals-corporation"
+        },
+        {
+          "company": "Novartis Pharmaceuticals",
+          "offense": "kickbacks and bribery",
+          "year": 2015,
+          "agency": "USAO",
+          "amountUsd": 390000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-pharmaceuticals"
+        },
+        {
+          "company": "Novartis Hellas S.A.C.I. et al.",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2020,
+          "agency": "DOJ_CRIMINAL",
+          "amountUsd": 233000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-hellas-saci-et-al"
+        },
+        {
+          "company": "Novartis Corporation",
+          "offense": "employment discrimination",
+          "year": 2010,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 175000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-corporation"
+        },
+        {
+          "company": "Novartis AG",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 126850000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-ag-1"
+        },
+        {
+          "company": "Novartis AG",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2020,
+          "agency": "SEC",
+          "amountUsd": 112800000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-ag-0"
+        },
+        {
+          "company": "Novartis Pharmaceuticals Corp.",
+          "offense": "kickbacks and bribery",
+          "year": 2020,
+          "agency": "MULTI-AG",
+          "amountUsd": 103000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-pharmaceuticals-corp"
+        },
+        {
+          "company": "Novartis",
+          "offense": "wage and hour violation",
+          "year": 2012,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 99000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis"
+        }
+      ],
+      "recent": [
+        {
+          "company": "NOVARTIS PHARMACEUTICALS CORPORATION",
+          "offense": "workplace safety or health violation",
+          "year": 2024,
+          "agency": "OSHA",
+          "amountUsd": 20000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/nj-novartis-pharmaceuticals-corporation-0"
+        },
+        {
+          "company": "Novartis AG",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 126850000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-ag-1"
+        },
+        {
+          "company": "Novartis Pharmaceuticals Corporation",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 30000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-pharmaceuticals-corporation-3"
+        },
+        {
+          "company": "Novartis Pharmaceuticals Corporation",
+          "offense": "kickbacks and bribery",
+          "year": 2020,
+          "agency": "CA-AG",
+          "amountUsd": 11800000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ca-novartis-pharmaceuticals-corporation"
+        },
+        {
+          "company": "Novartis Hellas S.A.C.I. et al.",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2020,
+          "agency": "DOJ_CRIMINAL",
+          "amountUsd": 233000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-novartis-hellas-saci-et-al"
+        }
+      ]
+    },
+    "janssen-cilag": {
+      "parentName": "Johnson & Johnson",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/johnson-and-johnson",
+      "penaltyTotalUsd": 25222910922,
+      "recordCount": 83,
+      "topOffenseTypes": [
+        {
+          "type": "product safety violation",
+          "totalUsd": 11550000000,
+          "count": 3
+        },
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 8505500000,
+          "count": 16
+        },
+        {
+          "type": "drug or medical equipment safety violation",
+          "totalUsd": 3577169800,
+          "count": 14
+        },
+        {
+          "type": "consumer protection violation",
+          "totalUsd": 717011000,
+          "count": 5
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 556555368,
+          "count": 13
+        }
+      ],
+      "largest": [
+        {
+          "company": "Johnson & Johnson",
+          "offense": "product safety violation",
+          "year": 2023,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 8900000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson-12"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2021,
+          "agency": "MULTI-AG",
+          "amountUsd": 5000000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson-6"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "product safety violation",
+          "year": 2021,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 2500000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson-7"
+        },
+        {
+          "company": "DePuy Orthopaedics, Inc.",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2013,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 2475000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-depuy-orthopaedics-inc-0"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2013,
+          "agency": "FDA",
+          "amountUsd": 2200000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "consumer protection violation",
+          "year": 2024,
+          "agency": "MULTI-AG",
+          "amountUsd": 700000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson-14"
+        },
+        {
+          "company": "Janssen Pharmaceuticals, Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2013,
+          "agency": "USAO",
+          "amountUsd": 410000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-janssen-pharmaceuticals-inc"
+        },
+        {
+          "company": "Janssen Pharmaceuticals",
+          "offense": "drug or medical equipment safety violation",
+          "year": 2019,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 387500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-janssen-pharmaceuticals"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Actelion Pharmaceuticals Ltd.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2026,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 65000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-actelion-pharmaceuticals-ltd"
+        },
+        {
+          "company": "Janssen Pharmaceuticals, Inc.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2026,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 40000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-janssen-pharmaceuticals-inc-3"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2024,
+          "agency": "WA-AG",
+          "amountUsd": 149500000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/wa-johnson-and-johnson-0"
+        },
+        {
+          "company": "Johnson & Johnson",
+          "offense": "consumer protection violation",
+          "year": 2024,
+          "agency": "MULTI-AG",
+          "amountUsd": 700000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-johnson-and-johnson-14"
+        },
+        {
+          "company": "JANSSEN PHARMACEUTICALS, INC.",
+          "offense": "environmental violation",
+          "year": 2024,
+          "agency": "EPA",
+          "amountUsd": 30400,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-janssen-pharmaceuticals-inc-2"
+        }
+      ]
+    },
+    "teva": {
+      "parentName": "Teva Pharmaceutical Industries",
+      "parentUrl": "https://violationtracker.goodjobsfirst.org/parent/teva-pharmaceutical-industries",
+      "penaltyTotalUsd": 10777526796,
+      "recordCount": 101,
+      "topOffenseTypes": [
+        {
+          "type": "off-label or unapproved promotion of medical products",
+          "totalUsd": 5824279633,
+          "count": 14
+        },
+        {
+          "type": "price-fixing or anti-competitive practices",
+          "totalUsd": 3027779384,
+          "count": 27
+        },
+        {
+          "type": "False Claims Act and related",
+          "totalUsd": 917482547,
+          "count": 23
+        },
+        {
+          "type": "Foreign Corrupt Practices Act",
+          "totalUsd": 519177348,
+          "count": 2
+        },
+        {
+          "type": "product safety violation",
+          "totalUsd": 270000000,
+          "count": 1
+        }
+      ],
+      "largest": [
+        {
+          "company": "Teva Pharmaceuticals",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2022,
+          "agency": "MULTI-AG",
+          "amountUsd": 4250000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals"
+        },
+        {
+          "company": "Cephalon, Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2015,
+          "agency": "FTC",
+          "amountUsd": 1200000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-cephalon-inc"
+        },
+        {
+          "company": "Teva Pharmaceuticals USA Inc.",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2015,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 512000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-usa-inc"
+        },
+        {
+          "company": "Teva Pharmaceuticals USA Inc. and Teva Neuroscience Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2024,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 450000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-usa-inc-and-teva-ne"
+        },
+        {
+          "company": "Cephalon Inc",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2008,
+          "agency": "FDA",
+          "amountUsd": 425000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-cephalon-inc-1"
+        },
+        {
+          "company": "Teva Pharmaceuticals, Ltd.",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2022,
+          "agency": "NY-AG",
+          "amountUsd": 313343793,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/ny-teva-pharmaceuticals-ltd"
+        },
+        {
+          "company": "Teva Pharmaceutical Industries Ltd",
+          "offense": "Foreign Corrupt Practices Act",
+          "year": 2016,
+          "agency": "DOJ_CRIMINAL",
+          "amountUsd": 283177348,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceutical-industries-ltd"
+        },
+        {
+          "company": "Teva Pharmaceutical Industries",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2022,
+          "agency": "FL-AG",
+          "amountUsd": 278826499,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/fl-teva-pharmaceutical-industries"
+        }
+      ],
+      "recent": [
+        {
+          "company": "Teva Pharmaceuticals",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2026,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 35000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-1"
+        },
+        {
+          "company": "Teva Pharmaceuticals",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2026,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 45000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-2"
+        },
+        {
+          "company": "Teva Pharmaceuticals",
+          "offense": "price-fixing or anti-competitive practices",
+          "year": 2025,
+          "agency": "private lawsuit-federal",
+          "amountUsd": 2250000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-0"
+        },
+        {
+          "company": "Teva",
+          "offense": "off-label or unapproved promotion of medical products",
+          "year": 2024,
+          "agency": "MD-AG",
+          "amountUsd": 70281867,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/md-teva"
+        },
+        {
+          "company": "Teva Pharmaceuticals USA Inc. and Teva Neuroscience Inc.",
+          "offense": "False Claims Act and related",
+          "year": 2024,
+          "agency": "DOJ_CIVIL",
+          "amountUsd": 450000000,
+          "url": "https://violationtracker.goodjobsfirst.org/violation-tracker/-teva-pharmaceuticals-usa-inc-and-teva-ne"
+        }
+      ]
+    }
+  }
+}

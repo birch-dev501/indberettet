@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -11,6 +12,18 @@ import {
 } from "recharts";
 import type { AgeRow, YearRow } from "@/lib/types";
 import { formatInt } from "@/lib/format";
+
+function useNarrow(): boolean {
+  const [narrow, setNarrow] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 720px)");
+    const update = () => setNarrow(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+  return narrow;
+}
 
 const nonserious = "#1c6d64";
 const serious = "#c56a32";
@@ -59,6 +72,7 @@ export type AgeSeriousnessRow = {
 };
 
 export function AgeSeriousnessChart({ rows }: { rows: AgeSeriousnessRow[] }) {
+  const narrow = useNarrow();
   if (rows.length === 0 || rows.every((row) => row.nonserious + row.serious + row.fatal === 0)) {
     return <p className="muted">Ingen aldersfordeling i udtrækket.</p>;
   }
@@ -77,8 +91,8 @@ export function AgeSeriousnessChart({ rows }: { rows: AgeSeriousnessRow[] }) {
           <YAxis
             type="category"
             dataKey="label"
-            width={78}
-            tick={{ fill: "#1c1915", fontSize: 12 }}
+            width={narrow ? 64 : 78}
+            tick={{ fill: "#1c1915", fontSize: narrow ? 11 : 12 }}
             axisLine={false}
             tickLine={false}
           />
@@ -103,6 +117,7 @@ export type CategoryCompareRow = {
 };
 
 export function CategoryCompareChart({ rows }: { rows: CategoryCompareRow[] }) {
+  const narrow = useNarrow();
   if (rows.length === 0) return <p className="muted">Ingen stoffer i gruppen.</p>;
   const height = Math.min(560, Math.max(200, rows.length * 38 + 16));
   return (
@@ -119,9 +134,9 @@ export function CategoryCompareChart({ rows }: { rows: CategoryCompareRow[] }) {
           <YAxis
             type="category"
             dataKey="name"
-            width={176}
+            width={narrow ? 92 : 176}
             interval={0}
-            tick={{ fill: "#1c1915", fontSize: 12 }}
+            tick={{ fill: "#1c1915", fontSize: narrow ? 11 : 12 }}
             axisLine={false}
             tickLine={false}
           />
@@ -136,6 +151,7 @@ export function CategoryCompareChart({ rows }: { rows: CategoryCompareRow[] }) {
 }
 
 export function AgeChart({ ages }: { ages: AgeRow[] }) {
+  const narrow = useNarrow();
   if (ages.length === 0) return <p className="muted">Ingen aldersoplysninger i dette udsnit.</p>;
   return (
     <div className="chart-box tall" role="img" aria-label="Søjlediagram over indberetninger fordelt på aldersgruppe">
@@ -146,8 +162,8 @@ export function AgeChart({ ages }: { ages: AgeRow[] }) {
           <YAxis
             type="category"
             dataKey="label"
-            width={92}
-            tick={{ fill: "#1c1915", fontSize: 12 }}
+            width={narrow ? 68 : 92}
+            tick={{ fill: "#1c1915", fontSize: narrow ? 11 : 12 }}
             axisLine={false}
             tickLine={false}
           />

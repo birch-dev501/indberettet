@@ -41,6 +41,8 @@ jobs:
         run: python scripts/build_plain_language.py
       - name: Tjek links til bivirkningstermer
         run: python scripts/check_term_links.py
+      - name: Opdater bøder fra Violation Tracker
+        run: python scripts/fetch_violations.py
       - name: Opdater søgeord og ATC-grupper fra produktlisten
         run: node --experimental-strip-types scripts/build-search-index.ts
       - name: Installer og byg

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { AgeChart, AgeSeriousnessChart, type AgeSeriousnessRow, YearChart } from "@/components/charts";
+import { ReactionTypes } from "@/components/reaction-types";
 import { RateCard } from "@/components/rate-card";
 import { formatDate, formatInt, formatPercent } from "@/lib/format";
 import type { PlainLanguage } from "@/lib/data";
@@ -36,7 +37,6 @@ export function SubstanceView({
 }) {
   const [viewId, setViewId] = useState<(typeof VIEWS)[number]["id"]>("all");
   const [termQuery, setTermQuery] = useState("");
-  const [metric, setMetric] = useState<"reactions" | "reports">("reactions");
   const [preparation, setPreparation] = useState("");
   useEffect(() => {
     const value = new URLSearchParams(window.location.search).get("praeparat");
@@ -128,6 +128,8 @@ export function SubstanceView({
         beskriver et dødsfald. {CAUSALITY_NOTE} Tallet siger heller ikke, hvor ofte det sker.
       </p>
 
+      <ReactionTypes substance={substance} />
+
       <NewsSection items={news} />
 
       <div className="tabs" role="group" aria-label="Alvorlighed">
@@ -207,60 +209,6 @@ export function SubstanceView({
         <h2>Alder</h2>
         <p className="muted">Alderen er et 10-års interval, som i Lægemiddelstyrelsens fil. Tom alder vises som ukendt.</p>
         <AgeChart ages={view.age} />
-      </section>
-
-      <section className="card section">
-        <div className="substance-title">
-          <div>
-            <h2>Organklasse</h2>
-            <p className="muted">
-              MedDRA-organklasser med Lægemiddelstyrelsens danske betegnelser. En indberetning kan tælle i flere
-              klasser. Navnet åbner Patienthåndbogen, når kapitlet passer til klassen. Ellers er det en søgning.
-            </p>
-          </div>
-          <div className="tabs" aria-label="Måleenhed for organklasse">
-            <button className="button" aria-pressed={metric === "reactions"} onClick={() => setMetric("reactions")}>
-              Reaktioner
-            </button>
-            <button className="button" aria-pressed={metric === "reports"} onClick={() => setMetric("reports")}>
-              Indberetninger
-            </button>
-          </div>
-        </div>
-        <RankedBars
-          rows={view.soc.map((row) => {
-            const link = resolveSoc(row.abbrev, row.label);
-            return {
-              label: row.label,
-              value: metric === "reactions" ? row.reactions : row.reports,
-              href: link.href,
-              search: link.search,
-              source: link.source,
-            };
-          })}
-        />
-        <DataTable caption="Organklasser">
-          <thead>
-            <tr>
-              <th>Organklasse</th>
-              <th className="num">Reaktioner</th>
-              <th className="num">Indberetninger</th>
-              <th className="num">Fatale reaktioner</th>
-            </tr>
-          </thead>
-          <tbody>
-            {view.soc.map((row) => (
-              <tr key={row.abbrev}>
-                <td>
-                  <SocName abbrev={row.abbrev} label={row.label} />
-                </td>
-                <td className="num">{formatInt(row.reactions)}</td>
-                <td className="num">{formatInt(row.reports)}</td>
-                <td className="num">{formatInt(row.fatalReactions)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </DataTable>
       </section>
 
       <TermTable view={view} query={termQuery} onQuery={setTermQuery} />

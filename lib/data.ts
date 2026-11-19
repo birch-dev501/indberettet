@@ -3,6 +3,7 @@ import { readFileSync, existsSync } from "fs";
 import path from "path";
 import { assignCategories, type CategoryDefinition, type CategoryGroup } from "./categories";
 import type { CompanyCatalog, CompanyPage, SubstanceIdentity } from "./companies";
+import type { ViolationFile, ViolationRecord } from "./violations";
 import type { UsageFile } from "./rates";
 
 export type PlainField = { value: string; source: string; needsReview: boolean };
@@ -59,6 +60,16 @@ export function getIdentity(slug: string): SubstanceIdentity | null {
 
 export function getCompany(slug: string): CompanyPage | undefined {
   return getCompanyCatalog().companies.find((company) => company.slug === slug);
+}
+
+export const getViolations = cache((): ViolationFile | null => {
+  const file = path.join(dataDir, "violations.json");
+  if (!existsSync(file)) return null;
+  return JSON.parse(readFileSync(file, "utf8")) as ViolationFile;
+});
+
+export function getViolation(slug: string): ViolationRecord | null {
+  return getViolations()?.firms[slug] ?? null;
 }
 
 export const getPlainLanguage = cache((): Record<string, PlainLanguage> => {

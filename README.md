@@ -43,6 +43,8 @@ Handelsnavne og indehavere kommer fra listen over godkendte lægemidler. Siden v
 
 Hverdagsnavne ligger i `data/plain-language.json`. `python3 scripts/build_plain_language.py` udfylder handelsnavne fra den godkendte liste og lægemiddelgruppen fra `data/atc-everyday.json`. Godkendte indikationer udfyldes ikke automatisk. Et felt med `needsReview: false` bliver stående. Sygdomsord til søgning står i `data/diseases.json` og peger kun på ATC-grupper.
 
+Bøder på firmasiderne ligger i `data/violations.json` og kommer fra [Violation Tracker](https://violationtracker.goodjobsfirst.org/industry/pharmaceuticals) hos Good Jobs First. `python3 scripts/fetch_violations.py` prøver at hente siderne igen. Blokerer siden hentningen, beholdes den gemte fil.
+
 Bivirkningstermer linker til en forklaring i `data/term-links.json`. Filen har kun de termnavne, der allerede står i Lægemiddelstyrelsens udtræk, ikke en MedDRA-ordbog. `python3 scripts/check_term_links.py` tjekker adresserne igen. En adresse, der ikke svarer, mister sit direkte link, og siden viser i stedet en søgning i Patienthåndbogen. Fejler netværket, beholdes den forrige fil.
 
 Pages skal stå på source **GitHub Actions**. `NEXT_PUBLIC_BASE_PATH` er `/indberettet`, som matcher repository-navnet.

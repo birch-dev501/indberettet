@@ -1,13 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
-export function SiteHeader({ current }: { current?: "home" | "katalog" | "kategori" | "sygdom" | "firma" | "om" }) {
+const LINKS = [
+  { href: "/katalog", id: "katalog", label: "Stoffer og præparater" },
+  { href: "/kategori", id: "kategori", label: "Grupper" },
+  { href: "/sygdom", id: "sygdom", label: "Efter sygdom" },
+  { href: "/firma", id: "firma", label: "Firmaer" },
+  { href: "/om-data", id: "om", label: "Om data" },
+] as const;
+
+export function SiteHeader({ current }: { current?: (typeof LINKS)[number]["id"] | "home" }) {
+  const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
       <a className="skip" href="#indhold">
         Spring til indhold
       </a>
       <div className="wrap header-inner">
-        <Link className="brand" href="/">
+        <Link className="brand" href="/" onClick={() => setOpen(false)}>
           <span className="mark" aria-hidden="true">
             <span />
             <span />
@@ -18,22 +30,26 @@ export function SiteHeader({ current }: { current?: "home" | "katalog" | "katego
             Ind<em>berettet</em>
           </span>
         </Link>
-        <nav className="nav" aria-label="Hovedmenu">
-          <Link href="/katalog" aria-current={current === "katalog" ? "page" : undefined}>
-            Stoffer og præparater
-          </Link>
-          <Link href="/kategori" aria-current={current === "kategori" ? "page" : undefined}>
-            Grupper
-          </Link>
-          <Link href="/sygdom" aria-current={current === "sygdom" ? "page" : undefined}>
-            Efter sygdom
-          </Link>
-          <Link href="/firma" aria-current={current === "firma" ? "page" : undefined}>
-            Firmaer
-          </Link>
-          <Link href="/om-data" aria-current={current === "om" ? "page" : undefined}>
-            Om data
-          </Link>
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-expanded={open}
+          aria-controls="hovedmenu"
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? "Luk" : "Menu"}
+        </button>
+        <nav id="hovedmenu" className={open ? "nav open" : "nav"} aria-label="Hovedmenu">
+          {LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={current === link.id ? "page" : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
