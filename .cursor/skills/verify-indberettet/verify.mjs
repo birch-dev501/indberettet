@@ -567,6 +567,7 @@ async function checkUncertainty(page) {
   await page.goto(`${base}/forstaa-forskning/`, { waitUntil: "networkidle" });
   const fromTrial = page.locator("a[href*='/forstaa-usikkerhed']");
   if ((await fromTrial.count()) < 1) fail("forsøgssiden linker ikke til usikkerhed");
+  const trialText = await page.locator("main").innerText();
   await page.goto(`${base}/forstaa-usikkerhed/`, { waitUntil: "networkidle" });
   if ((await page.locator("h1").innerText()) !== "Sådan læses usikkerhed.") fail("usikkerhedssiden mangler overskrift");
   const text = await page.locator("main").innerText();
@@ -578,6 +579,9 @@ async function checkUncertainty(page) {
   if (!text.toLowerCase().includes("beviser ikke")) fail("siden siger ikke at ikke-signifikant ikke er et bevis");
   if (!text.toLowerCase().includes("udenlandsk")) fail("usikkerhedssiden mærker ikke Polack som udenlandsk");
   if (!text.includes("0,044") || !text.includes("0,884")) fail("andelene er ikke vist med tre decimaler");
+  if (text.includes("opgiver ikke intervallets")) fail("usikkerhedssiden siger at forsøgssiden skjuler grænserne");
+  if (!trialText.includes("-0,19") || !trialText.includes("0,28")) fail("forsøgssiden mangler Karlstad-grænserne");
+  if (!text.includes("-0,19") || !text.includes("0,28")) fail("usikkerhedssiden mangler de samme Karlstad-grænser");
   const source = await page.locator("a[href*='nejm.org']").count();
   if (source < 1) fail("usikkerhedssiden mangler kilden til Polack");
 }
