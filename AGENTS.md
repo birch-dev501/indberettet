@@ -28,6 +28,8 @@ Før et issue bliver implementeret, kør `/blast-radius` på den planlagte ændr
 
 Ny eller ændret dansk tekst på siden køres gennem `/unslop` før commit. Det gælder teksten i brugerfladen, forklaringer, overskrifter og metabeskrivelser. Teksten skal være nøgtern og faktuel og passe med VISION.md.
 
+Ved hvert UI-issue køres Impeccable audit og critique på de berørte sider før rettelsen, og polish og harden efter. Fundene skrives i handoff. De bliver issues på samme måde som andre reviewfund.
+
 Et fund fra review får et issue, før nogen retter det. Commit-beskeden slutter med `Fixes #N`.
 
 Et tal fra en artikel, en tabel eller et register ligger i koden med tabel, række eller side. En reviewer tjekker tallet mod originalen, før siden bygges. Sensitivitet og specificitet, og andre par, kommer fra samme række.

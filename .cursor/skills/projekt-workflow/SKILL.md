@@ -30,6 +30,7 @@ A reusable loop for building a project with AI agents while the human stays in c
 2. **Hand to the builder** with the issue numbers and their order. Each commit ends with "Fixes #N" and adds a verify check for its Done-tjek.
    - **Before building each issue, run /blast-radius** on the planned change and note what else it could break and how that was checked.
    - **Run /unslop on any new user-facing text** (UI copy, explanations, meta descriptions) before committing.
+   - **On every UI issue, run Impeccable audit and critique on the affected pages before the fix, and polish and harden after.** Report those findings in the handoff. They become issues like any other review finding.
    - **Source check before building:** every number taken from an outside source (paper, table, register) is stored with its exact table/row/page, and an independent reviewer checks it against the original before the page is built. Paired figures (e.g. sensitivity and specificity) must come from the same row.
    - **Data invariants in verify:** encode domain rules as checks (e.g. "a label that says one item may only sit next to one item's number", "aliases need a word boundary"), not just "the page renders".
 3. **Verify** must exit 0.
