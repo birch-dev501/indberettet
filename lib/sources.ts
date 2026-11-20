@@ -18,11 +18,35 @@ export const polack = {
 export const karlstad = {
   work: "Karlstad et al., JAMA Cardiology 2022",
   url: "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253",
-  place: "Results, excess myocarditis events per 100,000. Each estimate is stored with its own interval.",
-  men16to24BntDose2: { excessPer100k: 5.55, low: 3.7, high: 7.39 },
-  men16to24MrnaDose2: { excessPer100k: 18.39, low: 9.05, high: 27.72 },
-  men16to24BntDose1: { excessPer100k: 1.55, low: 0.7, high: 2.39 },
-  men40BntTwoDoses: { excessPer100k: 0.22 },
+  pmc: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9021987/",
+  men16to24BntDose2: {
+    excessPer100k: 5.55,
+    low: 3.7,
+    high: 7.39,
+    table: "Table 2",
+    row: "Myocarditis, males 16-24 years, BNT162b2/BNT162b2",
+  },
+  men16to24MrnaDose2: {
+    excessPer100k: 18.39,
+    low: 9.05,
+    high: 27.72,
+    table: "Table 2",
+    row: "Myocarditis, males 16-24 years, mRNA-1273/mRNA-1273",
+  },
+  men16to24BntDose1: {
+    excessPer100k: 1.55,
+    low: 0.7,
+    high: 2.39,
+    table: "Table 2",
+    row: "Myocarditis, males 16-24 years, BNT162b2",
+  },
+  men40BntTwoDoses: {
+    excessPer100k: 0.05,
+    low: -0.19,
+    high: 0.28,
+    table: "Table 2",
+    row: "Myocarditis, males 40 years or older, BNT162b2/BNT162b2",
+  },
 } as const;
 
 export const husby = {

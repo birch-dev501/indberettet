@@ -14,6 +14,20 @@ test("parrede tal kommer fra samme række", () => {
   assert.equal(high?.truePositive, Math.round(high!.sick * cochraneAntigen.symptomaticSensitivity));
 });
 
+test("hvert Karlstad-tal har interval, tabel og række", () => {
+  for (const [name, row] of Object.entries(karlstad)) {
+    if (typeof row !== "object" || row === null || !("excessPer100k" in row)) continue;
+    assert.equal(typeof row.low, "number", name);
+    assert.equal(typeof row.high, "number", name);
+    assert.ok(row.low <= row.excessPer100k && row.excessPer100k <= row.high, name);
+    assert.equal(row.table, "Table 2", name);
+    assert.ok(String(row.row).includes("Myocarditis"), name);
+  }
+  assert.equal(karlstad.men40BntTwoDoses.excessPer100k, 0.05);
+  assert.equal(karlstad.men40BntTwoDoses.low, -0.19);
+  assert.equal(karlstad.men40BntTwoDoses.high, 0.28);
+});
+
 test("kildernes intervaller hører til deres skøn", () => {
   assert.ok(karlstad.men16to24BntDose2.low < karlstad.men16to24BntDose2.excessPer100k);
   assert.ok(karlstad.men16to24BntDose2.excessPer100k < karlstad.men16to24BntDose2.high);

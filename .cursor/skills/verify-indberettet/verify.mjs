@@ -541,7 +541,7 @@ async function checkUncertainty(page) {
   await page.goto(`${base}/forstaa-usikkerhed/`, { waitUntil: "networkidle" });
   if ((await page.locator("h1").innerText()) !== "Sådan læses usikkerhed.") fail("usikkerhedssiden mangler overskrift");
   const text = await page.locator("main").innerText();
-  for (const part of ["18.198", "18.325", "95,0", "90,3", "97,6", "3,70", "7,39", "0,22", "0,90", "2,00", "2,30", "6,68"]) {
+  for (const part of ["18.198", "18.325", "95,0", "90,3", "97,6", "3,70", "7,39", "0,05", "-0,19", "0,28", "0,90", "2,00", "2,30", "6,68"]) {
     if (!text.includes(part)) fail(`usikkerhedssiden mangler tallet ${part}`);
   }
   if (!text.includes("nulhypotesen er 0") && !text.includes("nulhypotesen 0")) fail("siden siger ikke at forskellens nul er 0");

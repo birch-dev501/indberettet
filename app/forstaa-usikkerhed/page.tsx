@@ -66,7 +66,7 @@ export default function UncertaintyPage() {
               ikke med en forskel på 0.
             </p>
             <p>
-              Hos mænd på 40 år og derover var det tilsvarende tal {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000, og intervallet gik gennem 0.
+              Hos mænd på 40 år og derover var ekstra myokarditis-tilfælde efter to doser BNT162b2 {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000. Intervallet er {da(karlstad.men40BntTwoDoses.low, 2)} til {da(karlstad.men40BntTwoDoses.high, 2)}. Det går gennem 0.
               Siden om forsøgstal opgiver ikke intervallets to grænser. Opgørelsen passer med flere tilfælde, med
               ingen forskel og med færre tilfælde. Den siger ikke, hvor langt fra 0 de tal ligger.
             </p>

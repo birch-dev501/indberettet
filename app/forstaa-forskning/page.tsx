@@ -196,12 +196,12 @@ export default function ResearchLiteracyPage() {
               fandt {da(karlstad.men16to24BntDose2.excessPer100k, 2)} ekstra tilfælde pr. 100.000 (interval {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)}) efter andet stik med BNT162b2 og {da(karlstad.men16to24MrnaDose2.excessPer100k, 2)} pr.
               100.000 ({da(karlstad.men16to24MrnaDose2.low, 2)} til {da(karlstad.men16to24MrnaDose2.high, 2)}) efter andet stik med mRNA-1273, hos mænd på 16–24 år. Efter første stik med BNT162b2
               var tallet {da(karlstad.men16to24BntDose1.excessPer100k, 2)} pr. 100.000 ({da(karlstad.men16to24BntDose1.low, 2)} til {da(karlstad.men16to24BntDose1.high, 2)}) i samme gruppe. Hos mænd på 40 år og derover var ekstra tilfælde
-              efter to doser BNT162b2 {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000, og intervallet gik gennem nul. Hos kvinder på 16–24 år var der
+              efter to doser BNT162b2 {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000. Intervallet er {da(karlstad.men40BntTwoDoses.low, 2)} til {da(karlstad.men40BntTwoDoses.high, 2)} og går gennem nul. Hos kvinder på 16–24 år var der
               for få myokarditis-tilfælde efter to doser BNT162b2 til at regne et stabilt overskud. Opfølgningen løb fra
               27. december 2020 til 5. oktober 2021.
             </p>
             <p className="note">
-              <strong>Hvad betyder det?</strong> {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)} ligger over 0. Intervallet omkring {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} går gennem 0.
+              <strong>Hvad betyder det?</strong> {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)} ligger over 0. Intervallet {da(karlstad.men40BntTwoDoses.low, 2)} til {da(karlstad.men40BntTwoDoses.high, 2)} går gennem 0.
               Ingen forskel mellem grupperne er tallet 0.{" "}
               <Link href="/forstaa-usikkerhed/#nul-forskel">Læs hvorfor grænsen er 0</Link>.
             </p>
