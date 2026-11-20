@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { InstallApp } from "@/components/install-app";
+import { TableHeaderPin } from "@/components/table-header-pin";
 import "./globals.css";
 
 const sans = Source_Sans_3({
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         {children}
         <InstallApp />
+        <TableHeaderPin />
       </body>
     </html>
   );
