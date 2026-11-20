@@ -83,8 +83,12 @@ def company_lines(company: dict) -> list[str]:
     reports = sum(int(item["reports"]) for item in rows)
     serious = sum(int(item["seriousReports"]) for item in rows)
     fatal = sum(int(item["fatalReports"]) for item in rows)
+    if len(rows) == 1:
+        lead = f"Tal for {rows[0].get('name') or 'stoffet'}. Ikke for firmaet."
+    else:
+        lead = "Tilsammen for de stoffer, der har en oversigt. Ikke for firmaet."
     return [
-        "Tilsammen for de stoffer, der har en oversigt. Ikke for firmaet.",
+        lead,
         f"{danish(reports)} indberetninger",
         f"{danish(serious)} alvorlige · {danish(fatal)} ved dødsfald",
     ]
