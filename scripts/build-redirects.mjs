@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chooseShortTarget } from "./company-alias.mjs";
@@ -49,5 +49,13 @@ for (const company of companies.companies) {
   if (!target || used.has(`firma/${short}`)) continue;
   used.add(`firma/${short}`);
   writeAlias("firma", short, `/firma/${target}/`);
+}
+for (const kind of ["stof", "firma"]) {
+  const dir = path.join(root, "public", kind);
+  if (!existsSync(dir)) continue;
+  for (const name of readdirSync(dir)) {
+    if (used.has(`${kind}/${name}`)) continue;
+    rmSync(path.join(dir, name), { recursive: true, force: true });
+  }
 }
 console.log(`Viderestillinger: ${used.size}`);
