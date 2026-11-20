@@ -3,10 +3,7 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { BNT162B2, trialRisks } from "@/lib/effects";
-
-const POLACK = "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577";
-const KARLSTAD = "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253";
-const HUSBY = "https://www.bmj.com/content/375/bmj-2021-068665";
+import { da, husby, karlstad, polack } from "@/lib/sources";
 
 export const metadata: Metadata = {
   title: "Sådan læses usikkerhed",
@@ -31,9 +28,9 @@ export default function UncertaintyPage() {
           Et studie giver et skøn, ikke den endelige sandhed. Intervallet viser, hvilke tal der stadig passer med
           studiet. Polack og kolleger er et udenlandsk forsøg. Karlstad og kolleger er et nordisk register, som også
           omfatter Danmark. Husby og kolleger fulgte personer i Danmark. Kilderne er{" "}
-          <a href={POLACK} rel="noopener noreferrer">Polack et al., New England Journal of Medicine 2020</a>,{" "}
-          <a href={KARLSTAD} rel="noopener noreferrer">Karlstad et al., JAMA Cardiology 2022</a> og{" "}
-          <a href={HUSBY} rel="noopener noreferrer">Husby et al., BMJ 2021</a>. Samme tal står på siden om{" "}
+          <a href={polack.url} rel="noopener noreferrer">{polack.work}</a>,{" "}
+          <a href={karlstad.url} rel="noopener noreferrer">{karlstad.work}</a> og{" "}
+          <a href={husby.url} rel="noopener noreferrer">{husby.work}</a>. Samme tal står på siden om{" "}
           <Link href="/forstaa-forskning/">forsøgstal</Link>.
         </p>
 
@@ -51,8 +48,8 @@ export default function UncertaintyPage() {
               inden for grænserne.
             </p>
             <p>
-              Polack og kolleger angav vaccineeffekten for BNT162b2 til 95,0 % med et 95 % kredibilitetsinterval fra
-              90,3 til 97,6. Det er et bayesiansk interval, ikke et konfidensinterval. Det ligger helt over 0. På den
+              Polack og kolleger angav vaccineeffekten for BNT162b2 til {da(polack.efficacy * 100, 1)} % med et 95 % kredibilitetsinterval fra{" "}
+              {da(polack.efficacyLow * 100, 1)} til {da(polack.efficacyHigh * 100, 1)}. Det er et bayesiansk interval, ikke et konfidensinterval. Det ligger helt over 0. På den
               skala er 0 ingen effekt.
             </p>
           </article>
@@ -64,12 +61,12 @@ export default function UncertaintyPage() {
               forskellen er 0.
             </p>
             <p>
-              Karlstad og kolleger fandt 5,55 ekstra tilfælde af myokarditis pr. 100.000 hos mænd på 16 til 24 år efter
-              andet stik med BNT162b2. Intervallet er 3,70 til 7,39. Begge grænser er over 0. Registeropgørelsen passer
+              Karlstad og kolleger fandt {da(karlstad.men16to24BntDose2.excessPer100k, 2)} ekstra tilfælde af myokarditis pr. 100.000 hos mænd på 16 til 24 år efter
+              andet stik med BNT162b2. Intervallet er {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)}. Begge grænser er over 0. Registeropgørelsen passer
               ikke med en forskel på 0.
             </p>
             <p>
-              Hos mænd på 40 år og derover var det tilsvarende tal 0,22 pr. 100.000, og intervallet gik gennem 0.
+              Hos mænd på 40 år og derover var det tilsvarende tal {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000, og intervallet gik gennem 0.
               Siden om forsøgstal opgiver ikke intervallets to grænser. Opgørelsen passer med flere tilfælde, med
               ingen forskel og med færre tilfælde. Den siger ikke, hvor langt fra 0 de tal ligger.
             </p>
@@ -83,12 +80,12 @@ export default function UncertaintyPage() {
               lavere risiko.
             </p>
             <p>
-              Husby og kolleger fandt en justeret hazard ratio på 1,34 for myokarditis eller myoperikarditis inden for
-              28 dage efter BNT162b2. Intervallet er 0,90 til 2,00. 0,90 er under 1, og 2,00 er over 1. Intervallet
+              Husby og kolleger fandt en justeret hazard ratio på {da(husby.bntHr.value, 2)} for myokarditis eller myoperikarditis inden for
+              28 dage efter BNT162b2. Intervallet er {da(husby.bntHr.low, 2)} til {da(husby.bntHr.high, 2)}. {da(husby.bntHr.low, 2)} er under 1, og {da(husby.bntHr.high, 2)} er over 1. Intervallet
               indeholder 1. Opgørelsen passer med en lavere rate, med samme rate og med en fordobling.
             </p>
             <p>
-              Efter mRNA-1273 var hazard ratio 3,92 med interval 2,30 til 6,68. Hele intervallet ligger over 1.
+              Efter mRNA-1273 var hazard ratio {da(husby.modernaHr.value, 2)} med interval {da(husby.modernaHr.low, 2)} til {da(husby.modernaHr.high, 2)}. Hele intervallet ligger over 1.
               Opgørelsen passer ikke med en ratio på 1.
             </p>
           </article>
@@ -136,9 +133,9 @@ export default function UncertaintyPage() {
           <article className="card" id="ingen-effekt">
             <h2>Et interval gennem 1 er ikke et bevis for ingen effekt</h2>
             <p>
-              Husby-intervallet 0,90 til 2,00 indeholder 1. Siden om forsøgstal kalder forskellen usikker. Intervallet
+              Husby-intervallet {da(husby.bntHr.low, 2)} til {da(husby.bntHr.high, 2)} indeholder 1. Siden om forsøgstal kalder forskellen usikker. Intervallet
               er ikke mærket som 95 % her, så siden kalder det ikke statistisk signifikant. Intervallet indeholder
-              også 2,00, altså en fordobling. Opgørelsen kan ikke skelne «ingen forskel» fra en reel stigning. Det
+              også {da(husby.bntHr.high, 2)}, altså en fordobling. Opgørelsen kan ikke skelne «ingen forskel» fra en reel stigning. Det
               beviser ikke, at vaccinen ikke øger risikoen.
             </p>
             <p>

@@ -16,6 +16,14 @@ Ny eller ændret dansk tekst på siden køres gennem `/unslop` før commit. Det 
 
 Et fund fra review får et issue, før nogen retter det. Commit-beskeden slutter med `Fixes #N`.
 
+Et tal fra en artikel, en tabel eller et register ligger i koden med tabel, række eller side. En reviewer tjekker tallet mod originalen, før siden bygges. Sensitivitet og specificitet, og andre par, kommer fra samme række.
+
+`npm run verify` tjekker reglerne for data. Et kort firmanavn kræver en ordgrænse, og et tvetydigt præfiks får ingen adresse. En tekst, der siger ét stof, står kun ved det ene stofs tal. En Bayes-tabel passer med den angivne sensitivitet og specificitet, når cellerne er afrundet.
+
+Et review, hvis diff rører tal, data eller beregninger, har en reviewer på data og statistik. Det gælder også en lille ændring.
+
+Efter hver reviewrunde køres `/correct`. Gentagne fejltyper rettes på det højeste niveau, der virker: arkitektur, typer, lint eller CI, verify, tests. Dokumentation er sidst.
+
 En kort observation eller en sag udefra bliver et præcist issue via [issue-fra-observation](.cursor/skills/issue-fra-observation/SKILL.md).
 
 Brug [typesafe-ai](.cursor/skills/typesafe-ai/SKILL.md), når koden kalder TypeSafe eller Jev: vurderinger kommer fra Jev, og beslutningerne bliver i koden. Ingen kode må kalde TypeSafe fra den offentlige side eller fra CI. API-nøglen må aldrig ligge i repoet eller i Actions-secrets.

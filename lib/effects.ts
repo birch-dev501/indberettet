@@ -1,3 +1,5 @@
+import { polack } from "./sources.ts";
+
 /** Risks are proportions between 0 and 1. ARR is control minus treated. */
 export type EffectMeasures = {
   arr: number;
@@ -18,10 +20,10 @@ export function effectMeasures(treated: number, control: number): EffectMeasures
 
 /** Polack et al., NEJM 2020, first primary endpoint. Counts are participants, not person-time. */
 export const BNT162B2 = {
-  vaccinatedCases: 8,
-  vaccinatedN: 18198,
-  placeboCases: 162,
-  placeboN: 18325,
+  vaccinatedCases: polack.vaccinatedCases,
+  vaccinatedN: polack.vaccinatedN,
+  placeboCases: polack.placeboCases,
+  placeboN: polack.placeboN,
 } as const;
 
 export function trialRisks() {

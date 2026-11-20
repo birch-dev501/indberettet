@@ -6,6 +6,7 @@ import { IconArray } from "@/components/icon-array";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { BNT162B2, trialRisks } from "@/lib/effects";
+import { da, husby, karlstad, polack } from "@/lib/sources";
 
 export const metadata: Metadata = {
   title: "Sådan læses forsøgstal",
@@ -13,12 +14,9 @@ export const metadata: Metadata = {
     "Relativ og absolut risikoreduktion, NNT og NNH, forklaret med tallene fra fase 3-forsøget med BNT162b2.",
 };
 
-const POLACK = "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577";
 const OLLIARO = "https://www.thelancet.com/journals/lanmic/article/PIIS2666-5247(21)00069-0/fulltext";
 const OLLIARO_CORRECTION = "https://pmc.ncbi.nlm.nih.gov/articles/PMC9247853/";
-const KARLSTAD = "https://jamanetwork.com/journals/jamacardiology/fullarticle/2791253";
 const CDC_MMWR = "https://www.cdc.gov/mmwr/volumes/70/wr/mm7027e2.htm";
-const HUSBY = "https://www.bmj.com/content/375/bmj-2021-068665";
 const CDC_OBESITY = "https://www.cdc.gov/nchs/products/databriefs/db508.htm";
 const DK_OBESITY = "https://www.sst.dk/media/wrginiwh/christine-bjoerk-petersen_oplaeg-session1.pdf";
 
@@ -99,11 +97,11 @@ export default function ResearchLiteracyPage() {
               sygdom og ikke død.
             </p>
             <p>
-              I den gruppe var der <strong>8 tilfælde blandt 18.198 vaccinerede</strong> og{" "}
-              <strong>162 tilfælde blandt 18.325, der fik placebo</strong>. Artiklen angiver vaccineeffekten til{" "}
-              <strong>95,0 %</strong> med et 95 % kredibilitetsinterval fra 90,3 til 97,6. Sikkerheden er beskrevet over
+              I den gruppe var der <strong>{BNT162B2.vaccinatedCases} tilfælde blandt {BNT162B2.vaccinatedN.toLocaleString("da-DK")} vaccinerede</strong> og{" "}
+              <strong>{BNT162B2.placeboCases} tilfælde blandt {BNT162B2.placeboN.toLocaleString("da-DK")}, der fik placebo</strong>. Artiklen angiver vaccineeffekten til{" "}
+              <strong>{da(polack.efficacy * 100, 1)} %</strong> med et 95 % kredibilitetsinterval fra {da(polack.efficacyLow * 100, 1)} til {da(polack.efficacyHigh * 100, 1)}. Sikkerheden er beskrevet over
               en median på 2 måneder. Forsøget er{" "}
-              <a href={POLACK} rel="noopener noreferrer">
+              <a href={polack.url} rel="noopener noreferrer">
                 Polack et al., N Engl J Med 2020
               </a>
               .
@@ -113,12 +111,12 @@ export default function ResearchLiteracyPage() {
               procentpoint, og NNT {Math.round(measures.nnt!)}. Det svarer til omkring{" "}
               {perThousandVaccine.toLocaleString("da-DK", { maximumFractionDigits: 1 })} tilfælde pr. 1.000 vaccinerede
               og {perThousandPlacebo.toLocaleString("da-DK", { maximumFractionDigits: 1 })} pr. 1.000 i placebogruppen.
-              Artiklens 95,0 % er regnet på tilfælde pr. observationstid med en bayesiansk model. De to måder lander på
+              Artiklens {da(polack.efficacy * 100, 1)} % er regnet på tilfælde pr. observationstid med en bayesiansk model. De to måder lander på
               samme afrundede relative tal.
             </p>
             <p className="note">
               <strong>Hvad betyder det?</strong> {rrr} % er den relative reduktion. {arr} procentpoint er den absolutte
-              forskel. Kredibilitetsintervallet 90,3 til 97,6 ligger over 0 og er ikke et konfidensinterval.{" "}
+              forskel. Kredibilitetsintervallet {da(polack.efficacyLow * 100, 1)} til {da(polack.efficacyHigh * 100, 1)} ligger over 0 og er ikke et konfidensinterval.{" "}
               <Link href="/forstaa-usikkerhed/#relativ-absolut">Regnestykket står her</Link>.
             </p>
             <p>
@@ -192,18 +190,18 @@ export default function ResearchLiteracyPage() {
             <p>
               I et nordisk register var den overskydende risiko for myokarditis højest hos unge mænd i de første 28
               dage efter andet stik.{" "}
-              <a href={KARLSTAD} rel="noopener noreferrer">
+              <a href={karlstad.url} rel="noopener noreferrer">
                 Karlstad et al., JAMA Cardiology 2022
               </a>{" "}
-              fandt 5,55 ekstra tilfælde pr. 100.000 (interval 3,70–7,39) efter andet stik med BNT162b2 og 18,39 pr.
-              100.000 (9,05–27,72) efter andet stik med mRNA-1273, hos mænd på 16–24 år. Efter første stik med BNT162b2
-              var tallet 1,55 pr. 100.000 (0,70–2,39) i samme gruppe. Hos mænd på 40 år og derover var ekstra tilfælde
-              efter to doser BNT162b2 0,22 pr. 100.000, og intervallet gik gennem nul. Hos kvinder på 16–24 år var der
+              fandt {da(karlstad.men16to24BntDose2.excessPer100k, 2)} ekstra tilfælde pr. 100.000 (interval {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)}) efter andet stik med BNT162b2 og {da(karlstad.men16to24MrnaDose2.excessPer100k, 2)} pr.
+              100.000 ({da(karlstad.men16to24MrnaDose2.low, 2)} til {da(karlstad.men16to24MrnaDose2.high, 2)}) efter andet stik med mRNA-1273, hos mænd på 16–24 år. Efter første stik med BNT162b2
+              var tallet {da(karlstad.men16to24BntDose1.excessPer100k, 2)} pr. 100.000 ({da(karlstad.men16to24BntDose1.low, 2)} til {da(karlstad.men16to24BntDose1.high, 2)}) i samme gruppe. Hos mænd på 40 år og derover var ekstra tilfælde
+              efter to doser BNT162b2 {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} pr. 100.000, og intervallet gik gennem nul. Hos kvinder på 16–24 år var der
               for få myokarditis-tilfælde efter to doser BNT162b2 til at regne et stabilt overskud. Opfølgningen løb fra
               27. december 2020 til 5. oktober 2021.
             </p>
             <p className="note">
-              <strong>Hvad betyder det?</strong> 3,70 til 7,39 ligger over 0. Intervallet omkring 0,22 går gennem 0.
+              <strong>Hvad betyder det?</strong> {da(karlstad.men16to24BntDose2.low, 2)} til {da(karlstad.men16to24BntDose2.high, 2)} ligger over 0. Intervallet omkring {da(karlstad.men40BntTwoDoses.excessPer100k, 2)} går gennem 0.
               Ingen forskel mellem grupperne er tallet 0.{" "}
               <Link href="/forstaa-usikkerhed/#nul-forskel">Læs hvorfor grænsen er 0</Link>.
             </p>
@@ -241,20 +239,20 @@ export default function ResearchLiteracyPage() {
               og samme helbred, som kan sættes ind i formlen. Komponenterne står hver for sig.
             </p>
             <p>
-              <a href={HUSBY} rel="noopener noreferrer">
+              <a href={husby.url} rel="noopener noreferrer">
                 Husby et al., BMJ 2021
               </a>{" "}
-              fulgte 4.931.775 personer i Danmark på 12 år og derover fra 1. oktober 2020 til 5. oktober 2021.
+              fulgte {husby.cohort.toLocaleString("da-DK")} personer i Danmark på 12 år og derover fra 1. oktober 2020 til 5. oktober 2021.
               Myokarditis eller myoperikarditis inden for 28 dage efter vaccination med BNT162b2 havde en absolut rate
-              på 1,4 pr. 100.000 (1,0–1,8). Den justerede hazard ratio mod tiden før vaccination var 1,34 (0,90–2,00),
-              så den samlede forskel er usikker. Blandt 12–39-årige var raten 1,6 pr. 100.000 (1,0–2,6) og hazard
-              ratio 1,48 (0,74–2,98). Efter mRNA-1273 var raten 4,2 pr. 100.000 (2,6–6,4) og hazard ratio 3,92
-              (2,30–6,68); blandt 12–39-årige 5,7 pr. 100.000 (3,3–9,3) og hazard ratio 5,24 (2,47–11,12). Raterne er
+              på {da(husby.bntRate.per100k, 1)} pr. 100.000 ({da(husby.bntRate.low, 1)} til {da(husby.bntRate.high, 1)}). Den justerede hazard ratio mod tiden før vaccination var {da(husby.bntHr.value, 2)} ({da(husby.bntHr.low, 2)} til {da(husby.bntHr.high, 2)}),
+              så den samlede forskel er usikker. Blandt 12–39-årige var raten {da(husby.bntYoungRate.per100k, 1)} pr. 100.000 ({da(husby.bntYoungRate.low, 1)} til {da(husby.bntYoungRate.high, 1)}) og hazard
+              ratio {da(husby.bntYoungHr.value, 2)} ({da(husby.bntYoungHr.low, 2)} til {da(husby.bntYoungHr.high, 2)}). Efter mRNA-1273 var raten {da(husby.modernaRate.per100k, 1)} pr. 100.000 ({da(husby.modernaRate.low, 1)} til {da(husby.modernaRate.high, 1)}) og hazard ratio {da(husby.modernaHr.value, 2)}
+              ({da(husby.modernaHr.low, 2)} til {da(husby.modernaHr.high, 2)}); blandt 12–39-årige {da(husby.modernaYoungRate.per100k, 1)} pr. 100.000 ({da(husby.modernaYoungRate.low, 1)} til {da(husby.modernaYoungRate.high, 1)}) og hazard ratio {da(husby.modernaYoungHr.value, 2)} ({da(husby.modernaYoungHr.low, 2)} til {da(husby.modernaYoungHr.high, 2)}). Raterne er
               antal blandt vaccinerede, ikke et overskud i forhold til uvaccinerede, og de er ikke delt i raske og
               personer med anden sygdom.               Derfor bliver de ikke til et NNH i lommeregneren.
             </p>
             <p className="note">
-              <strong>Hvad betyder det?</strong> Hazard ratio 1,34 har intervallet 0,90 til 2,00. Intervallet
+              <strong>Hvad betyder det?</strong> Hazard ratio {da(husby.bntHr.value, 2)} har intervallet {da(husby.bntHr.low, 2)} til {da(husby.bntHr.high, 2)}. Intervallet
               indeholder 1. Samme risiko som et forhold er tallet 1. Det beviser ikke, at der ingen effekt er.{" "}
               <Link href="/forstaa-usikkerhed/#nul-forhold">Læs hvorfor grænsen er 1</Link>.
             </p>

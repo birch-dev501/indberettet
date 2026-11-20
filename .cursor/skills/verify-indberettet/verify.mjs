@@ -578,7 +578,7 @@ async function checkBayes(page) {
   await form.locator("input").nth(0).fill("0,1");
   await form.getByText("Af 10.000 testede").waitFor();
   if ((await live.innerText()).includes("Skriv tre tal.")) fail("advarslen bliver stående efter et gyldigt tal");
-  const proof = spawn("node", ["--experimental-strip-types", "--test", "lib/bayes.test.ts"], { cwd: root });
+  const proof = spawn("node", ["--experimental-strip-types", "--test", "lib/bayes.test.ts", "lib/sources.test.ts"], { cwd: root });
   const code = await new Promise((done) => proof.on("exit", done));
   if (code !== 0) fail("bayes-regnestykket gik ikke op");
 }
