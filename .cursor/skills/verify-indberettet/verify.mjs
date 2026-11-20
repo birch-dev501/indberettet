@@ -312,23 +312,52 @@ async function checkCalculator(page, width) {
 }
 
 async function checkSticky(page, width) {
-  await page.goto(`${base}/stof/covid-19-vaccines/`, { waitUntil: "networkidle" });
-  const box = page.locator("#foretrukne-termer .table-scroll");
-  await box.scrollIntoViewIfNeeded();
-  const before = await box.locator("tbody tr").nth(6).boundingBox();
-  await box.evaluate((element) => {
-    element.scrollTop = 240;
-  });
-  const head = await box.locator("thead th").first().boundingBox();
-  const wrap = await box.boundingBox();
-  const after = await box.locator("tbody tr").nth(6).boundingBox();
-  if (!head || !wrap || !before || !after) {
-    fail(`${width} tabeloverskrift kunne ikke måles`);
-    return;
+  const sizes = width === 1280 ? [{ width: 1280, height: 900 }, { width: 390, height: 844 }, { width: 360, height: 780 }] : [];
+  const paths = ["/stof/covid-19-vaccines/", "/firma/msd/", "/forstaa-testen/"];
+  for (const size of sizes) {
+    await page.setViewportSize(size);
+    let longest = null;
+    for (const path of paths) {
+      await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
+      const found = await page.locator(".table-scroll").evaluateAll((nodes) =>
+        nodes.map((node, index) => ({ index, height: node.getBoundingClientRect().height })),
+      );
+      const best = found.sort((a, b) => b.height - a.height)[0];
+      if (best && (!longest || best.height > longest.height)) longest = { path, ...best, size };
+    }
+    await page.goto(`${base}${longest.path}`, { waitUntil: "networkidle" });
+    const box = page.locator(".table-scroll").nth(longest.index);
+    await box.scrollIntoViewIfNeeded();
+    const delta = await box.evaluate((element) => Math.max(0, element.getBoundingClientRect().height / 2 - window.innerHeight / 2));
+    await page.mouse.wheel(0, delta);
+    await page.waitForTimeout(150);
+    const shot = join(evidence, `tabel-${size.width}.png`);
+    await page.screenshot({ path: shot });
+    const reading = await page.evaluate(() => {
+      const site = document.querySelector(".site-header").getBoundingClientRect().bottom;
+      const tables = [...document.querySelectorAll(".table-scroll")];
+      const table = tables.sort((a, b) => b.getBoundingClientRect().height - a.getBoundingClientRect().height)[0];
+      const heads = [...table.querySelectorAll("thead th")];
+      const problems = [];
+      for (const th of heads) {
+        const range = document.createRange();
+        range.selectNodeContents(th);
+        const lines = [...range.getClientRects()];
+        const box = th.getBoundingClientRect();
+        if (box.height < 1) continue;
+        if (box.bottom < site || box.top > window.innerHeight) problems.push(`${th.textContent.trim()} er væk`);
+        for (const line of lines) {
+          if (line.top < site - 1 || line.bottom > window.innerHeight + 1 || line.top < box.top - 1 || line.bottom > box.bottom + 1) {
+            problems.push(`${th.textContent.trim()} klippet`);
+            break;
+          }
+        }
+      }
+      return { path: location.pathname, site: Math.round(site), problems: [...new Set(problems)] };
+    });
+    if (reading.problems.length) fail(`${size.width} ${reading.path}: ${reading.problems.join("; ")}`);
   }
-  if (Math.abs(head.y - wrap.y) > 4) fail(`${width} overskrift rykkede (${Math.round(head.y)} mod ${Math.round(wrap.y)})`);
-  if (after.y >= before.y) fail(`${width} tabelrækken rykkede ikke`);
-  await box.screenshot({ path: join(evidence, `tabel-${width}.png`) });
+  await page.setViewportSize({ width, height: width === 1280 ? 900 : 844 });
 }
 
 async function checkLayout(page, width) {

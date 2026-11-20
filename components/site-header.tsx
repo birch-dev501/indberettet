@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SearchPanel } from "@/components/search-panel";
 
@@ -18,6 +18,17 @@ const LINKS = [
 
 export function SiteHeader({ current }: { current?: (typeof LINKS)[number]["id"] | "home" }) {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+    const header = document.querySelector(".site-header");
+    if (!(header instanceof HTMLElement)) return;
+    const apply = () => {
+      document.documentElement.style.setProperty("--site-header-h", `${header.getBoundingClientRect().height}px`);
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, [open]);
   return (
     <header className="site-header">
       <a className="skip" href="#indhold">
