@@ -618,6 +618,14 @@ for name in names:
 assert paths[0].read_bytes() != paths[1].read_bytes()
 empty = og.company_lines({"substances": []})
 assert not any("0 indberetninger" in line for line in empty), empty
+pooled = og.company_lines({"substances": [
+ {"reports": 3329, "seriousReports": 845, "fatalReports": 22},
+ {"reports": 4756, "seriousReports": 1123, "fatalReports": 50},
+]})
+assert pooled[0].startswith("Tilsammen"), pooled
+assert "aktive stof" not in pooled[0], pooled
+assert pooled[1] == "8.085 indberetninger", pooled
+assert pooled[2] == "1.968 alvorlige · 72 ved dødsfald", pooled
 print("ok")
 `);
   if (pictures.code !== 0) fail(`delingsbilleder kan ikke skelnes: ${pictures.out.trim()}`);

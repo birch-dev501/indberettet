@@ -84,7 +84,7 @@ def company_lines(company: dict) -> list[str]:
     serious = sum(int(item["seriousReports"]) for item in rows)
     fatal = sum(int(item["fatalReports"]) for item in rows)
     return [
-        "Tal for det aktive stof, ikke for firmaet.",
+        "Tilsammen for de stoffer, der har en oversigt. Ikke for firmaet.",
         f"{danish(reports)} indberetninger",
         f"{danish(serious)} alvorlige · {danish(fatal)} ved dødsfald",
     ]
