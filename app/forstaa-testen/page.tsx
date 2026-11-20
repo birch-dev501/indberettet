@@ -131,8 +131,13 @@ export default function TestLiteracyPage() {
             <p>
               Tabellen viser hele personer. {percent(COCHRANE_ANTIGEN.asymptomaticSensitivity)} af {count(LOW_PREVALENCE.sick)} syge er{" "}
               {(LOW_PREVALENCE.sick * COCHRANE_ANTIGEN.asymptomaticSensitivity).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}{" "}
-              og rundes til {count(LOW_PREVALENCE.truePositive)}. Specificiteten {percent(COCHRANE_ANTIGEN.asymptomaticSpecificity)} giver{" "}
-              {count(LOW_PREVALENCE.falsePositive)} falsk positive blandt {count(LOW_PREVALENCE.well)} raske.
+              og rundes til {count(LOW_PREVALENCE.truePositive)} sandt positive. Resten,{" "}
+              {(LOW_PREVALENCE.sick - LOW_PREVALENCE.sick * COCHRANE_ANTIGEN.asymptomaticSensitivity).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+              , bliver {count(LOW_PREVALENCE.falseNegative)} falsk negative. {percent(COCHRANE_ANTIGEN.asymptomaticSpecificity)} af {count(LOW_PREVALENCE.well)} raske er{" "}
+              {(LOW_PREVALENCE.well * COCHRANE_ANTIGEN.asymptomaticSpecificity).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}{" "}
+              og rundes til {count(LOW_PREVALENCE.trueNegative)} sandt negative. De øvrige{" "}
+              {(LOW_PREVALENCE.well * (1 - COCHRANE_ANTIGEN.asymptomaticSpecificity)).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}{" "}
+              rundes til {count(LOW_PREVALENCE.falsePositive)} falsk positive.
             </p>
             <p>
               Af {count(LOW_PREVALENCE.truePositive + LOW_PREVALENCE.falsePositive)} positive svar er{" "}

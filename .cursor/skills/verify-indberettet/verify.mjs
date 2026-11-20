@@ -568,6 +568,9 @@ async function checkBayes(page) {
   if (!text.includes("Summary of findings 1") || !text.includes("Asymptomatic") || !text.includes("5,47")) {
     fail("testsiden citerer ikke rækken eller afrundingen");
   }
+  for (const raw of ["5,47", "4,53", "9.940,05", "49,95"]) {
+    if (!text.includes(raw)) fail(`testsiden mangler den rå værdi ${raw}`);
+  }
   if (!text.includes("40.956") || !text.includes("2.641")) fail("testsiden mangler prøvetallet fra rækken");
   const form = page.locator("form.effect-form");
   const live = form.locator("[aria-live=polite]");
