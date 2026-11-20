@@ -421,11 +421,23 @@ async function checkRedirects(page) {
     ["/firma/novo/", "/firma/novo-nordisk/"],
     ["/firma/glaxo/", "/firma/glaxosmithkline/"],
     ["/firma/nova/", "/firma/novartis/"],
+    ["/firma/medi/", "/firma/medi-radiopharma/"],
+    ["/firma/hal/", "/firma/hal-allergy/"],
   ];
   for (const [from, to] of routes) {
     await page.goto(`${base}${from}`, { waitUntil: "networkidle" });
     if (!page.url().includes(to)) fail(`${from} endte på ${page.url()}`);
   }
+  for (const blocked of ["/firma/blue/", "/firma/pharma/", "/firma/laboratorio/"]) {
+    const missed = await page.goto(`${base}${blocked}`, { waitUntil: "networkidle" });
+    if (missed?.status() !== 404) fail(`${blocked} svarer ${missed?.status()}`);
+    if (page.url().includes("bluefish") || page.url().includes("pharmathen") || page.url().includes("liconsa")) {
+      fail(`${blocked} sendte videre til ${page.url()}`);
+    }
+  }
+  const aliasRule = spawn("node", ["--test", "scripts/company-alias.test.mjs"], { cwd: root, stdio: "inherit" });
+  const aliasCode = await new Promise((done) => aliasRule.on("exit", done));
+  if (aliasCode !== 0) fail("korte firmanavne peger forkert");
   const response = await page.goto(`${base}/stof/findes-ikke-xyz/`, { waitUntil: "networkidle" });
   if (response?.status() !== 404) fail(`ukendt adresse svarer ${response?.status()}`);
   if (!(await page.locator("h1").innerText()).includes("findes ikke")) fail("404 mangler overskrift");

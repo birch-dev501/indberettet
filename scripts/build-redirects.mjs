@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { chooseShortTarget } from "./company-alias.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const base = "/indberettet";
@@ -44,11 +45,9 @@ for (const company of companies.companies) {
   const short = company.slug.split("-")[0];
   if (!short || short.length < 3 || seenShort.has(short) || companySlugs.has(short)) continue;
   seenShort.add(short);
-  const rivals = companies.companies.filter((item) => item.slug.startsWith(short));
-  rivals.sort((a, b) => b.productRows - a.productRows || a.slug.localeCompare(b.slug));
-  const [winner, next] = rivals;
-  if (!winner || (next && next.productRows === winner.productRows) || used.has(`firma/${short}`)) continue;
+  const target = chooseShortTarget(companies.companies, short);
+  if (!target || used.has(`firma/${short}`)) continue;
   used.add(`firma/${short}`);
-  writeAlias("firma", short, `/firma/${winner.slug}/`);
+  writeAlias("firma", short, `/firma/${target}/`);
 }
 console.log(`Viderestillinger: ${used.size}`);
