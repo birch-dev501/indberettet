@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { HIGH_PREVALENCE, LOW_PREVALENCE, bayesCounts } from "./bayes.ts";
+import { COCHRANE_ANTIGEN, HIGH_PREVALENCE, LOW_PREVALENCE, bayesCounts } from "./bayes.ts";
 
 function sums(row: NonNullable<ReturnType<typeof bayesCounts>>) {
   assert.equal(row.sick + row.well, row.tested);
@@ -16,9 +16,12 @@ test("lav og høj forekomst summer til 10.000", () => {
     assert.equal(row.tested, 10_000);
     sums(row);
   }
+  assert.equal(COCHRANE_ANTIGEN.asymptomaticSensitivity, 0.547);
+  assert.equal(COCHRANE_ANTIGEN.asymptomaticSpecificity, 0.995);
   assert.equal(LOW_PREVALENCE.sick, 10);
   assert.equal(LOW_PREVALENCE.truePositive, 5);
-  assert.equal(LOW_PREVALENCE.falsePositive, 30);
+  assert.equal(LOW_PREVALENCE.falsePositive, 50);
+  assert.equal(LOW_PREVALENCE.ppv, 5 / 55);
   assert.equal(HIGH_PREVALENCE.sick, 2_000);
   assert.equal(HIGH_PREVALENCE.truePositive, 1_460);
   assert.equal(HIGH_PREVALENCE.falsePositive, 72);

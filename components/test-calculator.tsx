@@ -30,7 +30,7 @@ export function TestCalculator() {
   const errorId = useId();
   const [prevalence, setPrevalence] = useState("0,1");
   const [sensitivity, setSensitivity] = useState("54,7");
-  const [specificity, setSpecificity] = useState("99,7");
+  const [specificity, setSpecificity] = useState("99,5");
   const result = useMemo(() => {
     const prior = parsePercent(prevalence);
     const sens = parsePercent(sensitivity);

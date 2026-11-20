@@ -561,9 +561,14 @@ async function checkBayes(page) {
   if (!(await page.locator("h1").innerText()).includes("Sådan læses en test")) fail("testsiden mangler overskrift");
   if (!text.includes("10.000")) fail("testsiden viser ikke 10.000");
   if (!text.includes("Cochrane")) fail("testsiden mangler kilden");
-  if (!text.includes("54,7") || !text.includes("99,7") || !text.includes("73,0") || !text.includes("99,1")) {
+  if (!text.includes("54,7") || !text.includes("99,5") || !text.includes("73,0") || !text.includes("99,1")) {
     fail("testsiden mangler de offentliggjorte testtal");
   }
+  if (text.includes("99,7")) fail("testsiden bruger 99,7 fra en anden række");
+  if (!text.includes("Summary of findings 1") || !text.includes("Asymptomatic") || !text.includes("5,47")) {
+    fail("testsiden citerer ikke rækken eller afrundingen");
+  }
+  if (!text.includes("40.956") || !text.includes("2.641")) fail("testsiden mangler prøvetallet fra rækken");
   const form = page.locator("form.effect-form");
   const live = form.locator("[aria-live=polite]");
   if ((await live.innerText()).trim() !== "") fail("beregneren melder en fejl ved de forudfyldte tal");

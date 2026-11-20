@@ -116,28 +116,40 @@ export default function TestLiteracyPage() {
           <article className="card" id="lav">
             <h2>Lav forekomst, eksempel</h2>
             <p>
-              Forekomsten 0,1 % er et eksempel, ikke en målt dansk forekomst. Testtallene er offentliggjorte.{" "}
+              Forekomsten 0,1 % er et eksempel, ikke en målt dansk forekomst. Sensitivitet og specificitet er fra samme række.{" "}
               <a href={COCHRANE_ANTIGEN.sourceUrl} rel="noopener noreferrer">
                 {COCHRANE_ANTIGEN.sourceName}
-              </a>{" "}
-              fandt for antigentest uden symptomer en gennemsnitlig sensitivitet på 54,7 % og en specificitet på 99,7 %.
+              </a>
+              , {COCHRANE_ANTIGEN.table}, rækken {COCHRANE_ANTIGEN.asymptomaticRow}. Sensitivitet{" "}
+              {percent(COCHRANE_ANTIGEN.asymptomaticSensitivity)} ({percent(COCHRANE_ANTIGEN.asymptomaticSensitivityLow)} til{" "}
+              {percent(COCHRANE_ANTIGEN.asymptomaticSensitivityHigh)}). Specificitet{" "}
+              {percent(COCHRANE_ANTIGEN.asymptomaticSpecificity)} ({percent(COCHRANE_ANTIGEN.asymptomaticSpecificityLow)} til{" "}
+              {percent(COCHRANE_ANTIGEN.asymptomaticSpecificityHigh)}). {count(COCHRANE_ANTIGEN.asymptomaticEvaluations)} evalueringer,{" "}
+              {count(COCHRANE_ANTIGEN.asymptomaticSamples)} prøver, heraf {count(COCHRANE_ANTIGEN.asymptomaticCases)} med smitte.
             </p>
             <Table row={LOW_PREVALENCE} />
+            <p>
+              Tabellen viser hele personer. {percent(COCHRANE_ANTIGEN.asymptomaticSensitivity)} af {count(LOW_PREVALENCE.sick)} syge er{" "}
+              {(LOW_PREVALENCE.sick * COCHRANE_ANTIGEN.asymptomaticSensitivity).toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}{" "}
+              og rundes til {count(LOW_PREVALENCE.truePositive)}. Specificiteten {percent(COCHRANE_ANTIGEN.asymptomaticSpecificity)} giver{" "}
+              {count(LOW_PREVALENCE.falsePositive)} falsk positive blandt {count(LOW_PREVALENCE.well)} raske.
+            </p>
             <p>
               Af {count(LOW_PREVALENCE.truePositive + LOW_PREVALENCE.falsePositive)} positive svar er{" "}
               {count(LOW_PREVALENCE.falsePositive)} falske. Den positive prædiktive værdi er {percent(LOW_PREVALENCE.ppv)}.
               Den negative prædiktive værdi er {percent(LOW_PREVALENCE.npv)}.
-            </p>
-            <p>
-              Specificiteten er 99,7 %. Alligevel er de fleste positive svar falske, fordi 9.990 af 10.000 er raske.
             </p>
           </article>
 
           <article className="card" id="hoj">
             <h2>Høj forekomst, eksempel</h2>
             <p>
-              Forekomsten 20 % er et eksempel blandt mennesker med symptomer, ikke en målt dansk andel. Samme
-              Cochrane-oversigt fandt med symptomer en sensitivitet på 73,0 % og en specificitet på 99,1 %.
+              Forekomsten 20 % er et eksempel blandt mennesker med symptomer, ikke en målt dansk andel. Samme tabel, rækken{" "}
+              {COCHRANE_ANTIGEN.symptomaticRow}. Sensitivitet {percent(COCHRANE_ANTIGEN.symptomaticSensitivity)} (
+              {percent(COCHRANE_ANTIGEN.symptomaticSensitivityLow)} til {percent(COCHRANE_ANTIGEN.symptomaticSensitivityHigh)}
+              ). Specificitet {percent(COCHRANE_ANTIGEN.symptomaticSpecificity)} ({percent(COCHRANE_ANTIGEN.symptomaticSpecificityLow)}{" "}
+              til {percent(COCHRANE_ANTIGEN.symptomaticSpecificityHigh)}). {count(COCHRANE_ANTIGEN.symptomaticEvaluations)} evalueringer,{" "}
+              {count(COCHRANE_ANTIGEN.symptomaticSamples)} prøver, heraf {count(COCHRANE_ANTIGEN.symptomaticCases)} med smitte.
             </p>
             <Table row={HIGH_PREVALENCE} />
             <p>

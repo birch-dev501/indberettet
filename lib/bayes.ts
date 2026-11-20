@@ -48,14 +48,34 @@ export function bayesCounts(
   };
 }
 
-/** Dinnes et al., Cochrane Database of Systematic Reviews 2022, issue 7, CD013705. */
+/** Dinnes et al., Cochrane Database Syst Rev. 2022 Jul 22;2022(7):CD013705.
+ * Summary of findings 1. Symptomatic and Asymptomatic are separate rows.
+ * https://pmc.ncbi.nlm.nih.gov/articles/PMC9305720/
+ */
 export const COCHRANE_ANTIGEN = {
   sourceName: "Dinnes et al., Cochrane Database of Systematic Reviews 2022",
-  sourceUrl: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013705.pub3/full",
+  sourceUrl: "https://doi.org/10.1002/14651858.CD013705.pub3",
+  table: "Summary of findings 1",
+  symptomaticRow: "Symptomatic",
   symptomaticSensitivity: 0.73,
+  symptomaticSensitivityLow: 0.693,
+  symptomaticSensitivityHigh: 0.764,
   symptomaticSpecificity: 0.991,
+  symptomaticSpecificityLow: 0.99,
+  symptomaticSpecificityHigh: 0.992,
+  symptomaticEvaluations: 109,
+  symptomaticSamples: 50_574,
+  symptomaticCases: 11_662,
+  asymptomaticRow: "Asymptomatic",
   asymptomaticSensitivity: 0.547,
-  asymptomaticSpecificity: 0.997,
+  asymptomaticSensitivityLow: 0.477,
+  asymptomaticSensitivityHigh: 0.616,
+  asymptomaticSpecificity: 0.995,
+  asymptomaticSpecificityLow: 0.994,
+  asymptomaticSpecificityHigh: 0.996,
+  asymptomaticEvaluations: 50,
+  asymptomaticSamples: 40_956,
+  asymptomaticCases: 2_641,
 } as const;
 
 export const TESTED = 10_000;
