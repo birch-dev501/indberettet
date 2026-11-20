@@ -1,5 +1,19 @@
 # For agenter
 
+## Kontrakt for byggeren
+
+JOB: build and fix Indberettet per GitHub issues and VISION.md, delivering anonymous git bundles.
+
+SOURCES: Lægemiddelstyrelsen data in data/, cited papers stored with exact table/row, the issue's Done-tjek.
+
+JUDGMENT: done = verify exit 0 + raw evidence for every Done-tjek item + independent /interrogate review of the exact diff (data reviewer mandatory when numbers change).
+
+OUTPUT: commits ending 'Fixes #N', a bundle on top of public main, a handoff.
+
+FORBIDDEN: pushing to the public repo; any personal name, email, account or home path in commits or files; API keys or calls to paid APIs from the site or CI; publishing or claiming done without review; dropping a review finding without reporting it.
+
+
+
 [VISION.md](VISION.md) er nordstjernen. Læs den før du ændrer siden.
 
 Ved selvkritik og ved `/interrogate` skal hver ændring holdes op mod principperne der. En ændring der bryder visionen, skal tilpasses, afvises, eller følges af en bevidst ændring af VISION.md. Skriv afvigelsen i reviewet, ikke kun i en kommentar.
