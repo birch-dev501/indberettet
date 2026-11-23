@@ -73,7 +73,8 @@ export function EffectCard({ effect }: { effect: EffectView }) {
       )}
       {effect.postponementDays && record.postponement && (
         <p>
-          Den gennemsnitlige udskydelse af død er {effect.postponementDays} dage over {effect.postponementYears} år.
+          Den gennemsnitlige udskydelse af død er {record.postponement.shown ?? effect.postponementDays} dage over{" "}
+          {effect.postponementYears} år.
           {effect.postponementSpread ? ` Spredningen på arealet er ${effect.postponementSpread}.` : ""} {record.postponement.method}{" "}
           <a href={record.postponement.sourceUrl} rel="noopener noreferrer">
             {record.postponement.sourceName}

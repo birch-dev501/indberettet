@@ -102,6 +102,7 @@
       },
       "postponement": {
         "days": 27.18,
+        "shown": "cirka 27",
         "overYears": 5.8,
         "method": "Metoden er arealet mellem overlevelseskurverne inden for forsøgstiden.",
         "sourceName": "Kristensen, Christensen og Hallas, BMJ Open 2015, tabel 1",
@@ -120,9 +121,9 @@
       "retrieved": "2026-11-23",
       "caveats": [
         "Tallene gælder personer, der allerede har hjertesygdom. De gælder ikke forebyggende behandling af raske.",
-        "Udskydelsen på 27,18 dage er et gennemsnit inden for forsøgstiden. Det kan dække over, at de fleste ikke får gavn, mens nogle få vinder meget. Det er ikke en livslang gevinst.",
-        "Forsøget er fra 1994, skandinavisk og placebokontrolleret. Dosis var 20 mg og blev justeret til 10 eller 40 mg.",
-        "I samme opgørelse ligger udskydelsen i forsøg med sekundær forebyggelse fra minus 10 til 27 dage. De 27 dage er 4S. Tallene må ikke overføres til andre statiner.",
+        "Udskydelsen på cirka 27 dage er et gennemsnit inden for forsøgstiden. Det kan dække over, at de fleste ikke får gavn, mens nogle få vinder meget. Det er ikke en livslang gevinst.",
+        "Forsøget er fra 1994, skandinavisk og placebokontrolleret. Dosis var 20 mg. Hos 37 % blev den hævet til 40 mg.",
+        "I Kristensen og kollegers opgørelse fra 2015 ligger udskydelsen i forsøg med sekundær forebyggelse fra minus 10 til 27 dage. De 27 dage er 4S. Tallene må ikke overføres til andre statiner.",
         "NNT må ikke sættes over for indberetningerne."
       ]
     }
