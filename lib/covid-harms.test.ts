@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { bannedPhrases, harmCopy, loadCovidHarms, measureText, per100k, perMillion } from "./covid-harms.ts";
 import { husby } from "./sources.ts";
@@ -48,10 +48,21 @@ test("Husby-tallene på studiesiden er de samme som i kildedefinitionen", () => 
   assert.equal(moderna?.low, husby.modernaYoungRate.low);
   assert.equal(moderna?.high, husby.modernaYoungRate.high);
   assert.equal(moderna?.ratio?.value, husby.modernaYoungHr.value);
+  assert.equal(moderna?.ratio?.low, husby.modernaYoungHr.low);
+  assert.equal(moderna?.ratio?.high, husby.modernaYoungHr.high);
   assert.equal(bnt?.value, husby.bntYoungRate.per100k);
+  assert.equal(bnt?.low, husby.bntYoungRate.low);
+  assert.equal(bnt?.high, husby.bntYoungRate.high);
+  assert.equal(bnt?.ratio?.value, husby.bntYoungHr.value);
   assert.equal(bnt?.ratio?.low, husby.bntYoungHr.low);
   assert.equal(bnt?.ratio?.high, husby.bntYoungHr.high);
   assert.deepEqual(loadCovidHarms().substanceSlugs, ["covid-19-vaccines"]);
+});
+
+test("den byggede side har ingen forbudte vendinger", () => {
+  const html = "out/covid-vacciner-bivirkninger/index.html";
+  if (!existsSync(html)) return;
+  assert.deepEqual(bannedPhrases(readFileSync(html, "utf8")), []);
 });
 
 test("Nygaards pr. million er afrundet fra tællerne", () => {
