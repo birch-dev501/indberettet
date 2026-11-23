@@ -26,6 +26,13 @@ test("covid-siden har tre grupper, en kilde pr. punkt og ingen forbudte påstand
   assert.ok(file.findings.filter((item) => item.group === "unsupported").length >= 3);
   assert.equal(text.includes("cirka 1.100"), true);
   assert.equal(text.includes("ikke er talt op linje for linje"), true);
+  assert.equal(text.includes("før Omikron"), true);
+  assert.equal(text.includes("1. december 2020"), true);
+  assert.equal(text.includes("stigning hos kvinder"), true);
+  assert.equal(text.includes("7 observerede"), true);
+  assert.equal(text.includes("0,3 ventede"), true);
+  assert.equal(text.includes("10,1 pr. 10.000"), true);
+  assert.equal(text.includes("15,1 pr. 10.000"), true);
   const page = readFileSync("app/covid-vacciner-bivirkninger/page.tsx", "utf8");
   assert.deepEqual(bannedPhrases(`${text}\n${page}`), []);
 });

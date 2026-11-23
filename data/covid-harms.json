@@ -28,8 +28,8 @@
       "id": "myocarditis",
       "group": "established",
       "heading": "Betændelse i hjertemusklen eller hjertesækken efter mRNA-vaccine",
-      "body": "EMA's produktinformation for Comirnaty lister myokarditis og perikarditis som meget sjældne og skriver, at risikoen er højest hos yngre mænd. Nygaards tal er Comirnaty og myoperikarditis. Husbys tal er myokarditis eller myoperikarditis og dækker både Comirnaty og Spikevax. Patones tal er myokarditis og er engelske.",
-      "note": "Patones infektionstal er pr. person med en positiv test. Vaccinetallet er pr. vaccineret. Ikke alle bliver smittet, og ikke alle smittede bliver testet. Gruppen under 40 år er begge køn. Risikoen efter vaccine samler sig hos unge mænd, så tallet for begge køn er ikke risikoen for en ung mand. Forfatterne skriver selv, at risikoen er mere jævnbyrdig hos personer op til 40 år, hvor anden dosis Spikevax lå over infektionen.",
+      "body": "EMA's produktinformation for Comirnaty lister myokarditis og perikarditis som meget sjældne og skriver, at risikoen er højest hos yngre mænd. Nygaards tal er Comirnaty og myoperikarditis. Husbys tal er myokarditis eller myoperikarditis og dækker både Comirnaty og Spikevax. Patones tal er myokarditis og er engelske. For Comirnaty i alderen 12 til 39 år går intervallet for hazard ratio under 1. Studiet fandt en stigning hos kvinder, ikke i den aldersgruppe samlet.",
+      "note": "Patones tal er fra England, 1. december 2020 til 24. august 2021, før Omikron. Infektionstallet er pr. person med en positiv test. Vaccinetallet er pr. vaccineret. Ikke alle bliver smittet, og ikke alle smittede bliver testet. Gruppen under 40 år er begge køn. Risikoen efter vaccine samler sig hos unge mænd, så tallet for begge køn er ikke risikoen for en ung mand. Forfatterne skriver selv, at risikoen er mere jævnbyrdig hos personer op til 40 år, hvor anden dosis Spikevax lå over infektionen.",
       "measures": [
         {
           "id": "ema-28",
@@ -168,7 +168,7 @@
       "id": "cvt",
       "group": "established",
       "heading": "Blodprop i hjernens vener efter Vaxzevria",
-      "body": "I Danmark var 80 % af de vaccinerede kvinder, i Norge 78 %. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
+      "body": "I Danmark var 80 % af de vaccinerede kvinder, i Norge 78 %. Der var 7 observerede tilfælde af blodprop i hjernens vener mod 0,3 ventede blandt 281.264 vaccinerede. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
       "measures": [
         {
           "id": "pottegard-cvt",
@@ -252,7 +252,7 @@
       "id": "fraiman",
       "group": "signal",
       "heading": "Alvorlige hændelser af særlig interesse i de voksne fase 3-forsøg",
-      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to fase 3-forsøg med voksne fra Pfizer og Moderna. Tallene er ikke danske. Det er et signal i en efterberegning, ikke bevis for én sygdom. I hvert forsøg for sig rummer intervallet også ingen forskel. Forfatterne skriver, at mer-risikoen kalder på formelle skade-gavn-analyser, og at de analyser kræver data på deltagerniveau. Black og Evans, Vaccine 2023, skriver at manuskriptet ikke fik en passende metodisk og statistisk gennemgang.",
+      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to fase 3-forsøg med voksne fra Pfizer og Moderna. Tallene er ikke danske. Det er et signal i en efterberegning, ikke bevis for én sygdom. Pfizer-forsøget alene var 10,1 pr. 10.000 (minus 0,4 til 20,6). Moderna-forsøget alene var 15,1 pr. 10.000 (minus 3,6 til 33,8). I hvert forsøg for sig rummer intervallet også ingen forskel. Forfatterne skriver, at mer-risikoen kalder på formelle skade-gavn-analyser, og at de analyser kræver data på deltagerniveau. Black og Evans, Vaccine 2023, skriver at manuskriptet ikke fik en passende metodisk og statistisk gennemgang.",
       "measures": [
         {
           "id": "fraiman-combined",
