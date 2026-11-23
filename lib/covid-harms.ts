@@ -9,6 +9,7 @@ export type HarmRatio = { name: string; value: number; low: number; high: number
 export type HarmMeasure = {
   id: string;
   label: string;
+  block?: string;
   value?: number;
   low?: number;
   high?: number;

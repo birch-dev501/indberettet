@@ -32,6 +32,7 @@
       "measures": [
         {
           "id": "ema-28",
+          "block": "Produktinformation",
           "label": "Ekstra tilfælde af myokarditis, mænd 16 til 24 år, 28 dage efter dosis 2 af Comirnaty",
           "value": 0.56,
           "low": 0.37,
@@ -58,6 +59,7 @@
         },
         {
           "id": "nygaard-boys",
+          "block": "Danmark",
           "label": "Fundne tilfælde af myoperikarditis, drenge 12 til 17 år i Danmark, Comirnaty, 15. maj til 15. september 2021",
           "cases": 13,
           "n": 133477,
@@ -108,6 +110,7 @@
         },
         {
           "id": "patone-infection",
+          "block": "England",
           "label": "Ekstra tilfælde af myokarditis efter en positiv test, England, 16 år og derover, 28 dage",
           "value": 40,
           "low": 38,
@@ -164,7 +167,7 @@
       "id": "cvt",
       "group": "established",
       "heading": "Blodprop i hjernens vener efter Vaxzevria",
-      "body": "Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
+      "body": "I Danmark var 80 % af de vaccinerede kvinder, i Norge 78 %. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
       "measures": [
         {
           "id": "pottegard-cvt",

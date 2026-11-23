@@ -22,8 +22,8 @@ export default function CovidHarmPage() {
         <p className="kicker">Studier. Ikke indberetninger.</p>
         <h1>Hvad siger studierne om bivirkninger ved covid-vacciner?</h1>
         <p className="lede">
-          Tallene er absolutte risici for en navngiven gruppe, taget fra studiet eller fra produktinformationen. En
-          indberetning til Lægemiddelstyrelsen, EudraVigilance eller VAERS er en mistanke. Den er ikke en hyppighed.
+          Hyppighederne gælder en navngiven gruppe. Forholdstal står som forholdstal. En indberetning til
+          Lægemiddelstyrelsen, EudraVigilance eller VAERS er en mistanke. Den er ikke en hyppighed.
         </p>
 
         {file.preface ? (
@@ -54,8 +54,9 @@ export default function CovidHarmPage() {
           {comirnaty?.nnt ? (
             <p>
               I godkendelsesforsøget med Comirnaty skulle der vaccineres {comirnaty.nnt} personer for at forebygge ét
-              tilfælde af symptomgivende covid-19 i den korte opfølgning i 2020. Det er et andet udfald end betændelse i
-              hjertemusklen. Tallene kan ikke trækkes fra hinanden.{" "}
+              tilfælde af symptomgivende covid-19 i den korte opfølgning i 2020. Tallet gælder deltagerne fra 16 år, ikke
+              kun den unge gruppe, hvor betændelse i hjertemusklen er hyppigst. Det er et andet udfald. Tallene kan ikke
+              trækkes fra hinanden.{" "}
               <Link href="/stof/covid-19-vaccines/#effekt-c4591001-primary">Kortet med regnestykket</Link>.
             </p>
           ) : (
@@ -82,11 +83,15 @@ function Finding({ finding }: { finding: HarmFinding }) {
     <article className="card">
       <h3>{finding.heading}</h3>
       <p>{finding.body}</p>
-      {finding.measures.map((measure) => (
-        <p key={measure.id}>
-          {measureText(measure)} {measure.place}
-        </p>
-      ))}
+      {finding.measures.map((measure, index) => {
+        const previous = finding.measures[index - 1]?.block;
+        return (
+          <p key={measure.id}>
+            {measure.block && measure.block !== previous ? <strong>{measure.block}. </strong> : null}
+            {measureText(measure)}
+          </p>
+        );
+      })}
       {finding.note ? <p>{finding.note}</p> : null}
       <ul>
         {links.map((link) => (
