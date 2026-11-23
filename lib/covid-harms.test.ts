@@ -25,6 +25,9 @@ test("covid-siden har tre grupper, en kilde pr. punkt og ingen forbudte påstand
   assert.equal(text.includes("VAERS"), false);
   assert.ok(file.findings.filter((item) => item.group === "unsupported").length >= 3);
   assert.equal(text.includes("cirka 1.100"), true);
+  assert.equal(text.includes("Knap halvdelen"), true);
+  assert.equal(text.includes("Godt halvdelen"), false);
+  assert.equal(text.includes("WITHDRAWN"), true);
   assert.equal(text.includes("ikke er talt op linje for linje"), true);
   assert.equal(text.includes("før Omikron"), true);
   assert.equal(text.includes("1. december 2020"), true);
