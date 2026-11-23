@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SubstanceView } from "@/components/substance-view";
 import { categoriesForSubstance } from "@/lib/categories";
-import { effectForSubstance } from "@/lib/effect-records";
+import { effectsForSubstance } from "@/lib/effect-records";
 import { getCategories, getIdentity, getIndex, getNews, getPlain, getProducts, getSubstance, getUsage } from "@/lib/data";
 import { substanceRate } from "@/lib/rates";
 
@@ -60,7 +60,7 @@ export default async function SubstancePage({ params }: { params: Promise<{ slug
           rate={rate}
           plain={getPlain(slug)}
           identity={getIdentity(slug)}
-          effect={effectForSubstance(slug)}
+          effects={effectsForSubstance(slug)}
         />
         <ReportIssue path={`/stof/${slug}/`} />
       </main>

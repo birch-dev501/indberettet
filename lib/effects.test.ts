@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { effectView, effectsForSubstance } from "./effect-records.ts";
 import { armMeasures, benefitHarm, effectMeasures, trialRisks } from "./effects.ts";
 
 test("8 af 18.198 mod 162 af 18.325 giver RRR 95,0 %, ARR 0,84 procentpoint og NNT 119", () => {
@@ -34,6 +35,28 @@ test("Comirnaty-posten bruger de samme arme og har intet interval for NNT", () =
   assert.equal(record.publishedEffect.emaCi.high, 0.979);
   assert.equal(record.nntInterval, undefined);
   assert.equal(record.arrInterval, undefined);
+});
+
+test("en post uden offentliggjorte intervaller viser ikke opfundne grænser", () => {
+  const view = effectView({
+    id: "bare",
+    substanceSlug: "test",
+    product: "Eksempel",
+    trial: "T1",
+    population: "Voksne.",
+    endpoint: "Død.",
+    treatedGroup: "behandlede",
+    controlGroup: "placebogruppen",
+    action: "behandles",
+    prevented: "ét dødsfald",
+    arms: { treated: { events: 10, n: 100 }, control: { events: 20, n: 100 } },
+    sources: [],
+    retrieved: "2026-11-23",
+    caveats: [],
+  });
+  assert.equal(view?.intervals.length, 0);
+  assert.equal(view?.nnt, "10");
+  assert.equal(effectsForSubstance("semaglutide").length, 0);
 });
 
 test("BNT162b2 giver cirka 95 procent RRR, 0,84 procentpoint ARR og NNT 119", () => {

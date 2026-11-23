@@ -29,7 +29,7 @@ export function SubstanceView({
   rate = null,
   plain = null,
   identity = null,
-  effect = null,
+  effects = [],
 }: {
   substance: Substance;
   news: NewsItem[];
@@ -37,7 +37,7 @@ export function SubstanceView({
   rate?: SubstanceRate | null;
   plain?: PlainLanguage | null;
   identity?: SubstanceIdentity | null;
-  effect?: EffectView | null;
+  effects?: EffectView[];
 }) {
   const [viewId, setViewId] = useState<(typeof VIEWS)[number]["id"]>("all");
   const [termQuery, setTermQuery] = useState("");
@@ -107,8 +107,10 @@ export function SubstanceView({
 
       <SummaryCard substance={substance} />
       {rate && <RateCard rate={rate} />}
-      {effect && <EffectCard effect={effect} />}
-      {effect ? null : (
+      {effects.map((effect) => (
+        <EffectCard key={effect.record.id} effect={effect} />
+      ))}
+      {effects.length > 0 ? null : (
         <p className="small muted research-link">
           <Link href="/forstaa-forskning/">Sådan læses en relativ risikoreduktion, NNT og NNH</Link>. En indberetning
           her er ikke en hyppighed.

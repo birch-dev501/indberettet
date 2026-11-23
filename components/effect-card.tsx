@@ -4,45 +4,88 @@ import { formatDate } from "@/lib/format";
 
 export function EffectCard({ effect }: { effect: EffectView }) {
   const { record } = effect;
-  const others = record.notCovered.join(" og ");
+  const others = (record.notCovered ?? []).join(" og ");
+  const identity = [record.code, record.makers].filter(Boolean).join(", ");
   return (
     <article className="card section" id="effekt">
-      <p className="kicker">Udenlandsk forsøg. Ikke danske indberetninger.</p>
-      <h2>Effekt i godkendelsesforsøget</h2>
+      <p className="kicker">{record.kicker ?? "Udenlandsk forsøg. Ikke danske indberetninger."}</p>
+      <h2>{record.heading ?? "Effekt i godkendelsesforsøget"}</h2>
       <p>
-        Tallene gælder {record.product} ({record.code}, {record.makers}) i forsøg {record.trial}. De gælder ikke {others}.
-        De gælder ikke indberetningerne på denne side.
+        Tallene gælder {record.product}
+        {identity ? ` (${identity})` : ""} i forsøg {record.trial}.
+        {others ? ` De gælder ikke ${others}.` : ""} De gælder ikke indberetningerne på denne side.
       </p>
       <p>{record.endpoint}</p>
       <p>
-        {record.population} Data er opgjort til {formatDate(record.dataCutoff)}.
+        {record.population}
+        {record.dataCutoff ? ` Data er opgjort til ${formatDate(record.dataCutoff)}.` : ""}
       </p>
       <p>
-        {effect.treatedEvents} af {effect.treatedN} vaccinerede fik udfaldet. {effect.controlEvents} af {effect.controlN} i
-        placebogruppen fik det. ARR og NNT er regnet på de andele, ikke på personår.
+        {effect.treatedN
+          ? `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} fik udfaldet. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} fik det.`
+          : `${effect.treatedEvents} døde i ${record.treatedGroup}. ${effect.controlEvents} døde i ${record.controlGroup}.`}
+        {record.calculationNote ? ` ${record.calculationNote}` : ""}
       </p>
-      <p>
-        Relativ risikoreduktion er den del af placebogruppens tilfælde, der udeblev. Her er den {effect.rrr} %. Den
-        offentliggjorte vaccineeffekt er {effect.published} %. Polack og kolleger angiver et 95 % kredibilitetsinterval
-        på {effect.polackLow} til {effect.polackHigh}. EMA-produktinformationen, {record.publishedEffect.emaCi.table},
-        angiver et 95 % konfidensinterval på {effect.emaLow} til {effect.emaHigh} efter{" "}
-        {record.publishedEffect.emaCi.method}.
-      </p>
-      <p>
-        Absolut risikoreduktion er forskellen mellem de to andele, i procentpoint. Her er den {effect.arr} procentpoint.
-      </p>
-      <p>
-        NNT er 1 divideret med forskellen som andel, cirka {effect.arrShare}. Det er det samme som 100 divideret med{" "}
-        {effect.arr} procentpoint, ikke 1 divideret med {effect.arr}. Tallet afrundes til nærmeste hele tal.{" "}
-        {effect.nntRaw} bliver {effect.nnt}. I dette forsøgs opfølgning skulle der i gennemsnit vaccineres {effect.nnt}{" "}
-        personer for at forebygge ét tilfælde af symptomgivende covid-19. Det er ikke NNT for alvorlig sygdom,
-        indlæggelse eller død. Kilderne angiver ikke et interval for NNT eller for den absolutte forskel.
-      </p>
+      {effect.rrr && effect.arr && effect.nnt && effect.arrShare && effect.nntRaw ? (
+        <>
+          <p>
+            Relativ risikoreduktion er den del af placebogruppens tilfælde, der udeblev. Her er den {effect.rrr} %.
+            {effect.published && record.publishedEffect ? ` Den offentliggjorte ${record.publishedEffect.label} er ${effect.published} %.` : ""}
+            {effect.intervals.map((interval) => (
+              <span key={interval.before}>
+                {" "}
+                {interval.before} {interval.low} til {interval.high}
+                {interval.after ? ` ${interval.after}` : ""}.
+              </span>
+            ))}
+          </p>
+          <p>
+            Absolut risikoreduktion er forskellen mellem de to andele, i procentpoint. Her er den {effect.arr} procentpoint.
+          </p>
+          <p>
+            NNT er 1 divideret med forskellen som andel, cirka {effect.arrShare}. Det er det samme som 100 divideret med{" "}
+            {effect.arr} procentpoint, ikke 1 divideret med {effect.arr}. Tallet afrundes til nærmeste hele tal.{" "}
+            {effect.nntRaw} bliver {effect.nnt}. I dette forsøgs opfølgning skulle der i gennemsnit {record.action}{" "}
+            {effect.nnt} personer for at forebygge {record.prevented}. {record.limits} Kilderne angiver ikke et interval
+            for NNT eller for den absolutte forskel.
+          </p>
+        </>
+      ) : (
+        effect.published &&
+        record.publishedEffect && (
+          <p>
+            Den offentliggjorte {record.publishedEffect.label} er {effect.published}
+            {record.publishedEffect.unit === "ratio" ? "" : " %"}.
+            {effect.intervals.map((interval) => (
+              <span key={interval.before}>
+                {" "}
+                {interval.before} {interval.low} til {interval.high}
+                {interval.after ? ` ${interval.after}` : ""}.
+              </span>
+            ))}
+          </p>
+        )
+      )}
+      {effect.postponementDays && record.postponement && (
+        <p>
+          Den gennemsnitlige udskydelse af død er {effect.postponementDays} dage over {effect.postponementYears} år.
+          {effect.postponementSpread ? ` Spredningen på arealet er ${effect.postponementSpread}.` : ""} {record.postponement.method}{" "}
+          <a href={record.postponement.sourceUrl} rel="noopener noreferrer">
+            {record.postponement.sourceName}
+          </a>
+          . Tallet er ikke regnet her.
+        </p>
+      )}
       <p>
         NNT hører til netop dette udfald, denne population, udgangsrisikoen i de uger og den opfølgning, tallene er talt
         over.
       </p>
-      <p>{record.followUp} NNT gælder den periode. Det gælder ikke et år og ikke et senere smitteår.</p>
+      {record.followUp && (
+        <p>
+          {record.followUp}
+          {record.periodNote ? ` ${record.periodNote}` : ""}
+        </p>
+      )}
       <ul>
         {record.caveats.map((item) => (
           <li key={item}>{item}</li>
@@ -52,9 +95,11 @@ export function EffectCard({ effect }: { effect: EffectView }) {
         Indberetningerne herunder er mistanker. De er ikke en hyppighed og ikke en bevist årsag. De kan ikke sættes
         direkte over for NNT.
       </p>
-      <p>
-        <Link href="/forstaa-forskning/#bnt162b2">Læs hvordan de 95 % bliver til en absolut forskel</Link>.
-      </p>
+      {record.learnMoreHref && record.learnMoreLabel && (
+        <p>
+          <Link href={record.learnMoreHref}>{record.learnMoreLabel}</Link>.
+        </p>
+      )}
       <p className="small muted">Kilder, opslag {formatDate(record.retrieved)}.</p>
       <ul>
         {record.sources.map((source) => (
