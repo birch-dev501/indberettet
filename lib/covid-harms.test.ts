@@ -51,7 +51,7 @@ test("EMA's 0,56 pr. 10.000 er 5,6 pr. 100.000", () => {
 
 test("Fraimans samlede interval udelukker 0, de to forsøg hver for sig gør ikke", () => {
   const file = loadCovidHarms();
-  const combined = file.findings.find((item) => item.id === "fraiman")?.measures[0];
+  const combined = file.findings.find((item) => item.id === "fraiman")?.measures.find((item) => item.id === "fraiman-combined");
   assert.ok(combined && combined.low! > 0);
   assert.equal(combined?.place.includes("minus 0,4"), true);
   assert.equal(combined?.place.includes("minus 3,6"), true);

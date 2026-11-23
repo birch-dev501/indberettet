@@ -202,7 +202,7 @@
       "id": "fraiman",
       "group": "signal",
       "heading": "Alvorlige hændelser af særlig interesse i de voksne fase 3-forsøg",
-      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to amerikanske voksenforsøg bag nødgodkendelsen. Tallene er ikke danske. Det er et signal i en efterberegning, ikke bevis for én sygdom. I hvert forsøg for sig rummer intervallet også ingen forskel.",
+      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to fase 3-forsøg med voksne fra Pfizer og Moderna. Tallene er ikke danske. Det er et signal i en efterberegning, ikke bevis for én sygdom. I hvert forsøg for sig rummer intervallet også ingen forskel. Forfatterne skriver, at mer-risikoen kalder på formelle skade-gavn-analyser, og at de analyser kræver data på deltagerniveau. Black og Evans, Vaccine 2023, skriver at manuskriptet ikke fik en passende metodisk og statistisk gennemgang.",
       "measures": [
         {
           "id": "fraiman-combined",
@@ -216,6 +216,34 @@
           "sourceName": "Fraiman et al., Vaccine 2022",
           "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9428332/",
           "place": "Resultater. Pfizer-forsøget alene var 10,1 (minus 0,4 til 20,6). Moderna-forsøget alene var 15,1 (minus 3,6 til 33,8)."
+        },
+        {
+          "id": "fraiman-pfizer-placebo",
+          "label": "Placebogruppen i Pfizer-forsøget, alvorlige hændelser af særlig interesse",
+          "value": 17.6,
+          "digits": 1,
+          "per": 10000,
+          "kind": "rate",
+          "sourceName": "Fraiman et al., Vaccine 2022",
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9428332/",
+          "place": "Abstract. Baseline i placebogruppen."
+        },
+        {
+          "id": "fraiman-moderna-placebo",
+          "label": "Placebogruppen i Moderna-forsøget, alvorlige hændelser af særlig interesse",
+          "value": 42.2,
+          "digits": 1,
+          "per": 10000,
+          "kind": "rate",
+          "sourceName": "Fraiman et al., Vaccine 2022",
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9428332/",
+          "place": "Abstract. Baseline i placebogruppen."
+        }
+      ],
+      "links": [
+        {
+          "name": "Black og Evans, Vaccine 2023",
+          "url": "https://doi.org/10.1016/j.vaccine.2023.04.040"
         }
       ]
     },
