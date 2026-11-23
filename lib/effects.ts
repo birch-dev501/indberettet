@@ -18,7 +18,7 @@ export function effectMeasures(treated: number, control: number): EffectMeasures
   return { arr: 0, rrr: rrr === null ? null : 0, nnt: null, nnh: null };
 }
 
-/** 1/ARR rounded to a whole person. 8/18198 against 162/18325 is 119.05, which rounds to 119. */
+/** 1/ARR rounded to the nearest whole person. 8/18198 against 162/18325 is 119.04, which rounds to 119. */
 export function roundedNnt(arr: number): number | null {
   if (!Number.isFinite(arr) || arr === 0) return null;
   return Math.round(1 / Math.abs(arr));

@@ -37,6 +37,8 @@ export type EffectView = {
   record: EffectRecord;
   rrr: string;
   arr: string;
+  arrShare: string;
+  nntRaw: string;
   nnt: string;
   published: string;
   polackLow: string;
@@ -71,6 +73,8 @@ export function effectForSubstance(slug: string): EffectView | null {
     record,
     rrr: percent(measures.rrr, 1),
     arr: da(measures.arr * 100, 2),
+    arrShare: da(measures.arr, 4),
+    nntRaw: da(1 / measures.arr, 2),
     nnt: measures.nnt.toLocaleString("da-DK"),
     published: percent(record.publishedEffect.value, 1),
     polackLow: percent(record.publishedEffect.polackCri.low, 1),

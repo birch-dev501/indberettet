@@ -9,7 +9,8 @@ test("8 af 18.198 mod 162 af 18.325 giver RRR 95,0 %, ARR 0,84 procentpoint og N
   assert.equal((result.rrr! * 100).toFixed(1), "95.0");
   assert.equal((result.arr * 100).toFixed(2), "0.84");
   assert.equal(result.nnt, 119);
-  assert.ok(Math.abs(1 / result.arr - 119) < 1);
+  assert.equal((1 / result.arr).toFixed(2), "119.04");
+  assert.equal(result.arr.toFixed(4), "0.0084");
 });
 
 test("Comirnaty-posten bruger de samme arme og har intet interval for NNT", () => {
