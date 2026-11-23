@@ -71,6 +71,8 @@ export type EffectView = {
   arr: string | null;
   arrShare: string | null;
   nntRaw: string | null;
+  roundedShareInverse: string | null;
+  roundedPointInverse: string | null;
   nnt: string | null;
   published: string | null;
   intervals: ShownInterval[];
@@ -136,6 +138,8 @@ export function effectView(record: EffectRecord): EffectView | null {
     arr: measures ? da(measures.arr * 100, 2) : null,
     arrShare: measures ? da(measures.arr, 4) : null,
     nntRaw: measures ? da(1 / measures.arr, 2) : null,
+    roundedShareInverse: measures ? da(1 / Number(measures.arr.toFixed(4)), 2) : null,
+    roundedPointInverse: measures ? da(100 / Number((measures.arr * 100).toFixed(2)), 2) : null,
     nnt: measures?.nnt === null || measures?.nnt === undefined ? null : measures.nnt.toLocaleString("da-DK"),
     published: published
       ? published.unit === "ratio"

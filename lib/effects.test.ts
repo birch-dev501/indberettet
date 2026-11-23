@@ -35,6 +35,11 @@ test("Comirnaty-posten bruger de samme arme og har intet interval for NNT", () =
   assert.equal(record.publishedEffect.emaCi.high, 0.979);
   assert.equal(record.nntInterval, undefined);
   assert.equal(record.arrInterval, undefined);
+  const view = effectsForSubstance("covid-19-vaccines").find((item) => item.record.id === "c4591001-primary");
+  assert.equal(view?.nntRaw, "119,04");
+  assert.equal(view?.roundedShareInverse, "119,05");
+  assert.equal(view?.roundedPointInverse, "119,05");
+  assert.equal(view?.nnt, "119");
 });
 
 test("en post uden offentliggjorte intervaller viser ikke opfundne grænser", () => {

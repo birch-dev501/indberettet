@@ -43,9 +43,10 @@ export function EffectCard({ effect }: { effect: EffectView }) {
             Absolut risikoreduktion er forskellen mellem de to andele, i procentpoint. Her er den {effect.arr} procentpoint.
           </p>
           <p>
-            NNT er 1 divideret med forskellen som andel, cirka {effect.arrShare}. Det er det samme som 100 divideret med{" "}
-            {effect.arr} procentpoint, ikke 1 divideret med {effect.arr}. Tallet afrundes til nærmeste hele tal.{" "}
-            {effect.nntRaw} bliver {effect.nnt}. I dette forsøgs opfølgning skulle der i gennemsnit {record.action}{" "}
+            NNT er 1 divideret med forskellen som andel, ikke med {effect.arr} procentpoint. {effect.nntRaw} er regnet med
+            alle decimaler og afrundes til nærmeste hele tal, {effect.nnt}. 1 divideret med det afrundede {effect.arrShare}{" "}
+            er {effect.roundedShareInverse}, og 100 divideret med {effect.arr} er {effect.roundedPointInverse}. I dette
+            forsøgs opfølgning skulle der i gennemsnit {record.action}{" "}
             {effect.nnt} personer for at forebygge {record.prevented}. {record.limits} Kilderne angiver ikke et interval
             for NNT eller for den absolutte forskel.
           </p>
