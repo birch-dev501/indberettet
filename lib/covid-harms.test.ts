@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { bannedPhrases, harmCopy, loadCovidHarms, measureText, per100k, perMillion } from "./covid-harms.ts";
+import { husby } from "./sources.ts";
 
 test("covid-siden har tre grupper, en kilde pr. punkt og ingen forbudte påstande", () => {
   const file = loadCovidHarms();
@@ -24,6 +26,22 @@ test("covid-siden har tre grupper, en kilde pr. punkt og ingen forbudte påstand
   assert.ok(file.findings.filter((item) => item.group === "unsupported").length >= 3);
   assert.equal(text.includes("cirka 1.100"), true);
   assert.equal(text.includes("ikke er talt op linje for linje"), true);
+  const page = readFileSync("app/covid-vacciner-bivirkninger/page.tsx", "utf8");
+  assert.deepEqual(bannedPhrases(`${text}\n${page}`), []);
+});
+
+test("Husby-tallene på studiesiden er de samme som i kildedefinitionen", () => {
+  const measures = loadCovidHarms().findings.find((item) => item.id === "myocarditis")?.measures ?? [];
+  const moderna = measures.find((item) => item.id === "husby-moderna");
+  const bnt = measures.find((item) => item.id === "husby-bnt");
+  assert.equal(moderna?.value, husby.modernaYoungRate.per100k);
+  assert.equal(moderna?.low, husby.modernaYoungRate.low);
+  assert.equal(moderna?.high, husby.modernaYoungRate.high);
+  assert.equal(moderna?.ratio?.value, husby.modernaYoungHr.value);
+  assert.equal(bnt?.value, husby.bntYoungRate.per100k);
+  assert.equal(bnt?.ratio?.low, husby.bntYoungHr.low);
+  assert.equal(bnt?.ratio?.high, husby.bntYoungHr.high);
+  assert.deepEqual(loadCovidHarms().substanceSlugs, ["covid-19-vaccines"]);
 });
 
 test("Nygaards pr. million er afrundet fra tællerne", () => {

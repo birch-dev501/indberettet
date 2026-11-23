@@ -38,6 +38,7 @@ export type HarmFinding = {
 };
 
 export type HarmFile = {
+  substanceSlugs?: string[];
   preface?: { title: string; body: string; sourceName: string; sourceUrl: string };
   groups: { id: HarmGroupId; title: string; lead: string }[];
   findings: HarmFinding[];

@@ -30,6 +30,7 @@ export function SubstanceView({
   plain = null,
   identity = null,
   effects = [],
+  studyHref = null,
 }: {
   substance: Substance;
   news: NewsItem[];
@@ -38,6 +39,7 @@ export function SubstanceView({
   plain?: PlainLanguage | null;
   identity?: SubstanceIdentity | null;
   effects?: EffectView[];
+  studyHref?: string | null;
 }) {
   const [viewId, setViewId] = useState<(typeof VIEWS)[number]["id"]>("all");
   const [termQuery, setTermQuery] = useState("");
@@ -110,9 +112,9 @@ export function SubstanceView({
       {effects.map((effect) => (
         <EffectCard key={effect.record.id} effect={effect} />
       ))}
-      {substance.slug === "covid-19-vaccines" ? (
+      {studyHref ? (
         <p>
-          <Link href="/covid-vacciner-bivirkninger/">Hvad siger studierne om bivirkninger ved covid-vacciner?</Link>
+          <Link href={studyHref}>Hvad siger studierne om bivirkninger ved covid-vacciner?</Link>
         </p>
       ) : null}
       {effects.length > 0 ? null : (

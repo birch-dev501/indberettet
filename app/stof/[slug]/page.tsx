@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SubstanceView } from "@/components/substance-view";
 import { categoriesForSubstance } from "@/lib/categories";
+import { loadCovidHarms } from "@/lib/covid-harms";
 import { effectsForSubstance } from "@/lib/effect-records";
 import { getCategories, getIdentity, getIndex, getNews, getPlain, getProducts, getSubstance, getUsage } from "@/lib/data";
 import { substanceRate } from "@/lib/rates";
@@ -61,6 +62,7 @@ export default async function SubstancePage({ params }: { params: Promise<{ slug
           plain={getPlain(slug)}
           identity={getIdentity(slug)}
           effects={effectsForSubstance(slug)}
+          studyHref={loadCovidHarms().substanceSlugs?.includes(slug) ? "/covid-vacciner-bivirkninger/" : null}
         />
         <ReportIssue path={`/stof/${slug}/`} />
       </main>
