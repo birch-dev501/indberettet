@@ -103,6 +103,7 @@
       "postponement": {
         "days": 27.18,
         "shown": "cirka 27",
+        "outcome": "død",
         "overYears": 5.8,
         "method": "Metoden er arealet mellem overlevelseskurverne inden for forsøgstiden.",
         "sourceName": "Kristensen, Christensen og Hallas, BMJ Open 2015, tabel 1",

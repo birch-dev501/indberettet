@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { EffectView } from "@/lib/effect-records";
-import { learnMore } from "@/lib/effect-text";
+import { effectAnchor, learnMore, unsizedCount } from "@/lib/effect-text";
 import { formatDate } from "@/lib/format";
 
 export function EffectCard({ effect }: { effect: EffectView }) {
@@ -9,7 +9,7 @@ export function EffectCard({ effect }: { effect: EffectView }) {
   const others = (record.notCovered ?? []).join(" og ");
   const identity = [record.code, record.makers].filter(Boolean).join(", ");
   return (
-    <article className="card section" id="effekt">
+    <article className="card section" id={effectAnchor(record.id)}>
       <p className="kicker">{record.kicker ?? "Udenlandsk forsøg. Ikke danske indberetninger."}</p>
       <h2>{record.heading ?? "Effekt i godkendelsesforsøget"}</h2>
       <p>
@@ -27,7 +27,7 @@ export function EffectCard({ effect }: { effect: EffectView }) {
           ? record.countVerb
             ? `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} ${record.countVerb}. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} ${record.countVerb}.`
             : `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} fik udfaldet. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} fik det.`
-          : `${effect.treatedEvents} døde i ${record.treatedGroup}. ${effect.controlEvents} døde i ${record.controlGroup}.`}
+          : `${unsizedCount(effect.treatedEvents, record.treatedGroup, record.countVerb ?? "fik udfaldet")}. ${unsizedCount(effect.controlEvents, record.controlGroup, record.countVerb ?? "fik udfaldet")}.`}
         {record.calculationNote ? ` ${record.calculationNote}` : ""}
       </p>
       {effect.rrr && effect.arr && effect.nnt && effect.arrShare && effect.nntRaw ? (
@@ -75,7 +75,8 @@ export function EffectCard({ effect }: { effect: EffectView }) {
       )}
       {effect.postponementDays && record.postponement && (
         <p>
-          Den gennemsnitlige udskydelse af død er {record.postponement.shown ?? effect.postponementDays} dage over{" "}
+          Den gennemsnitlige udskydelse{record.postponement.outcome ? ` af ${record.postponement.outcome}` : ""} er{" "}
+          {record.postponement.shown ?? effect.postponementDays} dage over{" "}
           {effect.postponementYears} år.
           {effect.postponementSpread ? ` Spredningen på arealet er ${effect.postponementSpread}.` : ""} {record.postponement.method}{" "}
           <a href={record.postponement.sourceUrl} rel="noopener noreferrer">

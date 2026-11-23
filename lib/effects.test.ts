@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { effectView, effectsForSubstance } from "./effect-records.ts";
-import { learnMore } from "./effect-text.ts";
+import { effectAnchor, learnMore, unsizedCount } from "./effect-text.ts";
 import { armMeasures, benefitHarm, effectMeasures, trialRisks } from "./effects.ts";
 
 test("8 af 18.198 mod 162 af 18.325 giver RRR 95,0 %, ARR 0,84 procentpoint og NNT 119", () => {
@@ -99,6 +99,10 @@ test("4S regner NNT 30 på 182 af 2.221 mod 256 af 2.223 og gemmer udskydelsen",
   assert.equal(learnMore(view.record).href, "/forstaa-forskning/");
   const comirnaty = effectsForSubstance("covid-19-vaccines").find((item) => item.record.id === "c4591001-primary");
   assert.equal(learnMore(comirnaty!.record).href, "/forstaa-forskning/#bnt162b2");
+  assert.notEqual(effectAnchor(view.record.id), effectAnchor(comirnaty!.record.id));
+  assert.equal(effectAnchor("4s-total-death"), "effekt-4s-total-death");
+  assert.equal(unsizedCount("182", "i simvastatingruppen", "døde"), "182 døde i simvastatingruppen");
+  assert.equal(view.record.postponement?.outcome, "død");
   assert.equal(comirnaty?.nnt, "119");
   assert.equal(comirnaty?.arr, "0,84");
   assert.equal(comirnaty?.rrr, "95,0");

@@ -15,6 +15,7 @@ export type EffectInterval = {
 export type EffectPostponement = {
   days: number;
   shown?: string;
+  outcome?: string;
   spread?: number;
   overYears: number;
   method: string;
