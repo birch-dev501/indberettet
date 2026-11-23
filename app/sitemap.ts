@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/boedesager/",
     "/firma/",
     "/forstaa-forskning/",
+    "/covid-vacciner-bivirkninger/",
     "/forstaa-usikkerhed/",
     "/forstaa-testen/",
     "/katalog/",

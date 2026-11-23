@@ -361,7 +361,7 @@ async function checkSticky(page, width) {
 }
 
 async function checkLayout(page, width) {
-  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/forstaa-usikkerhed/", "/forstaa-testen/", "/boedesager/"];
+  const paths = ["/", "/stof/covid-19-vaccines/", "/firma/msd/", "/katalog/", "/forstaa-forskning/", "/forstaa-usikkerhed/", "/forstaa-testen/", "/boedesager/", "/covid-vacciner-bivirkninger/"];
   for (const path of paths) {
     const response = await page.goto(`${base}${path}`, { waitUntil: "networkidle" });
     if (!response || response.status() >= 400) {

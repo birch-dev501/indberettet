@@ -110,6 +110,11 @@ export function SubstanceView({
       {effects.map((effect) => (
         <EffectCard key={effect.record.id} effect={effect} />
       ))}
+      {substance.slug === "covid-19-vaccines" ? (
+        <p>
+          <Link href="/covid-vacciner-bivirkninger/">Hvad siger studierne om bivirkninger ved covid-vacciner?</Link>
+        </p>
+      ) : null}
       {effects.length > 0 ? null : (
         <p className="small muted research-link">
           <Link href="/forstaa-forskning/">Sådan læses en relativ risikoreduktion, NNT og NNH</Link>. En indberetning
