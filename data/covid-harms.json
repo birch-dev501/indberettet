@@ -19,7 +19,7 @@
     {
       "id": "unsupported",
       "title": "Ikke understøttet",
-      "lead": "Studiets egen konklusion er, at der ikke var flere tilfælde end ventet."
+      "lead": "Enten fandt studiet ingen stigning, eller kilden er trukket tilbage."
     }
   ],
   "findings": [
@@ -290,6 +290,39 @@
         {
           "name": "Black og Evans, Vaccine 2023",
           "url": "https://doi.org/10.1016/j.vaccine.2023.04.040"
+        }
+      ]
+    },
+    {
+      "id": "jiang",
+      "group": "unsupported",
+      "heading": "Spike-protein og reparation af DNA",
+      "body": "Artiklen i Viruses 2021 er trukket tilbage 10. maj 2022. Begrundelsen er et forsøgsdesign, der kunne underminere resultaterne.",
+      "measures": [],
+      "links": [
+        {
+          "name": "Tilbagetrækning, Viruses 2022",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9145574/"
+        }
+      ]
+    },
+    {
+      "id": "jabagi",
+      "group": "unsupported",
+      "heading": "Blodprop i hjertet, slagtilfælde eller lungeemboli efter Comirnaty hos ældre",
+      "body": "I Frankrig, blandt personer på 75 år og derover, fandt studiet ingen øget forekomst af akut blodprop i hjertet, slagtilfælde eller lungeemboli i 14 dage efter hver dosis Comirnaty.",
+      "measures": [
+        {
+          "id": "jabagi-mi",
+          "label": "Relativ incidens for blodprop i hjertet, første dosis, 14 dage",
+          "value": 0.97,
+          "low": 0.88,
+          "high": 1.06,
+          "digits": 2,
+          "kind": "ratio",
+          "sourceName": "Jabagi et al., JAMA 2022",
+          "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8609457/",
+          "place": "Resultater, tabel 2. Fransk registerstudie."
         }
       ]
     },
