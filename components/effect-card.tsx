@@ -1,9 +1,11 @@
 import Link from "next/link";
 import type { EffectView } from "@/lib/effect-records";
+import { learnMore } from "@/lib/effect-text";
 import { formatDate } from "@/lib/format";
 
 export function EffectCard({ effect }: { effect: EffectView }) {
   const { record } = effect;
+  const more = learnMore(record);
   const others = (record.notCovered ?? []).join(" og ");
   const identity = [record.code, record.makers].filter(Boolean).join(", ");
   return (
@@ -101,11 +103,9 @@ export function EffectCard({ effect }: { effect: EffectView }) {
         Indberetningerne herunder er mistanker. De er ikke en hyppighed og ikke en bevist årsag. De kan ikke sættes
         direkte over for NNT.
       </p>
-      {record.learnMoreHref && record.learnMoreLabel && (
-        <p>
-          <Link href={record.learnMoreHref}>{record.learnMoreLabel}</Link>.
-        </p>
-      )}
+      <p>
+        <Link href={more.href}>{more.label}</Link>.
+      </p>
       <p className="small muted">Kilder, opslag {formatDate(record.retrieved)}.</p>
       <ul>
         {record.sources.map((source) => (
