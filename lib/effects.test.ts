@@ -64,6 +64,36 @@ test("en post uden offentliggjorte intervaller viser ikke opfundne grænser", ()
   assert.equal(effectsForSubstance("semaglutide").length, 0);
 });
 
+test("4S regner NNT 30 på 182 af 2.221 mod 256 af 2.223 og gemmer udskydelsen", () => {
+  const result = armMeasures(182, 2221, 256, 2223);
+  assert.equal(result?.nnt, 30);
+  assert.equal((result!.rrr! * 100).toFixed(1), "28.8");
+  assert.equal((result!.arr * 100).toFixed(2), "3.32");
+  assert.equal((1 / result!.arr).toFixed(2), "30.11");
+  const view = effectsForSubstance("simvastatin").find((item) => item.record.id === "4s-total-death");
+  assert.ok(view);
+  assert.equal(view.record.arms.treated.events, 182);
+  assert.equal(view.record.arms.treated.n, 2221);
+  assert.equal(view.record.arms.control.events, 256);
+  assert.equal(view.record.arms.control.n, 2223);
+  assert.equal(view.nnt, "30");
+  assert.equal(view.rrr, "28,8");
+  assert.equal(view.arr, "3,32");
+  assert.equal(view.published, "0,70");
+  assert.equal(view.intervals[0]?.low, "0,58");
+  assert.equal(view.intervals[0]?.high, "0,85");
+  assert.equal(view.postponementDays, "27,18");
+  assert.equal(view.postponementYears, "5,8");
+  assert.equal(view.record.postponement?.days, 27.18);
+  assert.notEqual(view.record.postponement?.days, 1 / result!.arr);
+  assert.equal("nntInterval" in view.record, false);
+  assert.equal("arrInterval" in view.record, false);
+  const comirnaty = effectsForSubstance("covid-19-vaccines").find((item) => item.record.id === "c4591001-primary");
+  assert.equal(comirnaty?.nnt, "119");
+  assert.equal(comirnaty?.arr, "0,84");
+  assert.equal(comirnaty?.rrr, "95,0");
+});
+
 test("BNT162b2 giver cirka 95 procent RRR, 0,84 procentpoint ARR og NNT 119", () => {
   const { treated, control, measures } = trialRisks();
   assert.ok(Math.abs(measures.rrr! - 0.9503) < 0.0001);

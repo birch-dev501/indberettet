@@ -64,6 +64,67 @@
         "NNT afhænger af udgangsrisikoen i netop de uger. Anden smitte, andre virusvarianter eller længere tid giver et andet NNT, også ved samme relative effekt.",
         "Tallene er fra et udenlandsk lodtrækningsforsøg. De er ikke danske indberetninger."
       ]
+    },
+    {
+      "id": "4s-total-death",
+      "substanceSlug": "simvastatin",
+      "product": "simvastatin",
+      "trial": "4S",
+      "heading": "Effekt på død i 4S",
+      "kicker": "Skandinavisk forsøg. Ikke danske indberetninger.",
+      "treatedGroup": "i simvastatingruppen",
+      "controlGroup": "placebogruppen",
+      "countVerb": "døde",
+      "action": "behandles",
+      "prevented": "ét dødsfald",
+      "limits": "Det gælder personer med kendt hjertesygdom i dette forsøg og ikke andre statiner.",
+      "calculationNote": "Den absolutte risikoreduktion (ARR) og antal, der skal behandles (NNT), er regnet på andelen, der døde i hver gruppe. Den offentliggjorte relative risiko er fra artiklens tidsanalyse og er et andet tal.",
+      "scopeNote": "NNT hører til død af enhver årsag hos personer med kendt hjertesygdom og til opfølgningen i dette forsøg.",
+      "population": "Personer med angina eller tidligere blodprop i hjertet og kolesterol 5,5 til 8,0 mmol/L. Det er sekundær forebyggelse.",
+      "endpoint": "Død af enhver årsag.",
+      "dataCutoff": "1994-08-01",
+      "followUp": "Median opfølgning i 4S var 5,4 år. Udskydelsen nedenfor er talt over 5,8 år i en senere opgørelse.",
+      "arms": {
+        "treated": { "events": 182, "n": 2221 },
+        "control": { "events": 256, "n": 2223 }
+      },
+      "publishedEffect": {
+        "label": "relative risiko",
+        "value": 0.7,
+        "unit": "ratio",
+        "intervals": [
+          {
+            "before": "Artiklens 95 % konfidensinterval for den relative risiko er",
+            "low": 0.58,
+            "high": 0.85
+          }
+        ]
+      },
+      "postponement": {
+        "days": 27.18,
+        "overYears": 5.8,
+        "method": "Metoden er arealet mellem overlevelseskurverne inden for forsøgstiden.",
+        "sourceName": "Kristensen, Christensen og Hallas, BMJ Open 2015, tabel 1",
+        "sourceUrl": "https://bmjopen.bmj.com/content/5/9/e007118"
+      },
+      "sources": [
+        {
+          "name": "Scandinavian Simvastatin Survival Study Group, Lancet 1994, tabel 1 og tabel 2",
+          "url": "https://www.thelancet.com/pb/assets/raw/Lancet/pdfs/issue-10000/4s-statins.pdf"
+        },
+        {
+          "name": "Kristensen, Christensen og Hallas, BMJ Open 2015, tabel 1",
+          "url": "https://bmjopen.bmj.com/content/5/9/e007118"
+        }
+      ],
+      "retrieved": "2026-11-23",
+      "caveats": [
+        "Tallene gælder personer, der allerede har hjertesygdom. De gælder ikke forebyggende behandling af raske.",
+        "Udskydelsen på 27,18 dage er et gennemsnit inden for forsøgstiden. Det kan dække over, at de fleste ikke får gavn, mens nogle få vinder meget. Det er ikke en livslang gevinst.",
+        "Forsøget er fra 1994, skandinavisk og placebokontrolleret. Dosis var 20 mg og blev justeret til 10 eller 40 mg.",
+        "I samme opgørelse ligger udskydelsen i forsøg med sekundær forebyggelse fra minus 10 til 27 dage. De 27 dage er 4S. Tallene må ikke overføres til andre statiner.",
+        "NNT må ikke sættes over for indberetningerne."
+      ]
     }
   ]
 }

@@ -22,7 +22,9 @@ export function EffectCard({ effect }: { effect: EffectView }) {
       </p>
       <p>
         {effect.treatedN
-          ? `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} fik udfaldet. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} fik det.`
+          ? record.countVerb
+            ? `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} ${record.countVerb}. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} ${record.countVerb}.`
+            : `${effect.treatedEvents} af ${effect.treatedN} ${record.treatedGroup} fik udfaldet. ${effect.controlEvents} af ${effect.controlN} i ${record.controlGroup} fik det.`
           : `${effect.treatedEvents} døde i ${record.treatedGroup}. ${effect.controlEvents} døde i ${record.controlGroup}.`}
         {record.calculationNote ? ` ${record.calculationNote}` : ""}
       </p>
@@ -30,7 +32,9 @@ export function EffectCard({ effect }: { effect: EffectView }) {
         <>
           <p>
             Relativ risikoreduktion er den del af placebogruppens tilfælde, der udeblev. Her er den {effect.rrr} %.
-            {effect.published && record.publishedEffect ? ` Den offentliggjorte ${record.publishedEffect.label} er ${effect.published} %.` : ""}
+            {effect.published && record.publishedEffect
+              ? ` Den offentliggjorte ${record.publishedEffect.label} er ${effect.published}${record.publishedEffect.unit === "ratio" ? "" : " %"}.`
+              : ""}
             {effect.intervals.map((interval) => (
               <span key={interval.before}>
                 {" "}
@@ -78,8 +82,8 @@ export function EffectCard({ effect }: { effect: EffectView }) {
         </p>
       )}
       <p>
-        NNT hører til netop dette udfald, denne population, udgangsrisikoen i de uger og den opfølgning, tallene er talt
-        over.
+        {record.scopeNote ??
+          "NNT hører til netop dette udfald, denne population, udgangsrisikoen i de uger og den opfølgning, tallene er talt over."}
       </p>
       {record.followUp && (
         <p>

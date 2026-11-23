@@ -39,6 +39,8 @@ export type EffectRecord = {
   periodNote?: string;
   treatedGroup: string;
   controlGroup: string;
+  countVerb?: string;
+  scopeNote?: string;
   action: string;
   prevented: string;
   limits?: string;
