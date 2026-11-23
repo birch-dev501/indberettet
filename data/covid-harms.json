@@ -168,7 +168,7 @@
       "id": "cvt",
       "group": "established",
       "heading": "Blodprop i hjernens vener efter Vaxzevria",
-      "body": "I Danmark var 80 % af de vaccinerede kvinder, i Norge 78 %. Der var 7 observerede tilfælde af blodprop i hjernens vener mod 0,3 ventede blandt 281.264 vaccinerede. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
+      "body": "Der var 7 observerede tilfælde af blodprop i hjernens vener mod 0,3 ventede blandt 281.264 vaccinerede. I studiet var 80 % af de vaccinerede i Danmark kvinder, og 78 % i Norge. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. EMA's produktinformation for Vaxzevria og for Jcovden er stemplet, at lægemidlet ikke længere er godkendt i EU. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
       "measures": [
         {
           "id": "pottegard-cvt",
@@ -202,6 +202,10 @@
         {
           "name": "Pavord et al., New England Journal of Medicine 2021",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34379914/"
+        },
+        {
+          "name": "EMA, produktinformation for Vaxzevria",
+          "url": "https://www.ema.europa.eu/en/documents/product-information/vaxzevria-epar-product-information_en.pdf"
         }
       ]
     },
@@ -209,7 +213,7 @@
       "id": "tts-jcovden",
       "group": "established",
       "heading": "Trombose med lavt blodpladetal efter Jcovden",
-      "body": "EMA's produktinformation for Jcovden skriver, at kombinationen er set meget sjældent, også i hjernens vener, mest i de første tre uger og mest hos personer under 60 år. Dødsfald er rapporteret. Det læste afsnit giver ikke et målt tal pr. million.",
+      "body": "EMA's produktinformation for Jcovden skriver, at kombinationen er set meget sjældent, også i hjernens vener, i de første tre uger og mest hos personer under 60 år. Dødsfald er rapporteret. Produktinformationen er stemplet, at lægemidlet ikke længere er godkendt. Det læste afsnit giver ikke et målt tal pr. million.",
       "measures": [],
       "links": [
         {
