@@ -82,6 +82,9 @@ test("4S regner NNT 30 på 182 af 2.221 mod 256 af 2.223 og gemmer udskydelsen",
   assert.equal(view.published, "0,70");
   assert.equal(view.intervals[0]?.low, "0,58");
   assert.equal(view.intervals[0]?.high, "0,85");
+  assert.equal(view.record.followUp?.includes("nedenfor"), false);
+  assert.equal(view.record.followUp?.includes("5,4 år"), true);
+  assert.equal(view.record.followUp?.includes("frem til 5,8 år"), true);
   assert.equal(view.postponementDays, "27,18");
   assert.equal(view.postponementYears, "5,8");
   assert.equal(view.record.postponement?.days, 27.18);

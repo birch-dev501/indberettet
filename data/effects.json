@@ -83,7 +83,7 @@
       "population": "Personer med angina eller tidligere blodprop i hjertet og kolesterol 5,5 til 8,0 mmol/L. Det er sekundær forebyggelse.",
       "endpoint": "Død af enhver årsag.",
       "dataCutoff": "1994-08-01",
-      "followUp": "Median opfølgning i 4S var 5,4 år. Udskydelsen nedenfor er talt over 5,8 år i en senere opgørelse.",
+      "followUp": "Median opfølgning i 4S var 5,4 år. Kristensen m.fl. aflæste i 2015 4S' egne overlevelseskurver fra 1994 frem til 5,8 år.",
       "arms": {
         "treated": { "events": 182, "n": 2221 },
         "control": { "events": 256, "n": 2223 }
