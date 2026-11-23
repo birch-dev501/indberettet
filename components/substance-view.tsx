@@ -11,7 +11,9 @@ import { SubstanceIdentityLine } from "@/components/substance-identity";
 import { SUBSTANCE_COUNT_NOTE, type SubstanceIdentity } from "@/lib/companies";
 import { CAUSALITY_NOTE, type SubstanceRate } from "@/lib/rates";
 import { englishSourceNote, linkTag, resolveSoc, resolveTerm } from "@/lib/term-links";
-import type { NewsItem, Substance, SubstanceView } from "@/lib/types";
+import type { EffectView } from "@/lib/effect-records";
+import { EffectCard } from "@/components/effect-card";
+import type { NewsItem, Substance, SubstanceView as SubstanceSlice } from "@/lib/types";
 
 const VIEWS = [
   { id: "all", label: "Alle" },
@@ -27,6 +29,7 @@ export function SubstanceView({
   rate = null,
   plain = null,
   identity = null,
+  effect = null,
 }: {
   substance: Substance;
   news: NewsItem[];
@@ -34,6 +37,7 @@ export function SubstanceView({
   rate?: SubstanceRate | null;
   plain?: PlainLanguage | null;
   identity?: SubstanceIdentity | null;
+  effect?: EffectView | null;
 }) {
   const [viewId, setViewId] = useState<(typeof VIEWS)[number]["id"]>("all");
   const [termQuery, setTermQuery] = useState("");
@@ -103,12 +107,8 @@ export function SubstanceView({
 
       <SummaryCard substance={substance} />
       {rate && <RateCard rate={rate} />}
-      {substance.slug === "covid-19-vaccines" ? (
-        <p className="note research-link">
-          Fase 3-forsøget målte symptomgivende covid-19, ikke indberetninger.{" "}
-          <Link href="/forstaa-forskning/#bnt162b2">Sådan regnes de 95 % om til en absolut forskel og et NNT</Link>.
-        </p>
-      ) : (
+      {effect && <EffectCard effect={effect} />}
+      {effect ? null : (
         <p className="small muted research-link">
           <Link href="/forstaa-forskning/">Sådan læses en relativ risikoreduktion, NNT og NNH</Link>. En indberetning
           her er ikke en hyppighed.
@@ -522,7 +522,7 @@ function TermTable({
   query,
   onQuery,
 }: {
-  view: SubstanceView;
+  view: SubstanceSlice;
   query: string;
   onQuery: (value: string) => void;
 }) {

@@ -18,6 +18,27 @@ export function effectMeasures(treated: number, control: number): EffectMeasures
   return { arr: 0, rrr: rrr === null ? null : 0, nnt: null, nnh: null };
 }
 
+/** 1/ARR rounded to a whole person. 8/18198 against 162/18325 is 119.05, which rounds to 119. */
+export function roundedNnt(arr: number): number | null {
+  if (!Number.isFinite(arr) || arr === 0) return null;
+  return Math.round(1 / Math.abs(arr));
+}
+
+export function armMeasures(treatedEvents: number, treatedN: number, controlEvents: number, controlN: number) {
+  if (treatedN <= 0 || controlN <= 0) return null;
+  const treated = treatedEvents / treatedN;
+  const control = controlEvents / controlN;
+  const measures = effectMeasures(treated, control);
+  if (!measures) return null;
+  return {
+    treated,
+    control,
+    arr: measures.arr,
+    rrr: measures.rrr,
+    nnt: measures.nnt === null ? null : roundedNnt(measures.arr),
+  };
+}
+
 /** Polack et al., NEJM 2020, first primary endpoint. Counts are participants, not person-time. */
 export const BNT162B2 = {
   vaccinatedCases: polack.vaccinatedCases,

@@ -1,0 +1,60 @@
+{
+  "effects": [
+    {
+      "id": "c4591001-primary",
+      "substanceSlug": "covid-19-vaccines",
+      "product": "Comirnaty",
+      "code": "BNT162b2",
+      "makers": "Pfizer/BioNTech",
+      "companySlugs": ["biontech"],
+      "notCovered": ["Spikevax"],
+      "trial": "C4591001",
+      "population": "Evaluerbar effektpopulation uden tegn på tidligere SARS-CoV-2-infektion.",
+      "endpoint": "Første tilfælde af laboratoriebekræftet, symptomgivende covid-19 med debut mindst 7 dage efter dosis 2.",
+      "dataCutoff": "2020-11-14",
+      "followUp": "NEJM beskriver sikkerheden over en median på 2 måneder. I den primære effektanalyse var overvågningstiden 2.214 personår i vaccinegruppen og 2.222 personår i placebogruppen. Tilfælde tælles fra 7 dage efter dosis 2.",
+      "arms": {
+        "treated": { "label": "BNT162b2, to doser à 30 µg", "events": 8, "n": 18198 },
+        "control": { "label": "Placebo, to doser", "events": 162, "n": 18325 }
+      },
+      "publishedEffect": {
+        "label": "vaccineeffekt",
+        "value": 0.95,
+        "polackCri": { "level": 0.95, "low": 0.903, "high": 0.976, "kind": "credibility" },
+        "emaCi": {
+          "level": 0.95,
+          "low": 0.9,
+          "high": 0.979,
+          "method": "Clopper-Pearson justeret for overvågningstid",
+          "table": "tabel 10"
+        }
+      },
+      "sources": [
+        {
+          "name": "Polack et al., New England Journal of Medicine 2020, tabel 2",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2034577"
+        },
+        {
+          "name": "Tabel 2 hos PMC",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7745181/table/t2/"
+        },
+        {
+          "name": "EMA, oversigt over Comirnaty",
+          "url": "https://www.ema.europa.eu/en/medicines/human/EPAR/comirnaty"
+        },
+        {
+          "name": "EMA, produktinformation, tabel 10",
+          "url": "https://www.ema.europa.eu/en/documents/product-information/comirnaty-epar-product-information_en.pdf"
+        }
+      ],
+      "retrieved": "2026-11-23",
+      "caveats": [
+        "Udfaldet er symptomgivende, bekræftet covid-19. Det er ikke alvorlig sygdom, indlæggelse eller død.",
+        "Opfølgningen er kort. Sikkerhedsanalysen har en median på omkring 2 måneder. Effektvinduet starter 7 dage efter dosis 2.",
+        "Forsøget er fra 2020, før Omikron, i en population uden tidligere infektion. Deltagerne var typisk 16 år og derover.",
+        "NNT afhænger af udgangsrisikoen i netop de uger. Anden smitte, andre virusvarianter eller længere tid giver et andet NNT, også ved samme relative effekt.",
+        "Tallene er fra et udenlandsk lodtrækningsforsøg. De er ikke danske indberetninger."
+      ]
+    }
+  ]
+}
