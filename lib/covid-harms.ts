@@ -14,7 +14,7 @@ export type HarmMeasure = {
   high?: number;
   digits?: number;
   per?: number;
-  kind: "excess" | "rate" | "identified" | "ratio";
+  kind: "excess" | "rate" | "identified" | "ratio" | "share";
   cases?: number;
   n?: number;
   statedPerMillion?: number;
@@ -53,6 +53,24 @@ export function per100k(value: number, per: number): number {
   return (value / per) * 100_000;
 }
 
+export function toPerMillion(value: number, per: number): number {
+  return (value / per) * 1_000_000;
+}
+
+function sourceUnit(per: number): string {
+  if (per === 10_000) return "pr. 10.000";
+  if (per === 100_000) return "pr. 100.000";
+  return "pr. million";
+}
+
+function scaled(value: number, digits: number, per: number): { source: string; million: string } {
+  const rounded = Number(value.toFixed(digits));
+  const factor = 1_000_000 / per;
+  const millionDigits = Math.max(0, digits - Math.round(Math.log10(factor)));
+  const million = Number((rounded * factor).toFixed(millionDigits));
+  return { source: signed(rounded, digits), million: signed(million, millionDigits) };
+}
+
 function signed(value: number, digits: number): string {
   if (value < 0) return `minus ${da(Math.abs(value), digits)}`;
   return da(value, digits);
@@ -63,18 +81,28 @@ export function measureText(measure: HarmMeasure): string {
     const rate = measure.statedPerMillion ?? Math.round(perMillion(measure.cases, measure.n));
     return `${measure.label}: ${measure.cases.toLocaleString("da-DK")} af ${measure.n.toLocaleString("da-DK")}, ${rate.toLocaleString("da-DK")} pr. million.`;
   }
+  if (measure.kind === "share") {
+    return `${measure.label}: ${signed(measure.value ?? 0, measure.digits ?? 0)} %.`;
+  }
   const digits = measure.digits ?? 0;
   const value = signed(measure.value ?? 0, digits);
   const band =
     measure.low !== undefined && measure.high !== undefined
       ? ` (${signed(measure.low, digits)} til ${signed(measure.high, digits)})`
       : "";
-  const unit =
-    measure.kind === "ratio" ? "" : measure.per === 10000 ? " pr. 10.000" : measure.per === 1_000_000 ? " pr. million" : " pr. 100.000";
+  if (measure.kind === "ratio" || !measure.per || measure.per === 1) {
+    return `${measure.label}: ${value}${band}.`;
+  }
+  const shown = scaled(measure.value ?? 0, digits, measure.per);
+  const shownBand =
+    measure.low !== undefined && measure.high !== undefined
+      ? ` (${scaled(measure.low, digits, measure.per).million} til ${scaled(measure.high, digits, measure.per).million})`
+      : "";
+  const own = measure.per === 1_000_000 ? "" : ` (${shown.source}${band} ${sourceUnit(measure.per)} i kilden)`;
   const ratio = measure.ratio
     ? ` ${measure.ratio.name} ${signed(measure.ratio.value, measure.ratio.digits)} (${signed(measure.ratio.low, measure.ratio.digits)} til ${signed(measure.ratio.high, measure.ratio.digits)}).`
     : "";
-  return `${measure.label}: ${value}${band}${unit}.${ratio}`;
+  return `${measure.label}: ${shown.million}${shownBand} pr. million${own}.${ratio}`;
 }
 
 const BANNED = ["sikker og effektiv", "katastrofe"];

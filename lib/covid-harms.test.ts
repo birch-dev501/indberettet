@@ -43,7 +43,10 @@ test("EMA's 0,56 pr. 10.000 er 5,6 pr. 100.000", () => {
   assert.ok(Math.abs(per100k(measure!.value!, measure!.per!) - 5.6) < 1e-9);
   assert.ok(Math.abs(per100k(measure!.low!, measure!.per!) - 3.7) < 1e-9);
   assert.ok(Math.abs(per100k(measure!.high!, measure!.per!) - 7.4) < 1e-9);
-  assert.equal(measureText(measure!).includes("0,56 (0,37 til 0,74) pr. 10.000"), true);
+  const shown = measureText(measure!);
+  assert.equal(shown.includes("56 (37 til 74) pr. million"), true);
+  assert.equal(shown.includes("(0,56 (0,37 til 0,74) pr. 10.000 i kilden)"), true);
+  assert.equal(shown.split("pr. 10.000").length - 1, 1);
 });
 
 test("Fraimans samlede interval udelukker 0, de to forsøg hver for sig gør ikke", () => {

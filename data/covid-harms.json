@@ -205,7 +205,7 @@
       "measures": [
         {
           "id": "fraiman-combined",
-          "label": "Ekstra hændelser i kurven, de to forsøg lagt sammen, pr. 10.000 vaccinerede",
+          "label": "Ekstra hændelser i kurven, de to forsøg lagt sammen",
           "value": 12.5,
           "low": 2.1,
           "high": 22.9,
