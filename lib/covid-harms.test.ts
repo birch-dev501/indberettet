@@ -21,7 +21,8 @@ test("covid-siden har tre grupper, en kilde pr. punkt og ingen forbudte påstand
   const text = harmCopy(file);
   assert.deepEqual(bannedPhrases(text), []);
   assert.equal(text.includes("VAERS"), false);
-  assert.equal(text.includes("1.100"), false);
+  assert.equal(text.includes("cirka 1.100"), true);
+  assert.equal(text.includes("ikke er talt op linje for linje"), true);
 });
 
 test("Nygaards pr. million er afrundet fra tællerne", () => {

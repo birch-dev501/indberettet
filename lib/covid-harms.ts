@@ -37,6 +37,7 @@ export type HarmFinding = {
 };
 
 export type HarmFile = {
+  preface?: { title: string; body: string; sourceName: string; sourceUrl: string };
   groups: { id: HarmGroupId; title: string; lead: string }[];
   findings: HarmFinding[];
 };
@@ -110,6 +111,8 @@ const BANNED = ["sikker og effektiv", "katastrofe"];
 
 export function harmCopy(file: HarmFile = loadCovidHarms()): string {
   const parts = [
+    file.preface?.title ?? "",
+    file.preface?.body ?? "",
     ...file.groups.flatMap((group) => [group.title, group.lead]),
     ...file.findings.flatMap((finding) => [
       finding.heading,

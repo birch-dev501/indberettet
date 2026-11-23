@@ -26,14 +26,18 @@ export default function CovidHarmPage() {
           indberetning til Lægemiddelstyrelsen, EudraVigilance eller VAERS er en mistanke. Den er ikke en hyppighed.
         </p>
 
-        <article className="card section">
-          <h2>Hvorfor 1.000 studier ikke måler skaden</h2>
-          <p>
-            En lang referenceliste viser, at mange har skrevet om emnet. Den viser ikke, hvor ofte en skade sker. Et
-            enkelt patientforløb og et lodtrækningsforsøg vejer ikke lige tungt. Nogle af artiklerne finder ingen
-            sammenhæng.
-          </p>
-        </article>
+        {file.preface ? (
+          <article className="card section">
+            <h2>{file.preface.title}</h2>
+            <p>{file.preface.body}</p>
+            <p>
+              <a href={file.preface.sourceUrl} rel="noopener noreferrer">
+                {file.preface.sourceName}
+              </a>
+              .
+            </p>
+          </article>
+        ) : null}
 
         {file.groups.map((group) => (
           <section className="section stack" key={group.id}>
