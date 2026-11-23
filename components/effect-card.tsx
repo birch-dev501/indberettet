@@ -19,7 +19,7 @@ export function EffectCard({ effect }: { effect: EffectView }) {
       </p>
       <p>
         {effect.treatedEvents} af {effect.treatedN} vaccinerede fik udfaldet. {effect.controlEvents} af {effect.controlN} i
-        placebogruppen fik det.
+        placebogruppen fik det. ARR og NNT er regnet på de andele, ikke på personår.
       </p>
       <p>
         Relativ risikoreduktion er den del af placebogruppens tilfælde, der udeblev. Her er den {effect.rrr} %. Den
