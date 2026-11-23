@@ -14,7 +14,7 @@
       "action": "vaccineres",
       "prevented": "ét tilfælde af symptomgivende covid-19",
       "limits": "Det er ikke NNT for alvorlig sygdom, indlæggelse eller død.",
-      "calculationNote": "ARR og NNT er regnet på de andele, ikke på personår.",
+      "calculationNote": "Den absolutte risikoreduktion (ARR) og antal, der skal vaccineres (NNT), er regnet på andelen af deltagere i hver gruppe, ikke på personår.",
       "periodNote": "NNT gælder den periode. Det gælder ikke et år og ikke et senere smitteår.",
       "learnMoreHref": "/forstaa-forskning/#bnt162b2",
       "learnMoreLabel": "Læs hvordan de 95 % bliver til en absolut forskel",
