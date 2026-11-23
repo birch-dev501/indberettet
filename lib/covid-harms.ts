@@ -31,6 +31,7 @@ export type HarmFinding = {
   group: HarmGroupId;
   heading: string;
   body: string;
+  note?: string;
   measures: HarmMeasure[];
   links?: HarmLink[];
 };
@@ -113,6 +114,7 @@ export function harmCopy(file: HarmFile = loadCovidHarms()): string {
     ...file.findings.flatMap((finding) => [
       finding.heading,
       finding.body,
+      finding.note ?? "",
       ...finding.measures.flatMap((measure) => [measureText(measure), measure.place, measure.sourceName]),
       ...(finding.links ?? []).map((link) => link.name),
     ]),

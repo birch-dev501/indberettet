@@ -83,6 +83,7 @@ function Finding({ finding }: { finding: HarmFinding }) {
           {measureText(measure)} {measure.place}
         </p>
       ))}
+      {finding.note ? <p>{finding.note}</p> : null}
       <ul>
         {links.map((link) => (
           <li key={link.url}>
