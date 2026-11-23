@@ -21,7 +21,7 @@
       "id": "myocarditis",
       "group": "established",
       "heading": "Betændelse i hjertemusklen eller hjertesækken efter mRNA-vaccine",
-      "body": "EMA's produktinformation for Comirnaty lister myokarditis og perikarditis som meget sjældne og skriver, at risikoen er højest hos yngre mænd. Nygaards tal er Comirnaty og myoperikarditis. Husbys tal er myokarditis eller myoperikarditis og dækker både Comirnaty og Spikevax. Patones tal er myokarditis og er engelske. Denne side har ikke et opslag om, hvem der inviteres i 2026.",
+      "body": "EMA's produktinformation for Comirnaty lister myokarditis og perikarditis som meget sjældne og skriver, at risikoen er højest hos yngre mænd. Nygaards tal er Comirnaty og myoperikarditis. Husbys tal er myokarditis eller myoperikarditis og dækker både Comirnaty og Spikevax. Patones tal er myokarditis og er engelske.",
       "note": "Patones infektionstal er pr. person med en positiv test. Vaccinetallet er pr. vaccineret. Ikke alle bliver smittet, og ikke alle smittede bliver testet. Gruppen under 40 år er begge køn. Risikoen efter vaccine samler sig hos unge mænd, så tallet for begge køn er ikke risikoen for en ung mand. Forfatterne skriver selv, at risikoen er mere jævnbyrdig hos personer op til 40 år, hvor anden dosis Spikevax lå over infektionen.",
       "measures": [
         {
@@ -171,7 +171,17 @@
           "kind": "excess",
           "sourceName": "Pottegård et al., BMJ 2021",
           "sourceUrl": "https://www.bmj.com/content/373/bmj.n1114",
-          "place": "Abstract og resultater. 7 observerede mod 0,3 ventede blandt 281.264 vaccinerede. De fleste var kvinder."
+          "place": "Abstract og resultater. 7 observerede mod 0,3 ventede blandt 281.264 vaccinerede. I Danmark var 80 % af de vaccinerede kvinder, i Norge 78 %."
+        },
+        {
+          "id": "pavord-died",
+          "label": "Andel der døde blandt tilfældene i Storbritannien",
+          "value": 22,
+          "digits": 0,
+          "kind": "share",
+          "sourceName": "Pavord et al., New England Journal of Medicine 2021",
+          "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/34379914/",
+          "place": "Abstract. Samlet dødelighed 22 %. Ikke en rate pr. vaccinerede."
         }
       ],
       "links": [
@@ -182,6 +192,36 @@
         {
           "name": "Pavord et al., New England Journal of Medicine 2021",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34379914/"
+        }
+      ]
+    },
+    {
+      "id": "tts-jcovden",
+      "group": "established",
+      "heading": "Trombose med lavt blodpladetal efter Jcovden",
+      "body": "EMA's produktinformation for Jcovden skriver, at kombinationen er set meget sjældent, også i hjernens vener, mest i de første tre uger og mest hos personer under 60 år. Dødsfald er rapporteret. Det læste afsnit giver ikke et målt tal pr. million.",
+      "measures": [],
+      "links": [
+        {
+          "name": "EMA, produktinformation for Jcovden",
+          "url": "https://www.ema.europa.eu/en/documents/product-information/jcovden-epar-product-information_en.pdf"
+        }
+      ]
+    },
+    {
+      "id": "gbs",
+      "group": "established",
+      "heading": "Guillain-Barré-syndrom efter Vaxzevria og Jcovden",
+      "body": "Begge produktinformationer lister Guillain-Barré-syndrom som meget sjældent. De læste afsnit giver ikke et målt tal pr. million.",
+      "measures": [],
+      "links": [
+        {
+          "name": "EMA, produktinformation for Vaxzevria, afsnit 4.8",
+          "url": "https://www.ema.europa.eu/en/documents/product-information/vaxzevria-epar-product-information_en.pdf"
+        },
+        {
+          "name": "EMA, produktinformation for Jcovden",
+          "url": "https://www.ema.europa.eu/en/documents/product-information/jcovden-epar-product-information_en.pdf"
         }
       ]
     },
