@@ -62,9 +62,12 @@ test("Husby-tallene på studiesiden er de samme som i kildedefinitionen", () => 
   assert.deepEqual(loadCovidHarms().substanceSlugs, ["covid-19-vaccines"]);
 });
 
-test("den byggede side har ingen forbudte vendinger", () => {
+test("den byggede side har ingen forbudte vendinger", (t) => {
   const html = "out/covid-vacciner-bivirkninger/index.html";
-  if (!existsSync(html)) return;
+  if (!existsSync(html)) {
+    t.skip("out/covid-vacciner-bivirkninger/index.html findes ikke. Kør npm run build først.");
+    return;
+  }
   assert.deepEqual(bannedPhrases(readFileSync(html, "utf8")), []);
 });
 
