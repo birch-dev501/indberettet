@@ -66,6 +66,14 @@ test("siden er linket fra forsiden og fra influenzavacciner", () => {
   assert.equal(substance.includes('href: "/influenzavaccine-raske/"'), true);
 });
 
+test("en overskrift uden det kendte format standser ikke læseren", () => {
+  const blocks = parseArticle("# Titel\n\n#### Dyb\n\n#tag\n\nAlmindelig tekst.");
+  assert.deepEqual(
+    blocks.map((block) => (block.type === "p" ? block.text : block.type)),
+    ["# Titel", "#### Dyb", "#tag", "Almindelig tekst."],
+  );
+});
+
 test("substack-udgaven har samme tekst og linket til siden", () => {
   assert.equal(substack.includes(markdown.trim()), true);
   assert.equal(substack.includes("https://birch-dev501.github.io/indberettet/influenzavaccine-raske/"), true);

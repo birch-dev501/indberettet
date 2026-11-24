@@ -23,6 +23,11 @@ export function parseArticle(markdown: string): ArticleBlock[] {
       index += 1;
       continue;
     }
+    if (line.startsWith("#")) {
+      blocks.push({ type: "p", text: line.trim() });
+      index += 1;
+      continue;
+    }
     if (line.startsWith("- ")) {
       const items: string[] = [];
       while (index < lines.length && lines[index].startsWith("- ")) {
