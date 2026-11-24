@@ -20,6 +20,7 @@ export type HarmMeasure = {
   n?: number;
   statedPerMillion?: number;
   ratio?: HarmRatio;
+  applies: string;
   sourceName: string;
   sourceUrl: string;
   place: string;
@@ -80,13 +81,30 @@ function signed(value: number, digits: number): string {
   return da(value, digits);
 }
 
+function opening(measure: HarmMeasure): string {
+  return `Gælder: ${measure.applies}. ${measure.label}`;
+}
+
+export function sourceUnitNote(measure: HarmMeasure): string {
+  if (measure.kind === "identified" || measure.kind === "share" || measure.kind === "ratio") return "";
+  if (!measure.per || measure.per === 1 || measure.per === 1_000_000) return "";
+  const digits = measure.digits ?? 0;
+  const shown = scaled(measure.value ?? 0, digits, measure.per);
+  const band =
+    measure.low !== undefined && measure.high !== undefined
+      ? ` (${signed(measure.low, digits)} til ${signed(measure.high, digits)})`
+      : "";
+  return `I kilden: ${shown.source}${band} ${sourceUnit(measure.per)}.`;
+}
+
 export function measureText(measure: HarmMeasure): string {
+  const label = opening(measure);
   if (measure.kind === "identified" && measure.cases !== undefined && measure.n !== undefined) {
     const rate = measure.statedPerMillion ?? Math.round(perMillion(measure.cases, measure.n));
-    return `${measure.label}: ${measure.cases.toLocaleString("da-DK")} af ${measure.n.toLocaleString("da-DK")}, ${rate.toLocaleString("da-DK")} pr. million.`;
+    return `${label}: ${measure.cases.toLocaleString("da-DK")} af ${measure.n.toLocaleString("da-DK")}, ${rate.toLocaleString("da-DK")} pr. million.`;
   }
   if (measure.kind === "share") {
-    return `${measure.label}: ${signed(measure.value ?? 0, measure.digits ?? 0)} %.`;
+    return `${label}: ${signed(measure.value ?? 0, measure.digits ?? 0)} %.`;
   }
   const digits = measure.digits ?? 0;
   const value = signed(measure.value ?? 0, digits);
@@ -95,18 +113,17 @@ export function measureText(measure: HarmMeasure): string {
       ? ` (${signed(measure.low, digits)} til ${signed(measure.high, digits)})`
       : "";
   if (measure.kind === "ratio" || !measure.per || measure.per === 1) {
-    return `${measure.label}: ${value}${band}.`;
+    return `${label}: ${value}${band}.`;
   }
   const shown = scaled(measure.value ?? 0, digits, measure.per);
   const shownBand =
     measure.low !== undefined && measure.high !== undefined
       ? ` (${scaled(measure.low, digits, measure.per).million} til ${scaled(measure.high, digits, measure.per).million})`
       : "";
-  const own = measure.per === 1_000_000 ? "" : ` (${shown.source}${band} ${sourceUnit(measure.per)} i kilden)`;
   const ratio = measure.ratio
     ? ` ${measure.ratio.name} ${signed(measure.ratio.value, measure.ratio.digits)} (${signed(measure.ratio.low, measure.ratio.digits)} til ${signed(measure.ratio.high, measure.ratio.digits)}).`
     : "";
-  return `${measure.label}: ${shown.million}${shownBand} pr. million${own}.${ratio}`;
+  return `${label}: ${shown.million}${shownBand} pr. million.${ratio}`;
 }
 
 const BANNED = ["sikker og effektiv", "katastrofe"];
@@ -120,7 +137,7 @@ export function harmCopy(file: HarmFile = loadCovidHarms()): string {
       finding.heading,
       finding.body,
       finding.note ?? "",
-      ...finding.measures.flatMap((measure) => [measureText(measure), measure.place, measure.sourceName]),
+      ...finding.measures.flatMap((measure) => [measureText(measure), sourceUnitNote(measure), measure.place, measure.sourceName]),
       ...(finding.links ?? []).map((link) => link.name),
     ]),
   ];

@@ -3,12 +3,12 @@ import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { effectsForSubstance } from "@/lib/effect-records";
-import { loadCovidHarms, measureText, type HarmFinding, type HarmGroupId } from "@/lib/covid-harms";
+import { loadCovidHarms, measureText, sourceUnitNote, type HarmFinding, type HarmGroupId } from "@/lib/covid-harms";
 
 export const metadata: Metadata = {
   title: "Hvad siger studierne om bivirkninger ved covid-vacciner",
   description:
-    "Absolutte risici for navngivne grupper fra studier og fra EMA's produktinformation. Indberetninger er ikke en hyppighed.",
+    "Studierne sorteret efter dokumentation. Merrisiko som absolut tal pr. million. Indberetninger er ikke en hyppighed.",
 };
 
 export default function CovidHarmPage() {
@@ -22,8 +22,11 @@ export default function CovidHarmPage() {
         <p className="kicker">Studier. Ikke indberetninger.</p>
         <h1>Hvad siger studierne om bivirkninger ved covid-vacciner?</h1>
         <p className="lede">
-          Hyppighederne gælder en navngiven gruppe. Forholdstal står som forholdstal. En indberetning til
-          Lægemiddelstyrelsen, EudraVigilance eller VAERS er en mistanke. Den er ikke en hyppighed.
+          Siden sorterer studierne efter, hvor godt fundet er dokumenteret. De tre kasser er evidensniveauer: Etableret,
+          Signal og Ikke understøttet. Signal betyder, at fundet kræver nærmere undersøgelse. Merrisiko vises som et
+          absolut tal pr. million. Enheden fra kilden står i noten under tallet. Tallet gælder gruppen ved tallet. Et
+          forholdstal står som et forholdstal. En indberetning til Lægemiddelstyrelsen, EudraVigilance eller VAERS er en
+          mistanke, ikke en hyppighed.
         </p>
 
         {file.preface ? (
@@ -88,7 +91,8 @@ function Finding({ finding }: { finding: HarmFinding }) {
         return (
           <p key={measure.id}>
             {measure.block && measure.block !== previous ? <strong>{measure.block}. </strong> : null}
-            {measureText(measure)}
+            {measureText(measure)}{" "}
+            {sourceUnitNote(measure) ? <span className="small muted">{sourceUnitNote(measure)}</span> : null}
           </p>
         );
       })}

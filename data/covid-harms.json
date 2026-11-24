@@ -1,8 +1,8 @@
 {
   "substanceSlugs": ["covid-19-vaccines"],
   "preface": {
-    "title": "Hvorfor 1.000 studier ikke måler skaden",
-    "body": "Boksen svarer på referencelisten til Thorp og kolleger, The Gazette of Medical Sciences 2022. En maskinel sortering, som ikke er talt op linje for linje på denne side, giver cirka 1.100 unikke værker. Knap halvdelen er beskrivelser af én patient. Tælles små serier med, er det over halvdelen. Sorteringen fandt ingen lodtrækningsforsøg. Jiang og Mei, Viruses 2021, er trukket tilbage efter udgivelse, 10. maj 2022, fordi forsøgsdesignet kunne underminere resultaterne. Rose og McCullough, Current Problems in Cardiology 2021, er mærket WITHDRAWN. Forlaget skriver, at den er trukket tilbage efter ønske fra forfatter eller redaktør. Flere studier, der selv fandt ingen sammenhæng, står på listen som komplikationer. Listen viser, at mange har skrevet om emnet. Den viser ikke, hvor ofte en skade sker.",
+    "title": "1.000 referencer er ikke 1.000 målinger",
+    "body": "Boksen svarer på referencelisten til Thorp og kolleger, The Gazette of Medical Sciences 2022. En maskinel sortering, som ikke er talt op linje for linje på denne side, giver cirka 1.100 unikke værker. Knap halvdelen er beskrivelser af én patient. Tælles små serier med, er det over halvdelen. Sorteringen fandt ingen lodtrækningsforsøg. To artikler på listen er trukket tilbage. De står under Ikke understøttet, med henvisning. Flere studier, der selv fandt ingen sammenhæng, står på listen som komplikationer. Listen viser, at mange har skrevet om emnet. Den viser ikke, hvor ofte en skade sker.",
     "sourceName": "Referenceliste til Thorp og kolleger, 2022",
     "sourceUrl": "https://www.thegms.co/publichealth/pubheal-rw-22042302-references.pdf"
   },
@@ -14,8 +14,8 @@
     },
     {
       "id": "signal",
-      "title": "Omdiskuteret signal",
-      "lead": "Et studie finder en forskel. Det er ikke bevis for én navngiven sygdom."
+      "title": "Signal",
+      "lead": "Kræver nærmere undersøgelse. Et studie finder en forskel. Det er ikke bevis for én navngiven sygdom."
     },
     {
       "id": "unsupported",
@@ -28,13 +28,14 @@
       "id": "myocarditis",
       "group": "established",
       "heading": "Betændelse i hjertemusklen eller hjertesækken efter mRNA-vaccine",
-      "body": "EMA's produktinformation for Comirnaty lister myokarditis og perikarditis som meget sjældne og skriver, at risikoen er højest hos yngre mænd. Nygaards tal er Comirnaty og myoperikarditis. Husbys tal er myokarditis eller myoperikarditis og dækker både Comirnaty og Spikevax. Patones tal er myokarditis og er engelske. For Comirnaty i alderen 12 til 39 år går intervallet for hazard ratio under 1. Studiet fandt en stigning hos kvinder, ikke i den aldersgruppe samlet.",
+      "body": "Kort: Risikoen er højest hos yngre mænd, efter anden dosis. Det står i EMA's produktinformation for Comirnaty, som lister myokarditis og perikarditis som meget sjældne. For Comirnaty i alderen 12 til 39 år rummer intervallet også ingen forskel. Studiet fandt en stigning hos kvinder, ikke i den aldersgruppe samlet.",
       "note": "Patones tal er fra England, 1. december 2020 til 24. august 2021, før Omikron. Infektionstallet er pr. person med en positiv test. Vaccinetallet er pr. vaccineret. Ikke alle bliver smittet, og ikke alle smittede bliver testet. Gruppen under 40 år er begge køn. Risikoen efter vaccine samler sig hos unge mænd, så tallet for begge køn er ikke risikoen for en ung mand. Forfatterne skriver selv, at risikoen er mere jævnbyrdig hos personer op til 40 år, hvor anden dosis Spikevax lå over infektionen.",
       "measures": [
         {
           "id": "ema-28",
           "block": "Produktinformation",
-          "label": "Ekstra tilfælde af myokarditis, mænd 16 til 24 år, 28 dage efter dosis 2 af Comirnaty",
+          "label": "Ekstra tilfælde af myokarditis",
+          "applies": "mænd 16 til 24 år, 28 dage efter dosis 2 af Comirnaty",
           "value": 0.56,
           "low": 0.37,
           "high": 0.74,
@@ -47,7 +48,8 @@
         },
         {
           "id": "ema-7",
-          "label": "Ekstra tilfælde af myokarditis, mænd 12 til 29 år, 7 dage efter dosis 2 af Comirnaty",
+          "label": "Ekstra tilfælde af myokarditis",
+          "applies": "mænd 12 til 29 år, 7 dage efter dosis 2 af Comirnaty",
           "value": 0.265,
           "low": 0.255,
           "high": 0.275,
@@ -61,7 +63,8 @@
         {
           "id": "nygaard-boys",
           "block": "Danmark",
-          "label": "Fundne tilfælde af myoperikarditis, drenge 12 til 17 år i Danmark, Comirnaty, 15. maj til 15. september 2021",
+          "label": "Fundne tilfælde af myoperikarditis",
+          "applies": "drenge 12 til 17 år i Danmark, Comirnaty, 15. maj til 15. september 2021",
           "cases": 13,
           "n": 133477,
           "statedPerMillion": 97,
@@ -72,7 +75,8 @@
         },
         {
           "id": "nygaard-girls",
-          "label": "Fundne tilfælde af myoperikarditis, piger 12 til 17 år i Danmark, Comirnaty, samme periode",
+          "label": "Fundne tilfælde af myoperikarditis",
+          "applies": "piger 12 til 17 år i Danmark, Comirnaty, samme periode",
           "cases": 2,
           "n": 127857,
           "statedPerMillion": 16,
@@ -83,7 +87,8 @@
         },
         {
           "id": "husby-moderna",
-          "label": "Rate af myokarditis eller myoperikarditis inden for 28 dage, 12 til 39 år i Danmark, Spikevax",
+          "label": "Rate af myokarditis eller myoperikarditis",
+          "applies": "12 til 39 år i Danmark, Spikevax, inden for 28 dage",
           "value": 5.7,
           "low": 3.3,
           "high": 9.3,
@@ -97,7 +102,8 @@
         },
         {
           "id": "husby-bnt",
-          "label": "Rate af myokarditis eller myoperikarditis inden for 28 dage, 12 til 39 år i Danmark, Comirnaty",
+          "label": "Rate af myokarditis eller myoperikarditis",
+          "applies": "12 til 39 år i Danmark, Comirnaty, inden for 28 dage",
           "value": 1.6,
           "low": 1.0,
           "high": 2.6,
@@ -107,12 +113,13 @@
           "ratio": { "name": "Hazard ratio", "value": 1.48, "low": 0.74, "high": 2.98, "digits": 2 },
           "sourceName": "Husby et al., BMJ 2021",
           "sourceUrl": "https://www.bmj.com/content/375/bmj-2021-068665",
-          "place": "Abstract. Intervallet for hazard ratio går under 1. Studiet fandt en stigning for Comirnaty hos kvinder, ikke i denne aldersgruppe samlet."
+          "place": "Abstract. Intervallet rummer også ingen forskel. Studiet fandt en stigning for Comirnaty hos kvinder, ikke i denne aldersgruppe samlet."
         },
         {
           "id": "patone-infection",
           "block": "England",
-          "label": "Ekstra tilfælde af myokarditis efter en positiv test, England, 16 år og derover, 28 dage",
+          "label": "Ekstra tilfælde af myokarditis efter en positiv test",
+          "applies": "England, 16 år og derover, 28 dage",
           "value": 40,
           "low": 38,
           "high": 41,
@@ -125,7 +132,8 @@
         },
         {
           "id": "patone-young-infection",
-          "label": "Ekstra tilfælde af myokarditis efter en positiv test, England, under 40 år, 28 dage",
+          "label": "Ekstra tilfælde af myokarditis efter en positiv test",
+          "applies": "England, under 40 år, 28 dage",
           "value": 10,
           "low": 7,
           "high": 11,
@@ -138,7 +146,8 @@
         },
         {
           "id": "patone-young-moderna",
-          "label": "Ekstra tilfælde af myokarditis, England, under 40 år, anden dosis Spikevax, 28 dage",
+          "label": "Ekstra tilfælde af myokarditis, anden dosis Spikevax",
+          "applies": "England, under 40 år, 28 dage",
           "value": 15,
           "low": 12,
           "high": 16,
@@ -151,7 +160,8 @@
         },
         {
           "id": "patone-young-bnt",
-          "label": "Ekstra tilfælde af myokarditis, England, under 40 år, anden dosis Comirnaty, 28 dage",
+          "label": "Ekstra tilfælde af myokarditis, anden dosis Comirnaty",
+          "applies": "England, under 40 år, 28 dage",
           "value": 3,
           "low": 2,
           "high": 4,
@@ -168,11 +178,12 @@
       "id": "cvt",
       "group": "established",
       "heading": "Blodprop i hjernens vener efter Vaxzevria",
-      "body": "Der var 7 observerede tilfælde af blodprop i hjernens vener mod 0,3 ventede blandt 281.264 vaccinerede. I studiet var 80 % af de vaccinerede i Danmark kvinder, og 78 % i Norge. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. EMA's produktinformation for Vaxzevria og for Jcovden er stemplet, at lægemidlet ikke længere er godkendt i EU. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
+      "body": "Der var 7 observerede tilfælde af blodprop i hjernens vener mod 0,3 ventede blandt 281.264 vaccinerede. I studiet var 80 % af de vaccinerede i Danmark kvinder, og 78 % i Norge. Sundhedsstyrelsen besluttede 14. april 2021, at det danske program fortsatte uden vaccinen fra AstraZeneca. Hverken Vaxzevria eller Jcovden er længere godkendt i EU, ifølge EMA's produktinformation. I Storbritannien beskrev Pavord og kolleger 170 bekræftede og 50 sandsynlige tilfælde af trombose med lavt blodpladetal efter første dosis. Abstractet har ingen rate pr. vaccinerede.",
       "measures": [
         {
           "id": "pottegard-cvt",
-          "label": "Ekstra tilfælde af blodprop i hjernens vener, 18 til 65 år, Danmark og Norge, 28 dage efter første dosis",
+          "label": "Ekstra tilfælde af blodprop i hjernens vener",
+          "applies": "18 til 65 år, Danmark og Norge, 28 dage efter første dosis",
           "value": 2.5,
           "low": 0.9,
           "high": 5.2,
@@ -185,7 +196,8 @@
         },
         {
           "id": "pavord-died",
-          "label": "Andel der døde blandt tilfældene i Storbritannien",
+          "label": "Andel der døde",
+          "applies": "tilfældene i Storbritannien",
           "value": 22,
           "digits": 0,
           "kind": "share",
@@ -213,7 +225,7 @@
       "id": "tts-jcovden",
       "group": "established",
       "heading": "Trombose med lavt blodpladetal efter Jcovden",
-      "body": "EMA's produktinformation for Jcovden skriver, at kombinationen er set meget sjældent, også i hjernens vener, i de første tre uger og mest hos personer under 60 år. Dødsfald er rapporteret. Produktinformationen er stemplet, at lægemidlet ikke længere er godkendt. Det læste afsnit giver ikke et målt tal pr. million.",
+      "body": "EMA's produktinformation for Jcovden skriver, at kombinationen er set meget sjældent, også i hjernens vener, i de første tre uger og mest hos personer under 60 år. Dødsfald er rapporteret. Det læste afsnit giver ikke et målt tal pr. million.",
       "measures": [],
       "links": [
         {
@@ -256,11 +268,12 @@
       "id": "fraiman",
       "group": "signal",
       "heading": "Alvorlige hændelser af særlig interesse i de voksne fase 3-forsøg",
-      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to fase 3-forsøg med voksne fra Pfizer og Moderna. Tallene er ikke danske. Det er et signal i en efterberegning, ikke bevis for én sygdom. Pfizer-forsøget alene var 10,1 pr. 10.000 (minus 0,4 til 20,6). Moderna-forsøget alene var 15,1 pr. 10.000 (minus 3,6 til 33,8). I hvert forsøg for sig rummer intervallet også ingen forskel. Forfatterne skriver, at mer-risikoen kalder på formelle skade-gavn-analyser, og at de analyser kræver data på deltagerniveau. BMJ's leder fra 2025 gengiver Black og Evans' grunde: problemer med at finde og klassificere hændelserne, at samme person blev talt flere gange, så skaden blev overvurderet, og at analysen ikke kan vise årsag. Lederen kalder Fraimans fund højst et signal, der kræver nærmere undersøgelse. Lederen skriver også, at Fraiman og kolleger siger, at Vaccine ikke har ladet dem svare på kritikken, og at FDA siden har frigivet data på deltagerniveau for de to forsøg.",
+      "body": "Fraiman og kolleger talte en kurv af alvorlige hændelser af særlig interesse i de to fase 3-forsøg med voksne fra Pfizer og Moderna. Tallene er ikke danske. Det er en efterberegning. Pfizer-forsøget alene var 10,1 pr. 10.000 (minus 0,4 til 20,6). Moderna-forsøget alene var 15,1 pr. 10.000 (minus 3,6 til 33,8). I hvert forsøg for sig rummer intervallet også ingen forskel. Forfatterne skriver, at mer-risikoen kalder på formelle skade-gavn-analyser, og at de analyser kræver data på deltagerniveau. BMJ's leder fra 2025 gengiver Black og Evans' grunde: problemer med at finde og klassificere hændelserne, at samme person blev talt flere gange, så skaden blev overvurderet, og at analysen ikke kan vise årsag. Lederen skriver også, at Fraiman og kolleger siger, at Vaccine ikke har ladet dem svare på kritikken, og at FDA siden har frigivet data på deltagerniveau for de to forsøg.",
       "measures": [
         {
           "id": "fraiman-combined",
-          "label": "Ekstra hændelser i kurven, de to forsøg lagt sammen",
+          "label": "Ekstra hændelser i kurven",
+          "applies": "de to voksne fase 3-forsøg, lagt sammen",
           "value": 12.5,
           "low": 2.1,
           "high": 22.9,
@@ -273,7 +286,8 @@
         },
         {
           "id": "fraiman-pfizer-placebo",
-          "label": "Placebogruppen i Pfizer-forsøget, alvorlige hændelser af særlig interesse",
+          "label": "Alvorlige hændelser af særlig interesse",
+          "applies": "placebogruppen i Pfizer-forsøget",
           "value": 17.6,
           "digits": 1,
           "per": 10000,
@@ -284,7 +298,8 @@
         },
         {
           "id": "fraiman-moderna-placebo",
-          "label": "Placebogruppen i Moderna-forsøget, alvorlige hændelser af særlig interesse",
+          "label": "Alvorlige hændelser af særlig interesse",
+          "applies": "placebogruppen i Moderna-forsøget",
           "value": 42.2,
           "digits": 1,
           "per": 10000,
@@ -322,7 +337,7 @@
       "id": "jiang",
       "group": "unsupported",
       "heading": "Spike-protein og reparation af DNA",
-      "body": "Artiklen i Viruses 2021 er trukket tilbage 10. maj 2022. Begrundelsen er et forsøgsdesign, der kunne underminere resultaterne.",
+      "body": "Artiklen af Jiang og Mei i Viruses 2021 er trukket tilbage 10. maj 2022. Begrundelsen er et forsøgsdesign, der kunne underminere resultaterne.",
       "measures": [],
       "links": [
         {
@@ -339,7 +354,8 @@
       "measures": [
         {
           "id": "jabagi-mi",
-          "label": "Relativ incidens for blodprop i hjertet, første dosis, 14 dage",
+          "label": "Relativ incidens for blodprop i hjertet, første dosis",
+          "applies": "75 år og derover i Frankrig, 14 dage",
           "value": 0.97,
           "low": 0.88,
           "high": 1.06,
@@ -359,7 +375,8 @@
       "measures": [
         {
           "id": "pottegard-arterial",
-          "label": "Standardiseret sygelighedsforhold for arterielle hændelser, samme kohorte som ovenfor",
+          "label": "Standardiseret sygelighedsforhold for arterielle hændelser",
+          "applies": "samme kohorte som ovenfor, 18 til 65 år, Danmark og Norge",
           "value": 0.97,
           "low": 0.77,
           "high": 1.2,
