@@ -75,7 +75,7 @@ export function parseInline(text: string): InlinePart[] {
     if (part.startsWith("**") && part.endsWith("**")) return { type: "strong", text: part.slice(2, -2) };
     if (part.startsWith("*") && part.endsWith("*")) return { type: "em", text: part.slice(1, -1) };
     const link = part.match(/^\[([^\]]+)\]\(((?:[^()]|\([^()]*\))+)\)$/);
-    if (link && (/^https?:\/\//i.test(link[2]) || link[2].startsWith("/"))) {
+    if (link && (/^https?:\/\//i.test(link[2]) || /^\/(?![/\\])/.test(link[2]))) {
       return { type: "link", text: link[1], href: link[2] };
     }
     return { type: "text", text: part };

@@ -75,9 +75,14 @@ test("en overskrift uden det kendte format standser ikke læseren", () => {
 });
 
 test("et link skal være http eller en sti på siden", () => {
-  const blocked = parseInline("[x](javascript:alert(1))");
-  assert.equal(blocked.some((part) => part.type === "link"), false);
-  assert.equal(blocked.map((part) => (part.type === "text" ? part.text : "")).join(""), "[x](javascript:alert(1))");
+  const asText = (source: string) => {
+    const parts = parseInline(source);
+    assert.equal(parts.some((part) => part.type === "link"), false, source);
+    assert.equal(parts.map((part) => (part.type === "text" ? part.text : "")).join(""), source);
+  };
+  asText("[x](javascript:alert(1))");
+  asText("[x](//evil.example/a)");
+  asText("[x](/\\evil.example)");
   const allowed = parseInline("[a](https://example.com/a) og [b](/lokal)");
   assert.deepEqual(
     allowed.flatMap((part) => (part.type === "link" ? [part.href] : [])),
