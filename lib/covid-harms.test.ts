@@ -173,9 +173,18 @@ test("teksten gentager ikke de afskårne punkter", () => {
   assert.equal(text.split("Rose og McCullough").length - 1, 1);
   assert.equal(text.split("Jiang").length - 1, 1);
   assert.equal(text.includes("Nygaards tal er"), false);
-  assert.equal(text.includes("højst et signal, der kræver nærmere undersøgelse"), false);
+  assert.equal(text.includes("Lederen kalder Fraimans fund højst et signal, der kræver nærmere undersøgelse."), true);
   assert.equal(text.includes("pr. 10.000 i kilden"), false);
   assert.equal(text.includes("I kilden: 0,56 (0,37 til 0,74) pr. 10.000."), true);
+});
+
+test("Husby-navnet og BMJ-sætningen er låst", () => {
+  const file = loadCovidHarms();
+  const text = harmCopy(file);
+  const myocarditis = file.findings.find((item) => item.id === "myocarditis");
+  assert.equal(myocarditis?.body.includes("I Husbys danske studie"), true);
+  assert.equal(myocarditis?.body.includes("hazard ratio"), true);
+  assert.equal(text.includes("Lederen kalder Fraimans fund højst et signal, der kræver nærmere undersøgelse."), true);
 });
 
 test("Pottegårds arterielle forhold rummer 1", () => {
