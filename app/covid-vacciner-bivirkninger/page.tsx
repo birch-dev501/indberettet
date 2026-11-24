@@ -8,7 +8,7 @@ import { loadCovidHarms, measureText, sourceUnitNote, type HarmFinding, type Har
 export const metadata: Metadata = {
   title: "Hvad siger studierne om bivirkninger ved covid-vacciner",
   description:
-    "Studierne sorteret efter dokumentation. Merrisiko som absolut tal pr. million. Indberetninger er ikke en hyppighed.",
+    "Studierne sorteret efter dokumentation. Tal pr. million. Etiketten siger, hvilken slags tal det er. Indberetninger er ikke en hyppighed.",
 };
 
 export default function CovidHarmPage() {
@@ -23,8 +23,9 @@ export default function CovidHarmPage() {
         <h1>Hvad siger studierne om bivirkninger ved covid-vacciner?</h1>
         <p className="lede">
           Siden sorterer studierne efter, hvor godt fundet er dokumenteret. De tre kasser er evidensniveauer: Etableret,
-          Signal og Ikke understøttet. Signal betyder, at fundet kræver nærmere undersøgelse. Merrisiko vises som et
-          absolut tal pr. million. Enheden fra kilden står i noten under tallet. Tallet gælder gruppen ved tallet. Et
+          Signal og Ikke understøttet. Signal betyder, at fundet kræver nærmere undersøgelse. Tal vises pr. million.
+          Etiketten siger, om tallet er merrisiko, rate, fundne tilfælde eller placebobaseline. Enheden fra kilden står
+          i noten under tallet. Tallet gælder gruppen ved tallet. Et
           forholdstal står som et forholdstal. En indberetning til Lægemiddelstyrelsen, EudraVigilance eller VAERS er en
           mistanke, ikke en hyppighed.
         </p>

@@ -155,6 +155,8 @@ test("teksten gentager ikke de afskårne punkter", () => {
   const text = harmCopy(file);
   const page = readFileSync("app/covid-vacciner-bivirkninger/page.tsx", "utf8");
   assert.equal(page.includes("Siden sorterer studierne efter, hvor godt fundet er dokumenteret."), true);
+  assert.equal(page.includes("Tal vises pr. million."), true);
+  assert.equal(page.includes("Merrisiko vises som et absolut tal pr. million"), false);
   assert.equal(file.groups.find((group) => group.id === "signal")?.title, "Signal");
   assert.equal(file.groups.find((group) => group.id === "signal")?.lead.includes("Kræver nærmere undersøgelse."), true);
   assert.equal(file.preface?.title, "1.000 referencer er ikke 1.000 målinger");
