@@ -182,6 +182,9 @@ export default function HomePage() {
               <p>
                 <Link href="/om-data">Læs hvad filerne indeholder, og hvad de ikke kan bruges til.</Link>
               </p>
+              <p>
+                <Link href="/influenzavaccine-raske/">Influenzavaccine til raske voksne</Link>
+              </p>
             </aside>
           </div>
         </section>

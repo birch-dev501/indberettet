@@ -63,6 +63,11 @@ export default async function SubstancePage({ params }: { params: Promise<{ slug
           identity={getIdentity(slug)}
           effects={effectsForSubstance(slug)}
           studyHref={loadCovidHarms().substanceSlugs?.includes(slug) ? "/covid-vacciner-bivirkninger/" : null}
+          articleHref={
+            slug === "influenza-vaccines"
+              ? { href: "/influenzavaccine-raske/", label: "Influenzavaccine til raske: Et nej tak kan være et oplyst valg" }
+              : null
+          }
         />
         <ReportIssue path={`/stof/${slug}/`} />
       </main>

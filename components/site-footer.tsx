@@ -36,6 +36,8 @@ export function SiteFooter() {
             <br />
             <Link href="/covid-vacciner-bivirkninger">Studier om bivirkninger ved covid-vacciner</Link>
             <br />
+            <Link href="/influenzavaccine-raske">Influenzavaccine til raske voksne</Link>
+            <br />
             <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
             <br />
             <Link href="/forstaa-testen">Sådan læses en test</Link>

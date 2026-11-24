@@ -31,6 +31,7 @@ export function SubstanceView({
   identity = null,
   effects = [],
   studyHref = null,
+  articleHref = null,
 }: {
   substance: Substance;
   news: NewsItem[];
@@ -40,6 +41,7 @@ export function SubstanceView({
   identity?: SubstanceIdentity | null;
   effects?: EffectView[];
   studyHref?: string | null;
+  articleHref?: { href: string; label: string } | null;
 }) {
   const [viewId, setViewId] = useState<(typeof VIEWS)[number]["id"]>("all");
   const [termQuery, setTermQuery] = useState("");
@@ -115,6 +117,11 @@ export function SubstanceView({
       {studyHref ? (
         <p>
           <Link href={studyHref}>Hvad siger studierne om bivirkninger ved covid-vacciner?</Link>
+        </p>
+      ) : null}
+      {articleHref ? (
+        <p>
+          <Link href={articleHref.href}>{articleHref.label}</Link>
         </p>
       ) : null}
       {effects.length > 0 ? null : (
