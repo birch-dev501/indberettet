@@ -28,7 +28,7 @@
       "id": "myocarditis",
       "group": "established",
       "heading": "Betændelse i hjertemusklen eller hjertesækken efter mRNA-vaccine",
-      "body": "Kort: Risikoen er højest hos yngre mænd, efter anden dosis. Det står i EMA's produktinformation for Comirnaty, som lister myokarditis og perikarditis som meget sjældne. For Comirnaty i alderen 12 til 39 år rummer intervallet også ingen forskel. Studiet fandt en stigning hos kvinder, ikke i den aldersgruppe samlet.",
+      "body": "Kort: Risikoen er højest hos yngre mænd, efter anden dosis. Det står i EMA's produktinformation for Comirnaty, som lister myokarditis og perikarditis som meget sjældne. I Husbys danske studie rummer intervallet for hazard ratio for Comirnaty i alderen 12 til 39 år ingen forskel. Studiet fandt en stigning hos kvinder, ikke i den aldersgruppe samlet.",
       "note": "Patones tal er fra England, 1. december 2020 til 24. august 2021, før Omikron. Infektionstallet er pr. person med en positiv test. Vaccinetallet er pr. vaccineret. Ikke alle bliver smittet, og ikke alle smittede bliver testet. Gruppen under 40 år er begge køn. Risikoen efter vaccine samler sig hos unge mænd, så tallet for begge køn er ikke risikoen for en ung mand. Forfatterne skriver selv, at risikoen er mere jævnbyrdig hos personer op til 40 år, hvor anden dosis Spikevax lå over infektionen.",
       "measures": [
         {
@@ -113,7 +113,7 @@
           "ratio": { "name": "Hazard ratio", "value": 1.48, "low": 0.74, "high": 2.98, "digits": 2 },
           "sourceName": "Husby et al., BMJ 2021",
           "sourceUrl": "https://www.bmj.com/content/375/bmj-2021-068665",
-          "place": "Abstract. Intervallet rummer også ingen forskel. Studiet fandt en stigning for Comirnaty hos kvinder, ikke i denne aldersgruppe samlet."
+          "place": "Abstract. I Husbys studie rummer intervallet for hazard ratio ingen forskel. Studiet fandt en stigning for Comirnaty hos kvinder, ikke i denne aldersgruppe samlet."
         },
         {
           "id": "patone-infection",

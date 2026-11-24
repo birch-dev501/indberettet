@@ -159,7 +159,14 @@ test("teksten gentager ikke de afskårne punkter", () => {
   assert.equal(file.groups.find((group) => group.id === "signal")?.lead.includes("Kræver nærmere undersøgelse."), true);
   assert.equal(file.preface?.title, "1.000 referencer er ikke 1.000 målinger");
   assert.equal(text.includes("går under 1"), false);
-  assert.equal(text.includes("rummer intervallet også ingen forskel"), true);
+  const myocarditis = file.findings.find((item) => item.id === "myocarditis");
+  assert.equal(
+    myocarditis?.body.includes(
+      "I Husbys danske studie rummer intervallet for hazard ratio for Comirnaty i alderen 12 til 39 år ingen forskel.",
+    ),
+    true,
+  );
+  assert.equal(myocarditis?.body.includes("også"), false);
   assert.equal(text.includes("Kort: Risikoen er højest hos yngre mænd, efter anden dosis."), true);
   assert.equal(text.includes("Hverken Vaxzevria eller Jcovden er længere godkendt i EU, ifølge EMA's produktinformation."), true);
   assert.equal(text.split("længere godkendt").length - 1, 1);
