@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
-import { articleHeadings, articleLinks, parseArticle } from "./article-markdown.ts";
+import { articleHeadings, articleLinks, parseArticle, parseInline } from "./article-markdown.ts";
 
 const markdown = readFileSync("content/influenzavaccine-raske.md", "utf8");
 const substack = readFileSync("substack/influenzavaccine-raske.md", "utf8");
@@ -71,6 +71,17 @@ test("en overskrift uden det kendte format standser ikke læseren", () => {
   assert.deepEqual(
     blocks.map((block) => (block.type === "p" ? block.text : block.type)),
     ["# Titel", "#### Dyb", "#tag", "Almindelig tekst."],
+  );
+});
+
+test("et link skal være http eller en sti på siden", () => {
+  const blocked = parseInline("[x](javascript:alert(1))");
+  assert.equal(blocked.some((part) => part.type === "link"), false);
+  assert.equal(blocked.map((part) => (part.type === "text" ? part.text : "")).join(""), "[x](javascript:alert(1))");
+  const allowed = parseInline("[a](https://example.com/a) og [b](/lokal)");
+  assert.deepEqual(
+    allowed.flatMap((part) => (part.type === "link" ? [part.href] : [])),
+    ["https://example.com/a", "/lokal"],
   );
 });
 
