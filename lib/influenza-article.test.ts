@@ -62,6 +62,9 @@ test("influenzasiden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("Opdateret 25. november 2026"), true);
   assert.equal(markdown.includes("4,40"), true);
   assert.equal(markdown.includes("6,5 %"), true);
+  assert.equal(markdown.includes("observationsstudier blandt patienter"), true);
+  assert.equal(markdown.includes("børn under 5 år"), true);
+  assert.equal(markdown.includes("En gennemgang over"), false);
   assert.equal(markdown.includes("Kun lidt"), false);
   assert.equal(markdown.includes("moralsk pligt"), false);
   const blocks = parseArticle(markdown);
