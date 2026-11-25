@@ -12,6 +12,11 @@ const substance = readFileSync("app/stof/[slug]/page.tsx", "utf8");
 const links = [
   "https://www.cochrane.org/evidence/CD001269_vaccines-prevent-influenza-healthy-adults",
   "https://www.dr.dk/nyheder/viden/naturvidenskab/4-paastande-om-influenzavaccine-holder-de-stik",
+  "https://doi.org/10.1093/cid/cis307",
+  "https://x.com/MidwesternDoc/status/2125401586323296492",
+  "https://doi.org/10.1093/cid/cit379",
+  "https://doi.org/10.1097/EDE.0000000000000670",
+  "https://doi.org/10.1093/cid/ciaa626",
   "https://jamanetwork.com/journals/jama/fullarticle/193139",
   "https://videnskab.dk/krop-sundhed/influenzavaccination-boer-du-faa-den/",
   "https://jamanetwork.com/journals/jama/fullarticle/185509",
@@ -31,6 +36,7 @@ const headings = [
   "Influenzavaccine til raske: Et nej tak kan være et oplyst valg",
   "Hvad vaccinen gør for raske voksne",
   "Vaccinen beskytter mod influenza, ikke mod vinterens forkølelser",
+  "Får man flere andre luftvejsvirus efter vaccinen?",
   "Færre sygedage på arbejdspladsen?",
   "Beskytter du andre ved at blive vaccineret?",
   "Cleveland Clinic-studiet: Flere smittede blandt de vaccinerede?",
@@ -53,6 +59,9 @@ test("influenzasiden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("9 ud af 1.000"), true);
   assert.equal(markdown.includes("omkring 71"), true);
   assert.equal(markdown.includes("61 %"), true);
+  assert.equal(markdown.includes("Opdateret 25. november 2026"), true);
+  assert.equal(markdown.includes("4,40"), true);
+  assert.equal(markdown.includes("6,5 %"), true);
   assert.equal(markdown.includes("Kun lidt"), false);
   assert.equal(markdown.includes("moralsk pligt"), false);
   const blocks = parseArticle(markdown);
