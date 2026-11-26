@@ -73,6 +73,13 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("CDR-SB et sekundært"), true);
   assert.equal(markdown.includes("22,8 %"), true);
   assert.equal(markdown.includes("34,4 %"), true);
+  assert.equal(markdown.includes("CDR-G"), true);
+  assert.equal(markdown.includes("n=672 og 701"), true);
+  assert.equal(markdown.includes("særlig vægt"), true);
+  assert.equal(markdown.includes("har stor betydning for patientens liv"), true);
+  assert.equal(markdown.includes("kan have betydning for patienten"), true);
+  assert.equal(markdown.includes("Virksomheden fremhæver, at 22,8"), false);
+  assert.equal(markdown.includes("ikke anbefaler donanemab som standardbehandling"), true);
   assert.equal(markdown.includes("skærpet indberetningspligt"), false);
   assert.equal(markdown.includes("supplerende overvågning"), true);
   assert.equal(markdown.includes("2.488"), true);
