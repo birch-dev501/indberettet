@@ -28,7 +28,7 @@ const links = [
 ];
 
 const headings = [
-  "Donanemab (Kisunla) mod tidlig Alzheimers: Lille gevinst, reel risiko, og hvorfor Medicinrådet siger nej",
+  "Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene, og hvorfor anbefaler Medicinrådet det ikke?",
   "Hvad har Medicinrådet besluttet?",
   "Hvad viser forsøget om effekten?",
   "Hvad viser forsøget om bivirkninger?",
@@ -69,6 +69,10 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("650"), true);
   assert.equal(markdown.includes("det første lægemiddel"), false);
   assert.equal(markdown.includes("et af to lægemidler"), true);
+  assert.equal(markdown.includes("iADRS det primære effektmål"), true);
+  assert.equal(markdown.includes("CDR-SB et sekundært"), true);
+  assert.equal(markdown.includes("22,8 %"), true);
+  assert.equal(markdown.includes("34,4 %"), true);
   assert.equal(markdown.includes("710"), true);
   assert.equal(markdown.includes("728"), true);
   const blocks = parseArticle(markdown);

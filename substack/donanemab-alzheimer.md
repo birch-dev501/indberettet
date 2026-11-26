@@ -1,6 +1,6 @@
 Teksten nedenfor står på Indberettet. Den gennemgår Medicinrådets anbefaling og de tal, forsøget og myndighederne viser om donanemab (Kisunla) mod tidlig Alzheimers sygdom.
 
-## Donanemab (Kisunla) mod tidlig Alzheimers: Lille gevinst, reel risiko, og hvorfor Medicinrådet siger nej
+## Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene, og hvorfor anbefaler Medicinrådet det ikke?
 
 **Kort:** Donanemab (Kisunla) er et lægemiddel mod tidlig Alzheimers sygdom, som er godkendt i EU. Det bremser sygdommen lidt, men helbreder den ikke og giver ikke tabte evner tilbage. I forsøget var forskellen efter 18 måneder 0,69 point på en skala fra 0 til 18, og Medicinrådet vurderer, at det er mindre end det, man anser for mærkbart for den enkelte. Omkring 1 ud af 3 behandlede fik hævelse eller små blødninger i hjernen (ARIA), de fleste uden symptomer, men nogle få fik alvorlige følger, og tre patienter døde af ARIA i forsøget. Den 25. november 2026 anbefalede Medicinrådet ikke donanemab som standardbehandling i det offentlige sundhedsvæsen. Det handler både om den lille effekt, bivirkningerne og prisen.
 
@@ -17,8 +17,11 @@ Beslutningen betyder, at donanemab ikke indføres som standardbehandling i det o
 Beslutningen bygger på forsøget TRAILBLAZER-ALZ 2: 1.736 patienter i otte lande fik donanemab eller placebo i 18 måneder (76 uger). Det er virksomhedens eget forsøg ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Medicinrådet har regnet på den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier), og lægger mest vægt på skalaen CDR-SB (0 til 18, højere er værre):
 - **CDR-SB:** Efter 76 uger var forværringen 1,73 point med donanemab og 2,42 med placebo. Forskellen er 0,69 point (usikkerhedsinterval 0,43 til 0,95). Medicinrådet omregner det til en forsinkelse på 5,8 måneder (4,2 til 7,4).
 - **iADRS** (en samlet skala for tænkning og dagligdag): Forskellen var 2,65 point (1,04 til 4,26), som Medicinrådet omregner til en forsinkelse på 2,9 måneder (1,3 til 4,5).
-Medicinrådets resumé nævner 1,5 point på iADRS, mens rapportens resultatafsnit og tabel har 2,65. Siden bruger resultatafsnittet, som også ligger til grund for de 2,9 måneder.
 - **Klinisk betydende forværring:** 28,7 % med donanemab mod 40,6 % med placebo.
+
+Medicinrådets resumé nævner 1,5 point på iADRS, mens rapportens resultatafsnit og tabel har 2,65. Siden bruger resultatafsnittet, som også ligger til grund for de 2,9 måneder.
+
+I forsøget var iADRS det primære effektmål, og CDR-SB et sekundært. Medicinrådet lægger størst vægt på CDR-SB, fordi der er mest erfaring med den. Virksomheden og Medicinrådet vurderer ikke effekten ens: Virksomheden regner mindre forskelle for relevante, og Medicinrådet sammenholder med tærskler fra studier af, hvad patienter oplever som mærkbart. Begge dele er skøn. Virksomheden fremhæver, at 22,8 % med donanemab og 34,4 % med placebo gik videre til et værre sygdomsstadie (usikkerhedsinterval 19,8 til 26,1 % og 31,0 til 38,0 %; hazard ratio 0,597) ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf)).
 
 Til sammenligning regner Medicinrådet 1 point på CDR-SB som en mærkbar forværring ved let kognitiv svækkelse og 2 point ved let demens. På iADRS er grænsen 5 point ved let kognitiv svækkelse og 9 ved let demens. Gennemsnitsforskellen i forsøget ligger under begge. Tærsklerne er selv skøn.
 
