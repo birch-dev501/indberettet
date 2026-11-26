@@ -73,6 +73,8 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("CDR-SB et sekundært"), true);
   assert.equal(markdown.includes("22,8 %"), true);
   assert.equal(markdown.includes("34,4 %"), true);
+  assert.equal(markdown.includes("skærpet indberetningspligt"), false);
+  assert.equal(markdown.includes("supplerende overvågning"), true);
   assert.equal(markdown.includes("710"), true);
   assert.equal(markdown.includes("728"), true);
   const blocks = parseArticle(markdown);
