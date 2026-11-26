@@ -38,6 +38,8 @@ export function SiteFooter() {
             <br />
             <Link href="/influenzavaccine-raske">Influenzavaccine til raske voksne</Link>
             <br />
+            <Link href="/donanemab-alzheimer">Donanemab (Kisunla) mod tidlig Alzheimers</Link>
+            <br />
             <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
             <br />
             <Link href="/forstaa-testen">Sådan læses en test</Link>

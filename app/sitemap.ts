@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/forstaa-forskning/",
     "/covid-vacciner-bivirkninger/",
     "/influenzavaccine-raske/",
+    "/donanemab-alzheimer/",
     "/forstaa-usikkerhed/",
     "/forstaa-testen/",
     "/katalog/",

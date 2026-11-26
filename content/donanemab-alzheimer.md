@@ -1,0 +1,75 @@
+## Donanemab (Kisunla) mod tidlig Alzheimers: Lille gevinst, reel risiko, og hvorfor Medicinrådet siger nej
+
+**Kort:** Donanemab (Kisunla) er et lægemiddel mod tidlig Alzheimers sygdom, som er godkendt i EU. Det bremser sygdommen lidt, men helbreder den ikke og giver ikke tabte evner tilbage. I forsøget var forskellen efter 18 måneder 0,69 point på en skala fra 0 til 18, og Medicinrådet vurderer, at det er mindre end det, man anser for mærkbart for den enkelte. Omkring 1 ud af 3 behandlede fik hævelse eller små blødninger i hjernen (ARIA), de fleste uden symptomer, men nogle få fik alvorlige følger, og tre patienter døde af ARIA i forsøget. Den 25. november 2026 anbefalede Medicinrådet ikke donanemab som standardbehandling i det offentlige sundhedsvæsen. Det handler både om den lille effekt, bivirkningerne og prisen.
+
+*Siden er ikke lægelig rådgivning. Er du patient eller pårørende og er i tvivl, så tal med din læge eller en hukommelsesklinik.*
+
+### Hvad har Medicinrådet besluttet?
+Medicinrådet anbefaler ikke donanemab til voksne med let kognitiv svækkelse eller let demens som følge af Alzheimers sygdom, som har bekræftet amyloid i hjernen og ikke har to kopier af genvarianten ApoE ε4 ([Medicinrådet, nyhed 25. november 2026](https://medicinraadet.dk/nyheder/2026/medicinradet-anbefaler-ikke-donanemab-mod-tidlig-alzheimers-sygdom); [anbefalingen](https://medicinraadet.dk/igangvaerende-vurderinger/laegemidler-og-indikationsudvidelser/donanemab-kisunla-alzheimers-sygdom)). Medicinrådet regner med, at cirka 650 patienter om året i Danmark ville starte behandling. Til sammenligning blev 4.879 diagnosticeret med Alzheimers i 2025, i alle stadier.
+
+Medicinrådets begrundelse er, at det er usikkert, hvor meget sygdommen forsinkes, at den dokumenterede effekt på tænkning og dagligdag er mindre, end hvad der i studier anses for klinisk relevant, at behandlingen kan give alvorlige bivirkninger, og at omkostningerne ikke står mål med det. Virksomheden kan komme igen med en lavere pris eller nye data.
+
+Beslutningen betyder, at donanemab ikke indføres som standardbehandling i det offentlige danske sundhedsvæsen på nuværende tidspunkt. Den ændrer ikke på EU-godkendelsen. Medicinrådet vurderer, om en behandling er værd at bruge fælles penge på. EMA vurderer, om fordele og risici samlet set kan forsvares. Det er to forskellige spørgsmål.
+
+### Hvad viser forsøget om effekten?
+Beslutningen bygger på forsøget TRAILBLAZER-ALZ 2: 1.736 patienter i otte lande fik donanemab eller placebo i 18 måneder (76 uger). Det er virksomhedens eget forsøg ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Medicinrådet har regnet på den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier), og lægger mest vægt på skalaen CDR-SB (0 til 18, højere er værre):
+- **CDR-SB:** Efter 76 uger var forværringen 1,73 point med donanemab og 2,42 med placebo. Forskellen er 0,69 point (usikkerhedsinterval 0,43 til 0,95). Medicinrådet omregner det til en forsinkelse på 5,8 måneder (4,2 til 7,4).
+- **iADRS** (en samlet skala for tænkning og dagligdag): Forskellen var 2,65 point (1,04 til 4,26), som Medicinrådet omregner til en forsinkelse på 2,9 måneder (1,3 til 4,5).
+- **Klinisk betydende forværring:** 28,7 % med donanemab mod 40,6 % med placebo.
+
+Til sammenligning regner Medicinrådet 1 point på CDR-SB som en mærkbar forværring ved let kognitiv svækkelse og 2 point ved let demens. På iADRS er grænsen 5 point ved let kognitiv svækkelse og 9 ved let demens. Gennemsnitsforskellen i forsøget ligger under begge. Tærsklerne er selv skøn.
+
+Det er gennemsnit. Et gennemsnit kan skjule, at nogle har mere gavn og andre mindre. Det kan forsøget ikke vise.
+
+Medicinrådet peger på disse usikkerheder:
+- **Forskellen mellem de to skalaer er stor** (5,8 måneder mod 2,9). Den manglende konsistens gør resultaterne usikre.
+- **Ingen data efter 18 måneder.** Hvad der sker, når behandlingen stopper, er ikke vist i et forsøg med placebo. Medicinrådets beregning antager, at donanemab ikke fortsætter med at bremse sygdommen efter stop.
+- **Ingen data om livskvalitet.** Virksomheden har ikke leveret dem, selv om Medicinrådet bad om dem.
+- **Amyloid er ikke det samme som gavn.** Lægemidlet fjerner amyloid fra hjernen, og det kan ses på scanninger. Medicinrådet vurderer, at det hænger dårligt sammen med, hvordan patienten har det.
+- Lægemidlet genopretter ikke nerveceller eller evner, som allerede er tabt.
+
+### Hvad viser forsøget om bivirkninger?
+Den vigtigste bivirkning hedder ARIA (amyloid-relaterede billeddannelsesabnormiteter). Den ses på en MR-scanning som hævelse eller væske i hjernen (ARIA-E) eller som små blødninger og jernaflejringer (ARIA-H). De fleste har ingen symptomer. Symptomerne kan være hovedpine, forvirring, svimmelhed, synsforstyrrelser og krampeanfald, og i sjældne tilfælde er det dødeligt. Tallene nedenfor gælder den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier; 710 behandlede og 728 på placebo) ([EMA, produktresumé](https://www.ema.europa.eu/en/documents/product-information/kisunla-epar-product-information_en.pdf), afsnit 4.8):
+- **ARIA (hævelse eller små blødninger):** 33,0 % med donanemab og 13,5 % med placebo.
+- **ARIA-E (hævelse):** 20,6 % og 1,8 %. Med symptomer: 5,6 % og 0.
+- **ARIA-H (små blødninger):** 27,6 % og 12,2 %.
+- **Alvorlig ARIA:** 1,4 % og 0.
+- **Dødelig ARIA:** 0,4 % (3 patienter) og 0.
+- **Stoppede på grund af bivirkninger:** 12,8 % og 3,8 %.
+- **Mindst én alvorlig uønsket hændelse:** 17,9 % og 15,2 %.
+- **Alle dødsfald i forsøget:** 1,8 % og 1,1 %.
+
+I 100 behandlede svarer det til omkring 33 med ARIA mod 13 til 14 på placebo, omkring 6 med symptomer fra hævelse og 1 til 2 med alvorlig ARIA. Antallet af dødsfald er lille, og forskellen mellem grupperne er lille ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf), tabel 11). I hele forsøget blev tre dødsfald i donanemab-gruppen vurderet som behandlingsrelaterede mod ét i placebogruppen ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Størstedelen af de første ARIA-tilfælde kom inden for de første 24 uger. Cirka 1 af 4 med ARIA-E fik det mere end én gang. Blødninger i hjernen over 1 cm sås hos 0,4 % med donanemab og 0,3 % med placebo, og produktresuméet nævner, at nogle har været dødelige.
+
+MR-scanninger kan ikke forhindre ARIA. De kan kun vise den, så behandlingen kan pauseres eller stoppes ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf)).
+
+### Hvorfor betyder generne (ApoE ε4) noget?
+ApoE ε4 er en genvariant, som mange med Alzheimers har. Cirka 15 % af patienterne har to kopier. De får oftere ARIA og oftere alvorlig ARIA. I forsøget fik 55,9 % af dem med to kopier ARIA på donanemab, mod 37,6 % med én kopi og 24,7 % uden. Alvorlig ARIA forekom hos 2,8 % med to kopier, 1,8 % med én og 0,8 % uden ([EMA, produktresumé](https://www.ema.europa.eu/en/documents/product-information/kisunla-epar-product-information_en.pdf), afsnit 4.8). Det er grunden til, at EU-godkendelsen udelukker dem med to kopier, og at man skal testes for ApoE ε4, før behandlingen starter.
+
+### Hvad siger EMA og FDA?
+- **EMA:** Lægemiddelkomiteen CHMP sagde først nej i marts 2025, fordi fordelene ikke opvejede ARIA-risikoen. Efter en ny vurdering anbefalede den i juli 2025 godkendelse, kun til personer med én eller ingen kopi af ApoE ε4. Europa-Kommissionen godkendte den 24. september 2025. Et stort mindretal i CHMP, blandt andet Lægemiddelstyrelsen, mente, at effekten og den kliniske relevans er begrænset, og at der er risiko for alvorlige bivirkninger ([EMA, EPAR](https://www.ema.europa.eu/en/medicines/human/EPAR/kisunla); [EMA, spørgsmål og svar](https://www.ema.europa.eu/en/documents/medicine-qa/questions-answers-approval-marketing-authorisation-kisunla-donanemab-outcome-re-examination_en.pdf); [Medicinrådet](https://medicinraadet.dk/nyheder/2026/medicinradet-anbefaler-ikke-donanemab-mod-tidlig-alzheimers-sygdom)).
+- **EU's vilkår:** Behandlingen skal ske gennem et program med kontrolleret adgang. Kun udvalgte centre med MR og erfaring kan give den, og hver patient registreres. Der er krav om test af ApoE ε4 og bekræftet amyloid. Dosen trækkes langsommere op. Patienterne skal MR-scannes før de første doser og senere. Behandlingen stoppes senest efter 18 måneder, eller når amyloid er væk. Blodfortyndende behandling og visse MR-fund, for eksempel flere end fire små blødninger, udelukker behandling. Patienten får et patientkort, og virksomheden skal gennemføre et sikkerhedsstudie ([EMA, produktresumé](https://www.ema.europa.eu/en/documents/product-information/kisunla-epar-product-information_en.pdf)).
+- **FDA (USA):** Etiketten har en fremhævet advarsel om, at ARIA kan være dødelig, og at personer med to kopier af ApoE ε4 har højere risiko. FDA anbefaler test, men siger, at man kan behandles uden at være testet ([FDA, Kisunla, BLA 761248](https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=761248)). Det er mindre stramt end i EU.
+
+### Hvad ved vi om bivirkninger i Danmark?
+Næsten ingenting endnu. Kisunla står på Lægemiddelstyrelsens liste over lægemidler, men styrelsen havde i Indberettets seneste hentning (4. november 2026) ingen bivirkningsoversigt for donanemab ([Lægemiddelstyrelsen, interaktive bivirkningsoversigter](https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin/interaktive-bivirkningsoversigter/)). Vi kan derfor ikke vise danske tal. Det kan vi først, når der er indberetninger. Det er ikke det samme som, at ingen har fået bivirkninger.
+
+Husk, hvad en indberetning er: en mistanke, ikke et bevis, og tallene kan ikke bruges til at udregne risiko. Kisunla har skærpet indberetningspligt, så alle formodede bivirkninger skal indberettes. Patienter og pårørende kan selv indberette på [meldenbivirkning.dk](https://www.meldenbivirkning.dk). Europæiske indberetninger kan slås op i EudraVigilance på [adrreports.eu](https://www.adrreports.eu/). Dem har vi ikke gennemgået her.
+
+### Hvad med lecanemab?
+Lecanemab (Leqembi) er et lignende lægemiddel, som gives hver anden uge. Medicinrådet anbefalede heller ikke det, den 17. december 2025. Rådet vurderede, at sygdomsudviklingen forsinkes cirka seks måneder, og at prisen ikke stod mål med effekten. Rådet nævner samme risiko for hjerneblødninger og hævelse og samme behov for hyppige MR-scanninger. Det var første gang, Medicinrådet tog stilling til et lægemiddel mod en demenssygdom ([Medicinrådet, december 2025](https://medicinraadet.dk/nyheder/2025/medicinradet-anbefaler-ikke-nyt-laegemiddel-til-patienter-med-alzheimers-sygdom)). Donanemab gives hver fjerde uge, og antallet af patienter, som kunne komme i betragtning, er cirka det samme.
+
+### Hvad med prisen?
+Lægemidlet koster cirka 250.000 kr. for et gennemsnitligt forløb på 11 måneder, regnet efter listepris. Der er forhandlet en rabat, men den er fortrolig, så den reelle pris er lavere. Medicinrådet regner med en gevinst på 0,18 ekstra kvalitetsjusterede leveår (QALY) og 0,13 ekstra leveår pr. patient. Det giver en merudgift på cirka 1,4 mio. kr. pr. vundet QALY til listepris. Medicinrådet vurderer, at de samlede omkostninger ved behandlingen ville blive et trecifret millionbeløb hvert år ([Medicinrådets anbefaling](https://filer.medicinraadet.dk/media/5pyntr1x/medicinradets-anbefaling-vedr-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0.pdf)). Behandlingen kræver også hospitalsbesøg hver fjerde uge og mange MR-scanninger.
+
+### Hvad betyder det for patienter og pårørende?
+- **Beslutningen er ikke et nej til patienten.** Det er en beslutning om, hvad det offentlige indfører som standard. Medicinrådet siger ikke, at lægemidlet er uden virkning, men at gevinsten er lille og usikker i forhold til prisen og risikoen.
+- **Det hjælper ikke alle.** Lægemidlet er til tidlige stadier, til dem med bekræftet amyloid, og ikke til personer med to kopier af ApoE ε4. Medicinrådet har regnet med, at halvdelen af de patienter, der er egnede, ville fravælge det, fordi det kræver mange hospitalsbesøg og indebærer risiko for bivirkninger.
+- **Spørg om tallene.** Spørg for eksempel: Hvad er min ApoE ε4-status? Hvad er min risiko for ARIA? Hvor ofte skal jeg scannes, og hvad sker der, hvis ARIA opstår? Hvad ved I om effekten efter 18 måneder?
+- **Har du symptomer på ARIA** (hovedpine, forvirring, svimmelhed, synsforstyrrelser, kramper), og er du i behandling, så kontakt straks sundhedsvæsenet.
+- **Kolinesterasehæmmere** (for eksempel donepezil) bruges i dag mod let til moderat Alzheimers. De lindrer symptomer, men bremser ikke sygdommen.
+
+### Bundlinjen
+Donanemab er det første lægemiddel, der i et stort forsøg har bremset tidlig Alzheimers en smule. Men forskellen er lille, usikker og mindre end det, Medicinrådet anser for mærkbart. Bivirkningerne er reelle: omkring 1 ud af 3 får ARIA, de fleste uden symptomer, og få får alvorlige følger. Derfor anbefaler Medicinrådet det ikke som standardbehandling, til den pris der er nu. EMA har godkendt det, men med strenge vilkår. Om donanemab er rigtigt for en enkelt patient, afgør patient, pårørende og læge ud fra de tal, der står her, og ud fra, hvad der betyder mest for dem.
+
+*Siden er ikke lægelig rådgivning.*

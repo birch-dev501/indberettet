@@ -208,3 +208,10 @@ test("testen og falsk positiv finder siden om testen", () => {
     assert.ok(pages?.hits.some((hit) => hit.href === "/forstaa-testen"), query);
   }
 });
+
+test("donanemab og kisunla finder siden om donanemab", () => {
+  for (const query of ["donanemab", "kisunla", "donanemab alzheimer"]) {
+    const pages = groupSearch(index, query).find((group) => group.id === "page");
+    assert.ok(pages?.hits.some((hit) => hit.href === "/donanemab-alzheimer"), query);
+  }
+});

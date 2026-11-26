@@ -185,6 +185,9 @@ export default function HomePage() {
               <p>
                 <Link href="/influenzavaccine-raske/">Influenzavaccine til raske voksne</Link>
               </p>
+              <p>
+                <Link href="/donanemab-alzheimer/">Donanemab (Kisunla) mod tidlig Alzheimers</Link>
+              </p>
             </aside>
           </div>
         </section>
