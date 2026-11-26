@@ -72,7 +72,7 @@ Lægemidlet koster cirka 250.000 kr. for et gennemsnitligt forløb på 11 måned
 - **Kolinesterasehæmmere** (for eksempel donepezil) bruges i dag mod let til moderat Alzheimers. De lindrer symptomer, men bremser ikke sygdommen.
 
 ### Bundlinjen
-Donanemab er det første lægemiddel, der i et stort forsøg har bremset tidlig Alzheimers en smule. Men forskellen er lille, usikker og mindre end det, Medicinrådet anser for mærkbart. Bivirkningerne er reelle: omkring 1 ud af 3 får ARIA, de fleste uden symptomer, og få får alvorlige følger. Derfor anbefaler Medicinrådet det ikke som standardbehandling, til den pris der er nu. EMA har godkendt det, men med strenge vilkår. Om donanemab er rigtigt for en enkelt patient, afgør patient, pårørende og læge ud fra de tal, der står her, og ud fra, hvad der betyder mest for dem.
+Donanemab er et af to lægemidler, der i store forsøg har bremset tidlig Alzheimers en smule. Men forskellen er lille, usikker og mindre end det, Medicinrådet anser for mærkbart. Bivirkningerne er reelle: omkring 1 ud af 3 får ARIA, de fleste uden symptomer, og få får alvorlige følger. Derfor anbefaler Medicinrådet det ikke som standardbehandling, til den pris der er nu. EMA har godkendt det, men med strenge vilkår. Om donanemab er rigtigt for en enkelt patient, afgør patient, pårørende og læge ud fra de tal, der står her, og ud fra, hvad der betyder mest for dem.
 
 *Siden er ikke lægelig rådgivning.*
 

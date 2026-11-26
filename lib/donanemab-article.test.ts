@@ -64,6 +64,8 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("250.000"), true);
   assert.equal(markdown.includes("0,18"), true);
   assert.equal(markdown.includes("650"), true);
+  assert.equal(markdown.includes("det første lægemiddel"), false);
+  assert.equal(markdown.includes("et af to lægemidler"), true);
   assert.equal(markdown.includes("710"), true);
   assert.equal(markdown.includes("728"), true);
   const blocks = parseArticle(markdown);
