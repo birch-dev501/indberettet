@@ -6,8 +6,6 @@ Teksten nedenfor står på Indberettet. Den samler, hvad lodtrækningsforsøg og
 
 *Siden er ikke lægelig rådgivning. Er du i tvivl om, hvad der gælder for dig, så tal med din læge.*
 
-*Opdateret 25. november 2026: Afsnittet om andre luftvejsvirus er udvidet med et lodtrækningsforsøg fra 2012 og med senere studier, der har prøvet at gentage fundet.*
-
 ### Hvad vaccinen gør for raske voksne
 Den største samlede gennemgang af lodtrækningsforsøg er [Cochrane 2018](https://www.cochrane.org/evidence/CD001269_vaccines-prevent-influenza-healthy-adults). Den samler forsøg med raske voksne på 16 til 65 år fra 1969 til 2009. Den viser:
 - **Bekræftet influenza:** 23 ud af 1.000 bliver syge uden vaccine og 9 ud af 1.000 med. Der skal altså vaccineres omkring 71 raske for at undgå ét tilfælde (moderat sikker evidens).
@@ -20,21 +18,6 @@ Virolog Allan Randrup Thomsen fra Københavns Universitet: "For almindelige yngr
 Mange tror, at de ikke bliver syge resten af vinteren, når de har fået vaccinen. Sådan virker den ikke. Hoste, ondt i halsen, feber og snot kan skyldes mange vira: rhinovirus (almindelig forkølelse), andre coronavirus, RS-virus, adenovirus og parainfluenza. Influenza er kun én af dem, og vaccinen virker kun mod de influenzavarianter, den er lavet til i år.
 
 I Cochrane-forsøgene fik omkring 1 ud af 5 en influenzalignende sygdom i løbet af sæsonen, men kun omkring 2 ud af 100 havde bekræftet influenza. Vaccinen sænkede andelen med influenzalignende sygdom fra 21,5 % til 18,1 %. Randrup sagde det samme til DR i 2017: "[V]accinen beskytter kun mod bestemte vira, så du skal vide, at du sagtens kan blive forkølet eller få andre luftvejsinfektioner alligevel." ([DR, 2017](https://www.dr.dk/nyheder/viden/naturvidenskab/4-paastande-om-influenzavaccine-holder-de-stik))
-
-
-### Får man flere andre luftvejsvirus efter vaccinen?
-Et lodtrækningsforsøg fra Hongkong i sæsonen 2008–09 gav 115 børn på 6 til 15 år enten inaktiveret influenzavaccine eller placebo. Blandt de 69 vaccinerede blev der påvist 20 tilfælde af andre luftvejsvirus, især rhinovirus og coxsackie/echovirus. Blandt de 46 i placebogruppen blev der påvist 3. Den relative risiko for bekræftet ikke-influenza-virus ved luftvejssygdom var 4,40 (usikkerhedsinterval 1,31 til 14,8) ([Cowling m.fl., Clinical Infectious Diseases 2012](https://doi.org/10.1093/cid/cis307)).
-
-Det skal du vide om studiet:
-- Det er et lodtrækningsforsøg, men det er lille, og usikkerhedsintervallet er bredt.
-- Der var ingen sikker forskel i, hvor ofte børnene overhovedet blev syge i luftvejene, hverken om vinteren eller om sommeren.
-- Prøver blev kun taget ved 49 % af sygdomsepisoderne.
-- Forfatterne skriver selv, at fundet kan være et artefakt, og at det er begrænset af den lille stikprøve.
-- Det er børn, én sæson og ét sted. Det siger ikke direkte noget om raske voksne.
-
-Tal, der cirkulerer på X, gengiver forsøget som 29 % mod 3,4 % og «mere end otte gange så ofte» ([X, november 2026](https://x.com/MidwesternDoc/status/2125401586323296492)). 20 ud af 69 er cirka 29 %, men 3 ud af 46 er 6,5 %, ikke 3,4 %. Forholdet er omkring fire gange, hvilket svarer til artiklens egne tal. 3,4 passer med den relative risiko 3,46, som forfatterne fandt, når de også talte to infektioner uden sygdom med. Det er ikke placebogruppens andel.
-
-Senere og større undersøgelser, der er observationsstudier blandt patienter, som allerede søgte læge med luftvejssygdom, har ikke fundet det samme samlede mønster. En undersøgelse over seks sæsoner blandt børn under 5 år og voksne på 50 år og derover fandt ingen sammenhæng mellem influenzavaccine og påvisning af andre luftvejsvirus ([Sundaram m.fl., Clinical Infectious Diseases 2013](https://doi.org/10.1093/cid/cit379)). Det samme gjaldt tre års amerikansk overvågning af patienter i ambulant regi ([Feng m.fl., Epidemiology 2017](https://doi.org/10.1097/EDE.0000000000000670)) og syv sæsoner i et canadisk netværk blandt patienter med influenzalignende sygdom ([Skowronski m.fl., Clinical Infectious Diseases 2020](https://doi.org/10.1093/cid/ciaa626)). Fundet fra 2012 er et signal i ét lille forsøg, ikke et belæg for, at vaccinen generelt giver flere andre infektioner.
 
 ### Færre sygedage på arbejdspladsen?
 Det er ikke dokumenteret. Et forsøg med ansatte på en amerikansk fabrik fandt 32 % færre tabte arbejdsdage i en sæson, hvor vaccinen passede godt til virus. I en sæson, hvor den passede dårligt, gav vaccinen ingen færre tabte arbejdsdage ([Bridges, JAMA 2000](https://jamanetwork.com/journals/jama/fullarticle/193139)). Lægger man alle forsøgene sammen, er effekten tæt på nul. Randrup til Videnskab.dk i 2019: "Vaccinen kan muligvis tage toppen af sygdommen, men når der er lavet undersøgelser på almindelige og raske voksne, så har det ikke kunnet dokumenteres, at de har haft færre sygedage, fordi de er blevet vaccineret." ([Videnskab.dk, 2019](https://videnskab.dk/krop-sundhed/influenzavaccination-boer-du-faa-den/))
@@ -76,5 +59,6 @@ Alex Berenson kalder vaccinen "useless" for alle aldre ([X, august 2026](https:/
 Er du rask, ikke i en risikogruppe, og vælger du influenzavaccinen fra, er det et rimeligt valg. Evidensen viser en lille gevinst for dig, og du er ikke i Sundhedsstyrelsens målgruppe. Vælger du den til, er det også et rimeligt valg. At være kritisk over for netop denne vaccine handler ikke om at være imod vacciner. Det handler om at kende tallene.
 
 *Siden er ikke lægelig rådgivning.*
+
 
 Læs siden: https://birch-dev501.github.io/indberettet/influenzavaccine-raske/
