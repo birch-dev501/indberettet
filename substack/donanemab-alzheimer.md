@@ -17,6 +17,7 @@ Beslutningen betyder, at donanemab ikke indføres som standardbehandling i det o
 Beslutningen bygger på forsøget TRAILBLAZER-ALZ 2: 1.736 patienter i otte lande fik donanemab eller placebo i 18 måneder (76 uger). Det er virksomhedens eget forsøg ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Medicinrådet har regnet på den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier), og lægger mest vægt på skalaen CDR-SB (0 til 18, højere er værre):
 - **CDR-SB:** Efter 76 uger var forværringen 1,73 point med donanemab og 2,42 med placebo. Forskellen er 0,69 point (usikkerhedsinterval 0,43 til 0,95). Medicinrådet omregner det til en forsinkelse på 5,8 måneder (4,2 til 7,4).
 - **iADRS** (en samlet skala for tænkning og dagligdag): Forskellen var 2,65 point (1,04 til 4,26), som Medicinrådet omregner til en forsinkelse på 2,9 måneder (1,3 til 4,5).
+Medicinrådets resumé nævner 1,5 point på iADRS, mens rapportens resultatafsnit og tabel har 2,65. Siden bruger resultatafsnittet, som også ligger til grund for de 2,9 måneder.
 - **Klinisk betydende forværring:** 28,7 % med donanemab mod 40,6 % med placebo.
 
 Til sammenligning regner Medicinrådet 1 point på CDR-SB som en mærkbar forværring ved let kognitiv svækkelse og 2 point ved let demens. På iADRS er grænsen 5 point ved let kognitiv svækkelse og 9 ved let demens. Gennemsnitsforskellen i forsøget ligger under begge. Tærsklerne er selv skøn.

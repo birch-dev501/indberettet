@@ -52,6 +52,9 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("0,69"), true);
   assert.equal(markdown.includes("5,8 måneder"), true);
   assert.equal(markdown.includes("2,65"), true);
+  assert.equal(markdown.includes("1,5 point"), true);
+  const iadrsNote = markdown.slice(markdown.indexOf("1,5 point") - 80, markdown.indexOf("1,5 point") + 120);
+  assert.equal(iadrsNote.includes("2,65"), true);
   assert.equal(markdown.includes("2,9 måneder"), true);
   assert.equal(markdown.includes("33,0 %"), true);
   assert.equal(markdown.includes("13,5 %"), true);
