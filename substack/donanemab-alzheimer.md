@@ -2,19 +2,19 @@ Teksten nedenfor står på Indberettet. Den gennemgår Medicinrådets anbefaling
 
 ## Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene, og hvorfor anbefaler Medicinrådet det ikke?
 
-**Kort:** Donanemab (Kisunla) er et lægemiddel mod tidlig Alzheimers sygdom, som er godkendt i EU. Det bremser sygdommen lidt, men helbreder den ikke og giver ikke tabte evner tilbage. I forsøget var forskellen efter 18 måneder 0,69 point på en skala fra 0 til 18, og Medicinrådet vurderer, at det er mindre end det, man anser for mærkbart for den enkelte. Omkring 1 ud af 3 behandlede fik hævelse eller små blødninger i hjernen (ARIA), de fleste uden symptomer, men nogle få fik alvorlige følger, og tre patienter døde af ARIA i forsøget. Den 25. november 2026 anbefalede Medicinrådet ikke donanemab som standardbehandling i det offentlige sundhedsvæsen. Det handler både om den lille effekt, bivirkningerne og prisen.
+**Kort:** Donanemab (Kisunla) er et lægemiddel mod tidlig Alzheimers sygdom, som er godkendt i EU. Det bremser sygdommen lidt, men helbreder den ikke og giver ikke tabte evner tilbage. I forsøget var forskellen efter 18 måneder 0,69 point på en skala fra 0 til 18, og Medicinrådet vurderer, at det er mindre end det, man anser for mærkbart for den enkelte. Omkring 1 ud af 3 behandlede blandt dem, som EU-godkendelsen gælder, fik hævelse eller små blødninger i hjernen (ARIA), de fleste uden symptomer, men nogle få fik alvorlige følger, og mindst tre patienter døde af ARIA i forsøget. Den 25. november 2026 anbefalede Medicinrådet ikke donanemab som standardbehandling i det offentlige sundhedsvæsen. Det handler både om den lille effekt, bivirkningerne og prisen.
 
 *Siden er ikke lægelig rådgivning. Er du patient eller pårørende og er i tvivl, så tal med din læge eller en hukommelsesklinik.*
 
 ### Hvad har Medicinrådet besluttet?
-Medicinrådet anbefaler ikke donanemab til voksne med let kognitiv svækkelse eller let demens som følge af Alzheimers sygdom, som har bekræftet amyloid i hjernen og ikke har to kopier af genvarianten ApoE ε4 ([Medicinrådet, nyhed 25. november 2026](https://medicinraadet.dk/nyheder/2026/medicinradet-anbefaler-ikke-donanemab-mod-tidlig-alzheimers-sygdom); [anbefalingen](https://medicinraadet.dk/igangvaerende-vurderinger/laegemidler-og-indikationsudvidelser/donanemab-kisunla-alzheimers-sygdom)). Medicinrådet regner med, at cirka 650 patienter om året i Danmark ville starte behandling. Til sammenligning blev 4.879 diagnosticeret med Alzheimers i 2025, i alle stadier.
+Medicinrådet anbefaler ikke donanemab til voksne med let kognitiv svækkelse eller let demens som følge af Alzheimers sygdom, som har bekræftet amyloid i hjernen og ikke har to kopier af genvarianten ApoE ε4 ([Medicinrådet, nyhed 25. november 2026](https://medicinraadet.dk/nyheder/2026/medicinradet-anbefaler-ikke-donanemab-mod-tidlig-alzheimers-sygdom); [anbefalingen](https://medicinraadet.dk/igangvaerende-vurderinger/laegemidler-og-indikationsudvidelser/donanemab-kisunla-alzheimers-sygdom)). Medicinrådet vurderer, at cirka 650 patienter om året vil være kandidater til at starte behandling. Til sammenligning blev 4.879 diagnosticeret med Alzheimers ved en demensudredningsenhed i 2025, heraf 2.488 med let kognitiv svækkelse eller let demens.
 
 Medicinrådets begrundelse er, at det er usikkert, hvor meget sygdommen forsinkes, at den dokumenterede effekt på tænkning og dagligdag er mindre, end hvad der i studier anses for klinisk relevant, at behandlingen kan give alvorlige bivirkninger, og at omkostningerne ikke står mål med det. Virksomheden kan komme igen med en lavere pris eller nye data.
 
 Beslutningen betyder, at donanemab ikke indføres som standardbehandling i det offentlige danske sundhedsvæsen på nuværende tidspunkt. Den ændrer ikke på EU-godkendelsen. Medicinrådet vurderer, om en behandling er værd at bruge fælles penge på. EMA vurderer, om fordele og risici samlet set kan forsvares. Det er to forskellige spørgsmål.
 
 ### Hvad viser forsøget om effekten?
-Beslutningen bygger på forsøget TRAILBLAZER-ALZ 2: 1.736 patienter i otte lande fik donanemab eller placebo i 18 måneder (76 uger). Det er virksomhedens eget forsøg ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Medicinrådet har regnet på den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier), og lægger mest vægt på skalaen CDR-SB (0 til 18, højere er værre):
+Beslutningen bygger på forsøget TRAILBLAZER-ALZ 2: 1.736 patienter i otte lande fik donanemab eller placebo og blev fulgt i 18 måneder (76 uger); donanemab blev givet i højst 72 uger. Det er virksomhedens eget forsøg ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Medicinrådet har regnet på den gruppe, som EU-godkendelsen gælder (ikke to ApoE ε4-kopier), og lægger mest vægt på skalaen CDR-SB (0 til 18, højere er værre):
 - **CDR-SB:** Efter 76 uger var forværringen 1,73 point med donanemab og 2,42 med placebo. Forskellen er 0,69 point (usikkerhedsinterval 0,43 til 0,95). Medicinrådet omregner det til en forsinkelse på 5,8 måneder (4,2 til 7,4).
 - **iADRS** (en samlet skala for tænkning og dagligdag): Forskellen var 2,65 point (1,04 til 4,26), som Medicinrådet omregner til en forsinkelse på 2,9 måneder (1,3 til 4,5).
 - **Klinisk betydende forværring:** 28,7 % med donanemab mod 40,6 % med placebo.
@@ -29,7 +29,7 @@ Det er gennemsnit. Et gennemsnit kan skjule, at nogle har mere gavn og andre min
 
 Medicinrådet peger på disse usikkerheder:
 - **Forskellen mellem de to skalaer er stor** (5,8 måneder mod 2,9). Den manglende konsistens gør resultaterne usikre.
-- **Ingen data efter 18 måneder.** Hvad der sker, når behandlingen stopper, er ikke vist i et forsøg med placebo. Medicinrådets beregning antager, at donanemab ikke fortsætter med at bremse sygdommen efter stop.
+- **Ingen sammenligning med placebo efter 18 måneder.** Medicinrådet har kun en sammenligning med en ekstern kohorte, som de vurderer er usikker. Medicinrådets beregning antager, at donanemab ikke fortsætter med at bremse sygdommen efter stop.
 - **Ingen data om livskvalitet.** Virksomheden har ikke leveret dem, selv om Medicinrådet bad om dem.
 - **Amyloid er ikke det samme som gavn.** Lægemidlet fjerner amyloid fra hjernen, og det kan ses på scanninger. Medicinrådet vurderer, at det hænger dårligt sammen med, hvordan patienten har det.
 - Lægemidlet genopretter ikke nerveceller eller evner, som allerede er tabt.
@@ -40,12 +40,12 @@ Den vigtigste bivirkning hedder ARIA (amyloid-relaterede billeddannelsesabnormit
 - **ARIA-E (hævelse):** 20,6 % og 1,8 %. Med symptomer: 5,6 % og 0.
 - **ARIA-H (små blødninger):** 27,6 % og 12,2 %.
 - **Alvorlig ARIA:** 1,4 % og 0.
-- **Dødelig ARIA:** 0,4 % (3 patienter) og 0.
+- **Dødelig ARIA:** 0,4 % (3 patienter) med donanemab. Produktresuméet nævner desuden en patient med forudgående jernaflejring, som døde af ARIA-H med blødning.
 - **Stoppede på grund af bivirkninger:** 12,8 % og 3,8 %.
 - **Mindst én alvorlig uønsket hændelse:** 17,9 % og 15,2 %.
 - **Alle dødsfald i forsøget:** 1,8 % og 1,1 %.
 
-I 100 behandlede svarer det til omkring 33 med ARIA mod 13 til 14 på placebo, omkring 6 med symptomer fra hævelse og 1 til 2 med alvorlig ARIA. Antallet af dødsfald er lille, og forskellen mellem grupperne er lille ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf), tabel 11). I hele forsøget blev tre dødsfald i donanemab-gruppen vurderet som behandlingsrelaterede mod ét i placebogruppen ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Størstedelen af de første ARIA-tilfælde kom inden for de første 24 uger. Cirka 1 af 4 med ARIA-E fik det mere end én gang. Blødninger i hjernen over 1 cm sås hos 0,4 % med donanemab og 0,3 % med placebo, og produktresuméet nævner, at nogle har været dødelige.
+I 100 behandlede svarer det til omkring 33 med ARIA mod 13 til 14 på placebo, omkring 6 med symptomer fra hævelse og 1 til 2 med alvorlig ARIA. Forskellen i dødsfald er lille (13 mod 8 patienter) ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf), tabel 11). I hele forsøget blev tre dødsfald i donanemab-gruppen vurderet som behandlingsrelaterede mod ét i placebogruppen ([Sims m.fl., JAMA 2023](https://doi.org/10.1001/jama.2023.13239)). Størstedelen af de første ARIA-tilfælde kom inden for de første 24 uger. Cirka 1 af 4 med ARIA-E fik det mere end én gang. Blødninger i hjernen over 1 cm sås hos 0,4 % med donanemab og 0,3 % med placebo, og produktresuméet nævner, at nogle har været dødelige.
 
 MR-scanninger kan ikke forhindre ARIA. De kan kun vise den, så behandlingen kan pauseres eller stoppes ([Medicinrådets vurdering](https://filer.medicinraadet.dk/media/dv4ku34r/medicinradets-vurdering-af-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0-x.pdf)).
 

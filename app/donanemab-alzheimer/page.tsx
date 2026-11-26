@@ -8,7 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { parseArticle, parseInline, type ArticleBlock, type InlinePart } from "@/lib/article-markdown";
 
 export const metadata: Metadata = {
-  title: "Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene, og hvorfor anbefaler Medicinrådet det ikke?",
+  title: "Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene?",
   description:
     "Medicinrådet anbefaler ikke donanemab som standardbehandling. Siden gennemgår effekten, ARIA og prisen. Den er ikke lægelig rådgivning.",
 };

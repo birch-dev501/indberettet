@@ -75,6 +75,13 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("34,4 %"), true);
   assert.equal(markdown.includes("skærpet indberetningspligt"), false);
   assert.equal(markdown.includes("supplerende overvågning"), true);
+  assert.equal(markdown.includes("2.488"), true);
+  assert.equal(markdown.includes("72 uger"), true);
+  assert.equal(markdown.includes("blandt dem, som EU-godkendelsen gælder"), true);
+  assert.equal(markdown.includes("Ingen sammenligning med placebo efter 18 måneder"), true);
+  assert.equal(markdown.includes("13 mod 8 patienter"), true);
+  assert.equal(markdown.includes("0,4 % (3 patienter) og 0"), false);
+  assert.equal(markdown.includes("forudgående jernaflejring"), true);
   assert.equal(markdown.includes("710"), true);
   assert.equal(markdown.includes("728"), true);
   const blocks = parseArticle(markdown);
