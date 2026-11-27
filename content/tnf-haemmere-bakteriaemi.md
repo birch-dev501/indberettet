@@ -21,7 +21,7 @@ Hos dem, der allerede fik en TNF-hæmmer, var raten højere, hvis de samtidig fi
 Når forskerne krævede mindst to registrerede IBD-diagnoser, var raten stadig forhøjet: 1,59 (1,36 til 1,86).
 
 ### Hvilke lægemidler handler det om?
-TNF-hæmmere dæmper signalstoffet TNF-alfa i immunforsvaret. Studiet ser på gruppen samlet og viser ikke, om tallene er de samme for hvert præparat. Til inflammatorisk tarmsygdom i Danmark bruges typisk [infliximab](/stof/infliximab), [adalimumab](/stof/adalimumab) og [golimumab](/stof/golimumab). [Certolizumab](/stof/certolizumab) er også en TNF-hæmmer. [Etanercept](/stof/etanercept) er det også, men bruges typisk ikke mod IBD.
+TNF-hæmmere dæmper signalstoffet TNF-alfa i immunforsvaret. Ved tarmsygdom er det især [infliximab](/stof/infliximab) og [adalimumab](/stof/adalimumab), og [golimumab](/stof/golimumab) ved colitis ulcerosa. [Certolizumab](/stof/certolizumab) og [etanercept](/stof/etanercept) er også TNF-hæmmere, men er ikke godkendt til tarmsygdom i EU. Studiet ser på TNF-hæmmere samlet og viser ikke, om tallene er de samme for hvert præparat.
 
 [Vedolizumab](/stof/vedolizumab) og [ustekinumab](/stof/ustekinumab) er andre biologiske midler. Her fandt studiet ikke en tilsvarende stigning i den samlede rate (0,85; 0,61 til 1,20 og 0,68; 0,38 til 1,23). En direkte sammenligning med TNF-hæmmere pegede numerisk lavere, men forskellen var ikke statistisk sikker. Især ustekinumab blev brugt af få, så tallet er usikkert.
 

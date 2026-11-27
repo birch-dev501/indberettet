@@ -61,6 +61,10 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   for (const slug of ["infliximab", "adalimumab", "golimumab", "certolizumab", "etanercept", "vedolizumab", "ustekinumab"]) {
     assert.equal(markdown.includes(`](/stof/${slug})`), true, slug);
   }
+  assert.equal(markdown.includes("](/stof/golimumab) ved colitis ulcerosa"), true);
+  assert.equal(markdown.includes("ikke godkendt til tarmsygdom i EU"), true);
+  assert.equal(markdown.includes("bruges typisk infliximab, adalimumab og golimumab"), false);
+  assert.equal(markdown.includes("bruges typisk ikke mod IBD"), false);
   assert.equal(markdown.includes("Cæcilie Leding og kolleger"), true);
   assert.equal(markdown.includes("En af forskerne bag studiet siger til Dagens Medicin"), true);
   assert.equal(markdown.includes("siger førsteforfatter Cæcilie Leding"), false);
