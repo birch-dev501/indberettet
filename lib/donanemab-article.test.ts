@@ -54,7 +54,7 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   for (const link of links) assert.equal(found.includes(link), true, link);
   assert.equal(new Set(found).size, links.length);
   assert.equal(markdown.split("ikke lægelig rådgivning").length - 1, 2);
-  assert.equal(page.includes('className={disclaimer ? "note"'), true);
+  assert.equal(readFileSync("components/article-blocks.tsx", "utf8").includes('className={disclaimer ? "note"'), true);
   assert.equal(markdown.includes("0,69"), true);
   assert.equal(markdown.includes("5,8 måneder"), true);
   assert.equal(markdown.includes("2,65"), true);
@@ -138,3 +138,12 @@ test("substack-udgaven har samme tekst og linket til siden", () => {
   assert.equal(substack.includes(markdown.trim()), true);
   assert.equal(substack.includes("https://birch-dev501.github.io/indberettet/donanemab-alzheimer/"), true);
 });
+
+test("artiklen bruger den fælles renderer med basePath på interne links", () => {
+  const renderer = readFileSync("components/article-blocks.tsx", "utf8");
+  assert.equal(page.includes('from "@/components/article-blocks"'), true);
+  assert.equal(page.includes("function inlineNodes"), false);
+  assert.equal(renderer.includes("sitePathHref(part.href)"), true);
+  assert.equal(renderer.includes("isSitePath(part.href)"), true);
+});
+

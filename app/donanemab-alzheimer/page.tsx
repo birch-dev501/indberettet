@@ -1,53 +1,17 @@
 import type { Metadata } from "next";
 import { readFileSync } from "fs";
 import path from "path";
-import type { ReactNode } from "react";
 import Link from "next/link";
+import { ArticleBlocks } from "@/components/article-blocks";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { parseArticle, parseInline, type ArticleBlock, type InlinePart } from "@/lib/article-markdown";
+import { parseArticle, type ArticleBlock } from "@/lib/article-markdown";
 
 export const metadata: Metadata = {
   title: "Donanemab (Kisunla) mod tidlig Alzheimers: Hvad viser tallene?",
   description:
     "Medicinrådet anbefaler ikke donanemab som standardbehandling. Siden gennemgår effekten, ARIA og prisen. Den er ikke lægelig rådgivning.",
 };
-
-function inlineNodes(parts: InlinePart[]): ReactNode[] {
-  return parts.map((part, index) => {
-    if (part.type === "strong") return <strong key={index}>{part.text}</strong>;
-    if (part.type === "em") return <em key={index}>{part.text}</em>;
-    if (part.type === "link") {
-      return (
-        <a key={index} href={part.href} rel="noopener noreferrer">
-          {part.text}
-        </a>
-      );
-    }
-    return <span key={index}>{part.text}</span>;
-  });
-}
-
-function Paragraph({ text }: { text: string }) {
-  const disclaimer = text.includes("ikke lægelig rådgivning");
-  return <p className={disclaimer ? "note" : undefined}>{inlineNodes(parseInline(text))}</p>;
-}
-
-function Blocks({ blocks }: { blocks: ArticleBlock[] }) {
-  return blocks.map((block, index) => {
-    if (block.type === "p") return <Paragraph key={index} text={block.text} />;
-    if (block.type === "ul") {
-      return (
-        <ul key={index}>
-          {block.items.map((item) => (
-            <li key={item}>{inlineNodes(parseInline(item))}</li>
-          ))}
-        </ul>
-      );
-    }
-    return null;
-  });
-}
 
 export default function DonanemabAlzheimerPage() {
   const markdown = readFileSync(path.join(process.cwd(), "content", "donanemab-alzheimer.md"), "utf8");
@@ -70,11 +34,11 @@ export default function DonanemabAlzheimerPage() {
       <main id="indhold" className="wrap page-head">
         <p className="kicker">Studier. Ikke indberetninger.</p>
         <h1 className="article-title">{title?.type === "h1" ? title.text : ""}</h1>
-        <Blocks blocks={lead} />
+        <ArticleBlocks blocks={lead} />
         {sections.map((section) => (
           <article className="card section" key={section.heading}>
             <h2>{section.heading}</h2>
-            <Blocks blocks={section.blocks} />
+            <ArticleBlocks blocks={section.blocks} />
           </article>
         ))}
         <p className="small muted">

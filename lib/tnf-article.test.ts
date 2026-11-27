@@ -34,7 +34,7 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   for (const link of links) assert.equal(found.includes(link), true, link);
   assert.equal(new Set(found).size, links.length);
   assert.equal(markdown.split("ikke lægelig rådgivning").length - 1, 2);
-  assert.equal(page.includes('className={disclaimer ? "note"'), true);
+  assert.equal(readFileSync("components/article-blocks.tsx", "utf8").includes('className={disclaimer ? "note"'), true);
   assert.equal(markdown.includes("4.503"), true);
   assert.equal(markdown.includes("22.473"), true);
   assert.equal(markdown.includes("1,73"), true);
@@ -98,8 +98,10 @@ test("siden er linket fra forsiden, sidfoden, sitemap og søgning", () => {
 });
 
 test("interne markdown-links renderes med basePath i href", () => {
-  assert.equal(page.includes("sitePathHref(part.href)"), true);
-  assert.equal(page.includes("isSitePath(part.href)"), true);
+  const renderer = readFileSync("components/article-blocks.tsx", "utf8");
+  assert.equal(page.includes('from "@/components/article-blocks"'), true);
+  assert.equal(renderer.includes("sitePathHref(part.href)"), true);
+  assert.equal(renderer.includes("isSitePath(part.href)"), true);
   const hrefs = [...markdown.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map((match) => match[1]);
   const internal = hrefs.filter((href) => isSitePath(href));
   assert.ok(internal.includes("/stof/infliximab"));
@@ -114,12 +116,13 @@ test("interne markdown-links renderes med basePath i href", () => {
   }
 });
 
-test("det byggede html har /indberettet på interne links", (t) => {
+test("det byggede html har /indberettet på interne links", () => {
   const htmlPath = "out/tnf-haemmere-bakteriaemi/index.html";
-  if (!existsSync(htmlPath)) {
-    t.skip("out/tnf-haemmere-bakteriaemi/index.html findes ikke. Kør npm run build først.");
-    return;
-  }
+  assert.equal(
+    existsSync(htmlPath),
+    true,
+    "out/tnf-haemmere-bakteriaemi/index.html findes ikke. Kør npm run build først.",
+  );
   const html = readFileSync(htmlPath, "utf8");
   assert.equal(html.includes('href="/stof/'), false);
   assert.equal(html.includes('href="/forstaa-forskning'), false);
