@@ -27,6 +27,9 @@ const links = [
   "https://filer.medicinraadet.dk/media/5pyntr1x/medicinradets-anbefaling-vedr-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0.pdf",
   "https://www.kristeligt-dagblad.dk/danmark/nej-til-alzheimermedicin-er-fornuftigt-hvis-man-vil-have-en-ny-bil-saa-kommer-man-nok-ikke",
   "https://www.alzheimer.dk/nyheder/2026/skuffelse-i-alzheimerforeningen-over-nyt-nej-til-ny-medicin-der-udsaetter-forvaerring-af-sygdommen/",
+  "https://politiken.dk/danmark/sundhed/art11074486/%C2%BBBanebrydende%C2%AB-medicin-mod-Alzheimers-afvises-i-Danmark",
+  "https://www.dagensmedicin.dk/nyheder/neurologi/DMafslag-pa-alzheimermedicin-kom-ikke-bag-pa-professor/",
+  "https://www.dr.dk/nyheder/indland/niels-fik-bremset-sin-alzheimers-sygdom-hans-datter-haaber-behandlingen-indfoeres-i-danmark",
 ];
 
 const headings = [
@@ -95,6 +98,16 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("Til dem, der er kede af afgørelsen"), true);
   assert.equal(markdown.includes('valget: "Hvis man vil have en ny bil'), false);
   assert.equal(markdown.includes("Det er ikke et tal for donanemab"), true);
+  assert.equal(markdown.includes("Jakob Blicher"), true);
+  assert.equal(markdown.includes("utrolig meget bedre end ingenting"), true);
+  assert.equal(markdown.includes("et af to lægemidler"), true);
+  assert.equal(markdown.includes("Torben Moos"), true);
+  assert.equal(markdown.includes("500.000"), true);
+  assert.equal(markdown.includes("ti behandlinger"), true);
+  assert.equal(markdown.includes("familiens beretning"), true);
+  assert.equal(markdown.includes("Vestergaard"), false);
+  assert.equal(markdown.includes("Kastbjerg"), false);
+  assert.equal(markdown.includes("Herning"), false);
   assert.equal(markdown.includes("svigerfar"), false);
   assert.equal(markdown.includes("Hvidovre"), false);
   assert.equal(markdown.includes("skærpet indberetningspligt"), false);
