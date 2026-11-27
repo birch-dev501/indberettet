@@ -40,6 +40,8 @@ export function SiteFooter() {
             <br />
             <Link href="/donanemab-alzheimer">Donanemab (Kisunla) mod tidlig Alzheimers</Link>
             <br />
+            <Link href="/tnf-haemmere-bakteriaemi">TNF-hæmmere og bakterier i blodet ved tarmsygdom</Link>
+            <br />
             <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
             <br />
             <Link href="/forstaa-testen">Sådan læses en test</Link>

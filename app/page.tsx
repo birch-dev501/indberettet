@@ -188,6 +188,9 @@ export default function HomePage() {
               <p>
                 <Link href="/donanemab-alzheimer/">Donanemab (Kisunla) mod tidlig Alzheimers</Link>
               </p>
+              <p>
+                <Link href="/tnf-haemmere-bakteriaemi/">TNF-hæmmere og bakterier i blodet ved tarmsygdom</Link>
+              </p>
             </aside>
           </div>
         </section>

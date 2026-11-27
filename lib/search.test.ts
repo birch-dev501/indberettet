@@ -215,3 +215,10 @@ test("donanemab og kisunla finder siden om donanemab", () => {
     assert.ok(pages?.hits.some((hit) => hit.href === "/donanemab-alzheimer"), query);
   }
 });
+
+test("tnf og bakteriæmi finder siden om tnf-hæmmere og bakterier i blodet", () => {
+  for (const query of ["tnf", "bakteriaemi", "blodforgiftning", "infliximab"]) {
+    const pages = groupSearch(index, query).find((group) => group.id === "page");
+    assert.ok(pages?.hits.some((hit) => hit.href === "/tnf-haemmere-bakteriaemi"), query);
+  }
+});

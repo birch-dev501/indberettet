@@ -416,6 +416,7 @@ const SITE_PAGES: { href: string; title: string; terms: string[] }[] = [
   { href: "/covid-vacciner-bivirkninger", title: "Hvad siger studierne om bivirkninger ved covid-vacciner", terms: ["myokarditis", "studie", "studier", "bivirkning studie"] },
   { href: "/influenzavaccine-raske", title: "Influenzavaccine til raske voksne", terms: ["influenzavaccine til raske"] },
   { href: "/donanemab-alzheimer", title: "Donanemab (Kisunla) mod tidlig Alzheimers", terms: ["donanemab", "kisunla", "donanemab alzheimer"] },
+  { href: "/tnf-haemmere-bakteriaemi", title: "TNF-hæmmere og bakterier i blodet ved tarmsygdom", terms: ["tnf", "tnf-haemmer", "bakteriaemi", "blodforgiftning", "infliximab", "adalimumab", "ibd", "crohn", "colitis", "vedolizumab", "ustekinumab"] },
   { href: "/forstaa-usikkerhed", title: "Sådan læses usikkerhed", terms: ["konfidensinterval", "p-vaerdi", "signifikans", "usikkerhed"] },
   { href: "/forstaa-testen", title: "Sådan læses en test", terms: ["sensitivitet", "specificitet", "praediktiv", "bayes", "testen", "falsk positiv", "falske positive"] },
   { href: "/om-data", title: "Sådan læses tallene", terms: ["om data", "metode", "indberetning"] },

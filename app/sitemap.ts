@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/covid-vacciner-bivirkninger/",
     "/influenzavaccine-raske/",
     "/donanemab-alzheimer/",
+    "/tnf-haemmere-bakteriaemi/",
     "/forstaa-usikkerhed/",
     "/forstaa-testen/",
     "/katalog/",
