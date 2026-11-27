@@ -48,8 +48,11 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("mindst 8 tilfælde"), true);
   assert.equal(markdown.includes("4 i Spanien, 3 i Belgien og 1 i USA"), true);
   assert.equal(markdown.includes("3 katte og 5 hunde"), true);
-  assert.equal(markdown.includes("PRAC skal i 2027"), true);
-  assert.equal(markdown.includes("PRAC har endnu ikke vurderet"), true);
+  assert.equal(markdown.includes("Ifølge Lægemiddelstyrelsen skal den europæiske bivirkningskomité PRAC i det nye år vurdere, om bivirkningerne hos katte og hunde skal stå i produktinformationen."), true);
+  assert.equal(markdown.split("PRAC").length - 1, 1);
+  assert.equal(markdown.includes("PRAC skal i 2027"), false);
+  assert.equal(markdown.includes("PRAC har endnu ikke vurderet"), false);
+  assert.equal(markdown.includes("2027"), false);
   assert.equal(markdown.includes("begrænset viden"), true);
   assert.equal(markdown.includes("ikke danske tal"), true);
   assert.equal(markdown.includes("](/stof/minoxidil/)"), true);

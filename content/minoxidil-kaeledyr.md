@@ -1,6 +1,6 @@
 ## Minoxidil mod hårtab kan gøre katte og hunde alvorligt syge
 
-**Kort:** Denne side handler om kæledyr, ikke om bivirkninger hos den, der bruger midlet. Den 27. november 2026 advarede Lægemiddelstyrelsen om, at receptfrie midler mod hårtab med stoffet minoxidil kan give alvorlige, og i nogle tilfælde dødelige, påvirkninger af hjerte og kredsløb hos katte og hunde. Det kan ske efter kontakt med små mængder, også bare ved at ligge i samme seng eller på puder og tæpper, hvor der sidder rester. Katte er særligt følsomme, men hunde kan også blive alvorligt syge. Den europæiske bivirkningskomité PRAC skal i 2027 vurdere, om advarslen skal stå i produktinformationen.
+**Kort:** Denne side handler om kæledyr, ikke om bivirkninger hos den, der bruger midlet. Den 27. november 2026 advarede Lægemiddelstyrelsen om, at receptfrie midler mod hårtab med stoffet minoxidil kan give alvorlige, og i nogle tilfælde dødelige, påvirkninger af hjerte og kredsløb hos katte og hunde. Det kan ske efter kontakt med små mængder, også bare ved at ligge i samme seng eller på puder og tæpper, hvor der sidder rester. Katte er særligt følsomme, men hunde kan også blive alvorligt syge. Ifølge Lægemiddelstyrelsen skal den europæiske bivirkningskomité PRAC i det nye år vurdere, om bivirkningerne hos katte og hunde skal stå i produktinformationen.
 
 *Siden er ikke lægelig eller dyrlægefaglig rådgivning. Har du mistanke om, at dit dyr er blevet sygt, så kontakt en dyrlæge.*
 
@@ -38,7 +38,7 @@ Lægemiddelstyrelsen skriver, at du skal opbevare produktet, så dyr ikke kan ko
 AEMPS anbefaler desuden at bære tøj, der dækker det behandlede område. Tjek pakningen, hvis du er i tvivl om, hvorvidt midlet indeholder minoxidil.
 
 ### Hvad ved vi ikke?
-Lægemiddelstyrelsen skriver, at der fortsat er begrænset viden om, hvor udbredt problemet er, og hvilke følger det har for kæledyr. Det reelle antal alvorligt ramte dyr kan være højere end de tilfælde, der er registreret i den europæiske bivirkningsovervågning. Der foreligger ikke danske tal i advarslen. PRAC har endnu ikke vurderet, om advarslen skal ind i produktinformationen. Det skal ske i 2027.
+Lægemiddelstyrelsen skriver, at der fortsat er begrænset viden om, hvor udbredt problemet er, og hvilke følger det har for kæledyr. Det reelle antal alvorligt ramte dyr kan være højere end de tilfælde, der er registreret i den europæiske bivirkningsovervågning. Der foreligger ikke danske tal i advarslen.
 
 Siden her handler ikke om bivirkninger hos mennesker, der selv bruger midlet. På [stofoversigten for minoxidil](/stof/minoxidil/) kan du se de indberettede mistanker, der er registreret for mennesker i Danmark.
 
