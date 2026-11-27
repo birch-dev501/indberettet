@@ -46,8 +46,17 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("1,24 til 1,93"), true);
   assert.equal(markdown.includes("1,88"), true);
   assert.equal(markdown.includes("2,20"), true);
+  assert.equal(markdown.includes("ikke aktuelt fik biologisk behandling"), true);
+  assert.equal(markdown.includes("patienter, der ikke fik biologisk behandling"), false);
+  assert.equal(markdown.includes("10 tilfælde pr. et bestemt antal patienter om året"), true);
+  assert.equal(markdown.includes("cirka 17 pr. det samme antal"), true);
+  assert.equal(markdown.includes("Vi kender ikke det rigtige tal"), true);
   assert.equal(markdown.includes("2,25"), true);
   assert.equal(markdown.includes("3,15"), true);
+  assert.equal(markdown.includes("endnu højere"), false);
+  assert.equal(markdown.includes("Tallene bygger på få personer"), true);
+  assert.equal(markdown.includes("I daglig tale kaldes det ofte blodforgiftning"), true);
+  assert.equal(markdown.includes("Det kaldes ofte blodforgiftning"), false);
   assert.equal(markdown.includes("1,59"), true);
   assert.equal(markdown.includes("0,85"), true);
   assert.equal(markdown.includes("0,68"), true);

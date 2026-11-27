@@ -1,6 +1,6 @@
 ## TNF-hæmmere og bakterier i blodet ved tarmsygdom: Hvad viser det danske studie?
 
-**Kort:** Et landsdækkende dansk studie fandt, at patienter med inflammatorisk tarmsygdom, som aktuelt fik en TNF-hæmmer, havde 73 % højere rate af bakteriæmi end patienter, der ikke fik biologisk behandling. Bakteriæmi betyder, at der er påvist bakterier i blodet. Det kaldes ofte blodforgiftning. 73 % højere er et relativt tal. Studiet fortæller ikke, hvor mange ekstra tilfælde der sker pr. 1.000 patienter. Den samme stigning blev ikke set for vedolizumab og ustekinumab. Studiet er observationsbaseret, så det beviser ikke, at medicinen er årsagen. Forskeren bag siger, at fundet ikke skal bruges til at advare mod behandlingerne, men at læger bør være opmærksomme på tegn på infektion.
+**Kort:** Et landsdækkende dansk studie fandt, at patienter med inflammatorisk tarmsygdom, som aktuelt fik en TNF-hæmmer, havde 73 % højere rate af bakteriæmi end patienter, der ikke aktuelt fik biologisk behandling. Bakteriæmi betyder, at der er påvist bakterier i blodet. I daglig tale kaldes det ofte blodforgiftning. 73 % højere er et relativt tal. Studiet fortæller ikke, hvor mange ekstra tilfælde der sker pr. 1.000 patienter. Den samme stigning blev ikke set for vedolizumab og ustekinumab. Studiet er observationsbaseret, så det beviser ikke, at medicinen er årsagen. Forskeren bag siger, at fundet ikke skal bruges til at advare mod behandlingerne, men at læger bør være opmærksomme på tegn på infektion.
 
 *Siden er ikke lægelig rådgivning. Stop ikke din medicin uden at tale med en læge. Er du i tvivl, så kontakt lægen.*
 
@@ -8,7 +8,7 @@
 Cæcilie Leding og kolleger sammenlignede alle voksne i Danmark, som fra januar 2010 til juni 2024 fik konstateret bakterier i blodet for første gang, og som havde inflammatorisk tarmsygdom (Crohns sygdom eller colitis ulcerosa), med kontrolpersoner med samme sygdom, samme køn og samme alder. Der var 4.503 patienter med bakteriæmi og 22.473 kontrolpersoner. Aktuel behandling blev defineret som mindst én registrering inden for 180 dage før blodprøven. Tallene er justeret for blandt andet andre sygdomme, tidligere biologisk behandling, binyrebarkhormon og stedfortrædere for, hvor aktiv tarmsygdommen var. Den typiske patient var omkring 70 år. ([Leding m.fl., Alimentary Pharmacology & Therapeutics 2026](https://doi.org/10.1111/apt.70999))
 
 ### Hvad betyder 73 % højere?
-Efter justering var raten 73 % højere hos dem, der aktuelt fik en TNF-hæmmer, end hos dem, der ikke fik biologisk behandling (rateratio 1,73; usikkerhedsinterval 1,49 til 2,00). Hvis raten uden biologisk behandling var 10 tilfælde, ville 73 % højere svare til cirka 17. Usikkerhedsintervallet spænder fra 49 % til 100 % højere.
+Efter justering var raten 73 % højere hos dem, der aktuelt fik en TNF-hæmmer, end hos dem, der ikke aktuelt fik biologisk behandling (rateratio 1,73; usikkerhedsinterval 1,49 til 2,00). Hvis raten uden aktuel biologisk behandling var 10 tilfælde pr. et bestemt antal patienter om året, ville 73 % højere svare til cirka 17 pr. det samme antal. Vi kender ikke det rigtige tal. Usikkerhedsintervallet spænder fra 49 % til 100 % højere.
 
 Det er et relativt tal. Studiet er et case-control-studie og rapporterer ikke, hvor mange tilfælde der typisk sker pr. 1.000 patienter om året. Derfor kan vi ikke sige, hvor stor den absolutte forskel er, altså hvor mange ekstra personer det drejer sig om. En stor relativ forskel kan dække over få eller mange ekstra tilfælde, alt efter hvor hyppig tilstanden er i forvejen. ([Sådan læses relativ og absolut risiko](/forstaa-forskning))
 
@@ -16,7 +16,7 @@ Blandt de 4.503 med bakteriæmi fik 258 (5,7 %) en TNF-hæmmer på det tidspunkt
 
 Samme mønster sås ved både colitis ulcerosa (1,73; 1,34 til 2,23) og Crohns sygdom (1,55; 1,24 til 1,93). Stigningen var især knyttet til *E. coli* (1,88; 1,40 til 2,52) og *S. aureus* (2,20; 1,58 til 3,08).
 
-Hos dem, der allerede fik en TNF-hæmmer, var raten højere, hvis de samtidig fik binyrebarkhormon (2,25; 1,42 til 3,58), og endnu højere hvis de også fik methotrexat eller et thiopurin-præparat (3,15; 1,72 til 5,76), sammenlignet med TNF-hæmmer alene.
+Hos dem, der allerede fik en TNF-hæmmer, var raten højere, hvis de samtidig fik binyrebarkhormon (2,25; 1,42 til 3,58), og 3,15 (1,72 til 5,76), hvis de også fik methotrexat eller et thiopurin-præparat, sammenlignet med TNF-hæmmer alene. Tallene bygger på få personer.
 
 Når forskerne krævede mindst to registrerede IBD-diagnoser, var raten stadig forhøjet: 1,59 (1,36 til 1,86).
 
