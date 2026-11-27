@@ -43,6 +43,10 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("211"), true);
   assert.equal(markdown.includes("62 katte"), true);
   assert.equal(markdown.includes("12,9 procent"), true);
+  assert.equal(markdown.includes("minoxidil til udvortes brug"), true);
+  assert.equal(markdown.includes("kontakt med minoxidil på huden"), false);
+  assert.equal(markdown.includes("Hos katte med symptomer var den hyppigste omstændighed"), true);
+  assert.equal(markdown.includes("hyppigste årsag"), false);
   assert.equal(markdown.includes("2001 til 2019"), true);
   assert.equal(markdown.includes("De siger ikke, hvor ofte det sker i Danmark"), true);
   assert.equal(markdown.includes("mindst 8 tilfælde"), true);
