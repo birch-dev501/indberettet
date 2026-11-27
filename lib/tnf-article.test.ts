@@ -61,7 +61,9 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   for (const slug of ["infliximab", "adalimumab", "golimumab", "certolizumab", "etanercept", "vedolizumab", "ustekinumab"]) {
     assert.equal(markdown.includes(`](/stof/${slug})`), true, slug);
   }
-  assert.equal(markdown.includes("Cæcilie Leding"), true);
+  assert.equal(markdown.includes("Cæcilie Leding og kolleger"), true);
+  assert.equal(markdown.includes("En af forskerne bag studiet siger til Dagens Medicin"), true);
+  assert.equal(markdown.includes("siger førsteforfatter Cæcilie Leding"), false);
   assert.equal(markdown.includes("advare mod behandlingerne"), true);
   assert.equal(markdown.includes("Hvidovre"), false);
   assert.equal(markdown.includes("svigerfar"), false);

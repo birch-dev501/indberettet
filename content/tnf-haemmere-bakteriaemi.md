@@ -33,7 +33,7 @@ Studiet er ikke et lodtrækningsforsøg. Behandlingen er ikke fordelt tilfældig
 Studiet kan heller ikke sige, hvor længe man har været i behandling, eller om dosis spiller en rolle. Og det siger ikke, hvor stor den absolutte risiko er for den enkelte.
 
 ### Hvad betyder det for patienter?
-I Dagens Medicin siger førsteforfatter Cæcilie Leding, at fundet ikke skal bruges til at advare mod behandlingerne, men at læger bør være opsøgende over for tegn på infektioner ([Dagens Medicin, 24. november 2026](https://www.dagensmedicin.dk/nyheder/gastroenterologi-hepatologi/ibd-patienter-i-behandling-med-tnf-haemmere-far-oftere-bakteriaemi-dm/)).
+En af forskerne bag studiet siger til Dagens Medicin, at fundet ikke skal bruges til at advare mod behandlingerne, men at læger bør være opsøgende over for tegn på infektioner ([Dagens Medicin, 24. november 2026](https://www.dagensmedicin.dk/nyheder/gastroenterologi-hepatologi/ibd-patienter-i-behandling-med-tnf-haemmere-far-oftere-bakteriaemi-dm/)).
 
 Stop ikke din medicin uden at tale med en læge. Bliver du dårlig, eller er du i tvivl, så kontakt lægen.
 
