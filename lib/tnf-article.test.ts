@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
-import { articleHeadings, articleLinks, parseArticle } from "./article-markdown.ts";
+import { isSitePath, sitePathHref } from "./article-href.ts";
+import { articleHeadings, articleLinks, parseArticle, parseInline } from "./article-markdown.ts";
 
 const markdown = readFileSync("content/tnf-haemmere-bakteriaemi.md", "utf8");
 const page = readFileSync("app/tnf-haemmere-bakteriaemi/page.tsx", "utf8");
@@ -73,4 +74,35 @@ test("siden er linket fra forsiden, sidfoden, sitemap og søgning", () => {
   assert.equal(footer.includes('href="/tnf-haemmere-bakteriaemi"'), true);
   assert.equal(sitemap.includes('"/tnf-haemmere-bakteriaemi/"'), true);
   assert.equal(search.includes('href: "/tnf-haemmere-bakteriaemi"'), true);
+});
+
+test("interne markdown-links renderes med basePath i href", () => {
+  assert.equal(page.includes("sitePathHref(part.href)"), true);
+  assert.equal(page.includes("isSitePath(part.href)"), true);
+  const hrefs = [...markdown.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map((match) => match[1]);
+  const internal = hrefs.filter((href) => isSitePath(href));
+  assert.ok(internal.includes("/stof/infliximab"));
+  assert.ok(internal.includes("/forstaa-forskning"));
+  for (const href of internal) {
+    const rendered = sitePathHref(href);
+    assert.equal(rendered.startsWith("/indberettet/"), true, href);
+    assert.equal(rendered.includes('href="/stof/'), false, href);
+    const parts = parseInline(`[x](${href})`);
+    const link = parts.find((part) => part.type === "link");
+    assert.equal(link?.type === "link" && sitePathHref(link.href), rendered);
+  }
+});
+
+test("det byggede html har /indberettet på interne links", (t) => {
+  const htmlPath = "out/tnf-haemmere-bakteriaemi/index.html";
+  if (!existsSync(htmlPath)) {
+    t.skip("out/tnf-haemmere-bakteriaemi/index.html findes ikke. Kør npm run build først.");
+    return;
+  }
+  const html = readFileSync(htmlPath, "utf8");
+  assert.equal(html.includes('href="/stof/'), false);
+  assert.equal(html.includes('href="/forstaa-forskning'), false);
+  assert.equal(html.includes('href="/indberettet/stof/infliximab/'), true);
+  assert.equal(html.includes('href="/indberettet/forstaa-forskning/'), true);
+  assert.equal(html.includes('href="https://www.meldenbivirkning.dk"'), true);
 });

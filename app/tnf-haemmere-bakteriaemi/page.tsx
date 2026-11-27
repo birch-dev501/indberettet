@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { isSitePath, sitePathHref } from "@/lib/article-href";
 import { parseArticle, parseInline, type ArticleBlock, type InlinePart } from "@/lib/article-markdown";
 
 export const metadata: Metadata = {
@@ -18,6 +19,13 @@ function inlineNodes(parts: InlinePart[]): ReactNode[] {
     if (part.type === "strong") return <strong key={index}>{part.text}</strong>;
     if (part.type === "em") return <em key={index}>{part.text}</em>;
     if (part.type === "link") {
+      if (isSitePath(part.href)) {
+        return (
+          <a key={index} href={sitePathHref(part.href)}>
+            {part.text}
+          </a>
+        );
+      }
       return (
         <a key={index} href={part.href} rel="noopener noreferrer">
           {part.text}

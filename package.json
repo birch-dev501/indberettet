@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 3847",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test lib/search.test.ts lib/search-dismiss.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts lib/case-notes.test.ts lib/effects.test.ts lib/covid-harms.test.ts lib/influenza-article.test.ts lib/donanemab-article.test.ts lib/tnf-article.test.ts lib/company-filter.test.ts lib/bayes.test.ts lib/sources.test.ts scripts/company-alias.test.mjs",
+    "test": "node --experimental-strip-types --test lib/search.test.ts lib/search-dismiss.test.ts lib/rates.test.ts lib/term-links.test.ts lib/companies.test.ts lib/case-notes.test.ts lib/effects.test.ts lib/covid-harms.test.ts lib/influenza-article.test.ts lib/donanemab-article.test.ts lib/tnf-article.test.ts lib/article-href.test.ts lib/company-filter.test.ts lib/bayes.test.ts lib/sources.test.ts scripts/company-alias.test.mjs",
     "verify": "node .cursor/skills/verify-indberettet/verify.mjs",
     "ingest": "python3 scripts/ingest.py"
   },
