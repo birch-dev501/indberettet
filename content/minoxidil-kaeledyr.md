@@ -25,9 +25,9 @@ Ifølge Lægemiddelstyrelsen kan tegn på alvorlige bivirkninger hos dyrene vær
 - Væske i lunger eller brysthule (lungeødem eller pleural effusion)
 - Nedsat funktion af hjerte og kredsløb (kongestivt hjertesvigt)
 
-Symptomerne er ofte uspecifikke, så sammenhængen med minoxidil kan være nem at overse. Kontakt hurtigst muligt en dyrlæge, hvis du har mistanke om, at dit kæledyr har været i kontakt med minoxidil og viser tegn på sygdom. Fortæl dyrlægen om den mulige kontakt.
+Symptomerne er ofte uspecifikke, så sammenhængen med minoxidil kan være nem at overse. Lægemiddelstyrelsen råder til at kontakte en dyrlæge hurtigst muligt, hvis du har mistanke om, at dit kæledyr har været i kontakt med minoxidil og viser tegn på sygdom, og til at fortælle dyrlægen om den mulige kontakt.
 
-Det spanske lægemiddelagentur anbefaler også sundhedspersoner at råde ejere til at kontakte en dyrlæge ved mistanke om kontakt, også før der er symptomer.
+Det spanske lægemiddelagentur anbefaler også sundhedspersoner at råde ejere til straks at kontakte en dyrlæge ved mistanke om kontakt, også før der er symptomer.
 
 ### Hvad kan du gøre, hvis du bruger minoxidil?
 Lægemiddelstyrelsen skriver, at du skal opbevare produktet, så dyr ikke kan komme til det. Du skal også:
@@ -35,7 +35,7 @@ Lægemiddelstyrelsen skriver, at du skal opbevare produktet, så dyr ikke kan ko
 - Undgå, at kæledyr slikker på eller har fysisk kontakt med de behandlede hudområder
 - Være opmærksom på, at rester kan sidde på puder, sengetøj og andre overflader
 
-AEMPS anbefaler desuden at bære tøj, der dækker det behandlede område. Tjek pakningen, hvis du er i tvivl om, hvorvidt midlet indeholder minoxidil.
+AEMPS anbefaler desuden at bære tøj, der dækker det behandlede område.
 
 ### Hvad ved vi ikke?
 Lægemiddelstyrelsen skriver, at der fortsat er begrænset viden om, hvor udbredt problemet er, og hvilke følger det har for kæledyr. Det reelle antal alvorligt ramte dyr kan være højere end de tilfælde, der er registreret i den europæiske bivirkningsovervågning. Der foreligger ikke danske tal i advarslen.
@@ -43,7 +43,7 @@ Lægemiddelstyrelsen skriver, at der fortsat er begrænset viden om, hvor udbred
 Siden her handler ikke om bivirkninger hos mennesker, der selv bruger midlet. På [stofoversigten for minoxidil](/stof/minoxidil/) kan du se de indberettede mistanker, der er registreret for mennesker i Danmark.
 
 ### Hvordan indberetter du en mistanke?
-Både dyreejere og dyrlæger opfordres til at [indberette mistænkte bivirkninger hos dyr til Lægemiddelstyrelsen](https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin-til-dyr/meld-en-bivirkning-eller-manglende-effekt-i-dyr/). Du behøver ikke at være sikker på sammenhængen. En mistanke er nok.
+Lægemiddelstyrelsen opfordrer både dyreejere og dyrlæger til at [indberette mistænkte bivirkninger hos dyr](https://laegemiddelstyrelsen.dk/da/bivirkninger/bivirkninger-ved-medicin-til-dyr/meld-en-bivirkning-eller-manglende-effekt-i-dyr/).
 
 ### Bundlinjen
 Receptfrie hårtabsmidler med minoxidil kan give alvorlige, og i nogle tilfælde dødelige, påvirkninger af hjerte og kredsløb hos katte og hunde, også efter kontakt med små mængder eller med sengetøj. Katte er særligt følsomme. Advarslen handler om dyrene, ikke om bivirkninger hos den, der bruger midlet. Viden om omfanget er stadig begrænset.
