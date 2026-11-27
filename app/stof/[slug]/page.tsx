@@ -66,7 +66,9 @@ export default async function SubstancePage({ params }: { params: Promise<{ slug
           articleHref={
             slug === "influenza-vaccines"
               ? { href: "/influenzavaccine-raske/", label: "Influenzavaccine til raske: Et nej tak kan være et oplyst valg" }
-              : null
+              : slug === "minoxidil"
+                ? { href: "/minoxidil-kaeledyr/", label: "Minoxidil mod hårtab kan gøre katte og hunde alvorligt syge" }
+                : null
           }
         />
         <ReportIssue path={`/stof/${slug}/`} />

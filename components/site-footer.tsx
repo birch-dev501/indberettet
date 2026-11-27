@@ -42,6 +42,8 @@ export function SiteFooter() {
             <br />
             <Link href="/tnf-haemmere-bakteriaemi">TNF-hæmmere og bakterier i blodet ved tarmsygdom</Link>
             <br />
+            <Link href="/minoxidil-kaeledyr">Minoxidil og kæledyr</Link>
+            <br />
             <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
             <br />
             <Link href="/forstaa-testen">Sådan læses en test</Link>

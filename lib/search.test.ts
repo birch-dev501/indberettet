@@ -222,3 +222,10 @@ test("tnf og bakteriæmi finder siden om tnf-hæmmere og bakterier i blodet", ()
     assert.ok(pages?.hits.some((hit) => hit.href === "/tnf-haemmere-bakteriaemi"), query);
   }
 });
+
+test("minoxidil og kæledyr finder siden om minoxidil og kæledyr", () => {
+  for (const query of ["minoxidil", "kæledyr", "hårtab"]) {
+    const pages = groupSearch(index, query).find((group) => group.id === "page");
+    assert.ok(pages?.hits.some((hit) => hit.href === "/minoxidil-kaeledyr"), query);
+  }
+});

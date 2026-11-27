@@ -191,6 +191,9 @@ export default function HomePage() {
               <p>
                 <Link href="/tnf-haemmere-bakteriaemi/">TNF-hæmmere og bakterier i blodet ved tarmsygdom</Link>
               </p>
+              <p>
+                <Link href="/minoxidil-kaeledyr/">Minoxidil og kæledyr</Link>
+              </p>
             </aside>
           </div>
         </section>

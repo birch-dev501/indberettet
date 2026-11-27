@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/influenzavaccine-raske/",
     "/donanemab-alzheimer/",
     "/tnf-haemmere-bakteriaemi/",
+    "/minoxidil-kaeledyr/",
     "/forstaa-usikkerhed/",
     "/forstaa-testen/",
     "/katalog/",
