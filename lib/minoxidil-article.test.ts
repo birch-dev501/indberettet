@@ -51,7 +51,7 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("Hos katte med symptomer var den hyppigste omstændighed"), true);
   assert.equal(markdown.includes("hyppigste årsag"), false);
   assert.equal(markdown.includes("2001 til 2019"), true);
-  assert.equal(markdown.includes("De siger ikke, hvor ofte det sker i Danmark"), true);
+  assert.equal(markdown.includes("siger ikke, hvor ofte det sker i Danmark"), true);
   assert.equal(markdown.includes("mindst 8 tilfælde"), true);
   assert.equal(markdown.includes("4 i Spanien, 3 i Belgien og 1 i USA"), true);
   assert.equal(markdown.includes("3 katte og 5 hunde"), true);
@@ -63,6 +63,10 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("begrænset viden"), true);
   assert.equal(markdown.includes("ikke danske tal"), true);
   assert.equal(markdown.includes("](/stof/minoxidil/)"), true);
+  assert.equal(markdown.includes("Risikoen gælder altså"), false);
+  const bundlinjen = markdown.slice(markdown.indexOf("### Bundlinjen"));
+  assert.equal(bundlinjen.includes("ikke om bivirkninger hos den, der bruger midlet"), false);
+  assert.equal(markdown.includes("Siden her handler ikke om bivirkninger hos mennesker"), true);
   assert.equal(markdown.includes("REGAINE"), false);
   assert.equal(markdown.includes("LONITEN"), false);
   assert.equal(markdown.includes("modgift"), false);
