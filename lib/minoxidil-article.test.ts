@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 import { articleHeadings, articleLinks, parseArticle } from "./article-markdown.ts";
 
@@ -37,6 +37,9 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(new Set(found).size, links.length);
   assert.equal(markdown.split("ikke lægelig eller dyrlægefaglig rådgivning").length - 1, 2);
   assert.equal(page.includes('className={disclaimer ? "note"'), true);
+  assert.equal(page.includes('text.includes("ikke lægelig")'), true);
+  assert.equal(page.includes('text.includes("rådgivning")'), true);
+  assert.equal(page.includes('text.includes("ikke lægelig rådgivning")'), false);
   assert.equal(page.includes("Advarsel. Om kæledyr."), true);
   const kort = markdown.slice(0, markdown.indexOf("### "));
   assert.equal(kort.includes("Denne side handler om kæledyr, ikke om bivirkninger hos den, der bruger midlet."), true);
@@ -75,4 +78,18 @@ test("siden er linket fra forsiden, sidfoden, sitemap, søgning og stofoversigte
   assert.equal(search.includes('href: "/minoxidil-kaeledyr"'), true);
   assert.equal(substance.includes('slug === "minoxidil"'), true);
   assert.equal(substance.includes('href: "/minoxidil-kaeledyr/"'), true);
+});
+
+test("forbeholdet får note-klassen i det renderede HTML", (t) => {
+  const htmlPath = "out/minoxidil-kaeledyr/index.html";
+  if (!existsSync(htmlPath)) {
+    t.skip("out/minoxidil-kaeledyr/index.html findes ikke. Kør npm run build først.");
+    return;
+  }
+  const html = readFileSync(htmlPath, "utf8");
+  const notes = [...html.matchAll(/<p class="note">([\s\S]*?)<\/p>/g)].map((match) => match[1]);
+  assert.equal(notes.length, 2);
+  for (const note of notes) {
+    assert.equal(note.includes("ikke lægelig eller dyrlægefaglig rådgivning"), true, note);
+  }
 });

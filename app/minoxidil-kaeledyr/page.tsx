@@ -29,7 +29,7 @@ function inlineNodes(parts: InlinePart[]): ReactNode[] {
 }
 
 function Paragraph({ text }: { text: string }) {
-  const disclaimer = text.includes("ikke lægelig rådgivning");
+  const disclaimer = text.includes("ikke lægelig") && text.includes("rådgivning");
   return <p className={disclaimer ? "note" : undefined}>{inlineNodes(parseInline(text))}</p>;
 }
 
