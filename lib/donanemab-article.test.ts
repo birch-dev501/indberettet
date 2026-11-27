@@ -25,6 +25,8 @@ const links = [
   "https://www.adrreports.eu/",
   "https://medicinraadet.dk/nyheder/2025/medicinradet-anbefaler-ikke-nyt-laegemiddel-til-patienter-med-alzheimers-sygdom",
   "https://filer.medicinraadet.dk/media/5pyntr1x/medicinradets-anbefaling-vedr-donanemab-til-behandling-af-alzheimers-sygdom-vers-1-0.pdf",
+  "https://www.kristeligt-dagblad.dk/danmark/nej-til-alzheimermedicin-er-fornuftigt-hvis-man-vil-have-en-ny-bil-saa-kommer-man-nok-ikke",
+  "https://www.alzheimer.dk/nyheder/2026/skuffelse-i-alzheimerforeningen-over-nyt-nej-til-ny-medicin-der-udsaetter-forvaerring-af-sygdommen/",
 ];
 
 const headings = [
@@ -38,6 +40,7 @@ const headings = [
   "Hvad med lecanemab?",
   "Hvad med prisen?",
   "Hvad betyder det for patienter og pårørende?",
+  "Debatten efter afgørelsen",
   "Bundlinjen",
 ];
 
@@ -80,6 +83,12 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("kan have betydning for patienten"), true);
   assert.equal(markdown.includes("Virksomheden fremhæver, at 22,8"), false);
   assert.equal(markdown.includes("ikke anbefaler donanemab som standardbehandling"), true);
+  assert.equal(markdown.includes("Debatten efter afgørelsen"), true);
+  assert.equal(markdown.includes("tre til seks måneder"), true);
+  assert.equal(markdown.includes("2,9 ligger under"), true);
+  assert.equal(markdown.includes("Hvis man vil have en ny bil, så kommer man nok ikke på skiferie."), true);
+  assert.equal(markdown.includes("svigerfar"), false);
+  assert.equal(markdown.includes("Hvidovre"), false);
   assert.equal(markdown.includes("skærpet indberetningspligt"), false);
   assert.equal(markdown.includes("supplerende overvågning"), true);
   assert.equal(markdown.includes("2.488"), true);
