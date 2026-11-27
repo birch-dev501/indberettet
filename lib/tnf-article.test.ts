@@ -40,8 +40,6 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("1,73"), true);
   assert.equal(markdown.includes("1,49 til 2,00"), true);
   assert.equal(markdown.includes("73 % højere"), true);
-  assert.equal(markdown.includes("258 (5,7 %)"), true);
-  assert.equal(markdown.includes("3,6 %"), true);
   assert.equal(markdown.includes("1,34 til 2,23"), true);
   assert.equal(markdown.includes("1,24 til 1,93"), true);
   assert.equal(markdown.includes("1,88"), true);
@@ -66,6 +64,9 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("ikke et lodtrækningsforsøg"), true);
   assert.equal(markdown.includes("Stop ikke din medicin uden at tale med en læge"), true);
   assert.equal(markdown.includes("meldenbivirkning.dk"), true);
+  assert.equal(markdown.includes("258 (5,7 %)"), false);
+  assert.equal(markdown.includes("På Indberettet kan du se"), false);
+
   assert.equal(markdown.includes("](/forstaa-forskning)"), true);
   for (const slug of ["infliximab", "adalimumab", "golimumab", "certolizumab", "etanercept", "vedolizumab", "ustekinumab"]) {
     assert.equal(markdown.includes(`](/stof/${slug})`), true, slug);
