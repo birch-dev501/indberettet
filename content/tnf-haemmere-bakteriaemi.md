@@ -26,6 +26,6 @@ Studiet er ikke et lodtrækningsforsøg. De, der får en TNF-hæmmer, kan have s
 En af forskerne bag studiet siger til Dagens Medicin, at fundet ikke skal bruges til at advare mod behandlingerne, men at læger bør være opsøgende over for tegn på infektioner ([Dagens Medicin, 24. november 2026](https://www.dagensmedicin.dk/nyheder/gastroenterologi-hepatologi/ibd-patienter-i-behandling-med-tnf-haemmere-far-oftere-bakteriaemi-dm/)). Bliver du dårlig, eller er du i tvivl, så kontakt lægen. Har du mistanke om en bivirkning, kan du selv indberette den til Lægemiddelstyrelsen på [meldenbivirkning.dk](https://www.meldenbivirkning.dk). En indberetning er en mistanke, ikke et bevis.
 
 ### Bundlinjen
-Studiet viser en relativt højere rate af bakterier i blodet hos IBD-patienter, der aktuelt fik en TNF-hæmmer, men beviser ikke en årsag og giver ikke et absolut tal. Stop ikke medicinen af dig selv.
+Studiet viser en 73 % højere rate af bakterier i blodet hos IBD-patienter, der aktuelt fik en TNF-hæmmer, men beviser ikke en årsag og giver ikke et absolut tal. Stop ikke medicinen af dig selv.
 
 *Siden er ikke lægelig rådgivning.*

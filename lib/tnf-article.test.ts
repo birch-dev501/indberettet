@@ -66,6 +66,11 @@ test("tnf-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("meldenbivirkning.dk"), true);
   assert.equal(markdown.includes("258 (5,7 %)"), false);
   assert.equal(markdown.includes("På Indberettet kan du se"), false);
+  const bundlinje = markdown.split("### Bundlinjen")[1] ?? "";
+  assert.equal(bundlinje.includes("73 % højere"), true);
+  assert.equal(bundlinje.includes("relativt højere"), false);
+  assert.equal(markdown.includes("relativt højere"), false);
+
 
   assert.equal(markdown.includes("](/forstaa-forskning)"), true);
   for (const slug of ["infliximab", "adalimumab", "golimumab", "certolizumab", "etanercept", "vedolizumab", "ustekinumab"]) {
