@@ -10,6 +10,7 @@ const footer = readFileSync("components/site-footer.tsx", "utf8");
 const sitemap = readFileSync("app/sitemap.ts", "utf8");
 const search = readFileSync("lib/search.ts", "utf8");
 const substance = readFileSync("app/stof/[slug]/page.tsx", "utf8");
+const renderer = readFileSync("components/article-blocks.tsx", "utf8");
 
 const links = [
   "https://laegemiddelstyrelsen.dk/da/nyheder/2026/receptfrie-laegemidler-mod-haartab-hos-mennesker-kan-give-en-raekke-alvorlige-bivirkninger/",
@@ -36,10 +37,11 @@ test("minoxidil-siden har titel, overskrifter, links og forbehold", () => {
   for (const link of links) assert.equal(found.includes(link), true, link);
   assert.equal(new Set(found).size, links.length);
   assert.equal(markdown.split("ikke lægelig eller dyrlægefaglig rådgivning").length - 1, 2);
-  assert.equal(page.includes('className={disclaimer ? "note"'), true);
-  assert.equal(page.includes('text.includes("ikke lægelig")'), true);
-  assert.equal(page.includes('text.includes("rådgivning")'), true);
-  assert.equal(page.includes('text.includes("ikke lægelig rådgivning")'), false);
+  assert.equal(page.includes('from "@/components/article-blocks"'), true);
+  assert.equal(renderer.includes('className={disclaimer ? "note"'), true);
+  assert.equal(renderer.includes('text.includes("ikke lægelig")'), true);
+  assert.equal(renderer.includes('text.includes("rådgivning")'), true);
+  assert.equal(renderer.includes("sitePathHref(part.href)"), true);
   assert.equal(page.includes("Advarsel. Om kæledyr."), true);
   const kort = markdown.slice(0, markdown.indexOf("### "));
   assert.equal(kort.includes("Denne side handler om kæledyr, ikke om bivirkninger hos den, der bruger midlet."), true);
@@ -84,7 +86,7 @@ test("siden er linket fra forsiden, sidfoden, sitemap, søgning og stofoversigte
   assert.equal(substance.includes('href: "/minoxidil-kaeledyr/"'), true);
 });
 
-test("forbeholdet får note-klassen i det renderede HTML", (t) => {
+test("forbeholdet får note-klassen, og det interne link har basePath", (t) => {
   const htmlPath = "out/minoxidil-kaeledyr/index.html";
   if (!existsSync(htmlPath)) {
     t.skip("out/minoxidil-kaeledyr/index.html findes ikke. Kør npm run build først.");
@@ -96,4 +98,6 @@ test("forbeholdet får note-klassen i det renderede HTML", (t) => {
   for (const note of notes) {
     assert.equal(note.includes("ikke lægelig eller dyrlægefaglig rådgivning"), true, note);
   }
+  assert.equal(html.includes('href="/indberettet/stof/minoxidil/"'), true);
+  assert.equal(html.includes('href="/stof/minoxidil/"'), false);
 });
