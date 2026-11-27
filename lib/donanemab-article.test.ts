@@ -86,7 +86,15 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("Debatten efter afgørelsen"), true);
   assert.equal(markdown.includes("tre til seks måneder"), true);
   assert.equal(markdown.includes("2,9 ligger under"), true);
+  assert.equal(markdown.includes("I vurderingen er de samme data gjort op"), true);
+  assert.equal(markdown.includes("Intervallet på CDR-SB går over seks"), true);
+  assert.equal(markdown.includes("intervallet på iADRS under tre"), true);
+  assert.equal(markdown.includes("usikkerhedsintervallerne går både"), false);
+  assert.equal(markdown.includes("På siden her er de samme data omregnet"), false);
   assert.equal(markdown.includes("Hvis man vil have en ny bil, så kommer man nok ikke på skiferie."), true);
+  assert.equal(markdown.includes("Til dem, der er kede af afgørelsen"), true);
+  assert.equal(markdown.includes('valget: "Hvis man vil have en ny bil'), false);
+  assert.equal(markdown.includes("Det er ikke et tal for donanemab"), true);
   assert.equal(markdown.includes("svigerfar"), false);
   assert.equal(markdown.includes("Hvidovre"), false);
   assert.equal(markdown.includes("skærpet indberetningspligt"), false);
