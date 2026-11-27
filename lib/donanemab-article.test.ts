@@ -105,6 +105,7 @@ test("donanemab-siden har titel, overskrifter, links og forbehold", () => {
   assert.equal(markdown.includes("500.000"), true);
   assert.equal(markdown.includes("ti behandlinger"), true);
   assert.equal(markdown.includes("familiens beretning"), true);
+  assert.equal(markdown.includes("Allerede før afgørelsen"), true);
   assert.equal(markdown.includes("Vestergaard"), false);
   assert.equal(markdown.includes("Kastbjerg"), false);
   assert.equal(markdown.includes("Herning"), false);
