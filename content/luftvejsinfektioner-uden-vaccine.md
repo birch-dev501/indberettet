@@ -1,42 +1,45 @@
 ## Kan man forebygge vinterens luftvejsinfektioner uden vaccine?
 
-**Kort:** D-vitamin beskytter ikke sikkert mod forkølelse, influenza eller covid. Saltvand i næsen er det eneste billige råd med god dokumentation: I et stort britisk forsøg gav saltvandsspray omkring en femtedel færre sygedage. At man kan "desinficere" sig rask med jod, brintoverilte eller DMSO, er ikke vist i forsøg.
+**Kort:** D-vitamin beskytter ikke sikkert mod forkølelse, influenza eller covid. Saltvand i næsen er det bedst undersøgte billige råd: I et stort britisk forsøg gav saltvandsspray omkring en femtedel færre selvrapporterede sygedage hos voksne med øget risiko. At man kan "desinficere" sig rask med jod, brintoverilte eller DMSO, er ikke vist i forsøg.
 
 *Siden er ikke lægelig rådgivning. Tal med din læge, før du ændrer noget.*
 
 ### Overblik
-- **D-vitamin:** Ingen sikker effekt i dag. Store engangsdoser kan skade.
-- **Saltvandsspray eller -dråber:** Beskeden, dokumenteret effekt på sygedage.
+- **D-vitamin:** Ingen sikker effekt i dag. I ét forsøg gav store engangsdoser flere fald og brud.
+- **Saltvandsspray eller -dråber:** En beskeden effekt i ét stort, åbent forsøg.
 - **Gurgling med vand:** Ét lille forsøg tyder på færre infektioner.
 - **Jod, brintoverilte og DMSO i næse og svælg:** Ikke vist at virke.
 
 ### D-vitamin
-En samlet analyse fra 2017 af 25 forsøg med 11.321 deltagere fandt en lille beskyttelse mod luftvejsinfektioner ([Metaanalyse, BMJ 2017](https://doi.org/10.1136/bmj.i6583)). Den seneste opdatering fra 2025 samler 40 forsøg med 61.589 deltagere. Den finder ikke længere en sikker effekt: oddsratio 0,94, hvor usikkerheden går fra 0,88 til 1,00 ([Jolliffe m.fl., Lancet Diabetes & Endocrinology 2025](https://doi.org/10.1016/S2213-8587(24)00348-6)).
+25 forsøg med 11.321 deltagere fandt i 2017 en lille beskyttelse ([Metaanalyse, BMJ 2017](https://doi.org/10.1136/bmj.i6583)). Opdateringen fra 2025 (40 forsøg, 61.589 deltagere) havde næsten samme estimat, men usikkerheden når nu op til ingen forskel: oddsratio 0,94 (0,88–1,00, hvor 1,00 er ingen forskel). Det er altså ikke en sikker beskyttelse ([Jolliffe m.fl., 2025](https://doi.org/10.1016/S2213-8587(24)00348-6)).
 
-To af de største forsøg fandt ingen effekt: amerikanske VITAL med 15.804 ældre voksne ([Camargo m.fl., Clinical Infectious Diseases 2024](https://doi.org/10.1093/cid/ciad770)) og australske D-Health med 21.315 personer på 60 til 84 år ([Pham m.fl., Lancet Diabetes & Endocrinology 2021](https://doi.org/10.1016/S2213-8587(20)30380-6)). De fleste deltagere havde i forvejen nok D-vitamin.
+Heller ingen effekt i VITAL med 15.804 ældre voksne med målt D-vitamin ([Camargo m.fl., 2024](https://doi.org/10.1093/cid/ciad770)) eller i D-Health med godt 21.000 personer på 60 til 79 år, nogle frivillige op til 84 ([Pham m.fl., 2021](https://doi.org/10.1016/S2213-8587(20)30380-6)).
 
-Store engangsdoser kan skade. 2.256 kvinder på 70 år eller ældre fik 500.000 IE én gang om året. De faldt 15 % oftere og fik 26 % flere knoglebrud end dem, der fik placebo ([Sanders m.fl., JAMA 2010](https://doi.org/10.1001/jama.2010.594)).
+I ét forsøg med 2.256 kvinder på 70 år eller ældre og høj risiko for knoglebrud gav 500.000 internationale enheder (IE) én gang om året 15 % flere fald og 26 % flere knoglebrud end placebo, bruddene lige på grænsen af det statistisk sikre ([Sanders m.fl., JAMA 2010](https://doi.org/10.1001/jama.2010.594)).
 
-Sundhedsstyrelsen anbefaler D-vitamin for at undgå mangel og for knoglerne, ikke mod infektioner. De fleste voksne anbefales 5 til 10 mikrogram om dagen fra oktober til april. Personer over 70 år anbefales 20 mikrogram plus calcium hele året. Voksne bør ikke tage over 100 mikrogram om dagen ([Sundhedsstyrelsen](https://www.sst.dk/vidensbase/forebyggelse/ernaering-mad-og-maaltider/tilskud-af-d-vitamin-og-calcium)).
+Sundhedsstyrelsen anbefaler D-vitamin mod mangel og for knoglerne, ikke mod infektioner: 5 til 10 mikrogram dagligt fra oktober til april til de fleste voksne, 20 mikrogram plus calcium hele året til personer over 70, og højst 100 mikrogram dagligt ([Sundhedsstyrelsen](https://www.sst.dk/vidensbase/forebyggelse/ernaering-mad-og-maaltider/tilskud-af-d-vitamin-og-calcium)).
 
 ### Saltvand og sprays i næse og svælg
-På X hævdes det, at man kan behandle forkølelse, influenza og covid ved at desinficere næse og svælg, hvor infektionerne begynder ([A Midwestern Doctor, X, november 2026](https://x.com/MidwesternDoc/status/2126633702696288594)). At virus begynder dér, beviser ikke, at man kan skylle sig rask.
+På X hævdes det, at man kan desinficere næse og svælg og dermed behandle forkølelse, influenza og covid ([A Midwestern Doctor, november 2026](https://x.com/MidwesternDoc/status/2126633702696288594)). At virus begynder dér, beviser det ikke.
 
-Det største forsøg omfattede 13.799 voksne med øget risiko fra 332 britiske lægepraksisser. De brugte saltvandsspray ved første tegn på sygdom eller efter mulig smitte. Over seks måneder havde de 6,4 sygedage mod 8,2 med almindelig behandling og færre antibiotikakure. Forsøget var ikke blindet ([Little m.fl., Lancet Respiratory Medicine 2024](https://doi.org/10.1016/S2213-2600(24)00140-1)). I et lille forsøg med 68 voksne varede forkølelsen 1,9 dag kortere med skylning og gurgling med saltvand ([Ramalingam m.fl., Scientific Reports 2019](https://doi.org/10.1038/s41598-018-37703-3)). Mod covid hjalp det ikke i et forsøg med 576 voksne ([Yusuf m.fl., Journal of Global Health 2024](https://doi.org/10.7189/jogh.14.05027)).
+Det største forsøg omfattede 13.799 voksne med øget risiko, som brugte saltvandsspray ved første tegn på sygdom. Over seks måneder havde de 6,4 sygedage mod 8,2 uden spray og færre antibiotikakure. Sygedagene var selvrapporterede, og forsøget var ikke blindet ([Little m.fl., 2024](https://doi.org/10.1016/S2213-2600(24)00140-1)).
 
-I et japansk forsøg med 387 raske voksne gav gurgling med vand mindst tre gange om dagen færre infektioner i de øvre luftveje. Gurgling med jod hjalp ikke ([Satomura m.fl., American Journal of Preventive Medicine 2005](https://doi.org/10.1016/j.amepre.2005.06.013)).
+I et åbent pilotforsøg med 68 voksne varede forkølelsen 1,9 dag kortere med 2,6 % saltvand til skylning og gurgling. Forfatterne vil have det bekræftet i et større forsøg ([Ramalingam m.fl., 2019](https://doi.org/10.1038/s41598-018-37703-3)). Mod covid var saltvandsskylning ikke bedre end skylning med almindeligt hanevand hos 576 voksne ([Yusuf m.fl., 2024](https://doi.org/10.7189/jogh.14.05027)).
 
-Brintoverilte i næse og mund lindrede ikke covid-symptomer i et brasiliansk forsøg og gav svie i hals og næse ([Di Domênico m.fl., Epidemiology and Health 2021](https://doi.org/10.4178/epih.e2021051)). Det mest omtalte DMSO-forsøg fulgte 1.252 covid-patienter i Vietnam. Det var ikke blindet, havde ingen placebo, og sprayen indeholdt fem forskellige stoffer ([Tran m.fl., In Vivo 2023](https://doi.org/10.21873/invivo.13313)).
+I et ublindet forsøg med 387 raske tydede gurgling med vand på færre selvrapporterede infektioner. Gurgling med jod viste ingen sikker effekt ([Satomura m.fl., 2005](https://doi.org/10.1016/j.amepre.2005.06.013)).
+
+Brintoverilte (1 % til gurgling, 0,5 % i næsen) lindrede ikke covid-symptomer i et brasiliansk forsøg og gav svie ([Di Domênico m.fl., 2021](https://doi.org/10.4178/epih.e2021051)). Det eneste lodtrækningsforsøg med DMSO, vi har fundet, fulgte 1.252 covid-patienter i Vietnam. Forfatterne fandt langt færre med symptomer efter 7 dage. Men patienterne vidste, at de fik sprayen (ingen placebo), og sprayen indeholdt fem stoffer, så man ved ikke, hvad der virkede. En så stor forskel er usædvanlig og er ikke gentaget ([Tran m.fl., 2023](https://doi.org/10.21873/invivo.13313)).
 
 ### Det skal du være opmærksom på
-- I Danmark kan du som udgangspunkt bruge hanevand til saltvand til næseskylning. I lande med usikker vandkvalitet bør du bruge kogt eller sterilt vand ([sundhed.dk](https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/)). I USA er to mennesker døde af en hjerneamøbe efter næseskylning med forurenet hanevand ([Yoder m.fl., Clinical Infectious Diseases 2012](https://doi.org/10.1093/cid/cis626)).
-- DMSO er i USA kun godkendt til skylning af blæren ved en bestemt blæresygdom. Ifølge den amerikanske lægemiddelmyndighed kan det forstærke virkningen af anden medicin ([FDA, produktinformation](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58b25d79-78f2-4953-b0c6-61658dc4ef0d)).
-- Kontakt lægen ved vedvarende høj feber eller stærke smerter, eller hvis du bliver dårligere, efter at det var begyndt at gå bedre ([sundhed.dk](https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/)).
+- I Danmark kan du som udgangspunkt bruge hanevand til næseskylning. Er du i tvivl om vandkvaliteten, for eksempel ved egen brønd, campingvogn eller på rejse, så brug kogt og afkølet eller sterilt vand. Køb saltvand på apoteket, eller bland én strøget teskefuld køkkensalt i en halv liter lunkent, rent vand (0,9 %). Forkert styrke irriterer slimhinden ([sundhed.dk](https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/)). To mennesker i USA er døde af en hjerneamøbe efter skylning med forurenet hanevand ([Yoder m.fl., 2012](https://doi.org/10.1093/cid/cis626)).
+- Jod optages gennem slimhinderne. Har du sygdom i skjoldbruskkirtlen, er gravid eller ammer, bør du ikke bruge jod i næse eller hals uden at tale med lægen ([Frank m.fl., 2020](https://doi.org/10.1177/0145561320932318)).
+- DMSO kan forstærke virkningen af anden medicin ([FDA, produktinformation](https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58b25d79-78f2-4953-b0c6-61658dc4ef0d)). Vi har ikke fundet et godkendt præparat til næsen.
+- Ved bihulebetændelse: kontakt lægen ved vedvarende høj feber, stærke smerter, hævelse omkring øjnene eller påvirket syn, eller hvis du bliver dårligere efter en bedring ([sundhed.dk](https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/)).
 
 ### Hvad med vaccinen?
-Influenzavaccinen er målt på noget andet: bekræftet influenza. Hos raske voksne bliver 23 ud af 1.000 syge med bekræftet influenza uden vaccine og 9 ud af 1.000 med ([Cochrane 2018](https://www.cochrane.org/evidence/CD001269_vaccines-prevent-influenza-healthy-adults)). Saltvandssprayen er målt på alle selvrapporterede sygedage. Tallene kan derfor ikke sammenlignes direkte, og metoderne udelukker ikke hinanden. Er du i en risikogruppe, tilbyder Sundhedsstyrelsen gratis vaccination ([Sundhedsstyrelsen](https://www.sst.dk/vaccination)). Læs mere på siden om [influenzavaccine til raske voksne](/influenzavaccine-raske/).
+Vaccinen er målt på noget andet: bekræftet influenza og alvorlig sygdom. Sundhedsstyrelsen anbefaler vaccination mod influenza og covid-19 til alle på 65 år og derover og til personer under 65 med visse sygdomme, og tilbyder den gratis til og med 20. december 2026. Vaccination nedsætter risikoen for et alvorligt forløb ([Sundhedsstyrelsen](https://www.sst.dk/vaccination)). Saltvand er ikke et alternativ til vaccinen, men kan bruges ved siden af. Læs mere på siden om [influenzavaccine til raske voksne](/influenzavaccine-raske/).
 
 ### Bundlinjen
-Saltvand i næsen er billigt og har en beskeden, dokumenteret effekt. D-vitamin beskytter ikke sikkert mod vinterens infektioner, men følg Sundhedsstyrelsens råd for at undgå mangel. At "desinficere" næse og svælg med jod, brintoverilte eller DMSO er ikke vist at virke.
+Saltvand i næsen er billigt og har en beskeden effekt i ét stort, åbent forsøg. D-vitamin beskytter ikke sikkert, men følg Sundhedsstyrelsens råd for at undgå mangel. At "desinficere" næse og svælg med jod, brintoverilte eller DMSO er ikke vist at virke.
 
 *Siden er ikke lægelig rådgivning.*

@@ -25,22 +25,22 @@ const headings = [
 const sources: { link: string; numbers: string[] }[] = [
   { link: "https://doi.org/10.1136/bmj.i6583", numbers: ["25 forsøg", "11.321"] },
   { link: "https://doi.org/10.1016/S2213-8587(24)00348-6", numbers: ["40 forsøg", "61.589", "0,94", "0,88", "1,00"] },
-  { link: "https://doi.org/10.1093/cid/ciad770", numbers: ["15.804"] },
-  { link: "https://doi.org/10.1016/S2213-8587(20)30380-6", numbers: ["21.315", "60 til 84 år"] },
-  { link: "https://doi.org/10.1001/jama.2010.594", numbers: ["2.256", "500.000 IE", "15 %", "26 %"] },
+  { link: "https://doi.org/10.1093/cid/ciad770", numbers: ["15.804", "med målt D-vitamin"] },
+  { link: "https://doi.org/10.1016/S2213-8587(20)30380-6", numbers: ["godt 21.000", "60 til 79 år"] },
+  { link: "https://doi.org/10.1001/jama.2010.594", numbers: ["2.256", "500.000", "15 %", "26 %", "lige på grænsen"] },
   { link: "https://www.sst.dk/vidensbase/forebyggelse/ernaering-mad-og-maaltider/tilskud-af-d-vitamin-og-calcium", numbers: ["5 til 10 mikrogram", "20 mikrogram", "100 mikrogram"] },
   { link: "https://x.com/MidwesternDoc/status/2126633702696288594", numbers: [] },
-  { link: "https://doi.org/10.1016/S2213-2600(24)00140-1", numbers: ["13.799", "332", "6,4", "8,2"] },
-  { link: "https://doi.org/10.1038/s41598-018-37703-3", numbers: ["68 voksne", "1,9 dag"] },
-  { link: "https://doi.org/10.7189/jogh.14.05027", numbers: ["576"] },
-  { link: "https://doi.org/10.1016/j.amepre.2005.06.013", numbers: ["387"] },
-  { link: "https://doi.org/10.4178/epih.e2021051", numbers: [] },
-  { link: "https://doi.org/10.21873/invivo.13313", numbers: ["1.252"] },
-  { link: "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/", numbers: [] },
+  { link: "https://doi.org/10.1016/S2213-2600(24)00140-1", numbers: ["13.799", "6,4", "8,2", "uden spray", "selvrapporterede"] },
+  { link: "https://doi.org/10.1038/s41598-018-37703-3", numbers: ["68 voksne", "1,9 dag", "2,6 %", "åbent pilotforsøg"] },
+  { link: "https://doi.org/10.7189/jogh.14.05027", numbers: ["576", "hanevand"] },
+  { link: "https://doi.org/10.1016/j.amepre.2005.06.013", numbers: ["387", "ingen sikker effekt"] },
+  { link: "https://doi.org/10.4178/epih.e2021051", numbers: ["1 %", "0,5 %"] },
+  { link: "https://doi.org/10.21873/invivo.13313", numbers: ["1.252", "ingen placebo"] },
+  { link: "https://www.sundhed.dk/borger/patienthaandbogen/oere-naese-hals/sygdomme/bihulerne/bihulebetaendelse-akut/", numbers: ["0,9 %"] },
   { link: "https://doi.org/10.1093/cid/cis626", numbers: [] },
+  { link: "https://doi.org/10.1177/0145561320932318", numbers: ["skjoldbruskkirtlen"] },
   { link: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=58b25d79-78f2-4953-b0c6-61658dc4ef0d", numbers: [] },
-  { link: "https://www.cochrane.org/evidence/CD001269_vaccines-prevent-influenza-healthy-adults", numbers: ["23 ud af 1.000", "9 ud af 1.000"] },
-  { link: "https://www.sst.dk/vaccination", numbers: [] },
+  { link: "https://www.sst.dk/vaccination", numbers: ["20. december 2026"] },
 ];
 
 test("luftvejssiden har titel, overskrifter, kilder og forbehold", () => {
@@ -61,12 +61,14 @@ test("luftvejssiden har titel, overskrifter, kilder og forbehold", () => {
 });
 
 test("luftvejssiden fraråder ikke vaccination og har ingen tabeller", () => {
+  assert.equal(markdown.includes("influenza og covid-19"), true);
+  assert.equal(markdown.includes("Saltvand er ikke et alternativ til vaccinen"), true);
+  assert.equal(markdown.includes("anbefaler vaccination"), true);
+  assert.equal(markdown.includes("65 år og derover"), true);
   for (const phrase of ["spring vaccinen over", "fravælg vaccinen", "stop din medicin", "i stedet for vaccine"]) {
     assert.equal(markdown.toLowerCase().includes(phrase), false, phrase);
   }
   assert.equal(markdown.split("\n").some((line) => line.trim().startsWith("|")), false);
-  assert.equal(markdown.includes("tilbyder Sundhedsstyrelsen gratis vaccination"), true);
-  assert.equal(markdown.includes("udelukker ikke hinanden"), true);
 });
 
 test("luftvejssiden er linket fra forsiden, sidefoden, sitemap og søgning", () => {
