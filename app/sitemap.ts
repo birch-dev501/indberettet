@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/donanemab-alzheimer/",
     "/tnf-haemmere-bakteriaemi/",
     "/minoxidil-kaeledyr/",
+    "/luftvejsinfektioner-uden-vaccine/",
     "/forstaa-usikkerhed/",
     "/forstaa-testen/",
     "/katalog/",

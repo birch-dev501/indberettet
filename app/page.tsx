@@ -194,6 +194,9 @@ export default function HomePage() {
               <p>
                 <Link href="/minoxidil-kaeledyr/">Minoxidil og kæledyr</Link>
               </p>
+              <p>
+                <Link href="/luftvejsinfektioner-uden-vaccine/">Luftvejsinfektioner uden vaccine: D-vitamin og saltvand</Link>
+              </p>
             </aside>
           </div>
         </section>

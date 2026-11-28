@@ -44,6 +44,8 @@ export function SiteFooter() {
             <br />
             <Link href="/minoxidil-kaeledyr">Minoxidil og kæledyr</Link>
             <br />
+            <Link href="/luftvejsinfektioner-uden-vaccine">Luftvejsinfektioner uden vaccine</Link>
+            <br />
             <Link href="/forstaa-usikkerhed">Sådan læses usikkerhed</Link>
             <br />
             <Link href="/forstaa-testen">Sådan læses en test</Link>

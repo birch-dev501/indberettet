@@ -418,6 +418,7 @@ const SITE_PAGES: { href: string; title: string; terms: string[] }[] = [
   { href: "/donanemab-alzheimer", title: "Donanemab (Kisunla) mod tidlig Alzheimers", terms: ["donanemab", "kisunla", "donanemab alzheimer"] },
   { href: "/tnf-haemmere-bakteriaemi", title: "TNF-hæmmere og bakterier i blodet ved tarmsygdom", terms: ["tnf", "tnf-haemmer", "bakteriaemi", "blodforgiftning", "infliximab", "adalimumab", "ibd", "crohn", "colitis", "vedolizumab", "ustekinumab"] },
   { href: "/minoxidil-kaeledyr", title: "Minoxidil og kæledyr", terms: ["minoxidil", "haartab", "hårtab", "kaeledyr", "kæledyr"] },
+  { href: "/luftvejsinfektioner-uden-vaccine", title: "Luftvejsinfektioner uden vaccine: D-vitamin og saltvand", terms: ["luftvejsinfektion", "luftvejsinfektioner", "forkoelelse", "forkølelse", "d-vitamin", "saltvand", "naesespray", "næsespray", "gurgling", "dmso"] },
   { href: "/forstaa-usikkerhed", title: "Sådan læses usikkerhed", terms: ["konfidensinterval", "p-vaerdi", "signifikans", "usikkerhed"] },
   { href: "/forstaa-testen", title: "Sådan læses en test", terms: ["sensitivitet", "specificitet", "praediktiv", "bayes", "testen", "falsk positiv", "falske positive"] },
   { href: "/om-data", title: "Sådan læses tallene", terms: ["om data", "metode", "indberetning"] },

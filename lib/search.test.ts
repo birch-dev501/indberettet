@@ -229,3 +229,10 @@ test("minoxidil og kæledyr finder siden om minoxidil og kæledyr", () => {
     assert.ok(pages?.hits.some((hit) => hit.href === "/minoxidil-kaeledyr"), query);
   }
 });
+
+test("forkølelse og saltvand finder siden om luftvejsinfektioner uden vaccine", () => {
+  for (const query of ["forkølelse", "saltvand", "næsespray", "luftvejsinfektioner"]) {
+    const pages = groupSearch(index, query).find((group) => group.id === "page");
+    assert.ok(pages?.hits.some((hit) => hit.href === "/luftvejsinfektioner-uden-vaccine"), query);
+  }
+});
